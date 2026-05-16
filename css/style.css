@@ -44,6 +44,9 @@
   --border: #334155;
   --footer-bg: #020617;
 }
+.dark .navbar { background: rgba(15,23,42,0.25); }
+.dark .navbar .theme-toggle,
+.dark .navbar .lang-toggle { border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.7); }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -73,13 +76,31 @@ img { max-width: 100%; height: auto; display: block; }
   z-index: 1000;
   padding: 16px 0;
   transition: all var(--transition);
+  background: rgba(15,23,42,0.15);
+  backdrop-filter: blur(6px);
 }
+.navbar .logo { color: white; }
+.navbar .nav-links a { color: rgba(255,255,255,0.75); }
+.navbar .nav-links a:hover { color: white; }
+.navbar .mobile-menu-btn span { background: white; }
+.navbar .theme-toggle,
+.navbar .lang-toggle { border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.1); color: white; }
+.navbar .theme-toggle:hover,
+.navbar .lang-toggle:hover { border-color: var(--brand); color: var(--brand); }
 .navbar.scrolled {
   background: var(--nav-bg);
   backdrop-filter: blur(20px) saturate(180%);
   padding: 10px 0;
   box-shadow: 0 1px 20px rgba(0,0,0,0.06);
 }
+.navbar.scrolled .logo { color: var(--text); }
+.navbar.scrolled .nav-links a { color: var(--text-light); }
+.navbar.scrolled .nav-links a:hover { color: var(--text); }
+.navbar.scrolled .mobile-menu-btn span { background: var(--text); }
+.navbar.scrolled .theme-toggle,
+.navbar.scrolled .lang-toggle { border-color: var(--border); background: var(--card-bg); color: var(--text); }
+.navbar.scrolled .theme-toggle:hover,
+.navbar.scrolled .lang-toggle:hover { border-color: var(--brand); color: var(--brand); }
 .navbar .inner {
   max-width: 1200px; margin: 0 auto;
   padding: 0 24px;
@@ -164,9 +185,17 @@ img { max-width: 100%; height: auto; display: block; }
 .hero::before {
   content: '';
   position: absolute; inset: 0;
-  background: url('https://images.unsplash.com/photo-1576444356170-66073046b1bc?q=80&w=2070&auto=format&fit=crop') center/cover;
-  opacity: 0.3;
+  background: url('https://images.unsplash.com/photo-1471347025057-68ff089f54cd?q=80&w=2070&auto=format&fit=crop') center/cover;
+  filter: blur(2px);
+  opacity: 0.35;
   animation: kenBurns 25s ease-in-out infinite alternate;
+}
+.hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('https://images.unsplash.com/photo-1651658313775-90bf2751913e?q=80&w=2070&auto=format&fit=crop') center/cover;
+  opacity: 0.15;
+  mix-blend-mode: overlay;
 }
 @keyframes kenBurns {
   0% { transform: scale(1); }
