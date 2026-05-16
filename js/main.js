@@ -262,4 +262,77 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ====== Place Card Modal ======
+  const placeCards = [];
+  document.querySelectorAll('.place-card').forEach(card => {
+    const img = card.querySelector('.thumb img');
+    const info = card.querySelector('.info');
+    const title = info?.querySelector('h3')?.innerHTML || '';
+    const desc = info?.querySelector('p')?.innerHTML || '';
+    const tags = info?.querySelector('.tags')?.innerHTML || '';
+    let tipsHtml = '';
+    info?.querySelectorAll('.tip').forEach(tip => { tipsHtml += tip.outerHTML; });
+    placeCards.push({
+      imgSrc: img?.src || '',
+      imgAlt: img?.alt || '',
+      title,
+      desc,
+      tags,
+      tips: tipsHtml
+    });
+  });
+
+  const modalOverlay = document.getElementById('placeModalOverlay');
+  const modal = document.getElementById('placeModal');
+  const modalContent = document.getElementById('modalContent');
+  const modalClose = document.getElementById('modalClose');
+  const modalPrev = document.getElementById('modalPrev');
+  const modalNext = document.getElementById('modalNext');
+  let currentIndex = 0;
+
+  function showPlaceModal(index) {
+    const card = placeCards[index];
+    if (!card) return;
+    currentIndex = index;
+    modalContent.innerHTML = `
+      <img src="${card.imgSrc}" alt="${card.imgAlt}" />
+      <h3>${card.title}</h3>
+      <div class="modal-tags">${card.tags}</div>
+      <p class="modal-desc">${card.desc}</p>
+      <div class="modal-tips">${card.tips}</div>
+    `;
+    modalOverlay.classList.add('open');
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function hidePlaceModal() {
+    modalOverlay.classList.remove('open');
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.place-card').forEach((card, i) => {
+    card.addEventListener('click', () => showPlaceModal(i));
+  });
+
+  if (modalClose) modalClose.addEventListener('click', hidePlaceModal);
+  if (modalOverlay) modalOverlay.addEventListener('click', hidePlaceModal);
+  if (modalPrev) modalPrev.addEventListener('click', () => {
+    let idx = currentIndex - 1;
+    if (idx < 0) idx = placeCards.length - 1;
+    showPlaceModal(idx);
+  });
+  if (modalNext) modalNext.addEventListener('click', () => {
+    let idx = currentIndex + 1;
+    if (idx >= placeCards.length) idx = 0;
+    showPlaceModal(idx);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') hidePlaceModal();
+    const mOpen = modal?.classList.contains('open');
+    if (e.key === 'ArrowLeft' && mOpen) modalPrev?.click();
+    if (e.key === 'ArrowRight' && mOpen) modalNext?.click();
+  });
+
 });

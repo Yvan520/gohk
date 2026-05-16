@@ -184,5 +184,68 @@ function filterStories(category) {
   });
 }
 </script>
+<script>
+if (!localStorage.getItem('sunnyhk-stories-seeded')) {
+  const seedStories = [
+    {
+      nickname: '書蟲小李',
+      origin: '香港',
+      category: 'healing',
+      message: '上星期行咗去旺角嘅Boundary Bookshop，細細間但好有溫度。店主話「我哋唔只係賣書，係build community㗎」。坐低睇咗本香港攝影集，成個下晝就咁過咗。原來治癒可以好簡單。',
+      time: '5月12日',
+      likes: 23,
+      liked: false
+    },
+    {
+      nickname: '離島達人',
+      origin: '九龍',
+      category: 'healing',
+      message: '南丫島榕樹灣有檔婆婆賣糖水賣咗成50年，$10一碗芝麻糊，滑到不得了。佢話「後生仔，慢慢食，唔使急」。嗰刻我明咗，幸福就係一碗芝麻糊再加一個微笑。',
+      time: '5月8日',
+      likes: 31,
+      liked: false
+    },
+    {
+      nickname: '為食貓',
+      origin: '廣州',
+      category: 'food',
+      message: '第一次聽「無情雞」呢個名覺得好搞笑，原來係傳統廣東宴席菜——白切雞配薑蔥油，因為「無情」意指雞冇內臓，啖啖肉。喺中環「鏞記」試咗，皮爽肉滑，點埋薑蓉真係一流！',
+      time: '5月3日',
+      likes: 45,
+      liked: false
+    },
+    {
+      nickname: '夜遊神',
+      origin: '台灣',
+      category: 'night',
+      message: '青衣真君廟嘅霓虹燈牌真係震撼到我！夜晚去，成座廟被粉紅同藍色燈光包圍，科幻感十足。完全顛覆咗我對傳統寺廟嘅想像，仲以為自己去咗cyberpunk電影場景。',
+      time: '4月28日',
+      likes: 38,
+      liked: false
+    },
+    {
+      nickname: '陳師奶',
+      origin: '香港',
+      category: 'family',
+      message: '帶咗兩個仔去科學館，佢哋玩到癲咗！能量穿梭機最誇張，啲波波由頂滾落嚟，啲細路睇到嘩嘩聲。仲有氣候室可以體驗颱風，阿仔話「媽咪，原來颱風係咁嘅！」又學到嘢又好玩。',
+      time: '4月20日',
+      likes: 27,
+      liked: false
+    },
+    {
+      nickname: '一人旅人',
+      origin: '新加坡',
+      category: 'solo',
+      message: '一個人去長洲，渡海書店係最大驚喜。喺二樓窗邊位攞住本《香港散步學》，望住下面東灣海灘，成個世界靜晒。下晝去張保仔洞探險，喺海邊大石上坐低睇日落——原來一個人旅行都可以咁滿足。',
+      time: '4月15日',
+      likes: 52,
+      liked: false
+    }
+  ];
+  const existing = JSON.parse(localStorage.getItem('sunnyhk-stories') || '[]');
+  localStorage.setItem('sunnyhk-stories', JSON.stringify([...seedStories, ...existing]));
+  localStorage.setItem('sunnyhk-stories-seeded', 'true');
+}
+</script>
 </body>
 </html>
