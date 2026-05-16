@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SunnyHK 香港分龄旅游指南 — 亲子、青年、上班族、银发、发呆地图，每个人都有自己的香港方式。">
+<title>探索指南 | SunnyHK 香港分龄攻略</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="inner">
+    <a href="index.html" class="logo">
+      <div class="sun"><i class="fas fa-sun"></i></div>
+      Sunny<span>HK</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="explore.html" class="active">探索指南</a>
+      <a href="stories.html">香港故事</a>
+      <a href="about.html">关于</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="切换主题"><i class="fas fa-moon"></i></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="index.html">首页</a>
+  <a href="explore.html">探索指南</a>
+  <a href="stories.html">香港故事</a>
+  <a href="about.html">关于</a>
+  <button class="theme-toggle" id="themeToggleMobile" aria-label="切换主题" style="margin-top:auto;align-self:flex-start;"><i class="fas fa-moon"></i></button>
+</div>
+
+<div class="page-header">
+  <div class="inner">
+    <h1>探索你的香港方式</h1>
+    <p>不按景点分类，按你的性格推荐。每一种节奏，都值得被尊重。</p>
+  </div>
+</div>
+
+<div class="explore-section">
+  <div class="inner">
+    <div class="flex-layout">
+      <nav class="sidebar-nav">
+        <h4>人群指南</h4>
+        <a href="#family">👶 亲子家庭</a>
+        <a href="#youth">🧑‍🎤 青年学生</a>
+        <a href="#adult">💼 上班族</a>
+        <a href="#senior">👴 银发旅行</a>
+        <a href="#quiet">🌊 发呆地图</a>
+        <a href="#routes">🧭 行程路线</a>
+      </nav>
+
+      <div class="content-area">
+
+        <!-- ====== 亲子家庭 ====== -->
+        <section id="family">
+          <h2>👶 亲子家庭 · 孩子眼里的香港</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">带娃出行不费妈！精选婴儿车友好路线、亲子餐厅、放电胜地。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1583344605937-236b280197d1?q=80&w=800&auto=format&fit=crop" alt="迪士尼" loading="lazy"></div>
+              <div class="info">
+                <h3>🏰 香港迪士尼乐园</h3>
+                <p>避开高峰小技巧：周二周四去，上午先玩明日世界，下午看巡游。</p>
+                <div class="tags"><span>婴儿车友好</span><span>亲子餐厅</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1563911892431-c078b7999adf?q=80&w=800&auto=format&fit=crop" alt="海洋公园" loading="lazy"></div>
+              <div class="info">
+                <h3>🐬 香港海洋公园</h3>
+                <p>怎么玩不累：上山缆车看海景，下山坐海洋列车，孩子能玩一整天。</p>
+                <div class="tags"><span>寓教于乐</span><span>亲子互动</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1578895102846-0e4dc7a47eca?q=80&w=800&auto=format&fit=crop" alt="科学馆" loading="lazy"></div>
+              <div class="info">
+                <h3>🔬 香港科学馆 · 太空馆</h3>
+                <p>互动性极强！孩子可以动手操作各种科学装置，玩中学的最佳去处。</p>
+                <div class="tags"><span>室内</span><span>互动</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1546159948-e26e285b5c14?q=80&w=800&auto=format&fit=crop" alt="天星小轮" loading="lazy"></div>
+              <div class="info">
+                <h3>🚢 天星小轮 & 维港</h3>
+                <p>花几块钱坐小轮过海，孩子最爱看海浪。推婴儿车完全没问题。</p>
+                <div class="tags"><span>婴儿车友好</span><span>平价</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?q=80&w=800&auto=format&fit=crop" alt="西九" loading="lazy"></div>
+              <div class="info">
+                <h3>🧺 西九文化区大草坪</h3>
+                <p>带孩子野餐、放风筝、跑跑跳跳。面朝维港，是城市中的一片绿洲。</p>
+                <div class="tags"><span>野餐</span><span>户外</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====== 青年学生 ====== -->
+        <section id="youth">
+          <h2>🧑‍🎤 青年 · 学生 · 年轻的城市节奏</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">穷游、暴走、打卡、文艺——青春就该这样浪费在香港的街头巷尾。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1542152345-d85c13e56f4d?q=80&w=800&auto=format&fit=crop" alt="壁画街" loading="lazy"></div>
+              <div class="info">
+                <h3>🎨 中环壁画街 & PMQ</h3>
+                <p>隐藏在荷里活道附近的涂鸦墙，每一面都是大片背景。PMQ文创园也值得一逛。</p>
+                <div class="tags"><span>拍照圣地</span><span>免费</span><span>文艺</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1579930467727-817ab3216839?q=80&w=800&auto=format&fit=crop" alt="旺角" loading="lazy"></div>
+              <div class="info">
+                <h3>🌃 旺角夜市 & 深水埗</h3>
+                <p>霓虹灯牌、街头小吃、电子街——赛博朋克香港的最佳体验地。</p>
+                <div class="tags"><span>夜市</span><span>平价</span><span>地道</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1505503463372-2f16d8a4f910?q=80&w=800&auto=format&fit=crop" alt="南丫岛" loading="lazy"></div>
+              <div class="info">
+                <h3>🏝️ 南丫岛徒步</h3>
+                <p>中环码头坐船30分钟，到另一个世界。徒步路线看海、吃海鲜、吹海风。</p>
+                <div class="tags"><span>徒步</span><span>离岛</span><span>性价比高</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1516893676001-52fdf7605797?q=80&w=800&auto=format&fit=crop" alt="太平山" loading="lazy"></div>
+              <div class="info">
+                <h3>🌄 太平山夜景</h3>
+                <p>建议傍晚前徒步上山（卢吉道），日落与夜景一次看完。免费观景台也很棒。</p>
+                <div class="tags"><span>夜景</span><span>徒步</span><span>免费</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1576444356170-66073046b1bc?q=80&w=800&auto=format&fit=crop" alt="咖啡" loading="lazy"></div>
+              <div class="info">
+                <h3>☕ 咖啡馆打卡路线</h3>
+                <p>坚尼地城 %Arabica、深水埗 Winstons Coffee——每一家都值得为它停留。</p>
+                <div class="tags"><span>咖啡</span><span>文青</span><span>拍照</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====== 上班族 ====== -->
+        <section id="adult">
+          <h2>💼 上班族 · 给忙碌的人一次喘息</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">2天1夜放空自己，城市疗愈地图，安静阅读咖啡馆——香港不只有加班。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?q=80&w=800&auto=format&fit=crop" alt="半山扶梯" loading="lazy"></div>
+              <div class="info">
+                <h3>🛗 半山扶梯漫步</h3>
+                <p>世界最长的户外扶梯系统。沿路经过苏豪区、古董街，越走越高，城市在脚下展开。</p>
+                <div class="tags"><span>治愈</span><span>慢逛</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1579930467727-817ab3216839?q=80&w=800&auto=format&fit=crop" alt="石板街" loading="lazy"></div>
+              <div class="info">
+                <h3>🗿 石板街 & 大馆</h3>
+                <p>百年石板路，香港电影的经典场景。旁边的大馆是前监狱改造的艺术区。</p>
+                <div class="tags"><span>历史</span><span>文艺</span><span>拍照</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1560046949-8d132cb039d5?q=80&w=800&auto=format&fit=crop" alt="西贡" loading="lazy"></div>
+              <div class="info">
+                <h3>🦐 西贡海鲜</h3>
+                <p>现捞现做，坐在海边吃避风塘炒蟹，配一瓶冰啤酒，人间值得。</p>
+                <div class="tags"><span>美食</span><span>海景</span><span>放松</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1505503463372-2f16d8a4f910?q=80&w=800&auto=format&fit=crop" alt="大澳" loading="lazy"></div>
+              <div class="info">
+                <h3>🏘️ 大澳渔村</h3>
+                <p>香港最后的水上人家。棚屋、咸鱼、夕阳下的渔船——时间在这里慢了不止一倍。</p>
+                <div class="tags"><span>怀旧</span><span>慢生活</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1516893676001-52fdf7605797?q=80&w=800&auto=format&fit=crop" alt="维港" loading="lazy"></div>
+              <div class="info">
+                <h3>🚢 维港夜游船</h3>
+                <p>晚上登上观光船，看两岸灯火璀璨。一杯酒，一个人，一座城。</p>
+                <div class="tags"><span>夜景</span><span>浪漫</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====== 银发旅行 ====== -->
+        <section id="senior">
+          <h2>👴 银发旅行 · 慢下来，看见香港</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">无障碍路线、体力友好攻略、早茶老字号——岁月是最好的导游。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1582234372722-50d7ccc30ebd?q=80&w=800&auto=format&fit=crop" alt="茶楼" loading="lazy"></div>
+              <div class="info">
+                <h3>🍵 老茶楼早茶攻略</h3>
+                <p>陆羽茶室、莲香楼——真正老派的茶楼。一盅两件，报纸一翻，就是半天。</p>
+                <div class="tags"><span>早茶</span><span>怀旧</span><span>不催客</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1528643596537-8b0101bba29e?q=80&w=800&auto=format&fit=crop" alt="昂坪" loading="lazy"></div>
+              <div class="info">
+                <h3>🚡 昂坪360 & 宝莲禅寺</h3>
+                <p>缆车看大屿山全景，平稳舒适。到宝莲禅寺拜佛、吃素斋，心静自然凉。</p>
+                <div class="tags"><span>缆车</span><span>礼佛</span><span>无障碍</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1546159948-e26e285b5c14?q=80&w=800&auto=format&fit=crop" alt="南莲园池" loading="lazy"></div>
+              <div class="info">
+                <h3>🌿 南莲园池 & 志莲净苑</h3>
+                <p>仿唐木构建筑，锦鲤池、松柏、诵经声——城市中的一片净土，轮椅友好。</p>
+                <div class="tags"><span>无障碍</span><span>宁静</span><span>唐风</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1578895102846-0e4dc7a47eca?q=80&w=800&auto=format&fit=crop" alt="花墟" loading="lazy"></div>
+              <div class="info">
+                <h3>🌸 花墟 & 雀鸟花园</h3>
+                <p>旺角附近的花市，色彩斑斓。买一束花、听听鸟鸣，心情都会好起来。</p>
+                <div class="tags"><span>休闲</span><span>散步</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1576444356170-66073046b1bc?q=80&w=800&auto=format&fit=crop" alt="九龙公园" loading="lazy"></div>
+              <div class="info">
+                <h3>🏸 九龙公园晨练</h3>
+                <p>尖沙咀闹市中的绿洲。早上来打太极、散步，感受香港人的日常生活。</p>
+                <div class="tags"><span>晨练</span><span>免费</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====== 发呆地图 ====== -->
+        <section id="quiet">
+          <h2>🌊 发呆地图 · 如果你什么都不想做</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">旅行不是一定要打卡。有时候，只是坐着。这里是为i人准备的避风港。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?q=80&w=800&auto=format&fit=crop" alt="西九" loading="lazy"></div>
+              <div class="info">
+                <h3>西九海滨 · 看日落</h3>
+                <p>适合一个人。傍晚来最好。带一杯咖啡，坐在长椅上，看太阳沉入海中。</p>
+                <div class="tags"><span>日落</span><span>独处</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1516893676001-52fdf7605797?q=80&w=800&auto=format&fit=crop" alt="码头" loading="lazy"></div>
+              <div class="info">
+                <h3>中环码头 · 看船</h3>
+                <p>坐在码头边，看来来往往的天星小轮。什么都不想，就是最好的放空。</p>
+                <div class="tags"><span>发呆</span><span>海风</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1505503463372-2f16d8a4f910?q=80&w=800&auto=format&fit=crop" alt="石澳" loading="lazy"></div>
+              <div class="info">
+                <h3>石澳海滩 · 黄昏</h3>
+                <p>彩色房子、安静的海。带上耳机、一本书，可以待一整个下午。</p>
+                <div class="tags"><span>海滩</span><span>安静</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1528643596537-8b0101bba29e?q=80&w=800&auto=format&fit=crop" alt="大帽山" loading="lazy"></div>
+              <div class="info">
+                <h3>大帽山 · 看云</h3>
+                <p>香港最高的山。清晨上山看云海，世界在你脚下苏醒，宁静至极。</p>
+                <div class="tags"><span>山景</span><span>清晨</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1582234372722-50d7ccc30ebd?q=80&w=800&auto=format&fit=crop" alt="书店" loading="lazy"></div>
+              <div class="info">
+                <h3>诚品书店 · 窗边座</h3>
+                <p>铜锣湾店的窗边位置，拿本书，点杯茶，看楼下人群匆匆。</p>
+                <div class="tags"><span>书店</span><span>室内</span></div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1560046949-8d132cb039d5?q=80&w=800&auto=format&fit=crop" alt="茶楼" loading="lazy"></div>
+              <div class="info">
+                <h3>老茶楼 · 一个人</h3>
+                <p>莲香楼、陆羽茶室——一个人去也不会尴尬的老派茶楼，坐多久都行。</p>
+                <div class="tags"><span>茶楼</span><span>怀旧</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====== 行程路线 ====== -->
+        <section id="routes">
+          <h2>🧭 行程路线 · 第一次来香港这样玩</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">精选3天2夜经典路线，适合第一次来香港的你。</p>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:28px;box-shadow:var(--card-shadow);">
+              <div style="font-size:2rem;margin-bottom:12px;">🌆</div>
+              <h3 style="font-family:var(--font-serif);font-size:1.2rem;margin-bottom:8px;">Day 1 · 港岛城市感</h3>
+              <ul style="color:var(--text-light);font-size:0.9rem;line-height:2;list-style:none;padding:0;">
+                <li>🏔️ 太平山顶（傍晚前抵达）</li>
+                <li>🗿 中环石板街</li>
+                <li>🌃 维港夜景</li>
+              </ul>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:28px;box-shadow:var(--card-shadow);">
+              <div style="font-size:2rem;margin-bottom:12px;">🏮</div>
+              <h3 style="font-family:var(--font-serif);font-size:1.2rem;margin-bottom:8px;">Day 2 · 九龙烟火气</h3>
+              <ul style="color:var(--text-light);font-size:0.9rem;line-height:2;list-style:none;padding:0;">
+                <li>🍜 旺角街市</li>
+                <li>📸 深水埗打卡</li>
+                <li>🌙 庙街夜市</li>
+              </ul>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:28px;box-shadow:var(--card-shadow);">
+              <div style="font-size:2rem;margin-bottom:12px;">🏝️</div>
+              <h3 style="font-family:var(--font-serif);font-size:1.2rem;margin-bottom:8px;">Day 3 · 离岛慢生活</h3>
+              <ul style="color:var(--text-light);font-size:0.9rem;line-height:2;list-style:none;padding:0;">
+                <li>🚢 南丫岛徒步</li>
+                <li>🦐 海鲜午餐</li>
+                <li>🌊 海边发呆</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="margin-top:32px;padding:24px;background:var(--card-bg);border-radius:var(--radius-md);box-shadow:var(--card-shadow);">
+            <h3 style="font-family:var(--font-serif);margin-bottom:12px;">💡 出行小贴士</h3>
+            <ul style="color:var(--text-light);font-size:0.9rem;line-height:2.2;">
+              <li>🚇 建议购买八达通卡，地铁、巴士、便利店通用</li>
+              <li>📱 下载 Google Maps + Citymapper，导航无忧</li>
+              <li>🧥 室内冷气很足，随身带一件薄外套</li>
+              <li>💰 人均预算参考：3000-5000 RMB（不含机票）</li>
+              <li>⏰ 避开周末高峰去热门景点</li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <div class="sun"><i class="fas fa-sun"></i></div>
+          SunnyHK
+        </div>
+        <p>一个年轻、阳光、真实的香港旅行灵感平台。</p>
+      </div>
+      <div class="footer-col">
+        <h4>探索</h4>
+        <a href="explore.html">人群指南</a>
+        <a href="explore.html#quiet">发呆地图</a>
+        <a href="stories.html">香港故事</a>
+      </div>
+      <div class="footer-col">
+        <h4>关于</h4>
+        <a href="about.html">关于 SunnyHK</a>
+        <a href="about.html#faq">常见问题</a>
+      </div>
+      <div class="footer-col">
+        <h4>关注我们</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="小红书"><i class="fab fa-xiaohongshu"></i></a>
+          <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 SunnyHK · Discover Your Own Hong Kong</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="关于 SunnyHK — 香港阳光旅行指南。一个年轻、阳光、真实的香港旅行灵感平台。">
+<title>关于 | SunnyHK 香港阳光旅行指南</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="inner">
+    <a href="index.html" class="logo">
+      <div class="sun"><i class="fas fa-sun"></i></div>
+      Sunny<span>HK</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="explore.html">探索指南</a>
+      <a href="stories.html">香港故事</a>
+      <a href="about.html" class="active">关于</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="切换主题"><i class="fas fa-moon"></i></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="index.html">首页</a>
+  <a href="explore.html">探索指南</a>
+  <a href="stories.html">香港故事</a>
+  <a href="about.html">关于</a>
+  <button class="theme-toggle" id="themeToggleMobile" aria-label="切换主题" style="margin-top:auto;align-self:flex-start;"><i class="fas fa-moon"></i></button>
+</div>
+
+<div class="page-header">
+  <div class="inner">
+    <h1>关于 SunnyHK</h1>
+    <p>一个年轻、阳光、真实的香港旅行灵感平台</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="inner" style="max-width: 700px;">
+
+    <div class="fade-in" style="text-align:center;margin-bottom:48px;">
+      <div style="font-size:4rem;margin-bottom:24px;">🌞</div>
+      <h2 style="font-family:var(--font-serif);font-size:1.8rem;margin-bottom:16px;">SunnyHK 的故事</h2>
+      <p style="color:var(--text-light);line-height:2;font-size:1rem;">
+        SunnyHK 诞生于一个简单的想法：<br><br>
+        <em style="color:var(--brand);">"如果每个人来到香港，都能找到属于自己的阳光时刻。"</em><br><br>
+        我们不是旅行社，不做机票酒店预订。我们只是一群热爱这座城市的人——<br>
+        想把香港最真实、最温暖、最治愈的一面呈现给你。<br><br>
+        无论你是带着孩子来探索世界，还是一个人想在陌生城市静静待一会儿——<br>
+        我们都相信，香港总有一个角落，是为你准备的。
+      </p>
+    </div>
+
+    <div class="feature-grid" style="margin-bottom:48px;">
+      <div class="feature-card fade-in">
+        <div class="icon" style="background:#f59e0b15;color:#f59e0b;"><i class="fas fa-users"></i></div>
+        <h3>分龄推荐</h3>
+        <p>不按景点分类，按你的年龄和性格推荐。每个人都有自己的香港路线。</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="icon" style="background:#14b8a615;color:#14b8a6;"><i class="fas fa-heart"></i></div>
+        <h3>真实体验</h3>
+        <p>所有内容来自真实旅行体验。不接广告软文，只推荐真正值得去的地方。</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="icon" style="background:#8b5cf615;color:#8b5cf6;"><i class="fas fa-comments"></i></div>
+        <h3>社区故事</h3>
+        <p>每一个来过的人都可以留下自己的故事。这里是一个属于旅人的日记本。</p>
+      </div>
+    </div>
+
+    <div id="faq" class="fade-in" style="margin-bottom:48px;">
+      <h2 style="font-family:var(--font-serif);font-size:1.5rem;margin-bottom:24px;text-align:center;">常见问题</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="question">
+            <span>SunnyHK 是旅行社吗？</span>
+            <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="answer">不是。SunnyHK 是一个旅行灵感平台，提供攻略、路线推荐和社区分享服务。我们不提供机票、酒店预订服务。</div>
+        </div>
+        <div class="faq-item">
+          <div class="question">
+            <span>留言板的故事会怎么处理？</span>
+            <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="answer">所有用户发布的故事经过审核后展示。我们保留删除违规内容的权利。优秀故事会被精选推荐到首页。</div>
+        </div>
+        <div class="faq-item">
+          <div class="question">
+            <span>网站上的信息准确吗？</span>
+            <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="answer">我们会定期更新信息，但建议出行前再次确认目的地的最新营业时间和交通状况。</div>
+        </div>
+        <div class="faq-item">
+          <div class="question">
+            <span>如何联系你们？</span>
+            <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="answer">你可以通过社交媒体（小红书、Instagram）私信我们，或者发送邮件至 hello@sunnyhk.hk。</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="privacy" class="fade-in">
+      <h2 style="font-family:var(--font-serif);font-size:1.5rem;margin-bottom:16px;text-align:center;">隐私政策 & 用户协议</h2>
+      <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:32px;box-shadow:var(--card-shadow);font-size:0.9rem;color:var(--text-light);line-height:2;">
+        <h3 style="color:var(--text);margin-bottom:12px;">隐私政策</h3>
+        <p>我们尊重每一位用户的隐私。我们可能收集的信息包括：用户昵称、邮箱地址（用于留言功能）、浏览数据（用于优化网站体验）。所有数据仅用于改善 SunnyHK 的服务，不会出售给第三方。</p>
+        <br>
+        <h3 style="color:var(--text);margin-bottom:12px;">用户协议</h3>
+        <p>使用本网站即表示同意以下条款：不发布违法、色情、暴力或歧视性内容；不侵犯他人版权或知识产权；不发布商业广告或垃圾信息；不对其他用户进行骚扰或人身攻击。本网站保留在不通知的情况下删除违规内容和封禁用户的权利。</p>
+        <br>
+        <p style="font-size:0.8rem;color:var(--text-muted);">最后更新：2026年5月</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <div class="sun"><i class="fas fa-sun"></i></div>
+          SunnyHK
+        </div>
+        <p>一个年轻、阳光、真实的香港旅行灵感平台。</p>
+      </div>
+      <div class="footer-col">
+        <h4>探索</h4>
+        <a href="explore.html">人群指南</a>
+        <a href="explore.html#quiet">发呆地图</a>
+        <a href="stories.html">香港故事</a>
+      </div>
+      <div class="footer-col">
+        <h4>关于</h4>
+        <a href="about.html">关于 SunnyHK</a>
+        <a href="about.html#faq">常见问题</a>
+        <a href="about.html#privacy">隐私政策</a>
+      </div>
+      <div class="footer-col">
+        <h4>关注我们</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="小红书"><i class="fab fa-xiaohongshu"></i></a>
+          <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 SunnyHK · Discover Your Own Hong Kong</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

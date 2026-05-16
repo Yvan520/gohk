@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="香港故事留言板 — 分享你在香港的那一天。最美夜景、最难忘的一顿饭、最治愈的一刻。">
+<title>香港故事 | SunnyHK 留言板</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.tag-select { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag-option {
+  padding: 8px 16px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: var(--bg-warm);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all var(--transition);
+  font-family: var(--font-sans);
+  color: var(--text-light);
+}
+.tag-option:hover { border-color: var(--brand); color: var(--brand); }
+.tag-option.selected {
+  background: var(--brand);
+  color: white;
+  border-color: var(--brand);
+}
+.filter-bar {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 32px;
+}
+.filter-btn-s {
+  padding: 8px 18px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all var(--transition);
+  font-family: var(--font-sans);
+  color: var(--text-light);
+}
+.filter-btn-s:hover { border-color: var(--brand); color: var(--brand); }
+.filter-btn-s.active {
+  background: var(--brand);
+  color: white;
+  border-color: var(--brand);
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="inner">
+    <a href="index.html" class="logo">
+      <div class="sun"><i class="fas fa-sun"></i></div>
+      Sunny<span>HK</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="explore.html">探索指南</a>
+      <a href="stories.html" class="active">香港故事</a>
+      <a href="about.html">关于</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="切换主题"><i class="fas fa-moon"></i></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="index.html">首页</a>
+  <a href="explore.html">探索指南</a>
+  <a href="stories.html">香港故事</a>
+  <a href="about.html">关于</a>
+  <button class="theme-toggle" id="themeToggleMobile" aria-label="切换主题" style="margin-top:auto;align-self:flex-start;"><i class="fas fa-moon"></i></button>
+</div>
+
+<div class="page-header">
+  <div class="inner">
+    <h1>💬 香港故事 · 分享你的那一天</h1>
+    <p>每一个来过的人，都留下了一瞬心动。你也可以。</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="inner" style="max-width: 900px;">
+
+    <!-- Submit Form -->
+    <div class="story-form fade-in">
+      <h3>✏️ 写下你的香港瞬间</h3>
+      <p class="hint">分享你在香港最难忘的回忆，也许你的故事会成为别人的旅行灵感。</p>
+      <form id="storyForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label>昵称</label>
+            <input type="text" id="storyNickname" placeholder="你的名字" maxlength="30">
+          </div>
+          <div class="form-group">
+            <label>来自哪里</label>
+            <input type="text" id="storyOrigin" placeholder="深圳 / 上海 / 东京 ...">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>故事分类</label>
+          <select id="storyCategory">
+            <option value="night">🌇 最美夜景</option>
+            <option value="food">🍜 最难忘的一顿饭</option>
+            <option value="healing">💛 最治愈的一刻</option>
+            <option value="family">👨‍👩‍👧 亲子回忆</option>
+            <option value="solo">🎒 一个人的旅行</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>你的故事</label>
+          <textarea id="storyMessage" rows="4" placeholder="那天在香港..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right:8px;"></i> 发布故事</button>
+      </form>
+    </div>
+
+    <!-- Stories Filter -->
+    <div class="filter-bar">
+      <button class="filter-btn-s active" onclick="filterStories('all')">全部故事</button>
+      <button class="filter-btn-s" onclick="filterStories('night')">🌇 夜景</button>
+      <button class="filter-btn-s" onclick="filterStories('food')">🍜 美食</button>
+      <button class="filter-btn-s" onclick="filterStories('healing')">💛 治愈</button>
+      <button class="filter-btn-s" onclick="filterStories('family')">👨‍👩‍👧 亲子</button>
+      <button class="filter-btn-s" onclick="filterStories('solo')">🎒 独旅</button>
+    </div>
+
+    <!-- Stories Grid -->
+    <div class="stories-grid" id="storiesContainer">
+      <div class="story-card" style="text-align:center;padding:48px 24px;grid-column:1/-1;">
+        <div style="font-size:3rem;margin-bottom:16px;">💬</div>
+        <p style="color:var(--text-muted);">加载中...</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <div class="sun"><i class="fas fa-sun"></i></div>
+          SunnyHK
+        </div>
+        <p>一个年轻、阳光、真实的香港旅行灵感平台。</p>
+      </div>
+      <div class="footer-col">
+        <h4>探索</h4>
+        <a href="explore.html">人群指南</a>
+        <a href="explore.html#quiet">发呆地图</a>
+        <a href="stories.html">香港故事</a>
+      </div>
+      <div class="footer-col">
+        <h4>关于</h4>
+        <a href="about.html">关于 SunnyHK</a>
+        <a href="about.html#faq">常见问题</a>
+      </div>
+      <div class="footer-col">
+        <h4>关注我们</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="小红书"><i class="fab fa-xiaohongshu"></i></a>
+          <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 SunnyHK · Discover Your Own Hong Kong</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+function filterStories(category) {
+  document.querySelectorAll('.filter-btn-s').forEach(b => b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+
+  document.querySelectorAll('.story-card').forEach(card => {
+    if (card.id === 'emptyState') return;
+    const tag = card.querySelector('.tag');
+    if (!tag) return;
+    const cat = tag.textContent.trim();
+    if (category === 'all') {
+      card.style.display = '';
+      return;
+    }
+    const catMap = {
+      night: '🌇',
+      food: '🍜',
+      healing: '💛',
+      family: '👨',
+      solo: '🎒'
+    };
+    card.style.display = cat.startsWith(catMap[category] || '') ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
