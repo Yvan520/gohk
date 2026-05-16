@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-HK">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="香港故事留言板 — 分享你在香港的那一天。最美夜景、最难忘的一顿饭、最治愈的一刻。">
+<meta name="description" content="香港故事留言板 — 分享你喺香港嘅嗰一日。最美夜景、最難忘嘅一餐、最治癒嘅一刻。">
 <title>香港故事 | SunnyHK 留言板</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -11,43 +11,26 @@
 <style>
 .tag-select { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag-option {
-  padding: 8px 16px;
-  border-radius: 100px;
+  padding: 8px 16px; border-radius: 100px;
   border: 1px solid var(--border);
-  background: var(--bg-warm);
-  cursor: pointer;
-  font-size: 0.85rem;
-  transition: all var(--transition);
-  font-family: var(--font-sans);
-  color: var(--text-light);
+  background: var(--bg-warm); cursor: pointer;
+  font-size: 0.85rem; transition: all var(--transition);
+  font-family: var(--font-sans); color: var(--text-light);
 }
 .tag-option:hover { border-color: var(--brand); color: var(--brand); }
-.tag-option.selected {
-  background: var(--brand);
-  color: white;
-  border-color: var(--brand);
-}
+.tag-option.selected { background: var(--brand); color: white; border-color: var(--brand); }
 .filter-bar {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  margin-bottom: 32px;
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px;
 }
 .filter-btn-s {
-  padding: 8px 18px;
-  border-radius: 100px;
+  padding: 8px 18px; border-radius: 100px;
   border: 1px solid var(--border);
-  background: var(--card-bg);
-  cursor: pointer;
-  font-size: 0.85rem;
-  transition: all var(--transition);
-  font-family: var(--font-sans);
-  color: var(--text-light);
+  background: var(--card-bg); cursor: pointer;
+  font-size: 0.85rem; transition: all var(--transition);
+  font-family: var(--font-sans); color: var(--text-light);
 }
 .filter-btn-s:hover { border-color: var(--brand); color: var(--brand); }
-.filter-btn-s.active {
-  background: var(--brand);
-  color: white;
-  border-color: var(--brand);
-}
+.filter-btn-s.active { background: var(--brand); color: white; border-color: var(--brand); }
 </style>
 </head>
 <body>
@@ -59,14 +42,15 @@
       Sunny<span>HK</span>
     </a>
     <div class="nav-links">
-      <a href="index.html">首页</a>
+      <a href="index.html">首頁</a>
       <a href="explore.html">探索指南</a>
       <a href="stories.html" class="active">香港故事</a>
-      <a href="about.html">关于</a>
+      <a href="about.html">關於</a>
     </div>
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="切换主题"><i class="fas fa-moon"></i></button>
-      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
+      <button class="lang-toggle" onclick="if(window.SunnyLang)window.SunnyLang.toggleLang()">简</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="切換主題"><i class="fas fa-moon"></i></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="選單">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -75,71 +59,69 @@
 
 <div class="mobile-overlay" id="mobileOverlay"></div>
 <div class="mobile-drawer" id="mobileDrawer">
-  <a href="index.html">首页</a>
+  <a href="index.html">首頁</a>
   <a href="explore.html">探索指南</a>
   <a href="stories.html">香港故事</a>
-  <a href="about.html">关于</a>
-  <button class="theme-toggle" id="themeToggleMobile" aria-label="切换主题" style="margin-top:auto;align-self:flex-start;"><i class="fas fa-moon"></i></button>
+  <a href="about.html">關於</a>
+  <button class="lang-toggle" onclick="if(window.SunnyLang)window.SunnyLang.toggleLang()" style="margin-top:16px;">简</button>
+  <button class="theme-toggle" id="themeToggleMobile" aria-label="切換主題" style="margin-top:8px;align-self:flex-start;"><i class="fas fa-moon"></i></button>
 </div>
 
 <div class="page-header">
   <div class="inner">
-    <h1>💬 香港故事 · 分享你的那一天</h1>
-    <p>每一个来过的人，都留下了一瞬心动。你也可以。</p>
+    <h1>💬 香港故事 · 分享你嘅嗰一日</h1>
+    <p>每一個嚟過嘅人，都留低咗一瞬心動。你都可以。</p>
   </div>
 </div>
 
 <section class="section">
   <div class="inner" style="max-width: 900px;">
 
-    <!-- Submit Form -->
     <div class="story-form fade-in">
-      <h3>✏️ 写下你的香港瞬间</h3>
-      <p class="hint">分享你在香港最难忘的回忆，也许你的故事会成为别人的旅行灵感。</p>
+      <h3>✏️ 寫低你嘅香港瞬間</h3>
+      <p class="hint">分享你喺香港最難忘嘅回憶，可能你嘅故事會成為別人嘅旅行靈感。</p>
       <form id="storyForm">
         <div class="form-row">
           <div class="form-group">
-            <label>昵称</label>
-            <input type="text" id="storyNickname" placeholder="你的名字" maxlength="30">
+            <label>稱呼</label>
+            <input type="text" id="storyNickname" placeholder="你嘅名字" maxlength="30">
           </div>
           <div class="form-group">
-            <label>来自哪里</label>
-            <input type="text" id="storyOrigin" placeholder="深圳 / 上海 / 东京 ...">
+            <label>來自邊度</label>
+            <input type="text" id="storyOrigin" placeholder="深圳 / 上海 / 東京 ...">
           </div>
         </div>
         <div class="form-group">
-          <label>故事分类</label>
+          <label>故事分類</label>
           <select id="storyCategory">
             <option value="night">🌇 最美夜景</option>
-            <option value="food">🍜 最难忘的一顿饭</option>
-            <option value="healing">💛 最治愈的一刻</option>
-            <option value="family">👨‍👩‍👧 亲子回忆</option>
-            <option value="solo">🎒 一个人的旅行</option>
+            <option value="food">🍜 最難忘嘅一餐</option>
+            <option value="healing">💛 最治癒嘅一刻</option>
+            <option value="family">👨‍👩‍👧 親子回憶</option>
+            <option value="solo">🎒 一個人嘅旅行</option>
           </select>
         </div>
         <div class="form-group">
-          <label>你的故事</label>
-          <textarea id="storyMessage" rows="4" placeholder="那天在香港..." required></textarea>
+          <label>你嘅故事</label>
+          <textarea id="storyMessage" rows="4" placeholder="嗰日喺香港..." required></textarea>
         </div>
-        <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right:8px;"></i> 发布故事</button>
+        <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right:8px;"></i> 發佈故事</button>
       </form>
     </div>
 
-    <!-- Stories Filter -->
     <div class="filter-bar">
       <button class="filter-btn-s active" onclick="filterStories('all')">全部故事</button>
       <button class="filter-btn-s" onclick="filterStories('night')">🌇 夜景</button>
       <button class="filter-btn-s" onclick="filterStories('food')">🍜 美食</button>
-      <button class="filter-btn-s" onclick="filterStories('healing')">💛 治愈</button>
-      <button class="filter-btn-s" onclick="filterStories('family')">👨‍👩‍👧 亲子</button>
-      <button class="filter-btn-s" onclick="filterStories('solo')">🎒 独旅</button>
+      <button class="filter-btn-s" onclick="filterStories('healing')">💛 治癒</button>
+      <button class="filter-btn-s" onclick="filterStories('family')">👨‍👩‍👧 親子</button>
+      <button class="filter-btn-s" onclick="filterStories('solo')">🎒 獨旅</button>
     </div>
 
-    <!-- Stories Grid -->
     <div class="stories-grid" id="storiesContainer">
       <div class="story-card" style="text-align:center;padding:48px 24px;grid-column:1/-1;">
         <div style="font-size:3rem;margin-bottom:16px;">💬</div>
-        <p style="color:var(--text-muted);">加载中...</p>
+        <p style="color:var(--text-muted);">載入中...</p>
       </div>
     </div>
 
@@ -154,24 +136,24 @@
           <div class="sun"><i class="fas fa-sun"></i></div>
           SunnyHK
         </div>
-        <p>一个年轻、阳光、真实的香港旅行灵感平台。</p>
+        <p>一個年輕、陽光、真實嘅香港旅行靈感平台。</p>
       </div>
       <div class="footer-col">
         <h4>探索</h4>
         <a href="explore.html">人群指南</a>
-        <a href="explore.html#quiet">发呆地图</a>
+        <a href="explore.html#quiet">發呆地圖</a>
         <a href="stories.html">香港故事</a>
       </div>
       <div class="footer-col">
-        <h4>关于</h4>
-        <a href="about.html">关于 SunnyHK</a>
-        <a href="about.html#faq">常见问题</a>
+        <h4>關於</h4>
+        <a href="about.html">關於 SunnyHK</a>
+        <a href="about.html#faq">常見問題</a>
       </div>
       <div class="footer-col">
-        <h4>关注我们</h4>
+        <h4>關注我哋</h4>
         <div class="footer-social">
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="小红书"><i class="fab fa-xiaohongshu"></i></a>
+          <a href="#" aria-label="小紅書"><i class="fab fa-xiaohongshu"></i></a>
           <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
         </div>
       </div>
@@ -182,28 +164,22 @@
   </div>
 </footer>
 
+<script src="js/lang.js"></script>
 <script src="js/main.js"></script>
 <script>
 function filterStories(category) {
-  document.querySelectorAll('.filter-btn-s').forEach(b => b.classList.remove('active'));
-  event.currentTarget.classList.add('active');
+  const btns = document.querySelectorAll('.filter-btn-s');
+  btns.forEach(b => b.classList.remove('active'));
+  if (event && event.currentTarget) event.currentTarget.classList.add('active');
+  else btns[0].classList.add('active');
 
-  document.querySelectorAll('.story-card').forEach(card => {
+  const catMap = { night:'🌇', food:'🍜', healing:'💛', family:'👨', solo:'🎒' };
+  document.querySelectorAll('#storiesContainer .story-card').forEach(card => {
     if (card.id === 'emptyState') return;
     const tag = card.querySelector('.tag');
-    if (!tag) return;
+    if (!tag) { card.style.display = ''; return; }
     const cat = tag.textContent.trim();
-    if (category === 'all') {
-      card.style.display = '';
-      return;
-    }
-    const catMap = {
-      night: '🌇',
-      food: '🍜',
-      healing: '💛',
-      family: '👨',
-      solo: '🎒'
-    };
+    if (category === 'all') { card.style.display = ''; return; }
     card.style.display = cat.startsWith(catMap[category] || '') ? '' : 'none';
   });
 }

@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ====== Scroll to hash anchor (fix cross-page nav) ======
+  if (window.location.hash) {
+    setTimeout(() => {
+      const el = document.querySelector(window.location.hash);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const offset = 100;
+        window.scrollBy(0, -offset);
+      }
+    }, 400);
+  }
+
   // ====== Theme Toggle ======
   const themeToggle = document.getElementById('themeToggle');
   const savedTheme = localStorage.getItem('sunnyhk-theme') || 'light';
@@ -16,6 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
       ? '<i class="fas fa-sun"></i>'
       : '<i class="fas fa-moon"></i>';
   }
+
+  // ====== Lang Toggle ======
+  document.querySelectorAll('.lang-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (window.SunnyLang) {
+        window.SunnyLang.toggleLang();
+      }
+    });
+  });
 
   // ====== Navbar Scroll Effect ======
   const navbar = document.querySelector('.navbar');

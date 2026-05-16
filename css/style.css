@@ -126,6 +126,22 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--text);
 }
 .theme-toggle:hover { border-color: var(--brand); }
+
+/* Lang Toggle (繁/簡) */
+.lang-toggle {
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all var(--transition);
+  color: var(--text);
+  font-family: var(--font-sans);
+  letter-spacing: 0.02em;
+}
+.lang-toggle:hover { border-color: var(--brand); color: var(--brand); }
 .mobile-menu-btn {
   display: none; width: 40px; height: 40px;
   border: none; background: none; cursor: pointer;
