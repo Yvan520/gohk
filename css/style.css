@@ -640,6 +640,19 @@ img { max-width: 100%; height: auto; display: block; }
   background: var(--bg-cool);
   color: var(--text-light);
 }
+.place-card .info .tip {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.place-card .info .tip i {
+  width: 14px;
+  font-size: 0.7rem;
+  color: var(--primary);
+}
 
 /* ====== Footer ====== */
 .footer {
