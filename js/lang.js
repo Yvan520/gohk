@@ -221,12 +221,22 @@
   function initLang() {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved === 'simp') {
-      // Use timeout to ensure DOM is ready
-      setTimeout(() => setLang('simp'), 50);
+      convertDOM(t2s);
+      document.querySelectorAll('.lang-toggle').forEach(btn => {
+        btn.textContent = '繁';
+        btn.setAttribute('data-lang', 'trad');
+      });
     }
   }
 
   // Export
   window.SunnyLang = { toggleLang, setLang, initLang, convertStr, t2s, s2t };
+
+  // Auto-init
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLang);
+  } else {
+    initLang();
+  }
 
 })();
