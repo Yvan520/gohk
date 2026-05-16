@@ -218,27 +218,42 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .hero .search-box {
   display: flex; align-items: center;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.12);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 100px;
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 16px;
   padding: 6px;
   max-width: 520px;
   gap: 6px;
 }
+.hero .search-select-wrap {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.hero .search-select-wrap .search-arrow {
+  position: absolute;
+  right: 16px;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.7rem;
+  pointer-events: none;
+}
 .hero .search-box select {
   flex: 1;
-  background: transparent;
-  border: none; outline: none;
-  padding: 14px 20px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  outline: none;
+  padding: 14px 36px 14px 16px;
   color: white;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-family: var(--font-sans);
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
+  border-radius: 12px;
 }
-.hero .search-box select option { color: #1e293b; }
+.hero .search-box select option { color: #1e293b; background: #fff; }
 .hero .search-box select:invalid { color: rgba(255,255,255,0.5); }
 .hero .search-btn {
   padding: 12px 28px;
@@ -813,8 +828,9 @@ img { max-width: 100%; height: auto; display: block; }
   .mobile-menu-btn { display: flex; }
   .section { padding: 60px 20px; }
   .hero .content { padding: 100px 20px 60px; }
-  .hero .search-box { flex-direction: column; border-radius: var(--radius-md); padding: 12px; }
-  .hero .search-box select { width: 100%; padding: 12px; }
+  .hero .search-box { flex-direction: column; border-radius: 16px; padding: 12px; gap: 10px; }
+  .hero .search-select-wrap { width: 100%; }
+  .hero .search-box select { width: 100%; padding: 14px 36px 14px 14px; }
   .hero .search-btn { width: 100%; justify-content: center; }
   .stories-grid { columns: 2 200px; }
   .form-row { grid-template-columns: 1fr; }
