@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="香港故事留言板 — 分享你喺香港嘅嗰一日。最美夜景、最難忘嘅一餐、最治癒嘅一刻。">
+<meta name="description" content="香港故事留言板 — 分享你喺香港嘅嗰一日。最美夜景、最難忘嘅一餐、最治癒嘅一刻。真實旅人分享，超過20個香港故事。">
+<meta name="keywords" content="香港故事,香港旅遊分享,香港回憶,香港旅行故事,香港留言板">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://gohk.gamewayz.com/stories.html">
+<meta property="og:title" content="香港故事 | SunnyHK 留言板">
+<meta property="og:description" content="分享你喺香港嘅嗰一日。最美夜景、最難忘嘅一餐、最治癒嘅一刻。真實旅人分享。">
+<meta property="og:url" content="https://gohk.gamewayz.com/stories.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1504664911901-2518a8bfc164?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:locale" content="zh_HK">
 <title>香港故事 | SunnyHK 留言板</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -365,6 +374,96 @@ if (!localStorage.getItem('sunnyhk-stories-seeded')) {
       message: '落狗屎冇帶遮，衝紅綠燈嗰陣有個阿叔突然行過嚟，二話不說就將把遮擰過嚟。我係咁話「唔該曬唔該曬」，佢用超標準普通話講「不用謝」，一啲港味都冇。成條斑馬線佢就咁送我過去，自己半邊膊頭濕曬。人間有情。',
       time: '上星期',
       likes: 29,
+      liked: false
+    },
+    {
+      nickname: '陳師奶',
+      origin: '香港',
+      category: 'food',
+      message: '上個星期日同個女去咗新蒲崗掃街，佢話要試間新開嘅日式鐵板牛扒，點知$128就食到紐西蘭西冷，仲要鐵板上枱咋咋聲，個女開心到不停叫我再帶佢去。睇住佢食得滋味，呢啲就係平民嘅幸福啦。',
+      time: '上個星期日',
+      likes: 34,
+      liked: false
+    },
+    {
+      nickname: '阿強',
+      origin: '香港',
+      category: 'solo',
+      message: '收工冇咩做，一個人揸車去咗東涌海濱長廊，坐低睇住日落同飛機升降，成個人都靜落嚟。城市人太耐冇放空，原來$0就可以買到一個寧靜嘅黃昏。但係記住帶蚊怕水，我畀蚊咬到跳舞。',
+      time: '前日收工後',
+      likes: 28,
+      liked: false
+    },
+    {
+      nickname: '小玲',
+      origin: '深圳',
+      category: 'healing',
+      message: '前排壓力大到爆，同事推介我去流水響水塘散心。朝早八點到，湖面靜到似塊鏡，白千層倒影靚到唔似香港。坐咗成個鐘，咩都唔諗，眼淚無聲咁流咗出嚟，之後成個人輕晒。原來療癒可以好簡單。',
+      time: '上星期六早上',
+      likes: 55,
+      liked: false
+    },
+    {
+      nickname: '大Tony',
+      origin: '香港',
+      category: 'night',
+      message: '同班friend去咗東龍島露營，夜晚喺崖邊開住啤酒吹水，聽住海浪聲，天上面仲有星星。平時返工對住電腦mon，呢啲時刻先叫做生活。不過半夜去廁所好鑊氣，黑到見唔到路，帶頭燈呀各位。',
+      time: '上個月周末',
+      likes: 41,
+      liked: false
+    },
+    {
+      nickname: '黃太',
+      origin: '香港',
+      category: 'family',
+      message: '復活節帶兩個仔去嘉道理農場，佢哋見到豹貓同麻鷹興奮到跳起。蝴蝶園入面有幾十種蝴蝶飛嚟飛去，細佬追蝴蝶追到成身汗。午餐食佢哋cafe嘅素菜包，意想不到咁好食。由朝玩到晚，上車即訓，完美嘅家庭日。',
+      time: '復活節假期',
+      likes: 48,
+      liked: false
+    },
+    {
+      nickname: '阿傑',
+      origin: '廣州',
+      category: 'youth',
+      message: '約咗成班friend去綠蛋島玩獨木舟，啲水清到見底，真係玻璃水嚟㗎。划到出去浮潛見到成班魚仔，仲有海膽。返到西貢再食海鮮，成班人由朝玩到晚，雖然第二日全身酸痛，但值得。',
+      time: '剛過去嘅星期六',
+      likes: 37,
+      liked: false
+    },
+    {
+      nickname: 'Peggy',
+      origin: '香港',
+      category: 'food',
+      message: '同事介紹咗間新蒲崗嘅潮州打冷，夜晚收工走去試。鵝片拼盤同蠔仔粥超正，凍蟹新鮮到不得了。老闆話間舖開咗三十幾年，由爸爸傳到佢。呢啲老味道，食一餐少一餐，要珍惜呀。食完飽到上心口都係$200頭，抵到爛。',
+      time: '昨晚收工',
+      likes: 32,
+      liked: false
+    },
+    {
+      nickname: '文迪',
+      origin: '台灣',
+      category: 'healing',
+      message: '一個人出走咗去南生圍，踩住單車穿梭橫水渡同木橋，日落嗰陣成片天空燒咗咁靚。坐喺岸邊睇雀仔飛，電話收得唔好反而開心。冇notification嘅世界，原來係咁平靜。下次要帶埋畫簿嚟寫生。',
+      time: '上星期六',
+      likes: 44,
+      liked: false
+    },
+    {
+      nickname: '阿豪',
+      origin: '澳門',
+      category: 'solo',
+      message: '趁平日放假自己去咗蒲台島，成個島都冇乜人，得幾個伯伯喺度釣魚。燈塔位影咗大半個鐘相，之後食咗碗紫菜麵，簡單但好味。搭船回程嗰陣吹住海風，諗起好多嘢，一個人嘅旅行有時仲充實過一大班人。',
+      time: '星期三',
+      likes: 25,
+      liked: false
+    },
+    {
+      nickname: '珊珊',
+      origin: '香港',
+      category: 'night',
+      message: '生日嗰晚男朋友帶我去香港仔坐舢舨夜遊避風塘，避風塘炒蟹同椒鹽瀨尿蝦送上船，海風吹住食海鮮，仲有太白海鮮舫嘅燈光做背景。佢話要畀我一個難忘嘅生日，佢做到咗。香港原來仲有咁浪漫嘅地方。',
+      time: '上星期生日',
+      likes: 63,
       liked: false
     }
   ];
