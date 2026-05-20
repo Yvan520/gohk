@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SunnyHK 香港美食地圖 — 由茶餐廳到街頭小食，由米芝蓮到隱世小店，超過40間實測推薦。">
+<meta name="keywords" content="香港美食,香港餐廳推薦,香港小食,香港茶餐廳,香港燒味,香港點心,香港甜品">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://gohk.gamewayz.com/food.html">
+<meta property="og:title" content="香港美食地圖 | SunnyHK">
+<meta property="og:description" content="由茶餐廳到街頭小食，由米芝蓮到隱世小店，超過40間實測推薦。">
+<meta property="og:url" content="https://gohk.gamewayz.com/food.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1512591290618-904e04936827?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:locale" content="zh_HK">
+<title>香港美食地圖 | SunnyHK</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="modal-overlay" id="placeModalOverlay"></div>
+<div class="place-modal" id="placeModal">
+  <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+  <button class="modal-prev" id="modalPrev"><i class="fas fa-chevron-left"></i></button>
+  <button class="modal-next" id="modalNext"><i class="fas fa-chevron-right"></i></button>
+  <div class="modal-content" id="modalContent"></div>
+</div>
+
+<nav class="navbar">
+  <div class="inner">
+    <a href="index.html" class="logo">
+      <div class="sun"><i class="fas fa-sun"></i></div>
+      Sunny<span>HK</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">首頁</a>
+      <a href="explore.html">探索指南</a>
+      <a href="food.html" class="active">美食地圖</a>
+      <a href="tips.html">實用資訊</a>
+      <a href="stories.html">香港故事</a>
+      <a href="about.html">關於</a>
+    </div>
+    <div class="nav-actions">
+      <button class="lang-toggle">简</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="切換主題"><i class="fas fa-moon"></i></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="選單">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="index.html">首頁</a>
+  <a href="explore.html">探索指南</a>
+  <a href="food.html">美食地圖</a>
+  <a href="tips.html">實用資訊</a>
+  <a href="stories.html">香港故事</a>
+  <a href="about.html">關於</a>
+   <button class="lang-toggle" style="margin-top:16px;">简</button>
+  <button class="theme-toggle" id="themeToggleMobile" aria-label="切換主題" style="margin-top:8px;align-self:flex-start;"><i class="fas fa-moon"></i></button>
+</div>
+
+<div class="page-header">
+  <div class="inner">
+    <h1>🍜 香港美食地圖</h1>
+    <p>由茶餐廳到街頭小食，由米芝蓮到隱世小店 — 每一啖都係香港故事。</p>
+  </div>
+</div>
+
+<div class="explore-section">
+  <div class="inner">
+    <div class="flex-layout">
+      <nav class="sidebar-nav">
+        <h4>美食分類</h4>
+        <a href="#cha-chaan-teng">🍳 茶餐廳</a>
+        <a href="#street-food">🍢 街頭小食</a>
+        <a href="#roast">🍖 燒味</a>
+        <a href="#dimsum">🥟 點心</a>
+        <a href="#dessert">🍮 糖水甜品</a>
+        <a href="#chiu-chow">🥢 打冷潮州</a>
+        <a href="#cart-noodles">🍜 車仔麵</a>
+        <a href="#claypot">🍚 煲仔飯</a>
+        <a href="#seafood">🦐 海鮮</a>
+        <a href="#hidden">✨ 隱藏驚喜</a>
+      </nav>
+
+      <div class="content-area">
+        <section id="cha-chaan-teng">
+          <h2>🍳 港式茶餐廳 · 香港人嘅食堂</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">由朝早常餐到夜晚碟頭飯，茶餐廳係香港人嘅第二個廚房。菠蘿油、沙嗲牛、絲襪奶茶——每一樣都係集體回憶。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1651658313775-90bf2751913e?auto=format&fit=crop&w=800&q=80" alt="紅茶冰室" loading="lazy"></div>
+              <div class="info">
+                <h3>🥇 紅茶冰室 · 小紅書爆紅No.1</h3>
+                <p>尖沙咀金馬倫道嘅人氣冰室，小紅書瘋傳「最好食嘅茶餐廳」。冰火菠蘿油熱辣辣上枱，脆皮一咬即碎，沙嗲牛肉麵濃郁入味，芝士流心西多士邪惡到極點。</p>
+                <div class="tags"><span>菠蘿油</span><span>沙嗲牛</span><span>排隊美食</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 尖沙咀站B2出口，行3分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早8-10點早餐時段少人啲</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$40-60，早餐$40起</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 冰火菠蘿油+沙嗲牛麵+紅豆冰</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1576444356170-66073046b1bc?auto=format&fit=crop&w=800&q=80" alt="蘭芳園" loading="lazy"></div>
+              <div class="info">
+                <h3>🫖 蘭芳園 · 絲襪奶茶始祖</h3>
+                <p>1952年創立，蔡瀾話「唔飲蘭芳園，白來香港」。中環老店仲保留緊八九十年代圓枱圓凳，絲襪奶茶茶底厚實入口順滑，奶油豬仔包烘得香脆。</p>
+                <div class="tags"><span>絲襪奶茶</span><span>老字號</span><span>中環</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 中環站D2出口，行5分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早8點開門，早去少人</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$40-60</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 絲襪奶茶+奶油豬+鹹檸七</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1549212408-d6b0defe25cf?auto=format&fit=crop&w=800&q=80" alt="華嫂冰室" loading="lazy"></div>
+              <div class="info">
+                <h3>🍅 華嫂冰室 · 余文樂飯堂</h3>
+                <p>元朗起家做到全港連鎖，明星排隊都係為咗招牌蕃茄蛋菠蘿油——原個菠蘿油夾厚切蕃茄同煎蛋，酸甜鹹香共冶一爐。蕃茄湯雞翼通粉亦係必食。</p>
+                <div class="tags"><span>蕃茄湯</span><span>明星飯堂</span><span>元朗</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 尖沙咀/灣仔/觀塘/天水圍有分店</div>
+                <div class="tip"><i class="fas fa-clock"></i> 午市12-2點最爆</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$50-70</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 蕃茄蛋菠蘿油+樽仔奶茶</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1465403157034-1d5e05cc2ac0?auto=format&fit=crop&w=800&q=80" alt="旺記冰室" loading="lazy"></div>
+              <div class="info">
+                <h3>🥚 旺記冰室 · 滑蛋專家</h3>
+                <p>用日本雞蛋做到「全港最好食滑蛋飯」，蝦仁大粒爽脆，叉燒厚身唔乾，滑蛋半熟流心撈飯一流。櫻花蝦滑蛋飯亦係招牌，簡單但係完美。</p>
+                <div class="tags"><span>滑蛋</span><span>日本雞蛋</span><span>CP值高</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 旺角/尖沙咀/灣仔有分店</div>
+                <div class="tip"><i class="fas fa-clock"></i> 下晝2-5點下午茶時段最抵</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$50-60</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 滑蛋叉燒蝦仁雙拼飯</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1516893676001-52fdf7605797?auto=format&fit=crop&w=800&q=80" alt="炳記茶檔" loading="lazy"></div>
+              <div class="info">
+                <h3>🏆 炳記茶檔 · 鐵皮奶茶王</h3>
+                <p>1950年代鐵皮茶檔，CNN評為「香港四大奶茶王」之一，陳奕迅都係熟客。劇集《難哄》取景地，茶味濃厚杯杯都係手藝。坐街邊摺櫈食先有風味。</p>
+                <div class="tags"><span>鐵皮檔</span><span>奶茶王</span><span>大坑</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 天后站B出口，行8分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 星期一休息，留意</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$30-50</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 奶茶+豬扒麵+奶醬多</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="street-food">
+          <h2>🍢 街頭小食 · 掃街才是王道</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">香港街頭小食係聯合國非物質文化遺產級別嘅美味。由狗仔粉到雞蛋仔，由腸粉到碗仔翅，$10就換到嘅快樂。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1629007006355-d75f7b828bfd?auto=format&fit=crop&w=800&q=80" alt="十八座狗仔粉" loading="lazy"></div>
+              <div class="info">
+                <h3>🥇 十八座狗仔粉 · 米芝蓮街頭小食</h3>
+                <p>湯底用金華火腿同豬骨熬足六個鐘，麵條煙韌彈牙，加埋辣菜脯同豬油渣，冬天食一碗暖到入心。連續多年米芝蓮必比登推薦，佐敦本店最有風味。</p>
+                <div class="tags"><span>米芝蓮</span><span>狗仔粉</span><span>宵夜</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 佐敦站A出口，行3分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 24小時營業，宵夜一流</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$25-40</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 火鴨翅+狗仔粉+碗仔翅</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1562757258-05a61b40eeee?auto=format&fit=crop&w=800&q=80" alt="媽咪雞蛋仔" loading="lazy"></div>
+              <div class="info">
+                <h3>🧇 媽咪雞蛋仔 · 香港雞蛋仔代表</h3>
+                <p>外脆內軟，蛋香撲鼻，粒粒飽滿，拎上手熱辣辣。格仔餅搽滿花生醬煉奶，係香港人由細食到大嘅味道。多區有分店，尖沙咀店最方便。</p>
+                <div class="tags"><span>雞蛋仔</span><span>街頭小食</span><span>排隊</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 尖沙咀站D1出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 下晝3-6點出爐最新鮮</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> $15-25</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 原味雞蛋仔+格仔餅</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1504664911901-2518a8bfc164?auto=format&fit=crop&w=800&q=80" alt="合益泰" loading="lazy"></div>
+              <div class="info">
+                <h3>🥟 合益泰小食 · 深水埗腸粉王</h3>
+                <p>每日新鮮即拉腸粉，滑溜到「咇」一聲入口。甜醬麻醬辣醬芝麻自己溝，$7四條便宜到喊。深水埗街坊由細食到大，米芝蓮都有推薦。</p>
+                <div class="tags"><span>腸粉</span><span>深水埗</span><span>平價</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 深水埗站A2出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早10點到下午6點</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> $7四條腸粉</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 混醬腸粉+燒賣+蘿蔔糕</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1495522097160-b7d527cc67f8?auto=format&fit=crop&w=800&q=80" alt="通達食店" loading="lazy"></div>
+              <div class="info">
+                <h3>🥣 通達食店 · 油麻地掃街之選</h3>
+                <p>大眾點評必吃榜上榜，碗仔翅落足冬菇絲仿翅雞絲，濃稠適中；生菜魚肉湯用新鮮鯪魚肉，彈牙鮮甜。油麻地掃街必經站。</p>
+                <div class="tags"><span>碗仔翅</span><span>油麻地</span><span>必吃榜</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 油麻地站C出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 24小時營業</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$25-40</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 碗仔翅+魚肉燒賣</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="roast">
+          <h2>🍖 燒味 · 香港人嘅靈魂食物</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">燒鵝、叉燒、燒肉——香港燒味係世界級嘅美味。脆皮、脂香、蜜味，每一啖都係手藝。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1576444356170-66073046b1bc?auto=format&fit=crop&w=800&q=80" alt="甘牌燒鵝" loading="lazy"></div>
+              <div class="info">
+                <h3>🥇 甘牌燒鵝 · 米芝蓮一星</h3>
+                <p>鏞記第三代自立門戶，開業四個月即拎米芝蓮一星。鵝皮薄脆如玻璃，皮下脂香四溢，肉嫩多汁。周潤發都係常客，灣仔店日日排長龍。</p>
+                <div class="tags"><span>米芝蓮一星</span><span>燒鵝</span><span>灣仔</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 灣仔站A4出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 開門前半小時到排隊</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$100-200</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 燒鵝髀+太子撈麵</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1549212408-d6b0defe25cf?auto=format&fit=crop&w=800&q=80" alt="一樂燒鵝" loading="lazy"></div>
+              <div class="info">
+                <h3>🦆 一樂燒鵝 · 中環米芝蓮一星</h3>
+                <p>1957年創立，連續九年米芝蓮一星。鵝皮脆到筷子一掂就裂開，鵝味濃郁，配酸梅醬一絕。原隻鵝腿$159，必點！中環打工仔嘅 luxury lunch。</p>
+                <div class="tags"><span>米芝蓮一星</span><span>1957年</span><span>中環</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 中環站D2出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 平日下晝2點後少人</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$80-150</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 燒鵝髀+化皮燒肉</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1651658313775-90bf2751913e?auto=format&fit=crop&w=800&q=80" alt="再興" loading="lazy"></div>
+              <div class="info">
+                <h3>🥩 再興燒臘 · CNN叉燒界王者</h3>
+                <p>清末創立過百年歷史，CNN封「叉燒同義詞」。蜜汁叉燒半肥瘦邊位微焦，肉質軟腍，飯底加薑蓉豉油，簡單到極致但美味到癲。</p>
+                <div class="tags"><span>百年老店</span><span>叉燒</span><span>灣仔</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 灣仔站A4出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 午市12-2點要排隊</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$40-60</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 叉燒飯+三寶飯</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="dimsum">
+          <h2>🥟 點心 · 一盅兩件飲茶時光</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">飲茶係香港人嘅週末儀式。蝦餃燒賣叉燒包，推車仔嘅姐姐同茶壺嘅蒸氣，係最香港嘅畫面。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1562757258-05a61b40eeee?auto=format&fit=crop&w=800&q=80" alt="添好運" loading="lazy"></div>
+              <div class="info">
+                <h3>🥇 添好運 · 全球最平米芝蓮一星</h3>
+                <p>酥皮叉燒包外脆內軟似菠蘿油，叉燒餡甜而不膩，日賣過千個。米芝蓮一星最平之選，排隊一個鐘都值得。深水埗總店最地道。</p>
+                <div class="tags"><span>米芝蓮一星</span><span>酥皮叉燒包</span><span>排隊</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 深水埗站B2出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早10點前到最少人</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$60-100</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 酥皮焗叉燒包+賽螃蟹春卷</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?auto=format&fit=crop&w=800&q=80" alt="蓮香樓" loading="lazy"></div>
+              <div class="info">
+                <h3>🏛️ 蓮香樓 · 百年推車點心</h3>
+                <p>1927年開業，仲保留緊點心車同茶盅泡茶。食客要自己去搶點心，芋角炸得金黃酥脆，係香港碩果僅存嘅老派飲茶體驗。一個人去都唔尷尬。</p>
+                <div class="tags"><span>百年老店</span><span>點心車</span><span>懷舊</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 上環站E1出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早7點到9點最安靜</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$60-100</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 蓮蓉包+鵪鶉蛋燒賣</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1516893676001-52fdf7605797?auto=format&fit=crop&w=800&q=80" alt="新興食家" loading="lazy"></div>
+              <div class="info">
+                <h3>🌙 新興食家 · 陳奕迅都愛嘅夜茶</h3>
+                <p>凌晨三點開到下午四點嘅夜茶老字號，流沙包被譽為全港最佳，一咬即流心。點心全手工製，香港本土味道嘅象徵。陳奕迅蔡瀾都係熟客。</p>
+                <div class="tags"><span>夜茶</span><span>流沙包</span><span>堅尼地城</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 堅尼地城站B出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 凌晨3點開到下午4點</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$50-70</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 流沙包+鵪鶉蛋燒賣</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="dessert">
+          <h2>🍮 糖水甜品 · 飯後嘅完美句號</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">中式糖水係香港人嘅comfort food。芝麻糊、楊枝甘露、豆腐花——每一碗都係師傅嘅心機。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1504664911901-2518a8bfc164?auto=format&fit=crop&w=800&q=80" alt="佳佳甜品" loading="lazy"></div>
+              <div class="info">
+                <h3>🥇 佳佳甜品 · 米芝蓮九年</h3>
+                <p>1979年創立，連續九年米芝蓮必比登。芝麻糊濃滑如絲，薑汁湯圓暖胃驅寒，深夜十二點都仲要排隊。寧波薑汁湯圓係招牌，皮薄餡靚。</p>
+                <div class="tags"><span>米芝蓮</span><span>芝麻糊</span><span>佐敦</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 佐敦站A出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 中午12點到凌晨1點</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$25-45</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 寧波薑汁湯圓+芝麻糊</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1653923302062-9fb10f6f3d8f?auto=format&fit=crop&w=800&q=80" alt="Bakehouse" loading="lazy"></div>
+              <div class="info">
+                <h3>🥐 Bakehouse · 全港最好食蛋撻</h3>
+                <p>前四季酒店糕點總廚 Grégoire Michaud 主理，酸種蛋撻日日排長龍。撻皮酥脆，蛋漿微甜帶焦香，$12一個被譽為全港最好食蛋撻。</p>
+                <div class="tags"><span>蛋撻</span><span>排隊</span><span>酸種</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 中環/灣仔/尖沙咀有分店</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早8點出爐最新鮮</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> $12/個</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 酸種蛋撻+牛角包</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1576444356170-66073046b1bc?auto=format&fit=crop&w=800&q=80" alt="玉葉甜品" loading="lazy"></div>
+              <div class="info">
+                <h3>🌿 玉葉甜品 · 百年鐵皮檔糖水</h3>
+                <p>屹立百年嘅鐵皮大排檔，傳承第五代。香草海帶綠豆沙清熱下火，糖不甩外軟內糯——係香港最古早嘅糖水味道。中環蘇豪區，食完可以行大館。</p>
+                <div class="tags"><span>百年老店</span><span>鐵皮檔</span><span>中環</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 上環站A2出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 下晝1點到凌晨12點</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$20-35</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 香草海帶綠豆沙+糖不甩</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="chiu-chow">
+          <h2>🥢 潮州打冷 · 夜宵之神</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">打冷係香港獨有嘅潮州菜宵夜文化。滷水鵝、蠔餅、蠔仔粥——越夜越滋味。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1582234372722-50d7ccc30ebd?auto=format&fit=crop&w=800&q=80" alt="陳勤記" loading="lazy"></div>
+              <div class="info">
+                <h3>🥇 陳勤記 · 米芝蓮必比登潮州菜</h3>
+                <p>1948年創立，三代傳承70年滷水膽。滷水鵝用獅頭鵝肉嫩入味，蠔仔粥大地魚湯底鮮甜，蠔餅香脆。獲米芝蓮必比登十二年推薦，正宗潮州味道。</p>
+                <div class="tags"><span>米芝蓮</span><span>滷水鵝</span><span>70年老店</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 上環站A2出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 晚市6點後最旺</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$80-150</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 滷水鵝片+蠔仔肉碎粥</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="cart-noodles">
+          <h2>🍜 車仔麵 · 自己話事嘅一碗麵</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">揀餸、揀麵、揀湯底——車仔麵係最個人化嘅香港美食。十幾蚊就有一碗。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1651658313775-90bf2751913e?auto=format&fit=crop&w=800&q=80" alt="文記車仔麵" loading="lazy"></div>
+              <div class="info">
+                <h3>🥇 文記車仔麵 · 深水埗車仔麵之王</h3>
+                <p>永遠排長龍，牛腩湯底濃郁，蘿蔔清甜無渣，豬腸洗得乾淨滷得入味。三餸麵$30起，十幾年嚟水準穩定，OpenRice長期高分。</p>
+                <div class="tags"><span>排隊</span><span>車仔麵</span><span>深水埗</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 深水埗站A2出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 平日下晝3點少人</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$35-55</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 蘿蔔+豬腸+瑞士雞翼+油麵</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="claypot">
+          <h2>🍚 煲仔飯 · 炭火嘅味道</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">冬天嘅香港，總要有一煲滋滋作響嘅煲仔飯。飯焦、臘味、豉油——完美嘅三位一體。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1549212408-d6b0defe25cf?auto=format&fit=crop&w=800&q=80" alt="坤記煲仔飯" loading="lazy"></div>
+              <div class="info">
+                <h3>🥇 坤記煲仔小菜 · 米芝蓮煲仔飯</h3>
+                <p>米芝蓮必比登推介，炭火煲仔飯係招牌。飯焦金黃香脆可以原塊刮起，米飯乾爽甘香。一開蓋滋滋聲，淋上甜豉油蓋住焗一分鐘——人間美味。</p>
+                <div class="tags"><span>米芝蓮</span><span>炭火</span><span>西環</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 西環站B出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 晚市6點後先有煲仔飯</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$80-120</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 臘味排骨煲仔飯+白鱔滑雞飯</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="seafood">
+          <h2>🦐 海鮮 · 香港係漁港出身</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">避風塘炒蟹、椒鹽瀨尿蝦、芝士龍蝦伊麵——香港海鮮世界聞名。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?auto=format&fit=crop&w=800&q=80" alt="喜記" loading="lazy"></div>
+              <div class="info">
+                <h3>🦀 喜記避風塘炒辣蟹 · 避風塘始祖</h3>
+                <p>1960年代由喜叔喺避風塘漁船起家，蔡瀾親題「蟹王」。蒜蓉炸得金黃酥脆，辣度適中，蟹肉鮮甜。成龍劉德華都係常客。來香港必食嘅海鮮體驗。</p>
+                <div class="tags"><span>避風塘炒蟹</span><span>名人群</span><span>灣仔</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 銅鑼灣站C出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 晚市6點後</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$300-500</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 避風塘炒辣蟹+椒鹽瀨尿蝦</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="hidden">
+          <h2>✨ 隱藏驚喜 · 國際級hidden gems</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">香港唔只有地道嘢食，仲有世界級嘅fusion同fine dining。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1589977326928-0c4681f1f1d3?auto=format&fit=crop&w=800&q=80" alt="九記牛腩" loading="lazy"></div>
+              <div class="info">
+                <h3>🥇 九記牛腩 · 中環排隊傳奇</h3>
+                <p>歌賦街人人皆知，清湯腩湯底清而味濃，牛爽腩係最矜貴部位，筋膜肉三層分明入口即化。日日排長龍，只收現金。中環打工仔嘅comfort food。</p>
+                <div class="tags"><span>牛腩</span><span>排隊</span><span>只收現金</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 上環站A2出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 下晝12:30-7:30pm</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$60-80</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 上湯牛爽腩+咖喱牛筋腩伊麵</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1651658313775-90bf2751913e?auto=format&fit=crop&w=800&q=80" alt="Little Bao" loading="lazy"></div>
+              <div class="info">
+                <h3>🍔 Little Bao · 亞洲最佳女廚</h3>
+                <p>亞洲最佳女廚May Chow主理，將港式大排檔元素融合西方comfort food。招牌豬腩包軟腍入味，油炸鬼脆口，fusion得嚟好食唔造作。中環細店有氣氛。</p>
+                <div class="tags"><span>Fusion</span><span>亞洲最佳女廚</span><span>中環</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 上環站A2出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 晚市6點後</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$120-200</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 招牌豬腩包+Szechuan fries</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <div class="sun"><i class="fas fa-sun"></i></div>
+          SunnyHK
+        </div>
+        <p>一個年輕、陽光、真實嘅香港旅行靈感平台。</p>
+      </div>
+      <div class="footer-col">
+        <h4>探索</h4>
+        <a href="explore.html">人群指南</a>
+        <a href="explore.html#quiet">發呆地圖</a>
+        <a href="food.html">美食地圖</a>
+        <a href="tips.html">實用資訊</a>
+        <a href="stories.html">香港故事</a>
+      </div>
+      <div class="footer-col">
+        <h4>關於</h4>
+        <a href="about.html">關於 SunnyHK</a>
+        <a href="about.html#faq">常見問題</a>
+      </div>
+      <div class="footer-col">
+        <h4>關注我哋</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="小紅書"><i class="fab fa-xiaohongshu"></i></a>
+          <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 SunnyHK · Discover Your Own Hong Kong</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/lang.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -53,6 +53,8 @@
     <div class="nav-links">
       <a href="index.html">首頁</a>
       <a href="explore.html">探索指南</a>
+      <a href="food.html">美食地圖</a>
+      <a href="tips.html">實用資訊</a>
       <a href="stories.html" class="active">香港故事</a>
       <a href="about.html">關於</a>
     </div>
@@ -70,6 +72,8 @@
 <div class="mobile-drawer" id="mobileDrawer">
   <a href="index.html">首頁</a>
   <a href="explore.html">探索指南</a>
+  <a href="food.html">美食地圖</a>
+  <a href="tips.html">實用資訊</a>
   <a href="stories.html">香港故事</a>
   <a href="about.html">關於</a>
    <button class="lang-toggle" style="margin-top:16px;">简</button>
@@ -151,6 +155,7 @@
         <h4>探索</h4>
         <a href="explore.html">人群指南</a>
         <a href="explore.html#quiet">發呆地圖</a>
+        <a href="tips.html">實用資訊</a>
         <a href="stories.html">香港故事</a>
       </div>
       <div class="footer-col">
@@ -464,6 +469,96 @@ if (!localStorage.getItem('sunnyhk-stories-seeded')) {
       message: '生日嗰晚男朋友帶我去香港仔坐舢舨夜遊避風塘，避風塘炒蟹同椒鹽瀨尿蝦送上船，海風吹住食海鮮，仲有太白海鮮舫嘅燈光做背景。佢話要畀我一個難忘嘅生日，佢做到咗。香港原來仲有咁浪漫嘅地方。',
       time: '上星期生日',
       likes: 63,
+      liked: false
+    },
+    {
+      nickname: '陳師奶的利是錢',
+      origin: '街坊',
+      category: 'healing',
+      message: '陳師奶每次嚟街市買餸都攞住一疊利是封，唔係派俾啲細路，係多謝啲檔主「計少幾蚊」或者「送多條葱」。佢話：「人哋對你好，你要識做。」而家啲後生成日覺得老土，但其實呢啲人情味先係香港最值錢嘅嘢。',
+      time: '上星期',
+      likes: 41,
+      liked: false
+    },
+    {
+      nickname: '阿強的豆腐花',
+      origin: '晨運客',
+      category: 'food',
+      message: '朝早六點半，大埔墟街市後面，阿強架豆腐花車準時開檔。佢啲豆腐花滑到可以當甜品食，黃糖任落。佢話呢個位擺咗三十年，由佢阿爸嗰代開始。三十年前呢度仲係個爛地停車場，而家起滿樓，但佢架車仲喺度。',
+      time: '早上',
+      likes: 36,
+      liked: false
+    },
+    {
+      nickname: '小玲的SEN學生',
+      origin: '特教老師',
+      category: 'healing',
+      message: '我教特殊教育需要學生八年，見過最得意嘅case係一個自閉症小朋友可以背晒成個港鐵路線圖，但講唔到自己阿媽叫咩名。有次佢喺金鐘站走失，結果自己搭咗五個站返學校，仲話：「老師，呢條路最近。」香港嘅鐵路系統對佢嚟講係安全感。',
+      time: '今年',
+      likes: 47,
+      liked: false
+    },
+    {
+      nickname: '大Tony的WhatsApp',
+      origin: '地產經紀',
+      category: 'healing',
+      message: '大Tony係個地產經紀，每日WhatsApp status都會有一句「今天的我打倒昨天的我」。例如：星期一話「樓市必升」，星期三變「而家係最好嘅買入點」，星期五拍片「調整係正常」。我問佢你唔怕客戶睇返你之前講過咩？佢笑住話：「香港人，三分鐘記憶嘛。」一語中的。',
+      time: '呢排',
+      likes: 53,
+      liked: false
+    },
+    {
+      nickname: '黃太的鳳仙花',
+      origin: '鄰居',
+      category: 'healing',
+      message: '黃太住公屋四十年，窗台種咗十幾盆鳳仙花，由春天開到秋天。佢話呢啲花最「捱得」，唔使點淋水，太陽曬住都生得靚。「同我哋呢代香港人一樣，再差嘅環境都開到花。」後來成條走廊嘅鄰居都學佢種，變咗條空中花園。',
+      time: '今年',
+      likes: 39,
+      liked: false
+    },
+    {
+      nickname: '阿傑的巴士人生',
+      origin: '巴士迷',
+      category: 'healing',
+      message: '阿傑係個典型巴士迷，屋企幾百部巴士模型。佢話最鍾意係行屯門公路嘅60X，「屯門公路嘅風景係全世界最靚嘅公路風景，左邊山右邊海前面係青馬大橋。」我跟佢坐咗一次，佢全程冇停過口，每段路都講得出典故。香港需要呢啲對城市有熱情嘅人。',
+      time: '上個月',
+      likes: 44,
+      liked: false
+    },
+    {
+      nickname: 'Peggy的移民巴士',
+      origin: '社工',
+      category: 'healing',
+      message: 'Peggy做移民輔導，每日見唔同嘅人。佢話最深刻係一個單親媽媽帶住兩個女去英國，臨上機前同佢講：「我唔知去英國係咪啱，但我知留喺香港一定錯。」半年後收到佢message，話喺Manchester開咗間茶餐廳，賣菠蘿油同絲襪奶茶，英國人好鍾意。香港人，去到邊都係開餐飲。',
+      time: '今年',
+      likes: 58,
+      liked: false
+    },
+    {
+      nickname: '文迪的愛情故事',
+      origin: '朋友',
+      category: 'healing',
+      message: '文迪同男朋友拍拖六年，男朋友用晒六年前追佢嘅方法繼續——每日一封手寫信。我話：「你男朋友由簡體字寫到繁體字，由鉛筆寫到鋼筆，下一版係咪要寫書法？」文迪話：「佢話要寫到結婚嗰日，然後擺酒嗰陣展覽俾親友睇。」我話呢啲男仔去邊度搵。',
+      time: '呢排',
+      likes: 62,
+      liked: false
+    },
+    {
+      nickname: '阿豪的眼鏡舖',
+      origin: '熟客',
+      category: 'healing',
+      message: '深水埗黃金商場對面有間老式眼鏡舖，阿豪係老細兼師傅。佢驗眼唔用電腦，用傳統嗰種「呢個清啲定呢個清啲」嘅方法。我話你點同商場嗰啲大連鎖店鬥？佢答：「人哋十分鐘驗完，我用一粒鐘。我睇你對眼，唔係睇你個荷包。」呢啲就係香港嘅匠人精神，可惜買少見少。',
+      time: '上個月',
+      likes: 49,
+      liked: false
+    },
+    {
+      nickname: '珊珊的貓貓Café',
+      origin: '貓奴',
+      category: 'healing',
+      message: '旺角一座舊唐樓嘅閣樓，珊珊開咗間貓Café。十七隻貓全部係收養返嚟，有啲得返三條腿，有啲盲一隻眼。珊珊話：「冇人要嘅貓，我嚟要。」鋪頭細到得二百呎，但周末爆滿。有客人話心情唔好就會上去坐兩個鐘，淨係睇貓打喊露都治療晒。香港需要多啲呢種溫暖嘅角落。',
+      time: '上星期',
+      likes: 56,
       liked: false
     }
   ];
