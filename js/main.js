@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
       : '<i class="fas fa-moon"></i>';
   }
 
-  // ====== Lang Toggle ======
-  document.querySelectorAll('.lang-toggle').forEach(btn => {
+  // ====== Lang Buttons ======
+  document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       if (window.SunnyLang) {
-        window.SunnyLang.toggleLang();
+        window.SunnyLang.setLang(btn.dataset.lang);
       }
     });
   });

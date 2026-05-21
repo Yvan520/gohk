@@ -200,7 +200,7 @@
     'age-quiet-desc': 'West Kowloon bench, Central pier watching boats, Shek O sunset — stillness is also a journey.',
     'age-route-tag': 'Routes',
     'age-route-title': '3-Day Classic Route',
-    'age-route-desc': "First time in Hong Kong? We've got you — island city vibes + Kowloon烟火 + outlying islands.",
+    'age-route-desc': "First time in Hong Kong? We've got you — island city vibes + Kowloon smoke + outlying islands.",
     'section-quiet-title': 'If you want nothing but to sit a while',
     'section-quiet-sub': 'Hong Kong is not all fast-paced. These places pause for you.',
     'quiet-wk-title': 'West Kowloon Promenade',
@@ -270,8 +270,6 @@
   };
 
   const STORAGE_KEY = 'sunnyhk-lang';
-  const MODES = ['trad', 'simp', 'en'];
-  const NEXT_LABEL = { trad: '简', simp: 'EN', en: '繁' };
   const HTML_LANG = { trad: 'zh-HK', simp: 'zh-CN', en: 'en' };
 
   function convertStr(str, map) {
@@ -330,13 +328,6 @@
     location.reload();
   }
 
-  function toggleLang() {
-    const current = localStorage.getItem(STORAGE_KEY) || 'trad';
-    const idx = MODES.indexOf(current);
-    const next = MODES[(idx + 1) % MODES.length];
-    setLang(next);
-  }
-
   function initLang() {
     const saved = localStorage.getItem(STORAGE_KEY) || 'trad';
     if (saved === 'simp') {
@@ -346,12 +337,12 @@
       document.title = document.title.replace('香港', 'Hong Kong');
     }
     document.documentElement.lang = HTML_LANG[saved] || 'zh-HK';
-    document.querySelectorAll('.lang-toggle').forEach(btn => {
-      btn.textContent = NEXT_LABEL[saved] || '简';
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === saved);
     });
   }
 
-  window.SunnyLang = { toggleLang, setLang, initLang, convertStr, t2s, s2t };
+  window.SunnyLang = { setLang, initLang, convertStr, t2s, s2t };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initLang);
