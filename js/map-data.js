@@ -121,4 +121,28 @@ const placesData = [
   { id: 'hei-kei', name: '喜記避風塘炒辣蟹', emoji: '🦀', category: 'food', lat: 22.2800, lng: 114.1860, section: 'food', link: 'food.html#seafood' },
   { id: 'kau-keung', name: '九記牛腩 · 中環排隊傳奇', emoji: '🥇', category: 'food', lat: 22.2830, lng: 114.1540, section: 'food', link: 'food.html#hidden' },
   { id: 'little-bao', name: 'Little Bao · 亞洲最佳女廚', emoji: '🍔', category: 'food', lat: 22.2840, lng: 114.1530, section: 'food', link: 'food.html#hidden' },
+
+  // ====== Explore page additions ======
+  { id: 'zoo-botanic', name: '香港動植物公園', emoji: '🌿', category: 'family', lat: 22.2770, lng: 114.1570, section: 'family', link: 'explore.html#family' },
+  { id: 'yuen-long-bird', name: '元朗公園百鳥塔', emoji: '🐦', category: 'family', lat: 22.4440, lng: 114.0240, section: 'family', link: 'explore.html#family' },
+  { id: 'haiphong-market', name: '海防道臨時熟食市場', emoji: '🍜', category: 'adult', lat: 22.2990, lng: 114.1710, section: 'adult', link: 'explore.html#adult' },
+  { id: 'statue-square', name: '遮打花園皇后像廣場', emoji: '🏛️', category: 'senior', lat: 22.2810, lng: 114.1600, section: 'senior', link: 'explore.html#senior' },
+  { id: 'mid-levels-esc', name: '中環半山扶手電梯', emoji: '🛗', category: 'photo', lat: 22.2820, lng: 114.1550, section: 'photo', link: 'explore.html#photo' },
+  { id: 'sai-wan-cargo', name: '西環貨物裝卸區', emoji: '📦', category: 'photo', lat: 22.2830, lng: 114.1270, section: 'photo', link: 'explore.html#photo' },
+  { id: 'monster-building', name: '鰂魚涌海山樓', emoji: '🏗️', category: 'photo', lat: 22.2870, lng: 114.2100, section: 'photo', link: 'explore.html#photo' },
+  { id: 'hk-island-route', name: '港島文化一日遊', emoji: '🚃', category: 'routes', lat: 22.2800, lng: 114.1600, section: 'routes', link: 'explore.html#routes' },
+  { id: 'kowloon-food-walk', name: '九龍美食散步', emoji: '🥟', category: 'routes', lat: 22.3200, lng: 114.1690, section: 'routes', link: 'explore.html#routes' },
+  { id: 'island-escape', name: '離島出走兩天遊', emoji: '🏝️', category: 'routes', lat: 22.2100, lng: 114.0280, section: 'routes', link: 'explore.html#routes' },
+  { id: 'ozone-bar', name: 'Ozone酒吧', emoji: '🍸', category: 'adult', lat: 22.3000, lng: 114.1600, section: 'adult', link: 'explore.html#adult' },
+  { id: 'red-sugar', name: 'Red Sugar 紅糖', emoji: '🍹', category: 'adult', lat: 22.3040, lng: 114.1910, section: 'adult', link: 'explore.html#adult' },
+  { id: 'peninsula-tea', name: '半島酒店大堂茶座', emoji: '☕', category: 'adult', lat: 22.2950, lng: 114.1710, section: 'adult', link: 'explore.html#adult' },
+
+  // ====== Food page additions ======
+  { id: 'lee-keung-kei', name: '利強記北角雞蛋仔', emoji: '🥚', category: 'food', lat: 22.2910, lng: 114.2000, section: 'food', link: 'food.html#street-food' },
+  { id: 'wah-sou', name: '華嫂冰室', emoji: '🍞', category: 'food', lat: 22.3140, lng: 114.2250, section: 'food', link: 'food.html#cha-chaan-teng' },
+  { id: 'kai-kai-dessert', name: '佳佳甜品', emoji: '🍮', category: 'food', lat: 22.3070, lng: 114.1700, section: 'food', link: 'food.html#dessert' },
+  { id: 'tim-ho-wan-ssp', name: '添好運 (深水埗)', emoji: '🥟', category: 'food', lat: 22.3290, lng: 114.1610, section: 'food', link: 'food.html#dim-sum' },
+  { id: 'chai-hing-siu-mei', name: '再興燒臘', emoji: '🍗', category: 'food', lat: 22.2770, lng: 114.1730, section: 'food', link: 'food.html#roast' },
+  { id: 'chan-kan-kee', name: '陳勤記 · 米芝蓮必比登潮州菜', emoji: '🥢', category: 'food', lat: 22.3070, lng: 114.1700, section: 'food', link: 'food.html#chiu-chow' },
+  { id: 'man-kei-noodles', name: '文記車仔麵 · 深水埗車仔麵之王', emoji: '🍜', category: 'food', lat: 22.3310, lng: 114.1620, section: 'food', link: 'food.html#cart-noodles' },
 ];

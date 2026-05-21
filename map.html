@@ -445,6 +445,25 @@ placesData.forEach(place => {
 
 map.addLayer(markerClusterGroup);
 
+// Handle ?q=NAME from explore/food card map links
+function normalizeChinese(s) {
+  return s.replace(/[^\u4e00-\u9fff]/g, '');
+}
+const urlParams = new URLSearchParams(window.location.search);
+const queryName = urlParams.get('q');
+if (queryName) {
+  const norm = normalizeChinese(queryName);
+  const place = placesData.find(p => {
+    const pNorm = normalizeChinese(p.name);
+    return pNorm.includes(norm) || norm.includes(pNorm);
+  });
+  if (place && markers[place.id]) {
+    const m = markers[place.id];
+    map.setView([place.lat, place.lng], 15, { animate: true });
+    setTimeout(() => m.openPopup(), 400);
+  }
+}
+
 document.querySelectorAll('.map-filter-item input[type="checkbox"]').forEach(cb => {
   cb.addEventListener('change', function() {
     const cat = this.value;

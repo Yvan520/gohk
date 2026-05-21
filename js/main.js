@@ -262,23 +262,63 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ====== Place Card Modal ======
   const placeCards = [];
   document.querySelectorAll('.place-card').forEach(card => {
     const img = card.querySelector('.thumb img');
     const info = card.querySelector('.info');
-    const title = info?.querySelector('h3')?.innerHTML || '';
+    const titleEl = info?.querySelector('h3');
+    const title = titleEl?.innerHTML || '';
     const desc = info?.querySelector('p')?.innerHTML || '';
     const tags = info?.querySelector('.tags')?.innerHTML || '';
     let tipsHtml = '';
     info?.querySelectorAll('.tip').forEach(tip => { tipsHtml += tip.outerHTML; });
+    const rawTitle = titleEl?.textContent || '';
+    const cleanName = rawTitle.replace(/[^\u4e00-\u9fff\w\s]/g, '').trim();
     placeCards.push({
       imgSrc: img?.src || '',
       imgAlt: img?.alt || '',
       title,
       desc,
       tags,
-      tips: tipsHtml
+      tips: tipsHtml,
+      mapName: cleanName
+    });
+  });
+
+  // Add inline map link to each place card
+  document.querySelectorAll('.place-card').forEach((card, i) => {
+    const info = card.querySelector('.info');
+    const p = placeCards[i];
+    if (info && p && p.mapName) {
+      const link = document.createElement('a');
+      link.className = 'card-map-link';
+      link.href = `map.html?q=${encodeURIComponent(p.mapName)}`;
+      link.target = '_blank';
+      link.innerHTML = '<i class="fas fa-map-marked-alt"></i> 睇地圖位置';
+      info.appendChild(link);
+    }
+  });
+  const placeCards = [];
+  document.querySelectorAll('.place-card').forEach(card => {
+    const img = card.querySelector('.thumb img');
+    const info = card.querySelector('.info');
+    const titleEl = info?.querySelector('h3');
+    const title = titleEl?.innerHTML || '';
+    const desc = info?.querySelector('p')?.innerHTML || '';
+    const tags = info?.querySelector('.tags')?.innerHTML || '';
+    let tipsHtml = '';
+    info?.querySelectorAll('.tip').forEach(tip => { tipsHtml += tip.outerHTML; });
+    // Get clean name for map linking
+    const rawTitle = titleEl?.textContent || '';
+    const cleanName = rawTitle.replace(/[^\u4e00-\u9fff\w\s]/g, '').trim();
+    placeCards.push({
+      imgSrc: img?.src || '',
+      imgAlt: img?.alt || '',
+      title,
+      desc,
+      tags,
+      tips: tipsHtml,
+      mapName: cleanName
     });
   });
 
@@ -300,6 +340,9 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="modal-tags">${card.tags}</div>
       <p class="modal-desc">${card.desc}</p>
       <div class="modal-tips">${card.tips}</div>
+      <a href="map.html?q=${encodeURIComponent(card.mapName)}" class="modal-map-link" target="_blank">
+        <i class="fas fa-map-marked-alt"></i> 睇地圖位置
+      </a>
     `;
     modalOverlay.classList.add('open');
     modal.classList.add('open');
