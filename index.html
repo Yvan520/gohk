@@ -43,12 +43,12 @@
       Sunny<span>HK</span>
     </a>
     <div class="nav-links">
-      <a href="index.html" class="active">首頁</a>
-      <a href="explore.html">探索指南</a>
-      <a href="food.html">美食地圖</a>
-      <a href="tips.html">實用資訊</a>
-      <a href="stories.html">香港故事</a>
-      <a href="about.html">關於</a>
+      <a href="index.html" class="active" data-i18n="nav-home">首頁</a>
+      <a href="explore.html" data-i18n="nav-explore">探索指南</a>
+      <a href="food.html" data-i18n="nav-food">美食地圖</a>
+      <a href="tips.html" data-i18n="nav-tips">實用資訊</a>
+      <a href="stories.html" data-i18n="nav-stories">香港故事</a>
+      <a href="about.html" data-i18n="nav-about">關於</a>
     </div>
     <div class="nav-actions">
       <button class="lang-toggle">简</button>
@@ -62,12 +62,12 @@
 
 <div class="mobile-overlay" id="mobileOverlay"></div>
 <div class="mobile-drawer" id="mobileDrawer">
-  <a href="index.html">首頁</a>
-  <a href="explore.html">探索指南</a>
-  <a href="food.html">美食地圖</a>
-  <a href="tips.html">實用資訊</a>
-  <a href="stories.html">香港故事</a>
-  <a href="about.html">關於</a>
+  <a href="index.html" data-i18n="nav-mobile-home">首頁</a>
+  <a href="explore.html" data-i18n="nav-mobile-explore">探索指南</a>
+  <a href="food.html" data-i18n="nav-mobile-food">美食地圖</a>
+  <a href="tips.html" data-i18n="nav-mobile-tips">實用資訊</a>
+  <a href="stories.html" data-i18n="nav-mobile-stories">香港故事</a>
+  <a href="about.html" data-i18n="nav-mobile-about">關於</a>
    <button class="lang-toggle" style="margin-top:16px;">简</button>
   <button class="theme-toggle" id="themeToggleMobile" aria-label="切換主題" style="margin-top:8px;align-self:flex-start;"><i class="fas fa-moon"></i></button>
 </div>
@@ -75,12 +75,12 @@
 <section class="hero">
   <div class="hero-overlay"></div>
   <div class="content">
-    <div class="badge"><i class="fas fa-location-dot"></i> 香港 · 發掘屬於你嘅角落</div>
+    <div class="badge"><i class="fas fa-location-dot"></i> <span data-i18n="hero-badge">香港 · 發掘屬於你嘅角落</span></div>
     <h1>
-      無論你幾歲、咩性格，<br>
-      <span class="highlight">香港總有一個屬於你嘅角落</span>
+      <span data-i18n="hero-h1-1">無論你幾歲、咩性格，</span><br>
+      <span class="highlight" data-i18n="hero-h1-2">香港總有一個屬於你嘅角落</span>
     </h1>
-    <p class="subtitle">
+    <p class="subtitle" data-i18n="hero-subtitle">
       唔只係購物天堂。呢度有海風、叮叮車、夜色同街角茶餐廳嘅熱氣。<br>
       我哋幫你搵到最適合自己嘅香港節奏。
     </p>
@@ -103,67 +103,67 @@
 
 <section class="section section-alt" style="padding:60px 24px;">
   <div class="inner" style="display:flex;justify-content:space-around;flex-wrap:wrap;gap:24px;text-align:center;">
-    <div><div style="font-size:2rem;font-weight:700;color:var(--brand);font-family:var(--font-serif);">50+</div><div style="font-size:0.85rem;color:var(--text-muted);">精選目的地</div></div>
-    <div><div style="font-size:2rem;font-weight:700;color:var(--brand);font-family:var(--font-serif);">6</div><div style="font-size:0.85rem;color:var(--text-muted);">人群分類指南</div></div>
-    <div><div style="font-size:2rem;font-weight:700;color:var(--brand);font-family:var(--font-serif);">100%</div><div style="font-size:0.85rem;color:var(--text-muted);">真實體驗分享</div></div>
-    <div><div style="font-size:2rem;font-weight:700;color:var(--brand);font-family:var(--font-serif);;">24/7</div><div style="font-size:0.85rem;color:var(--text-muted);">隨時可以發吽哣</div></div>
+    <div><div style="font-size:2rem;font-weight:700;color:var(--brand);font-family:var(--font-serif);">50+</div><div style="font-size:0.85rem;color:var(--text-muted);" data-i18n="stats-destinations">精選目的地</div></div>
+    <div><div style="font-size:2rem;font-weight:700;color:var(--brand);font-family:var(--font-serif);">6</div><div style="font-size:0.85rem;color:var(--text-muted);" data-i18n="stats-guides">人群分類指南</div></div>
+    <div><div style="font-size:2rem;font-weight:700;color:var(--brand);font-family:var(--font-serif);">100%</div><div style="font-size:0.85rem;color:var(--text-muted);" data-i18n="stats-real">真實體驗分享</div></div>
+    <div><div style="font-size:2rem;font-weight:700;color:var(--brand);font-family:var(--font-serif);;">24/7</div><div style="font-size:0.85rem;color:var(--text-muted);" data-i18n="stats-247">隨時可以發吽哣</div></div>
   </div>
 </section>
 
 <section class="section" id="ageGroups">
   <div class="inner">
     <div class="section-header fade-in">
-      <div class="label">For Everyone</div>
-      <h2>每個人都有一條屬於自己嘅香港路線</h2>
-      <p>唔按景點分類，只按你嘅性格同節奏推薦。</p>
+      <div class="label" data-i18n="section-for-everyone">For Everyone</div>
+      <h2><span data-i18n="section-age-title">每個人都有一條屬於自己嘅香港路線</span></h2>
+      <p data-i18n="section-age-sub">唔按景點分類，只按你嘅性格同節奏推薦。</p>
     </div>
     <div class="age-grid">
       <div class="age-card fade-in" data-href="explore.html#family">
         <div class="bg"><img src="https://images.unsplash.com/photo-1651658313775-90bf2751913e?auto=format&fit=crop&w=800&q=80" alt="親子" loading="lazy"></div>
         <div class="body">
-          <span class="tag" style="background:#f59e0b15;color:#f59e0b;">親子家庭</span>
-          <h3>👶 小朋友眼中嘅香港</h3>
-          <p>迪士尼、海洋公園、科學館、天星小輪——等細路嘅笑聲裝滿維港嘅風。</p>
+          <span class="tag" style="background:#f59e0b15;color:#f59e0b;" data-i18n="age-family-tag">親子家庭</span>
+          <h3 data-i18n="age-family-title">👶 小朋友眼中嘅香港</h3>
+          <p data-i18n="age-family-desc">迪士尼、海洋公園、科學館、天星小輪——等細路嘅笑聲裝滿維港嘅風。</p>
         </div>
       </div>
       <div class="age-card fade-in" data-href="explore.html#youth">
         <div class="bg"><img src="https://images.unsplash.com/photo-1465403157034-1d5e05cc2ac0?auto=format&fit=crop&w=800&q=80" alt="青年" loading="lazy"></div>
         <div class="body">
-          <span class="tag" style="background:#f43f5e15;color:#f43f5e;">青年 · 學生</span>
-          <h3>🧑‍🎤 年輕嘅城市節奏</h3>
-          <p>中環壁畫街、旺角夜市、南丫島徒步、咖啡館打卡——青春就係要咁樣用。</p>
+          <span class="tag" style="background:#f43f5e15;color:#f43f5e;" data-i18n="age-youth-tag">青年 · 學生</span>
+          <h3 data-i18n="age-youth-title">🧑‍🎤 年輕嘅城市節奏</h3>
+          <p data-i18n="age-youth-desc">中環壁畫街、旺角夜市、南丫島徒步、咖啡館打卡——青春就係要咁樣用。</p>
         </div>
       </div>
       <div class="age-card fade-in" data-href="explore.html#adult">
         <div class="bg"><img src="https://images.unsplash.com/photo-1576444356170-66073046b1bc?auto=format&fit=crop&w=800&q=80" alt="上班族" loading="lazy"></div>
         <div class="body">
-          <span class="tag" style="background:#3b82f615;color:#3b82f6;">上班族 · 30+</span>
-          <h3>💼 俾忙碌嘅人一次唞氣</h3>
-          <p>半山扶梯、石板街、西貢海鮮、維港夜遊船——香港唔只有OT，仲有生活。</p>
+          <span class="tag" style="background:#3b82f615;color:#3b82f6;" data-i18n="age-adult-tag">上班族 · 30+</span>
+          <h3 data-i18n="age-adult-title">💼 俾忙碌嘅人一次唞氣</h3>
+          <p data-i18n="age-adult-desc">半山扶梯、石板街、西貢海鮮、維港夜遊船——香港唔只有OT，仲有生活。</p>
         </div>
       </div>
       <div class="age-card fade-in" data-href="explore.html#senior">
         <div class="bg"><img src="https://images.unsplash.com/photo-1629007006355-d75f7b828bfd?auto=format&fit=crop&w=800&q=80" alt="銀髮" loading="lazy"></div>
         <div class="body">
-          <span class="tag" style="background:#14b8a615;color:#14b8a6;">銀髮旅行</span>
-          <h3>👴 慢落嚟，睇見香港</h3>
-          <p>南蓮園池、昂坪360、寶蓮禪寺、老茶樓——歲月係最好嘅導遊。</p>
+          <span class="tag" style="background:#14b8a615;color:#14b8a6;" data-i18n="age-senior-tag">銀髮旅行</span>
+          <h3 data-i18n="age-senior-title">👴 慢落嚟，睇見香港</h3>
+          <p data-i18n="age-senior-desc">南蓮園池、昂坪360、寶蓮禪寺、老茶樓——歲月係最好嘅導遊。</p>
         </div>
       </div>
       <div class="age-card fade-in" data-href="explore.html#quiet">
         <div class="bg"><img src="https://images.unsplash.com/photo-1504664911901-2518a8bfc164?auto=format&fit=crop&w=800&q=80" alt="發呆" loading="lazy"></div>
         <div class="body">
-          <span class="tag" style="background:#8b5cf615;color:#8b5cf6;">I人避風港</span>
-          <h3>🌊 如果你咩都唔想做</h3>
-          <p>西九海濱長櫈、中環碼頭睇船、石澳海灘黃昏——靜靜哋唞一陣，都係一種旅行。</p>
+          <span class="tag" style="background:#8b5cf615;color:#8b5cf6;" data-i18n="age-quiet-tag">I人避風港</span>
+          <h3 data-i18n="age-quiet-title">🌊 如果你咩都唔想做</h3>
+          <p data-i18n="age-quiet-desc">西九海濱長櫈、中環碼頭睇船、石澳海灘黃昏——靜靜哋唞一陣，都係一種旅行。</p>
         </div>
       </div>
       <div class="age-card fade-in" data-href="explore.html#routes">
         <div class="bg"><img src="https://images.unsplash.com/photo-1516893676001-52fdf7605797?auto=format&fit=crop&w=800&q=80" alt="路線" loading="lazy"></div>
         <div class="body">
-          <span class="tag" style="background:#f59e0b15;color:#f59e0b;">行程推薦</span>
-          <h3>🧭 3日2夜經典路線</h3>
-          <p>第一次嚟香港？幫你規劃好咗——港島城市感 + 九龍煙火氣 + 離島慢生活。</p>
+          <span class="tag" style="background:#f59e0b15;color:#f59e0b;" data-i18n="age-route-tag">行程推薦</span>
+          <h3 data-i18n="age-route-title">🧭 3日2夜經典路線</h3>
+          <p data-i18n="age-route-desc">第一次嚟香港？幫你規劃好咗——港島城市感 + 九龍煙火氣 + 離島慢生活。</p>
         </div>
       </div>
     </div>
@@ -173,40 +173,40 @@
 <section class="section section-alt">
   <div class="inner">
     <div class="section-header fade-in">
-      <div class="label">Quiet Corners</div>
-      <h2>如果你咩都唔想做，淨係想坐一陣</h2>
-      <p>香港唔只有快節奏。呢啲地方，會為你停落嚟。</p>
+      <div class="label" data-i18n="section-quiet-title">Quiet Corners</div>
+      <h2 data-i18n="section-quiet-title">如果你咩都唔想做，淨係想坐一陣</h2>
+      <p data-i18n="section-quiet-sub">香港唔只有快節奏。呢啲地方，會為你停落嚟。</p>
     </div>
     <div class="feature-grid">
       <div class="feature-card fade-in">
         <div class="icon" style="background:#8b5cf615;color:#8b5cf6;"><i class="fas fa-sea"></i></div>
-        <h3>西九海濱</h3>
-        <p>適合一個人。傍晚時分嚟，睇日落染紅維港，咩都唔做，就係最好嘅旅行。</p>
+        <h3 data-i18n="quiet-wk-title">西九海濱</h3>
+        <p data-i18n="quiet-wk-desc">適合一個人。傍晚時分嚟，睇日落染紅維港，咩都唔做，就係最好嘅旅行。</p>
       </div>
       <div class="feature-card fade-in">
         <div class="icon" style="background:#14b8a615;color:#14b8a6;"><i class="fas fa-ship"></i></div>
-        <h3>中環碼頭</h3>
-        <p>畀幾蚊搭天星小輪，喺下層吹住海風來回港島同九龍，呢個係最平嘅治癒時刻。</p>
+        <h3 data-i18n="quiet-pier-title">中環碼頭</h3>
+        <p data-i18n="quiet-pier-desc">畀幾蚊搭天星小輪，喺下層吹住海風來回港島同九龍，呢個係最平嘅治癒時刻。</p>
       </div>
       <div class="feature-card fade-in">
         <div class="icon" style="background:#f59e0b15;color:#f59e0b;"><i class="fas fa-mountain-sun"></i></div>
-        <h3>石澳海灘</h3>
-        <p>彩色屋仔、寧靜嘅海、慢悠悠嘅狗。帶塊野餐墊，就可以消磨成個下晝。</p>
+        <h3 data-i18n="quiet-shek-o-title">石澳海灘</h3>
+        <p data-i18n="quiet-shek-o-desc">彩色屋仔、寧靜嘅海、慢悠悠嘅狗。帶塊野餐墊，就可以消磨成個下晝。</p>
       </div>
       <div class="feature-card fade-in">
         <div class="icon" style="background:#3b82f615;color:#3b82f6;"><i class="fas fa-tree"></i></div>
-        <h3>南蓮園池</h3>
-        <p>鑽石山地鐵站出行幾步，就從喧囂踏入唐風庭院。聽錦鯉游水，時間都慢咗。</p>
+        <h3 data-i18n="quiet-nanlian-title">南蓮園池</h3>
+        <p data-i18n="quiet-nanlian-desc">鑽石山地鐵站出行幾步，就從喧囂踏入唐風庭院。聽錦鯉游水，時間都慢咗。</p>
       </div>
       <div class="feature-card fade-in">
         <div class="icon" style="background:#f43f5e15;color:#f43f5e;"><i class="fas fa-book-open"></i></div>
-        <h3>誠品書店窗邊</h3>
-        <p>銅鑼灣店嘅窗邊位，攞本書，睇樓下如蟻群過馬路嘅人潮，大隱隱於市。</p>
+        <h3 data-i18n="quiet-eslite-title">誠品書店窗邊</h3>
+        <p data-i18n="quiet-eslite-desc">銅鑼灣店嘅窗邊位，攞本書，睇樓下如蟻群過馬路嘅人潮，大隱隱於市。</p>
       </div>
       <div class="feature-card fade-in">
         <div class="icon" style="background:#8b5cf615;color:#8b5cf6;"><i class="fas fa-cloud"></i></div>
-        <h3>大帽山睇雲</h3>
-        <p>香港最高嘅山。清晨上山，睇雲海翻湧，城市喺腳下甦醒，世界突然靜晒。</p>
+        <h3 data-i18n="quiet-taimo-title">大帽山睇雲</h3>
+        <p data-i18n="quiet-taimo-desc">香港最高嘅山。清晨上山，睇雲海翻湧，城市喺腳下甦醒，世界突然靜晒。</p>
       </div>
     </div>
   </div>
@@ -215,13 +215,13 @@
 <section class="section">
   <div class="inner">
     <div class="section-header fade-in">
-      <div class="label">Echoes of HK</div>
-      <h2>最新香港故事</h2>
-      <p>每一個嚟過嘅人，都留低咗一瞬心動。</p>
+      <div class="label" data-i18n="section-stories-title">Echoes of HK</div>
+      <h2 data-i18n="section-stories-title">最新香港故事</h2>
+      <p data-i18n="section-stories-sub">每一個嚟過嘅人，都留低咗一瞬心動。</p>
     </div>
     <div id="homeStories" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:900px;margin:0 auto;"></div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="stories.html" class="submit-btn" style="display:inline-block;width:auto;padding:14px 36px;border-radius:100px;">
+      <a href="stories.html" class="submit-btn" style="display:inline-block;width:auto;padding:14px 36px;border-radius:100px;" data-i18n="stories-share-btn">
         分享你嘅香港故事 <i class="fas fa-arrow-right" style="margin-left:8px;"></i>
       </a>
     </div>
@@ -236,23 +236,23 @@
           <div class="sun"><i class="fas fa-sun"></i></div>
           SunnyHK
         </div>
-        <p>一個年輕、陽光、真實嘅香港旅行靈感平台。我哋相信，旅行唔只係打卡，而係揾到屬於自己嘅城市節奏。</p>
+        <p data-i18n="footer-tagline">一個年輕、陽光、真實嘅香港旅行靈感平台。我哋相信，旅行唔只係打卡，而係揾到屬於自己嘅城市節奏。</p>
       </div>
       <div class="footer-col">
-        <h4>探索</h4>
-        <a href="explore.html">人群指南</a>
-        <a href="explore.html#quiet">發呆地圖</a>
-        <a href="tips.html">實用資訊</a>
-        <a href="stories.html">香港故事</a>
+        <h4 data-i18n="footer-explore">探索</h4>
+        <a href="explore.html" data-i18n="footer-guide">人群指南</a>
+        <a href="explore.html#quiet" data-i18n="footer-quiet">發呆地圖</a>
+        <a href="tips.html" data-i18n="footer-tips">實用資訊</a>
+        <a href="stories.html" data-i18n="footer-stories">香港故事</a>
       </div>
       <div class="footer-col">
-        <h4>關於</h4>
-        <a href="about.html">關於 SunnyHK</a>
-        <a href="about.html#faq">常見問題</a>
-        <a href="about.html#privacy">私隱政策</a>
+        <h4 data-i18n="footer-about">關於</h4>
+        <a href="about.html" data-i18n="footer-about-us">關於 SunnyHK</a>
+        <a href="about.html#faq" data-i18n="footer-faq">常見問題</a>
+        <a href="about.html#privacy" data-i18n="footer-privacy">私隱政策</a>
       </div>
       <div class="footer-col">
-        <h4>關注我哋</h4>
+        <h4 data-i18n="footer-follow">關注我哋</h4>
         <div class="footer-social">
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="#" aria-label="小紅書"><i class="fab fa-xiaohongshu"></i></a>
@@ -262,7 +262,7 @@
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 SunnyHK · Discover Your Own Hong Kong</span>
-      <span>用 <i class="fas fa-heart" style="color:var(--brand);"></i> 為香港而造</span>
+      <span data-i18n="footer-made-with">用 <i class="fas fa-heart" style="color:var(--brand);"></i> 為香港而造</span>
     </div>
   </div>
 </footer>

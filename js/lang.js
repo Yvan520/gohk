@@ -1,11 +1,5 @@
-/**
- * SunnyHK 繁簡轉換系統
- * 主用繁體，支援一鍵切換簡體
- */
-
 (function() {
 
-  // ====== Traditional → Simplified Character Map ======
   const t2s = {
     '萬': '万', '與': '与', '醜': '丑', '專': '专', '業': '业', '叢': '丛', '東': '东',
     '絲': '丝', '丟': '丢', '兩': '两', '嚴': '严', '個': '个', '中': '中', '豐': '丰',
@@ -153,13 +147,133 @@
     '龍': '龙', '龜': '龟', '齡': '龄'
   };
 
-  // ====== Build reverse map (Simplified → Traditional) ======
   const s2t = {};
   for (const [t, s] of Object.entries(t2s)) {
     s2t[s] = t;
   }
 
-  // ====== Convert a string ======
+  const en = {
+    'nav-home': 'Home',
+    'nav-explore': 'Explore',
+    'nav-food': 'Food',
+    'nav-tips': 'Tips',
+    'nav-stories': 'Stories',
+    'nav-about': 'About',
+    'nav-mobile-home': 'Home',
+    'nav-mobile-explore': 'Explore',
+    'nav-mobile-food': 'Food',
+    'nav-mobile-tips': 'Tips',
+    'nav-mobile-stories': 'Stories',
+    'nav-mobile-about': 'About',
+    'hero-badge': 'Hong Kong · Find Your Corner',
+    'hero-h1-1': 'No matter who you are,',
+    'hero-h1-2': 'Hong Kong has a corner for you',
+    'hero-subtitle': 'Discover the hidden side of Hong Kong — from neon streets to fishing villages.',
+    'hero-search-placeholder': 'What do you want to experience?',
+    'hero-search-option-family': 'Traveling with kids — Family Fun',
+    'hero-search-option-youth': 'City walking & check-ins — Youth',
+    'hero-search-option-adult': 'Need a breather — Working Adults',
+    'hero-search-option-senior': 'Slow travel — Seniors',
+    'hero-search-option-quiet': 'Want to do nothing — Quiet Corners',
+    'hero-btn': "Let's Go",
+    'stats-destinations': 'Destinations',
+    'stats-guides': 'Age Guides',
+    'stats-real': 'Real Stories',
+    'stats-247': 'Chill 24/7',
+    'section-for-everyone': 'For Everyone',
+    'section-age-title': 'A Hong Kong route for every traveler',
+    'section-age-sub': 'Not by attraction — by your pace and personality.',
+    'age-family-tag': 'Family',
+    'age-family-title': "Kids' Hong Kong",
+    'age-family-desc': 'Disney, Ocean Park, Science Museum, Star Ferry — let their laughter fill the harbor breeze.',
+    'age-youth-tag': 'Youth',
+    'age-youth-title': 'Young & Urban',
+    'age-youth-desc': 'Street art in Central, night markets in Mong Kok, hiking on Lamma Island — youth spent right.',
+    'age-adult-tag': '30+ Working',
+    'age-adult-title': 'A breather for the busy',
+    'age-adult-desc': 'Mid-level Escalator, Stanley seafood, Victoria Harbour night cruise — Hong Kong is not just OT.',
+    'age-senior-tag': 'Senior',
+    'age-senior-title': 'Slow down, see Hong Kong',
+    'age-senior-desc': 'Nan Lian Garden, Ngong Ping 360, Po Lin Monastery, old tea houses — time is the best guide.',
+    'age-quiet-tag': 'Quiet Soul',
+    'age-quiet-title': 'If you want to do nothing',
+    'age-quiet-desc': 'West Kowloon bench, Central pier watching boats, Shek O sunset — stillness is also a journey.',
+    'age-route-tag': 'Routes',
+    'age-route-title': '3-Day Classic Route',
+    'age-route-desc': "First time in Hong Kong? We've got you — island city vibes + Kowloon烟火 + outlying islands.",
+    'section-quiet-title': 'If you want nothing but to sit a while',
+    'section-quiet-sub': 'Hong Kong is not all fast-paced. These places pause for you.',
+    'quiet-wk-title': 'West Kowloon Promenade',
+    'quiet-wk-desc': 'Come at dusk, watch the sunset paint the harbor. Doing nothing is the best travel.',
+    'quiet-pier-title': 'Central Piers',
+    'quiet-pier-desc': "A few dollars for the Star Ferry, wind in your hair — it's the cheapest healing.",
+    'quiet-shek-o-title': 'Shek O Beach',
+    'quiet-shek-o-desc': "Colorful houses, calm sea, slow dogs. Bring a picnic mat and vanish for an afternoon.",
+    'quiet-nanlian-title': 'Nan Lian Garden',
+    'quiet-nanlian-desc': 'A Tang dynasty garden steps from Diamond Hill MTR. Watch koi swim, time slows down.',
+    'quiet-eslite-title': 'Eslite Bookstore Window',
+    'quiet-eslite-desc': 'Grab a book at the Causeway Bay window seat, watch the crowd below like an ant colony.',
+    'quiet-taimo-title': 'Tai Mo Shan Clouds',
+    'quiet-taimo-desc': "HK's highest peak. Hike up at dawn, watch clouds roll over the city waking below.",
+    'section-stories-title': 'Latest Hong Kong Stories',
+    'section-stories-sub': 'Every visitor leaves a moment of wonder.',
+    'stories-share-btn': 'Share Your Story',
+    'footer-tagline': 'A young, sunny, authentic Hong Kong travel inspiration platform.',
+    'footer-explore': 'Explore',
+    'footer-guide': 'Age Guide',
+    'footer-quiet': 'Quiet Map',
+    'footer-tips': 'Travel Tips',
+    'footer-stories': 'Stories',
+    'footer-about': 'About',
+    'footer-about-us': 'About SunnyHK',
+    'footer-faq': 'FAQ',
+    'footer-privacy': 'Privacy Policy',
+    'footer-follow': 'Follow Us',
+    'footer-made-with': 'Made with',
+    'explore-title': 'Explore Hong Kong',
+    'explore-subtitle': 'Find your corner of Hong Kong.',
+    'explore-sidebar-family': '👶 Family',
+    'explore-sidebar-youth': '🧑‍🎤 Youth',
+    'explore-sidebar-adult': '💼 Working',
+    'explore-sidebar-senior': '👴 Senior',
+    'explore-sidebar-quiet': '🌊 Quiet',
+    'explore-sidebar-photo': '📸 Photo',
+    'explore-sidebar-routes': '🧭 Routes',
+    'explore-search-placeholder': 'Search destinations...',
+    'food-title': 'Hong Kong Food Map',
+    'food-subtitle': 'Eat like a local, one bite at a time.',
+    'tips-title': 'Hong Kong Travel Tips',
+    'tips-subtitle': 'Everything you need to know before you go.',
+    'stories-title': 'Hong Kong Stories',
+    'stories-subtitle': 'Real stories from real travelers.',
+    'stories-filter-all': 'All Stories',
+    'stories-filter-night': '🌇 Night',
+    'stories-filter-food': '🍜 Food',
+    'stories-filter-healing': '💛 Healing',
+    'stories-filter-family': '👨‍👩‍👧 Family',
+    'stories-filter-solo': '🎒 Solo',
+    'stories-form-title': 'Share your story',
+    'stories-form-nickname': 'Nickname (optional)',
+    'stories-form-origin': 'Where are you from? (optional)',
+    'stories-form-category': 'Category',
+    'stories-form-message': 'Write your Hong Kong story...',
+    'stories-form-submit': 'Post Story',
+    'about-title': 'About SunnyHK',
+    'about-subtitle': 'A travel guide made with love for Hong Kong.',
+    'section-family': '👶 Family',
+    'section-youth': '🧑‍🎤 Youth',
+    'section-adult': '💼 Working',
+    'section-senior': '👴 Senior',
+    'section-quiet': '🌊 Quiet',
+    'section-photo': '📸 Photo Spots',
+    'section-routes': '🧭 Routes',
+  };
+
+  const STORAGE_KEY = 'sunnyhk-lang';
+  const MODES = ['trad', 'simp', 'en'];
+  const NEXT_LABEL = { trad: '简', simp: 'EN', en: '繁' };
+  const HTML_LANG = { trad: 'zh-HK', simp: 'zh-CN', en: 'en' };
+
   function convertStr(str, map) {
     let result = '';
     for (const ch of str) {
@@ -168,13 +282,11 @@
     return result;
   }
 
-  // ====== Convert all text nodes in the DOM ======
   function convertDOM(map) {
     const walker = document.createTreeWalker(
       document.body,
       NodeFilter.SHOW_TEXT,
-      null,
-      false
+      null, false
     );
     const nodes = [];
     while (walker.nextNode()) nodes.push(walker.currentNode);
@@ -183,7 +295,6 @@
       if (parent && (parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE')) continue;
       node.textContent = convertStr(node.textContent, map);
     }
-    // Convert placeholder/attr
     document.querySelectorAll('input, textarea, select').forEach(el => {
       if (el.placeholder) el.placeholder = convertStr(el.placeholder, map);
       if (el.value && el.tagName !== 'INPUT') el.value = convertStr(el.value, map);
@@ -193,46 +304,55 @@
     });
   }
 
-  // ====== Toggle ======
-  const STORAGE_KEY = 'sunnyhk-lang';
-
-  function setLang(lang) {
-    const targetMap = lang === 'simp' ? t2s : s2t;
-    const currentLang = localStorage.getItem(STORAGE_KEY) || 'trad';
-
-    if (currentLang === lang) return;
-
-    convertDOM(targetMap);
-    localStorage.setItem(STORAGE_KEY, lang);
-
-    // Update toggle button
-    document.querySelectorAll('.lang-toggle').forEach(btn => {
-      btn.textContent = lang === 'simp' ? '繁' : '简';
-      btn.setAttribute('data-lang', lang === 'simp' ? 'trad' : 'simp');
+  function applyEnglish() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (en[key]) {
+        el.textContent = en[key];
+      }
     });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (en[key]) {
+        el.placeholder = en[key];
+      }
+    });
+    document.querySelectorAll('[data-i18n-option]').forEach(el => {
+      const key = el.getAttribute('data-i18n-option');
+      if (en[key]) {
+        el.textContent = en[key];
+      }
+    });
+  }
+
+  function setLang(mode) {
+    localStorage.setItem(STORAGE_KEY, mode);
+    location.reload();
   }
 
   function toggleLang() {
     const current = localStorage.getItem(STORAGE_KEY) || 'trad';
-    setLang(current === 'trad' ? 'simp' : 'trad');
+    const idx = MODES.indexOf(current);
+    const next = MODES[(idx + 1) % MODES.length];
+    setLang(next);
   }
 
-  // ====== Init on page load ======
   function initLang() {
-    const saved = localStorage.getItem(STORAGE_KEY);
+    const saved = localStorage.getItem(STORAGE_KEY) || 'trad';
     if (saved === 'simp') {
       convertDOM(t2s);
-      document.querySelectorAll('.lang-toggle').forEach(btn => {
-        btn.textContent = '繁';
-        btn.setAttribute('data-lang', 'trad');
-      });
+    } else if (saved === 'en') {
+      applyEnglish();
+      document.title = document.title.replace('香港', 'Hong Kong');
     }
+    document.documentElement.lang = HTML_LANG[saved] || 'zh-HK';
+    document.querySelectorAll('.lang-toggle').forEach(btn => {
+      btn.textContent = NEXT_LABEL[saved] || '简';
+    });
   }
 
-  // Export
   window.SunnyLang = { toggleLang, setLang, initLang, convertStr, t2s, s2t };
 
-  // Auto-init
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initLang);
   } else {

@@ -52,12 +52,12 @@
       Sunny<span>HK</span>
     </a>
     <div class="nav-links">
-      <a href="index.html">首頁</a>
-      <a href="explore.html">探索指南</a>
-      <a href="food.html">美食地圖</a>
-      <a href="tips.html">實用資訊</a>
-      <a href="stories.html" class="active">香港故事</a>
-      <a href="about.html">關於</a>
+      <a href="index.html" data-i18n="nav-home">首頁</a>
+      <a href="explore.html" data-i18n="nav-explore">探索指南</a>
+      <a href="food.html" data-i18n="nav-food">美食地圖</a>
+      <a href="tips.html" data-i18n="nav-tips">實用資訊</a>
+      <a href="stories.html" class="active" data-i18n="nav-stories">香港故事</a>
+      <a href="about.html" data-i18n="nav-about">關於</a>
     </div>
     <div class="nav-actions">
       <button class="lang-toggle">简</button>
@@ -71,20 +71,20 @@
 
 <div class="mobile-overlay" id="mobileOverlay"></div>
 <div class="mobile-drawer" id="mobileDrawer">
-  <a href="index.html">首頁</a>
-  <a href="explore.html">探索指南</a>
-  <a href="food.html">美食地圖</a>
-  <a href="tips.html">實用資訊</a>
-  <a href="stories.html">香港故事</a>
-  <a href="about.html">關於</a>
+  <a href="index.html" data-i18n="nav-mobile-home">首頁</a>
+  <a href="explore.html" data-i18n="nav-mobile-explore">探索指南</a>
+  <a href="food.html" data-i18n="nav-mobile-food">美食地圖</a>
+  <a href="tips.html" data-i18n="nav-mobile-tips">實用資訊</a>
+  <a href="stories.html" data-i18n="nav-mobile-stories">香港故事</a>
+  <a href="about.html" data-i18n="nav-mobile-about">關於</a>
    <button class="lang-toggle" style="margin-top:16px;">简</button>
   <button class="theme-toggle" id="themeToggleMobile" aria-label="切換主題" style="margin-top:8px;align-self:flex-start;"><i class="fas fa-moon"></i></button>
 </div>
 
 <div class="page-header">
   <div class="inner">
-    <h1>💬 香港故事 · 分享你嘅嗰一日</h1>
-    <p>每一個嚟過嘅人，都留低咗一瞬心動。你都可以。</p>
+    <h1 data-i18n="stories-title">💬 香港故事 · 分享你嘅嗰一日</h1>
+    <p data-i18n="stories-subtitle">每一個嚟過嘅人，都留低咗一瞬心動。你都可以。</p>
   </div>
 </div>
 
@@ -92,21 +92,21 @@
   <div class="inner" style="max-width: 900px;">
 
     <div class="story-form fade-in">
-      <h3>✏️ 寫低你嘅香港瞬間</h3>
+      <h3 data-i18n="stories-form-title">✏️ 寫低你嘅香港瞬間</h3>
       <p class="hint">分享你喺香港最難忘嘅回憶，可能你嘅故事會成為別人嘅旅行靈感。</p>
       <form id="storyForm">
         <div class="form-row">
           <div class="form-group">
-            <label>稱呼</label>
-            <input type="text" id="storyNickname" placeholder="你嘅名字" maxlength="30">
+            <label data-i18n="stories-form-nickname">稱呼</label>
+            <input type="text" id="storyNickname" placeholder="你嘅名字" maxlength="30" data-i18n-placeholder="stories-form-nickname">
           </div>
           <div class="form-group">
-            <label>來自邊度</label>
-            <input type="text" id="storyOrigin" placeholder="深圳 / 上海 / 東京 ...">
+            <label data-i18n="stories-form-origin">來自邊度</label>
+            <input type="text" id="storyOrigin" placeholder="深圳 / 上海 / 東京 ..." data-i18n-placeholder="stories-form-origin">
           </div>
         </div>
         <div class="form-group">
-          <label>故事分類</label>
+          <label data-i18n="stories-form-category">故事分類</label>
           <select id="storyCategory">
             <option value="night">🌇 最美夜景</option>
             <option value="food">🍜 最難忘嘅一餐</option>
@@ -117,19 +117,19 @@
         </div>
         <div class="form-group">
           <label>你嘅故事</label>
-          <textarea id="storyMessage" rows="4" placeholder="嗰日喺香港..." required></textarea>
+          <textarea id="storyMessage" rows="4" placeholder="嗰日喺香港..." required data-i18n-placeholder="stories-form-message"></textarea>
         </div>
-        <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right:8px;"></i> 發佈故事</button>
+        <button type="submit" class="submit-btn" data-i18n="stories-form-submit"><i class="fas fa-paper-plane" style="margin-right:8px;"></i> 發佈故事</button>
       </form>
     </div>
 
     <div class="filter-bar">
-      <button class="filter-btn-s active" onclick="filterStories('all')">全部故事</button>
-      <button class="filter-btn-s" onclick="filterStories('night')">🌇 夜景</button>
-      <button class="filter-btn-s" onclick="filterStories('food')">🍜 美食</button>
-      <button class="filter-btn-s" onclick="filterStories('healing')">💛 治癒</button>
-      <button class="filter-btn-s" onclick="filterStories('family')">👨‍👩‍👧 親子</button>
-      <button class="filter-btn-s" onclick="filterStories('solo')">🎒 獨旅</button>
+      <button class="filter-btn-s active" onclick="filterStories('all')" data-i18n="stories-filter-all">全部故事</button>
+      <button class="filter-btn-s" onclick="filterStories('night')" data-i18n="stories-filter-night">🌇 夜景</button>
+      <button class="filter-btn-s" onclick="filterStories('food')" data-i18n="stories-filter-food">🍜 美食</button>
+      <button class="filter-btn-s" onclick="filterStories('healing')" data-i18n="stories-filter-healing">💛 治癒</button>
+      <button class="filter-btn-s" onclick="filterStories('family')" data-i18n="stories-filter-family">👨‍👩‍👧 親子</button>
+      <button class="filter-btn-s" onclick="filterStories('solo')" data-i18n="stories-filter-solo">🎒 獨旅</button>
     </div>
 
     <div class="stories-grid" id="storiesContainer">
@@ -150,22 +150,22 @@
           <div class="sun"><i class="fas fa-sun"></i></div>
           SunnyHK
         </div>
-        <p>一個年輕、陽光、真實嘅香港旅行靈感平台。</p>
+        <p data-i18n="footer-tagline">一個年輕、陽光、真實嘅香港旅行靈感平台。</p>
       </div>
       <div class="footer-col">
-        <h4>探索</h4>
-        <a href="explore.html">人群指南</a>
-        <a href="explore.html#quiet">發呆地圖</a>
-        <a href="tips.html">實用資訊</a>
-        <a href="stories.html">香港故事</a>
+        <h4 data-i18n="footer-explore">探索</h4>
+        <a href="explore.html" data-i18n="footer-guide">人群指南</a>
+        <a href="explore.html#quiet" data-i18n="footer-quiet">發呆地圖</a>
+        <a href="tips.html" data-i18n="footer-tips">實用資訊</a>
+        <a href="stories.html" data-i18n="footer-stories">香港故事</a>
       </div>
       <div class="footer-col">
-        <h4>關於</h4>
-        <a href="about.html">關於 SunnyHK</a>
-        <a href="about.html#faq">常見問題</a>
+        <h4 data-i18n="footer-about">關於</h4>
+        <a href="about.html" data-i18n="footer-about-us">關於 SunnyHK</a>
+        <a href="about.html#faq" data-i18n="footer-faq">常見問題</a>
       </div>
       <div class="footer-col">
-        <h4>關注我哋</h4>
+        <h4 data-i18n="footer-follow">關注我哋</h4>
         <div class="footer-social">
           <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="#" aria-label="小紅書"><i class="fab fa-xiaohongshu"></i></a>
