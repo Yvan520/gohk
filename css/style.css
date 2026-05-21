@@ -601,6 +601,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   margin-bottom: 12px;
+  text-wrap: pretty;
 }
 .page-header p {
   color: rgba(255,255,255,0.7);
