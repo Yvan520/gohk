@@ -298,29 +298,6 @@ document.addEventListener('DOMContentLoaded', () => {
       info.appendChild(link);
     }
   });
-  const placeCards = [];
-  document.querySelectorAll('.place-card').forEach(card => {
-    const img = card.querySelector('.thumb img');
-    const info = card.querySelector('.info');
-    const titleEl = info?.querySelector('h3');
-    const title = titleEl?.innerHTML || '';
-    const desc = info?.querySelector('p')?.innerHTML || '';
-    const tags = info?.querySelector('.tags')?.innerHTML || '';
-    let tipsHtml = '';
-    info?.querySelectorAll('.tip').forEach(tip => { tipsHtml += tip.outerHTML; });
-    // Get clean name for map linking
-    const rawTitle = titleEl?.textContent || '';
-    const cleanName = rawTitle.replace(/[^\u4e00-\u9fff\w\s]/g, '').trim();
-    placeCards.push({
-      imgSrc: img?.src || '',
-      imgAlt: img?.alt || '',
-      title,
-      desc,
-      tags,
-      tips: tipsHtml,
-      mapName: cleanName
-    });
-  });
 
   const modalOverlay = document.getElementById('placeModalOverlay');
   const modal = document.getElementById('placeModal');
