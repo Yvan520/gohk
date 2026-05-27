@@ -31,6 +31,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://gohk.gamewayz.com/map.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://gohk.gamewayz.com/tips.html</loc>
     <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
