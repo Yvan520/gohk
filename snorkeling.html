@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SunnyHK 香港浮潛攻略 — 由新手到高手，12大浮潛勝地推介！橋咀洲、海下灣、綠蛋島、東平洲⋯⋯裝備、潮汐、交通、安全貼士一文睇晒。">
+<meta name="keywords" content="香港浮潛,香港浮潛地點,橋咀洲浮潛,海下灣浮潛,綠蛋島浮潛,東平洲,香港水上活動,獨木舟浮潛">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://gohk.gamewayz.com/snorkeling.html">
+<meta name="baidu-site-verification" content="codeva-6fKr2IJVp7" />
+<meta property="og:title" content="🤿 香港浮潛攻略 | SunnyHK">
+<meta property="og:description" content="由新手到高手，12大浮潛勝地推介！橋咀洲、海下灣、綠蛋島、東平洲⋯⋯裝備、潮汐、交通、安全貼士一文睇晒。">
+<meta property="og:url" content="https://gohk.gamewayz.com/snorkeling.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1688180171636-7e255f59450f?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:locale" content="zh_HK">
+<title>🤿 香港浮潛攻略 | SunnyHK</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="modal-overlay" id="placeModalOverlay"></div>
+<div class="place-modal" id="placeModal">
+  <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+  <button class="modal-prev" id="modalPrev"><i class="fas fa-chevron-left"></i></button>
+  <button class="modal-next" id="modalNext"><i class="fas fa-chevron-right"></i></button>
+  <div class="modal-content" id="modalContent"></div>
+</div>
+
+<nav class="navbar">
+  <div class="inner">
+    <a href="index.html" class="logo">
+      <div class="sun"><i class="fas fa-sun"></i></div>
+      Sunny<span>HK</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav-home">首頁</a>
+      <a href="explore.html" data-i18n="nav-explore">探索指南</a>
+      <a href="food.html" data-i18n="nav-food">美食地圖</a>
+      <a href="snorkeling.html" class="active" data-i18n="nav-snorkeling">🤿 浮潛</a>
+      <a href="tips.html" data-i18n="nav-tips">實用資訊</a>
+      <a href="stories.html" data-i18n="nav-stories">香港故事</a>
+      <a href="map.html" data-i18n="nav-map">🗺️ 地圖</a>
+      <a href="about.html" data-i18n="nav-about">關於</a>
+    </div>
+    <div class="nav-actions">
+      <div class="lang-group">
+        <button class="lang-btn" data-lang="trad">繁</button>
+        <button class="lang-btn" data-lang="simp">简</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切換主題"><i class="fas fa-moon"></i></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="選單">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="index.html" data-i18n="nav-mobile-home">首頁</a>
+  <a href="explore.html" data-i18n="nav-mobile-explore">探索指南</a>
+  <a href="food.html" data-i18n="nav-mobile-food">美食地圖</a>
+  <a href="snorkeling.html" data-i18n="nav-mobile-snorkeling">🤿 浮潛</a>
+  <a href="tips.html" data-i18n="nav-mobile-tips">實用資訊</a>
+  <a href="stories.html" data-i18n="nav-mobile-stories">香港故事</a>
+  <a href="map.html" data-i18n="nav-mobile-map">地圖</a>
+  <a href="about.html" data-i18n="nav-mobile-about">關於</a>
+  <div class="lang-group">
+    <button class="lang-btn" data-lang="trad">繁</button>
+    <button class="lang-btn" data-lang="simp">简</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="theme-toggle" id="themeToggleMobile" aria-label="切換主題" style="margin-top:8px;align-self:flex-start;"><i class="fas fa-moon"></i></button>
+</div>
+
+<div class="page-header">
+  <div class="inner">
+    <h1 data-i18n="snorkeling-title">🤿 香港浮潛攻略</h1>
+    <p data-i18n="snorkeling-subtitle">由新手到高手，12大浮潛勝地 — 清澈玻璃水、七彩珊瑚、魚群穿梭，香港嘅海底世界一樣精彩。</p>
+  </div>
+</div>
+
+<div class="explore-section">
+  <div class="inner">
+    <div class="flex-layout">
+      <nav class="sidebar-nav">
+        <h4 data-i18n="snorkeling-sidebar-title">浮潛分類</h4>
+        <a href="#beginner" data-i18n="snorkeling-sidebar-beginner">🏖️ 新手啱玩</a>
+        <a href="#intermediate" data-i18n="snorkeling-sidebar-intermediate">⚡ 進階之選</a>
+        <a href="#expert" data-i18n="snorkeling-sidebar-expert">🏆 高手向</a>
+        <a href="#gear" data-i18n="snorkeling-sidebar-gear">🎒 裝備貼士</a>
+        <a href="#safety" data-i18n="snorkeling-sidebar-safety">⚠️ 安全須知</a>
+      </nav>
+
+      <div class="content-area">
+
+        <section id="beginner">
+          <h2 data-i18n="section-beginner">🏖️ 新手啱玩 · 零經驗都冇問題</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">以下介紹嘅浮潛點風浪平靜、水淺、有基本配套，適合第一次試浮潛嘅你。小朋友玩都得！</p>
+          <div class="place-list">
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1688180171636-7e255f59450f?auto=format&fit=crop&w=800&q=80" alt="橋咀洲" loading="lazy"></div>
+              <div class="info">
+                <h3>🌴 橋咀洲（Sharp Island）</h3>
+                <p>西貢最親民嘅浮潛點，船程十分鐘就到！落船後行過沙灘同連島沙洲（留意潮退先過得），離岸廿米已經見到十字牡丹珊瑚群落。水清到不得了，仲有扁腦珊瑚、柱角孔珊瑚，魚仔喺你身邊游嚟游去。最正係游完水可以行上廈門灣沙灘休息，有更衣室同小食亭。</p>
+                <div class="tags"><span>新手推薦</span><span>親子</span><span>公共交通可達</span></div>
+                <div class="tip"><i class="fas fa-ship"></i> 西貢碼頭搭街渡（~15分鐘），來回約$40-50</div>
+                <div class="tip"><i class="fas fa-clock"></i> 潮低於1.4米先見到連島沙洲，出發前查天文台潮汐表</div>
+                <div class="tip"><i class="fas fa-camera"></i> 水中珊瑚用手機加防水袋都影到，中午光線最靚</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 西貢海鮮街返碼頭就係，游完水食海鮮</div>
+                <div class="tip"><i class="fas fa-info-circle"></i> 有更衣室、淋浴、小食亭</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?auto=format&fit=crop&w=800&q=80" alt="海下灣" loading="lazy"></div>
+              <div class="info">
+                <h3>🪸 海下灣（Hoi Ha Wan）</h3>
+                <p>香港首批海岸公園之一，水靜到似湖面！海下灣嘅特別之處係有政府投放嘅人工魚礁，時至今日已經變成海洋生物嘅安樂窩。浮潛時可以見到各式熱帶魚喺魚礁之間穿梭，仲有成片嘅軟珊瑚。海下村可以租獨木舟，劃出啲去水更深嘅地方。回程記住預時間搭7號小巴，尾班車約7點。</p>
+                <div class="tags"><span>海岸公園</span><span>風浪平靜</span><span>獨木舟</span></div>
+                <div class="tip"><i class="fas fa-bus"></i> 西貢搭7號小巴到海下總站（~30分鐘）</div>
+                <div class="tip"><i class="fas fa-clock"></i> 建議朝早出發，玩到下晝3點回程</div>
+                <div class="tip"><i class="fas fa-camera"></i> 人工魚礁附近最多魚，帶防水相機去</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 獨木舟租借~$100/小時</div>
+                <div class="tip"><i class="fas fa-info-circle"></i> 有燒烤場同小食店，整潔企理</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1537956965359-7573183d1f57?auto=format&fit=crop&w=800&q=80" alt="廈門灣" loading="lazy"></div>
+              <div class="info">
+                <h3>🏖️ 廈門灣（Half Moon Bay）</h3>
+                <p>橋咀洲另一邊嘅泳灘，半月形沙灘水清沙幼，被譽為香港嘅馬爾代夫！呢度係官方泳灘，有救生員當值，配套十足：更衣室、淋浴、燒烤爐、小食亭乜都有。浮潛方面，灘頭兩側嘅礁石區係最好嘅浮潛點，有唔少珊瑚同魚仔，適合第一次帶小朋友試浮潛。</p>
+                <div class="tags"><span>官方泳灘</span><span>救生員</span><span>親子</span></div>
+                <div class="tip"><i class="fas fa-ship"></i> 西貢搭街渡直達廈門灣碼頭</div>
+                <div class="tip"><i class="fas fa-clock"></i> 平日好過週末，週末人山人海</div>
+                <div class="tip"><i class="fas fa-camera"></i> 沙灘左側礁石區最多珊瑚</div>
+                <div class="tip"><i class="fas fa-info-circle"></i> 有燒烤爐，可以自備食物BBQ</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="三星灣" loading="lazy"></div>
+              <div class="info">
+                <h3>⭐ 三星灣（Triple Bay）</h3>
+                <p>西貢白沙灣附近嘅隱世泳灘，水質長期評為「良好」至「極佳」。比起廈門灣，三星灣更細更寧靜，平日幾乎冇乜人。沙灘有基本配套（更衣室、淋浴、小食亭），浮潛點喺沙灘右邊嘅石灘一帶，水清見底，好多細路跟住阿爸阿媽嚟學浮潛。</p>
+                <div class="tags"><span>隱世</span><span>水質極佳</span><span>寧靜</span></div>
+                <div class="tip"><i class="fas fa-ship"></i> 白沙灣碼頭搭街渡（~5分鐘）</div>
+                <div class="tip"><i class="fas fa-clock"></i> 平日去幾乎包場</div>
+                <div class="tip"><i class="fas fa-camera"></i> 石灘區光影變化好靚，影水底一流</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 街渡來回約$30</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="intermediate">
+          <h2 data-i18n="section-intermediate">⚡ 進階之選 · 有經驗嘅浮潛愛好者</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">需要划獨木舟或行山路先到，回報係更清澈嘅水質同更豐富嘅海洋生態。</p>
+          <div class="place-list">
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1573790387438-4da905039392?auto=format&fit=crop&w=800&q=80" alt="綠蛋島" loading="lazy"></div>
+              <div class="info">
+                <h3>🥚 綠蛋島（Green Egg Island）</h3>
+                <p>Instagram最紅嘅香港玻璃水秘境！原名爛排，因為高空睇似一隻荷包蛋而得名。水清到好似透明咁，被稱為「玻璃水」。上島要划獨木舟（由相思灣出發約45分鐘）或者行山路+綑邊，唔算容易但絕對值得。島周圍嘅海底有唔少珊瑚群落，魚類豐富。記住帶齊補給，島上乜都冇。</p>
+                <div class="tags"><span>玻璃水</span><span>秘境</span><span>獨木舟</span></div>
+                <div class="tip"><i class="fas fa-kayak"></i> 相思灣划獨木舟約45分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 出發前必查潮汐，水退時更多珊瑚可見</div>
+                <div class="tip"><i class="fas fa-camera"></i> 空中角度最震撼，帶航拍機就perfect</div>
+                <div class="tip"><i class="fas fa-exclamation-triangle"></i> 島上冇水冇補給，自備充足糧水</div>
+                <div class="tip"><i class="fas fa-info-circle"></i> 建議跟團或約有經驗朋友同行</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1582967788606-a171c1080cb0?auto=format&fit=crop&w=800&q=80" alt="鹽田梓" loading="lazy"></div>
+              <div class="info">
+                <h3>🧂 鹽田梓（Yim Tin Tsai）</h3>
+                <p>有300年歷史嘅客家鹽田村，2004年修復後重新產鹽。呢度唔單止有文化底蘊，周圍嘅紅樹林同水域生態超豐富！碼頭右邊有硬珊瑚群落，容易見到彈塗魚、招潮蟹，運氣好仲見到海星！建議租獨木舟繞島一圈，發掘唔同嘅浮潛點。地面有蠔殼，一定要著浮潛鞋。</p>
+                <div class="tags"><span>歷史文化</span><span>紅樹林</span><span>生態豐富</span></div>
+                <div class="tip"><i class="fas fa-ship"></i> 西貢搭街渡直達</div>
+                <div class="tip"><i class="fas fa-clock"></i> 建議預半日：參觀鹽田+浮潛</div>
+                <div class="tip"><i class="fas fa-camera"></i> 聖若瑟小堂係打卡熱點，影相一流</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 鹽田參觀收費約$20</div>
+                <div class="tip"><i class="fas fa-exclamation-triangle"></i> 蠔殼鋒利，必穿浮潛鞋</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?auto=format&fit=crop&w=800&q=80" alt="塔門" loading="lazy"></div>
+              <div class="info">
+                <h3>🌿 塔門（Grass Island）</h3>
+                <p>塔門出名係露營同牛牛天堂，但其實佢嘅水域都好適合浮潛！塔門北面同東面一帶水質清澈，有唔少珊瑚群落。係塔門碼頭落船後向左行，穿過草地到北面嘅石灘就係浮潛點。塔門最正係可以日間浮潛、夜晚露營睇星星，一次過滿足兩個願望。</p>
+                <div class="tags"><span>露營</span><span>觀星</span><span>牛牛</span></div>
+                <div class="tip"><i class="fas fa-ship"></i> 馬料水碼頭搭船（~1.5小時）</div>
+                <div class="tip"><i class="fas fa-clock"></i> 週末船期較多，建議兩日一夜露營</div>
+                <div class="tip"><i class="fas fa-camera"></i> 北面石灘黃昏影日落超靚</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 塔門有海膽炒飯！必試</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=800&q=80" alt="東心淇" loading="lazy"></div>
+              <div class="info">
+                <h3>🏝️ 東心淇（Tung Sam Kei）</h3>
+                <p>赤門海峽嘅隱世小島，水質長期一級棒！由黃石碼頭搭船十幾分鐘就到。島嘅南面同西面有珊瑚群落，水清見底，浮潛時經常有成班魚仔跟住你游。東心淇最正係冇乜人去，平日可以一個人獨享成個沙灘。島上有簡單燒烤設施，但記住自己帶齊物資。</p>
+                <div class="tags"><span>隱世</span><span>水質一級</span><span>少人</span></div>
+                <div class="tip"><i class="fas fa-ship"></i> 黃石碼頭搭船（~15分鐘）</div>
+                <div class="tip"><i class="fas fa-clock"></i> 平日去最正，冇人同你爭</div>
+                <div class="tip"><i class="fas fa-camera"></i> 南面海底有大量軟珊瑚</div>
+                <div class="tip"><i class="fas fa-fire"></i> 有燒烤爐，自備食物</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="expert">
+          <h2 data-i18n="section-expert">🏆 高手向 · 要有啲準備先去到</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">船程長、偏遠、需要包船或有經驗帶隊。回報係香港最頂級嘅海底景觀，珊瑚同魚類多到好似去咗沖繩！</p>
+          <div class="place-list">
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1582967788606-a171c108cb0b?auto=format&fit=crop&w=800&q=80" alt="東平洲" loading="lazy"></div>
+              <div class="info">
+                <h3>🗿 東平洲（Tung Ping Chau）</h3>
+                <p>香港東極，香港最年輕沉積岩構成嘅奇特地貌。除咗斬頸洲、更樓石等打卡點，東平洲嘅海底世界一樣震撼——擁有47種珊瑚、過百種珊瑚魚、數十種海藻！水清到可以見到十米以下嘅海床。留意電話訊號微弱，一定要做足規劃。船程約1.5小時，星期六日先有船。</p>
+                <div class="tags"><span>地質奇觀</span><span>珊瑚天堂</span><span>偏遠</span></div>
+                <div class="tip"><i class="fas fa-ship"></i> 馬料水碼頭搭船（~1.5小時），來回$100</div>
+                <div class="tip"><i class="fas fa-clock"></i> 星期六9am/3:30pm去程，星期日只有9am</div>
+                <div class="tip"><i class="fas fa-camera"></i> 更樓石日出、斬頸洲地貌必影</div>
+                <div class="tip"><i class="fas fa-exclamation-triangle"></i> 訊號微弱，提前通知親友</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 自備乾糧，島上冇餐廳</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&fit=crop&w=800&q=80" alt="果洲群島" loading="lazy"></div>
+              <div class="info">
+                <h3>🪨 果洲群島（Ninepin Group）</h3>
+                <p>被稱為「香港嘅海底花園」！海床鋪滿色彩繽紛嘅軟珊瑚、柳珊瑚、木珊瑚同海扇，顏色艷麗到唔似香港。海洋生物多到你唔信，係真正嘅潛水天堂。不過呢度必須包船或者參加本地潛水團先去到，由西貢碼頭出發船程約1小時。建議有返咁上下經驗先好去。</p>
+                <div class="tags"><span>海底花園</span><span>包船</span><span>經驗要求</span></div>
+                <div class="tip"><i class="fas fa-ship"></i> 西貢包船（~1小時），人均約$300-500</div>
+                <div class="tip"><i class="fas fa-clock"></i> 夏季（6-9月）風浪最穩定</div>
+                <div class="tip"><i class="fas fa-camera"></i> 軟珊瑚色彩繽紛，水底攝影天堂</div>
+                <div class="tip"><i class="fas fa-phone"></i> 潛水快線：2724 1322 可查詢包船</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1580137189272-c9379f8864fd?auto=format&fit=crop&w=800&q=80" alt="娥眉洲" loading="lazy"></div>
+              <div class="info">
+                <h3>🌊 娥眉洲（Ng Mei Chau）</h3>
+                <p>位於印洲塘海岸公園內，係香港水質最好嘅區域之一。娥眉洲周圍嘅海底有大量軟珊瑚同硬珊瑚群落，魚群密集，被譽為香港嘅「小沖繩」。最正係佢嘅能見度極高，水清時可以見到十幾米深。同樣需要包船前往，適合有經驗嘅浮潛同潛水愛好者。</p>
+                <div class="tags"><span>印洲塘</span><span>能見度高</span><span>包船</span></div>
+                <div class="tip"><i class="fas fa-ship"></i> 黃石碼頭包船前往</div>
+                <div class="tip"><i class="fas fa-clock"></i> 夏季風平浪靜時最佳</div>
+                <div class="tip"><i class="fas fa-camera"></i> 能見度高，水底wide鏡必帶</div>
+                <div class="tip"><i class="fas fa-info-circle"></i> 建議參加本地潛水團</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=800&q=80" alt="甕缸群島" loading="lazy"></div>
+              <div class="info">
+                <h3>🏔️ 甕缸群島（Ung Kong Group）</h3>
+                <p>香港地質公園嘅一部分，群島由火成岩構成，海底地形多變，有海蝕洞、深海溝，生態極之豐富。甕缸群島係香港少數可以見到大型珊瑚礁群落嘅地方，仲有機會見到海龜！呢度水流較急，只適合有豐富浮潛經驗嘅人。一定要跟專業潛水團，唔好單獨去。</p>
+                <div class="tags"><span>大型珊瑚礁</span><span>海蝕洞</span><span>高手限定</span></div>
+                <div class="tip"><i class="fas fa-ship"></i> 西貢包船，經專業潛水團安排</div>
+                <div class="tip"><i class="fas fa-clock"></i> 7-9月水溫最暖，風浪最細</div>
+                <div class="tip"><i class="fas fa-camera"></i> 海蝕洞加海底珊瑚，影出嚟似National Geographic</div>
+                <div class="tip"><i class="fas fa-exclamation-triangle"></i> 水流急，必須有經驗人士帶領</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="gear">
+          <h2 data-i18n="section-gear">🎒 裝備貼士 · 浮潛要帶乜</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">玩得開心又安全，裝備好重要！以下係小編嘅浮潛必備清單。</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);">
+              <h3 style="font-size:1.1rem;margin-bottom:8px;color:var(--brand);"><i class="fas fa-mask"></i> 面鏡 + 呼吸管</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">最緊要係Fit面形，唔好貪靚。試戴時輕輕吸氣，面鏡唔跌落就啱位。防霧噴霧必帶，冇嘅話口水都得（真係得）。</p>
+              <div class="tip" style="margin-top:8px;"><i class="fas fa-store"></i> Decathlon有齊，入門套裝~$200起</div>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);">
+              <h3 style="font-size:1.1rem;margin-bottom:8px;color:var(--brand);"><i class="fas fa-shoe-prints"></i> 浮潛鞋 / 水上活動鞋</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">一對浮潛鞋好重要！保護對腳唔被蠔殼、石頭界親。揀厚底嘅、包到腳踭嘅款。千祈唔好著人字拖去石灘！</p>
+              <div class="tip" style="margin-top:8px;"><i class="fas fa-store"></i> Decathlon浮潛鞋~$99起</div>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);">
+              <h3 style="font-size:1.1rem;margin-bottom:8px;color:var(--brand);"><i class="fas fa-tshirt"></i> 防曬衣 / 潛水衣</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">防曬又保暖，仲可以防止被水母𧐢。夏天著防曬衣（1mm就夠），春尾秋初可以著2-3mm潛水衣。買連身款，保護背脊唔曬傷。</p>
+              <div class="tip" style="margin-top:8px;"><i class="fas fa-sun"></i> 防曬衣仲環保過防曬液，唔傷珊瑚</div>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);">
+              <h3 style="font-size:1.1rem;margin-bottom:8px;color:var(--brand);"><i class="fas fa-life-ring"></i> 浮水衣 / 浮力裝備</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">唔識游水一樣可以浮潛！浮水衣令你自然浮喺水面，慳力又安全。有啲浮潛專用背心仲可以調節浮力，推薦。</p>
+              <div class="tip" style="margin-top:8px;"><i class="fas fa-child"></i> 小朋友一定要著浮水衣！</div>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);">
+              <h3 style="font-size:1.1rem;margin-bottom:8px;color:var(--brand);"><i class="fas fa-tint"></i> 物理防曬（Reef Safe）</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">普通防曬液入面嘅Oxybenzone會殺死珊瑚！改用物理防曬（Zinc Oxide / Titanium Dioxide base），或者直接著防曬衣。保護自己嘅同時都保護海洋。</p>
+              <div class="tip" style="margin-top:8px;"><i class="fas fa-store"></i> 天然防曬：Thinkbaby、Sun Bum等</div>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);">
+              <h3 style="font-size:1.1rem;margin-bottom:8px;color:var(--brand);"><i class="fas fa-water"></i> 其他必帶</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">防水袋（保護手機/銀包）、大樽水（補充水份）、小食補充體力、膠袋（裝濕衫）、急救包（以備不時之需）。</p>
+              <div class="tip" style="margin-top:8px;"><i class="fas fa-lightbulb"></i> 帶個藍牙喇叭，游水聽歌好爽</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="safety" style="margin-top:48px;">
+          <h2 data-i18n="section-safety">⚠️ 安全須知 · 玩得開心更玩得安全</h2>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:16px;">
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);border-left:4px solid #ef4444;">
+              <h3 style="font-size:1.05rem;margin-bottom:6px;color:#ef4444;">🌊 潮汐與水流</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">出發前必查天文台潮汐表！漲退潮嘅水流可以好急，尤其係橋咀洲連島沙洲一帶。水漲時唔好急於橫越沙洲，寧願等水退或者繞路。</p>
+              <div class="tip" style="margin-top:8px;"><i class="fas fa-globe"></i> 天文台潮汐網頁：data.weather.gov.hk/tide</div>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);border-left:4px solid #f59e0b;">
+              <h3 style="font-size:1.05rem;margin-bottom:6px;color:#f59e0b;">🪸 保護海洋</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">珊瑚好脆弱，生長速度極慢！唔好踩、唔好踢、唔好掂。絕對唔好帶走任何海洋生物做紀念品。自己嘅垃圾自己帶走，仲可以順手執吓海灘垃圾。</p>
+              <div class="tip" style="margin-top:8px;"><i class="fas fa-heart"></i> 香港嘅珊瑚需要我哋一齊守護</div>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);border-left:4px solid #3b82f6;">
+              <h3 style="font-size:1.05rem;margin-bottom:6px;color:#3b82f6;">👥 結伴同行</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">千祈唔好一個人去浮潛！就算你游水好叻，都要有朋友一齊。互相照應，有咩事有人幫手。新手最好參加浮潛團或者約有經驗嘅朋友。</p>
+              <div class="tip" style="margin-top:8px;"><i class="fas fa-users"></i> Klook同綠色假期都有浮潛團</div>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);border-left:4px solid #8b5cf6;">
+              <h3 style="font-size:1.05rem;margin-bottom:6px;color:#8b5cf6;">☀️ 防曬中暑</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">浮潛玩得興起好易唔覺曬過龍。每30分鐘上水唞一陣，補充水份。戴闊邊帽同太陽眼鏡。注意頭頂同背部最易曬傷。</p>
+              <div class="tip" style="margin-top:8px;"><i class="fas fa-clock"></i> 10:00前、15:00後最適宜浮潛</div>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);border-left:4px solid #ec4899;">
+              <h3 style="font-size:1.05rem;margin-bottom:6px;color:#ec4899;">📱 出行準備</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">出發前通知親友去邊同幾時返。偏遠地區（東平洲等）訊號微弱，最好有衛星電話或者租用WiFi蛋。Check定天氣預報，雷暴警告就唔好去。</p>
+              <div class="tip" style="margin-top:8px;"><i class="fas fa-download"></i> 離線地圖準備好，以防冇訊號</div>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);border-left:4px solid #06b6d4;">
+              <h3 style="font-size:1.05rem;margin-bottom:6px;color:#06b6d4;">🎯 新手建議</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">第一次浮潛推薦去橋咀洲或者海下灣。可以先參加浮潛團，有教練指導點用面鏡、呼吸管同浮水衣。學識基本技巧之後先慢慢挑戰其他景點。</p>
+              <div class="tip" style="margin-top:8px;"><i class="fas fa-school"></i> Decathlon同綠色假期都有新手浮潛班</div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <div class="sun"><i class="fas fa-sun"></i></div>
+          SunnyHK
+        </div>
+        <p data-i18n="footer-tagline">一個年輕、陽光、真實嘅香港旅行靈感平台。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-explore">探索</h4>
+        <a href="explore.html" data-i18n="footer-guide">人群指南</a>
+        <a href="snorkeling.html" data-i18n="footer-snorkeling">🤿 浮潛攻略</a>
+        <a href="explore.html#quiet" data-i18n="footer-quiet">發呆地圖</a>
+        <a href="tips.html" data-i18n="footer-tips">實用資訊</a>
+        <a href="stories.html" data-i18n="footer-stories">香港故事</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-about">關於</h4>
+        <a href="about.html" data-i18n="footer-about-us">關於 SunnyHK</a>
+        <a href="about.html#faq" data-i18n="footer-faq">常見問題</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-follow">關注我哋</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="小紅書"><i class="fab fa-xiaohongshu"></i></a>
+          <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 SunnyHK · Discover Your Own Hong Kong</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/lang.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

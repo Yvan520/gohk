@@ -145,4 +145,14 @@ const placesData = [
   { id: 'chai-hing-siu-mei', name: '再興燒臘', emoji: '🍗', category: 'food', lat: 22.2770, lng: 114.1730, section: 'food', link: 'food.html#roast' },
   { id: 'chan-kan-kee', name: '陳勤記 · 米芝蓮必比登潮州菜', emoji: '🥢', category: 'food', lat: 22.3070, lng: 114.1700, section: 'food', link: 'food.html#chiu-chow' },
   { id: 'man-kei-noodles', name: '文記車仔麵 · 深水埗車仔麵之王', emoji: '🍜', category: 'food', lat: 22.3310, lng: 114.1620, section: 'food', link: 'food.html#cart-noodles' },
+
+  // ====== Snorkeling spots ======
+  { id: 'hoi-ha-wan', name: '海下灣海岸公園', emoji: '🪸', category: 'snorkeling', lat: 22.4730, lng: 114.3320, section: 'snorkeling', link: 'snorkeling.html#beginner' },
+  { id: 'half-moon-bay', name: '廈門灣 (半月灣)', emoji: '🏖️', category: 'snorkeling', lat: 22.3680, lng: 114.2910, section: 'snorkeling', link: 'snorkeling.html#beginner' },
+  { id: 'triple-bay', name: '三星灣', emoji: '⭐', category: 'snorkeling', lat: 22.3620, lng: 114.2730, section: 'snorkeling', link: 'snorkeling.html#beginner' },
+  { id: 'yim-tin-tsai', name: '鹽田梓', emoji: '🧂', category: 'snorkeling', lat: 22.3700, lng: 114.3050, section: 'snorkeling', link: 'snorkeling.html#intermediate' },
+  { id: 'tung-sam-kei', name: '東心淇', emoji: '🏝️', category: 'snorkeling', lat: 22.4470, lng: 114.3510, section: 'snorkeling', link: 'snorkeling.html#intermediate' },
+  { id: 'ninepin', name: '果洲群島', emoji: '🪨', category: 'snorkeling', lat: 22.2170, lng: 114.3470, section: 'snorkeling', link: 'snorkeling.html#expert' },
+  { id: 'ng-mei-chau', name: '娥眉洲', emoji: '🌊', category: 'snorkeling', lat: 22.5100, lng: 114.2900, section: 'snorkeling', link: 'snorkeling.html#expert' },
+  { id: 'ung-kong', name: '甕缸群島', emoji: '🏔️', category: 'snorkeling', lat: 22.2400, lng: 114.3600, section: 'snorkeling', link: 'snorkeling.html#expert' },
 ];
