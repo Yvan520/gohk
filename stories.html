@@ -6,6 +6,15 @@
 <meta name="description" content="香港故事留言板 — 分享你喺香港嘅嗰一日。最美夜景、最難忘嘅一餐、最治癒嘅一刻。真實旅人分享，超過20個香港故事。">
 <meta name="keywords" content="香港故事,香港旅遊分享,香港回憶,香港旅行故事,香港留言板">
 <meta name="robots" content="index, follow">
+<link rel="manifest" href="/manifest.json">
+<!-- Google tag (gtag.js) GA4 placeholder -> 改做你嘅 Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX');
+</script>
 <link rel="canonical" href="https://gohk.gamewayz.com/stories.html">
 <meta name="baidu-site-verification" content="codeva-6fKr2IJVp7" />
 <meta property="og:title" content="香港故事 | SunnyHK 留言板">
@@ -60,6 +69,7 @@
       <div class="nav-dropdown active">
         <a data-i18n="nav-more">更多</a>
         <div class="nav-dropdown-menu">
+          <a href="hiking.html" data-i18n="nav-hiking">🥾 行山路線</a>
           <a href="snorkeling.html" data-i18n="nav-snorkeling">🤿 浮潛攻略</a>
           <a href="swimming.html" data-i18n="nav-swimming">🏊 游水指南</a>
           <a href="electronics.html" data-i18n="nav-electronics">💻 電子產品</a>
@@ -89,6 +99,7 @@
   <a href="food.html" data-i18n="nav-mobile-food">美食地圖</a>
   <a href="tips.html" data-i18n="nav-mobile-tips">實用資訊</a>
       <a href="map.html" data-i18n="nav-mobile-map">🗺️ 地圖</a>
+    <a href="hiking.html" data-i18n="nav-mobile-hiking">🥾 行山路線</a>
   <a href="snorkeling.html" data-i18n="nav-mobile-snorkeling">🤿 浮潛攻略</a>
   <a href="swimming.html" data-i18n="nav-mobile-swimming">🏊 游水指南</a>
   <a href="electronics.html" data-i18n="nav-mobile-electronics">💻 電子產品</a>
@@ -176,6 +187,7 @@
       <div class="footer-col">
         <h4 data-i18n="footer-explore">探索</h4>
         <a href="explore.html" data-i18n="footer-guide">人群指南</a>
+        <a href="hiking.html" data-i18n="footer-hiking">🥾 行山路線</a>
         <a href="snorkeling.html" data-i18n="footer-snorkeling">🤿 浮潛攻略</a>
         <a href="explore.html#quiet" data-i18n="footer-quiet">發呆地圖</a>
         <a href="tips.html" data-i18n="footer-tips">實用資訊</a>
@@ -590,5 +602,7 @@ if (!localStorage.getItem('sunnyhk-stories-seeded')) {
   localStorage.setItem('sunnyhk-stories-seeded', 'true');
 }
 </script>
+
+<script>navigator.serviceWorker?.register("/sw.js");</script>
 </body>
 </html>

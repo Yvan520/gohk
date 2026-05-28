@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SunnyHK 香港行山攻略 — 由新手到高手，龍脊、獅子山、麥理浩徑、大東山⋯⋯路線難度、交通、裝備、安全貼士一文睇晒。">
+<meta name="keywords" content="香港行山,香港行山路線,龍脊,獅子山,麥理浩徑,大東山,大帽山,釣魚翁,千島湖,南丫島,香港行山新手">
+<meta name="robots" content="index, follow">
+<link rel="manifest" href="/manifest.json">
+<!-- Google tag (gtag.js) GA4 placeholder -> 改做你嘅 Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX');
+</script>
+<link rel="canonical" href="https://gohk.gamewayz.com/hiking.html">
+<meta name="baidu-site-verification" content="codeva-6fKr2IJVp7" />
+<meta property="og:title" content="🥾 香港行山攻略 | SunnyHK">
+<meta property="og:description" content="由新手到高手，龍脊、獅子山、麥理浩徑、大東山⋯⋯路線難度、交通、裝備、安全貼士一文睇晒。">
+<meta property="og:url" content="https://gohk.gamewayz.com/hiking.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:locale" content="zh_HK">
+<title>🥾 香港行山攻略 | SunnyHK</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="modal-overlay" id="placeModalOverlay"></div>
+<div class="place-modal" id="placeModal">
+  <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+  <button class="modal-prev" id="modalPrev"><i class="fas fa-chevron-left"></i></button>
+  <button class="modal-next" id="modalNext"><i class="fas fa-chevron-right"></i></button>
+  <div class="modal-content" id="modalContent"></div>
+</div>
+
+<nav class="navbar">
+  <div class="inner">
+    <a href="index.html" class="logo">
+      <div class="sun"><i class="fas fa-sun"></i></div>
+      Sunny<span>HK</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav-home">首頁</a>
+      <a href="explore.html" data-i18n="nav-explore">探索指南</a>
+      <a href="food.html" data-i18n="nav-food">美食地圖</a>
+      <a href="tips.html" data-i18n="nav-tips">實用資訊</a>
+      <a href="map.html" data-i18n="nav-map">🗺️ 地圖</a>
+      <div class="nav-dropdown active">
+        <a data-i18n="nav-more">更多</a>
+        <div class="nav-dropdown-menu">
+          <a href="hiking.html" data-i18n="nav-hiking">🥾 行山路線</a>
+          <a href="hiking.html" data-i18n="nav-hiking">🥾 行山路線</a>
+          <a href="snorkeling.html" data-i18n="nav-snorkeling">🤿 浮潛攻略</a>
+          <a href="swimming.html" data-i18n="nav-swimming">🏊 游水指南</a>
+          <a href="electronics.html" data-i18n="nav-electronics">💻 電子產品</a>
+          <a href="stories.html" data-i18n="nav-stories">香港故事</a>
+          <a href="about.html" data-i18n="nav-about">關於</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-actions">
+      <div class="lang-group">
+        <button class="lang-btn" data-lang="trad">繁</button>
+        <button class="lang-btn" data-lang="simp">简</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切換主題"><i class="fas fa-moon"></i></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="選單">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="index.html" data-i18n="nav-mobile-home">首頁</a>
+  <a href="explore.html" data-i18n="nav-mobile-explore">探索指南</a>
+  <a href="food.html" data-i18n="nav-mobile-food">美食地圖</a>
+  <a href="tips.html" data-i18n="nav-mobile-tips">實用資訊</a>
+  <a href="map.html" data-i18n="nav-mobile-map">🗺️ 地圖</a>
+  <a href="hiking.html" data-i18n="nav-mobile-hiking">🥾 行山路線</a>
+    <a href="hiking.html" data-i18n="nav-mobile-hiking">🥾 行山路線</a>
+  <a href="snorkeling.html" data-i18n="nav-mobile-snorkeling">🤿 浮潛攻略</a>
+  <a href="swimming.html" data-i18n="nav-mobile-swimming">🏊 游水指南</a>
+  <a href="electronics.html" data-i18n="nav-mobile-electronics">💻 電子產品</a>
+  <a href="stories.html" data-i18n="nav-mobile-stories">香港故事</a>
+  <a href="about.html" data-i18n="nav-mobile-about">關於</a>
+  <div class="lang-group">
+    <button class="lang-btn" data-lang="trad">繁</button>
+    <button class="lang-btn" data-lang="simp">简</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="theme-toggle" id="themeToggleMobile" aria-label="切換主題" style="margin-top:8px;align-self:flex-start;"><i class="fas fa-moon"></i></button>
+</div>
+
+<div class="page-header">
+  <div class="inner">
+    <h1 data-i18n="hiking-title">🥾 香港行山攻略</h1>
+    <p data-i18n="hiking-subtitle">由新手到高手，龍脊日出、獅子山景、大東山芒草——香港唔只有石屎森林，山海之美一樣震撼。</p>
+  </div>
+</div>
+
+<div class="explore-section">
+  <div class="inner">
+    <div class="flex-layout">
+      <nav class="sidebar-nav">
+        <h4 data-i18n="hiking-sidebar-title">路線分類</h4>
+        <a href="#beginner" data-i18n="hiking-sidebar-beginner">🌱 新手啱行</a>
+        <a href="#intermediate" data-i18n="hiking-sidebar-intermediate">⛰️ 中級挑戰</a>
+        <a href="#expert" data-i18n="hiking-sidebar-expert">🏔️ 高手路線</a>
+        <a href="#family" data-i18n="hiking-sidebar-family">👨‍👩‍👧 親子樂行</a>
+        <a href="#gear" data-i18n="hiking-sidebar-gear">🎒 裝備貼士</a>
+        <a href="#safety" data-i18n="hiking-sidebar-safety">⚠️ 安全須知</a>
+      </nav>
+
+      <div class="content-area">
+
+        <section id="beginner">
+          <h2 data-i18n="hiking-section-beginner">🌱 新手啱行 · 輕輕鬆鬆上山去</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">以下路線石屎路多、指示清晰、體力要求低，好適合第一次行山嘅你。最緊要係風景絕不輸蝕！</p>
+          <div class="place-list">
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" alt="龍脊" loading="lazy"></div>
+              <div class="info">
+                <h3>🐉 龍脊（Dragon's Back）</h3>
+                <p>香港最出名行山路線，CNN旅遊榜上有名！龍脊係港島徑第八段，由土地灣上嚟約一個鐘就到打爛埕頂山，之後沿龍脊行到大浪灣落山。山脊兩邊都係海景——一邊石澳、一邊大潭灣，真係好似行喺龍背脊上一樣。秋冬天去最正，唔曬又涼爽。</p>
+                <div class="tags"><span>國際知名</span><span>全海景</span><span>新手OK</span></div>
+                <div class="tip"><i class="fas fa-bus"></i> 筲箕灣搭9號巴士到土地灣落車</div>
+                <div class="tip"><i class="fas fa-clock"></i> 全程約4-5公里，2-3小時行完</div>
+                <div class="tip"><i class="fas fa-camera"></i> 打爛埕頂山觀景台係最佳影相位</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 落到大浪灣有茶座，西多士+凍檸茶好正</div>
+                <div class="tip"><i class="fas fa-sun"></i> 夏天暴曬，記得帶多啲水</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1582568072276-3a4c366c6b3b?auto=format&fit=crop&w=800&q=80" alt="太平山頂" loading="lazy"></div>
+              <div class="info">
+                <h3>🏔️ 太平山頂環山步道（Victoria Peak Circle）</h3>
+                <p>最輕鬆又最經典！盧吉道環山步道係一條平坦到BB車都推到嘅石板路，圍繞太平山山腰一圈約3.5公里。沿途可以180度俯瞰維港、九龍半島同埋離島景致，黃昏時分嚟行，可以一次過睇日落同百萬夜景。外國遊客必到，香港人自己都成日去。</p>
+                <div class="tags"><span>零難度</span><span>百萬夜景</span><span>親子</span></div>
+                <div class="tip"><i class="fas fa-tram"></i> 纜車上/巴士落，或者直接15號巴士上</div>
+                <div class="tip"><i class="fas fa-clock"></i> 全程約3.5公里，1小時行完</div>
+                <div class="tip"><i class="fas fa-camera"></i> 盧吉道觀景台影維港角度最好</div>
+                <div class="tip"><i class="fas fa-info-circle"></i> 全程石屎平路，穿普通波鞋都得</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80" alt="菠蘿山" loading="lazy"></div>
+              <div class="info">
+                <h3>🏜️ 菠蘿山（Por Lo Shan）良田坳峽谷</h3>
+                <p>香港都有大峽谷！菠蘿山嘅良田坳係屯門附近嘅丹霞地貌，橙紅色嘅岩石同峽谷景觀令人嘩一聲。由良景邨出發上山約45分鐘就到，峽谷位係最佳影相位。沿山脊可以行到下白泥睇日落——被譽為香港最美日落之一。注意地面多沙石，建議穿防滑鞋。</p>
+                <div class="tags"><span>大峽谷</span><span>丹霞地貌</span><span>日落</span></div>
+                <div class="tip"><i class="fas fa-bus"></i> 良景邨巴士總站行約15分鐘上山</div>
+                <div class="tip"><i class="fas fa-clock"></i> 來回約5公里，2-3小時</div>
+                <div class="tip"><i class="fas fa-camera"></i> 峽谷位下午光影最靚，順便行落去下白泥睇日落</div>
+                <div class="tip"><i class="fas fa-exclamation-triangle"></i> 沙石路面易跣，著好行山鞋</div>
+                <div class="tip"><i class="fas fa-info-circle"></i> 解放軍靶場區域，留意紅旗唔好進入</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=800&q=80" alt="南丫島" loading="lazy"></div>
+              <div class="info">
+                <h3>🏝️ 南丫島家樂徑（Lamma Island Family Walk）</h3>
+                <p>由榕樹灣行到索罟灣，全程大約5公里，石屎路為主，輕鬆到可以穿拖鞋行！途中經過洪聖爺灣（可以游水）、觀景亭（望到發電廠三支煙囪同成個南丫島）、仲有幾間豆腐花店俾你唞唞。最正係兩邊都係海，海風吹住行唔會太熱。行完喺索罟灣食海鮮收尾。</p>
+                <div class="tags"><span>小島風情</span><span>海鮮</span><span>零難度</span></div>
+                <div class="tip"><i class="fas fa-ship"></i> 中環4號碼頭搭船去榕樹灣（約25分鐘）</div>
+                <div class="tip"><i class="fas fa-clock"></i> 全程約5公里，1.5-2小時</div>
+                <div class="tip"><i class="fas fa-camera"></i> 觀景亭影到三支煙囪＋海景，必打卡</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 索罟灣天虹海鮮酒家好出名</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="intermediate">
+          <h2 data-i18n="hiking-section-intermediate">⛰️ 中級挑戰 · 攞返啲汗水先</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">需要啲體力同耐力，但上到山頂嘅成就感同景觀，絕對值回票價。</p>
+          <div class="place-list">
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80" alt="獅子山" loading="lazy"></div>
+              <div class="info">
+                <h3>🦁 獅子山（Lion Rock）</h3>
+                <p>香港精神嘅象徵！由樂富橫頭磡起步，上到獅子山頂可以俯瞰九龍全景同維港，氣勢磅礴。斜度唔細，最後一段要手腳並用爬石級，但唔算危險。山頂位嘅「獅頭」同「獅身」之間嘅裂縫係經典打卡位。獅子山代表嘅係香港人打不死嘅精神，上到山頂特別有感觸。</p>
+                <div class="tags"><span>香港精神</span><span>九龍全景</span><span>斜度大</span></div>
+                <div class="tip"><i class="fas fa-bus"></i> 樂富站沿天馬苑方向上約45分鐘到入口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 來回約4小時，4公里</div>
+                <div class="tip"><i class="fas fa-camera"></i> 山頂裂縫位影相要小心，唔好走出去</div>
+                <div class="tip"><i class="fas fa-exclamation-triangle"></i> 最後一段較斜，手腳並用會穩陣啲</div>
+                <div class="tip"><i class="fas fa-sun"></i> 朝早去最好，下晝西曬好熱</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1516893676001-52fdf7605797?auto=format&fit=crop&w=800&q=80" alt="大帽山" loading="lazy"></div>
+              <div class="info">
+                <h3>⛰️ 大帽山（Tai Mo Shan）</h3>
+                <p>香港最高峰——957米！大帽山道嘅馬路可以直接開車上到閘口，之後再行石屎路上山頂。天氣好時可以俯瞰新界、九龍、港島，甚至遠眺深圳。冬天有機會結霜（香港人會瘋狂湧上嚟睇），春天有大量蝴蝶，秋天芒草隨風搖曳。山頂嘅天文台雷達站係地標。</p>
+                <div class="tags"><span>香港最高</span><span>360度全景</span><span>可開車</span></div>
+                <div class="tip"><i class="fas fa-bus"></i> 荃灣搭51號巴士到大帽山郊野公園站</div>
+                <div class="tip"><i class="fas fa-clock"></i> 閘口到山頂約2-3小時來回，8公里</div>
+                <div class="tip"><i class="fas fa-camera"></i> 秋冬芒草季（11-12月）最靚</div>
+                <div class="tip"><i class="fas fa-tshirt"></i> 山頂風大溫度低，帶件風褸</div>
+                <div class="tip"><i class="fas fa-sun"></i> 睇日出要凌晨4點上山，帶頭燈</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="釣魚翁" loading="lazy"></div>
+              <div class="info">
+                <h3>🎣 釣魚翁（High Junk Peak）</h3>
+                <p>香港三尖之一，海拔344米，山形尖削似釣魚翁而得名。由五塊田出發，上到釣魚翁頂望到成個清水灣半島同布袋澳，景色開揚。呢條路比較多碎石同浮沙，落山時要特別小心。可以簡化啲只上釣魚翁頂（約1小時），或者挑戰全程由五塊田行到大廟。</p>
+                <div class="tags"><span>香港三尖</span><span>清水灣</span><span>碎石路</span></div>
+                <div class="tip"><i class="fas fa-bus"></i> 鑽石山搭91號巴士到五塊田落車</div>
+                <div class="tip"><i class="fas fa-clock"></i> 短途來回約2小時，全程約6小時</div>
+                <div class="tip"><i class="fas fa-camera"></i> 山頂望到布袋澳同牛尾海，天氣好時超靚</div>
+                <div class="tip"><i class="fas fa-exclamation-triangle"></i> 落山浮沙多，著防滑行山鞋</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1504664911901-2518a8bfc164?auto=format&fit=crop&w=800&q=80" alt="千島湖" loading="lazy"></div>
+              <div class="info">
+                <h3>🏞️ 千島湖清景台（Thousand Islands Lake）</h3>
+                <p>大欖涌水塘被稱為「香港千島湖」，由多個小島組成，高空睇好似千島湖一樣。清景台係最佳觀景點，由大棠出發沿山路行約1.5小時就到。紅葉季節（12月-1月）大棠山路兩邊嘅楓香樹轉紅，令條路線更加精彩。交通方便，適合半日遊。</p>
+                <div class="tags"><span>千島湖</span><span>紅葉</span><span>半日遊</span></div>
+                <div class="tip"><i class="fas fa-bus"></i> 朗屏站轉K66巴士到大棠山路落車</div>
+                <div class="tip"><i class="fas fa-clock"></i> 來回約7公里，3-4小時</div>
+                <div class="tip"><i class="fas fa-camera"></i> 11-1月紅葉＋千島湖景色雙重享受</div>
+                <div class="tip"><i class="fas fa-info-circle"></i> 清景台有長櫈可以坐低慢慢欣賞</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="expert">
+          <h2 data-i18n="hiking-section-expert">🏔️ 高手路線 · 真正嘅山系人</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">路程長、上落大、需要經驗同充足裝備。回報係極級美景同滿滿嘅成就感。</p>
+          <div class="place-list">
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?auto=format&fit=crop&w=800&q=80" alt="麥理浩徑" loading="lazy"></div>
+              <div class="info">
+                <h3>🥇 麥理浩徑第二段（MacLehose Trail Section 2）</h3>
+                <p>麥理浩徑全長100公里分10段，其中第二段係最精華路段——由東壩出發經浪茄、西灣山、鹹田灣、赤徑到北潭凹。沿途經多個水清沙幼嘅沙灘（浪茄、西灣、鹹田），上山落海不斷重複，體能要求高但景色係全港頂級。西灣同鹹田有士多補給，可以食碗餐蛋麵唞吓。</p>
+                <div class="tags"><span>麥徑精華</span><span>沙灘路線</span><span>體能考驗</span></div>
+                <div class="tip"><i class="fas fa-bus"></i> 鑽石山搭96R巴士到北潭涌，轉的士到東壩</div>
+                <div class="tip"><i class="fas fa-clock"></i> 約14公里，5-6小時</div>
+                <div class="tip"><i class="fas fa-camera"></i> 浪茄沙灘、西灣山頂、鹹田木橋係三大打卡點</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 西灣同鹹田有士多補給，帶現金</div>
+                <div class="tip"><i class="fas fa-exclamation-triangle"></i> 夏天極熱，建議秋冬或者春天行</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1580137189272-c9379f8864fd?auto=format&fit=crop&w=800&q=80" alt="大東山" loading="lazy"></div>
+              <div class="info">
+                <h3>🌾 大東山（Sunset Peak）</h3>
+                <p>香港第三高峰（869米），秋冬芒草季嘅王者！每年11月到12月，成山頭嘅金黃色芒草隨風搖曳，靚到唔似香港。爛頭營嘅石屋群係標誌性地標，配合芒草景，影出嚟嘅相好似去咗蘇格蘭高地。上大東山主要有兩條路——由伯公坳上（較短但斜）或者由南山上（較長但緩）。</p>
+                <div class="tags"><span>芒草天堂</span><span>爛頭營</span><span>秋冬限定</span></div>
+                <div class="tip"><i class="fas fa-bus"></i> 東涌站搭11/23號巴士到伯公坳</div>
+                <div class="tip"><i class="fas fa-clock"></i> 伯公坳上落約4小時，7公里</div>
+                <div class="tip"><i class="fas fa-camera"></i> 11月中至12月芒草最盛，黃昏光影最靚</div>
+                <div class="tip"><i class="fas fa-tshirt"></i> 山頂風好大，一定要帶風褸</div>
+                <div class="tip"><i class="fas fa-exclamation-triangle"></i> 爛頭營石屋係私人建築，唔好入內</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?auto=format&fit=crop&w=800&q=80" alt="東澳古道" loading="lazy"></div>
+              <div class="info">
+                <h3>🏘️ 東澳古道（Tung O Ancient Trail）</h3>
+                <p>由東涌行到大澳嘅古時通道，全程約15公里，沿途經過多條古老村落（沙螺灣、䃟石灣、深石村等），充滿人文氣息。最正係沿途一路都係海景，可以望到港珠澳大橋同機場跑道，飛機喺頭頂低飛而過超震撼！大澳嘅棚屋同蝦醬一定唔可以錯過。</p>
+                <div class="tags"><span>人文古道</span><span>全景</span><span>飛機景</span></div>
+                <div class="tip"><i class="fas fa-bus"></i> 東涌站出發，沿逸東邨方向行到入口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 全程約15公里，4-5小時</div>
+                <div class="tip"><i class="fas fa-camera"></i> 飛機低飛＋港珠澳大橋景全球獨有</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 大澳沙翁、蝦醬、魷魚乾必買</div>
+                <div class="tip"><i class="fas fa-info-circle"></i> 沿途村落有士多補給，唔洗帶太多水</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?auto=format&fit=crop&w=800&q=80" alt="鶴咀" loading="lazy"></div>
+              <div class="info">
+                <h3>🐋 鶴咀（Cape D'Aguilar）</h3>
+                <p>香港最東南端嘅海岸保護區，擁有世界級嘅地質景觀！雷音洞（海蝕洞）、蟹洞（海蝕拱）、1867年嘅燈塔（香港最古老燈塔）同巨型鯨魚骨標本。由筲箕灣出發行石屎路約1小時到，沿路睇住無敵海景行，唔會覺得攰。鶴咀係海岸保護區，記得保持安靜同清潔。</p>
+                <div class="tags"><span>海岸保護區</span><span>地質景觀</span><span>古老燈塔</span></div>
+                <div class="tip"><i class="fas fa-bus"></i> 筲箕灣搭9號巴士到鶴咀站落車</div>
+                <div class="tip"><i class="fas fa-clock"></i> 來回約8公里，3-4小時</div>
+                <div class="tip"><i class="fas fa-camera"></i> 雷音洞光影效果超震撼，蟹洞影到天圓地方</div>
+                <div class="tip"><i class="fas fa-exclamation-triangle"></i> 保護區範圍，唔好騷擾海洋生物</div>
+                <div class="tip"><i class="fas fa-info-circle"></i> 大風時唔好靠近岸邊，浪可以好大</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="family">
+          <h2 data-i18n="hiking-section-family">👨‍👩‍👧 親子樂行 · 帶埋小朋友一齊去</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">以下路線平坦短途，有教育意義又有樂趣，啱曬一家大細放電。</p>
+          <div class="place-list">
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?auto=format&fit=crop&w=800&q=80" alt="城門水塘" loading="lazy"></div>
+              <div class="info">
+                <h3>🌳 城門水塘（Shing Mun Reservoir）</h3>
+                <p>新界最受歡迎嘅親子行山路線！環塘徑全程平坦，樹蔭多，沿途可以見到猴子、牛牛同鸚鵡，細路仔會超級開心。最出名係白千層林道——兩排白色嘅樹幹企喺水邊，影出嚟好似仙境。水塘大壩嘅風景都一流。環塘一圈約8公里，但可以只行半段。</p>
+                <div class="tags"><span>動物多</span><span>白千層</span><span>平坦</span></div>
+                <div class="tip"><i class="fas fa-bus"></i> 荃灣兆和街搭82號小巴到城門水塘總站</div>
+                <div class="tip"><i class="fas fa-clock"></i> 半段約2小時，環塘約4小時</div>
+                <div class="tip"><i class="fas fa-camera"></i> 白千層林道喺近主壩位置，唔好錯過</div>
+                <div class="tip"><i class="fas fa-apple-alt"></i> 見到猴子唔好餵食，亦唔好拎膠袋出嚟</div>
+              </div>
+            </div>
+
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1566020110-968e308ec215?auto=format&fit=crop&w=800&q=80" alt="元荃古道" loading="lazy"></div>
+              <div class="info">
+                <h3>🌿 元荃古道（Yuen Tsuen Ancient Trail）部分路段</h3>
+                <p>昔日元朗到荃灣嘅主要通道，而家變成超受歡迎嘅行山路線。由荃灣港安醫院起步到石龍拱一段（約2小時）最適合新手同親子。石龍拱嘅大草地可以俾小朋友跑嚟跑去，俯瞰荃灣同青衣景色一流。秋天時段仲有芒草睇，唔洗去大東山人擠人。</p>
+                <div class="tags"><span>歷史古道</span><span>大草地</span><span>俯瞰市景</span></div>
+                <div class="tip"><i class="fas fa-bus"></i> 荃灣站行到港安醫院約15分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 荃灣到石龍拱來回約4公里，2小時</div>
+                <div class="tip"><i class="fas fa-camera"></i> 石龍拱望到成個荃灣青衣，黃昏靚到痴線</div>
+                <div class="tip"><i class="fas fa-info-circle"></i> 路段多樹蔭，夏天都算涼爽</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="gear">
+          <h2 data-i18n="hiking-section-gear">🎒 裝備貼士 · 行山要帶乜</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">行山唔係郊遊，裝備好先可以玩得開心又安全。</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;">
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);">
+              <h3 style="font-size:1.1rem;margin-bottom:8px;color:var(--brand);"><i class="fas fa-shoe-prints"></i> 行山鞋</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">新手最易忽略嘅裝備！普通波鞋行石屎路OK，但一有沙石路段就好易跣。一對有抓地力嘅行山鞋（中筒更好）可以保護腳踝，防止拗柴。Decathlon入門行山鞋~$199起。</p>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);">
+              <h3 style="font-size:1.1rem;margin-bottom:8px;color:var(--brand);"><i class="fas fa-tint"></i> 水（1.5L起跳）</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">香港夏天行山每小時最少飲500ml水。中長途路線建議帶1.5-2L，唔好慳。帶水袋（Camelbak）比水樽方便，可以邊行邊飲。必要時帶埋電解質粉沖劑補充鹽份。</p>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);">
+              <h3 style="font-size:1.1rem;margin-bottom:8px;color:var(--brand);"><i class="fas fa-tshirt"></i> 洋蔥式穿搭</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">底層（快乾T-shirt）＋中層（薄風褸）＋外層（防水外套）。香港天氣變幻莫測，山頂同山腳可以差十度。唔好著棉質衫，濕咗會好凍。帽同太陽眼鏡都係必需品。</p>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);">
+              <h3 style="font-size:1.1rem;margin-bottom:8px;color:var(--brand);"><i class="fas fa-mobile-alt"></i> 離線地圖 + 充電寶</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">山上訊號時有時無，出發前下載Google Map離線地圖或者用Hiking Trail HK App。充電寶必帶，行山用手機影相好快冇電。最穩陣係帶張實體地圖（漁護署有得拎）。</p>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);">
+              <h3 style="font-size:1.1rem;margin-bottom:8px;color:var(--brand);"><i class="fas fa-medkit"></i> 急救包</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">最基本要有：膠布、消毒紙巾、止痛藥、蚊怕水、防曬、哨子（求救用）。如果有行開山嘅朋友會帶彈性繃帶同三角巾，以防關節受傷。</p>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);">
+              <h3 style="font-size:1.1rem;margin-bottom:8px;color:var(--brand);"><i class="fas fa-lightbulb"></i> 其他實用小物</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">頭燈（睇日落必帶）、行山杖（減輕膝頭負擔）、垃圾袋（自己垃圾自己帶走）、少量乾糧（能量棒、果仁）、現金（山頂士多冇八達通）。</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="safety" style="margin-top:48px;">
+          <h2 data-i18n="hiking-section-safety">⚠️ 安全須知 · 安全上山，開心落山</h2>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:16px;">
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);border-left:4px solid #ef4444;">
+              <h3 style="font-size:1.05rem;margin-bottom:6px;color:#ef4444;">🌤️ 天氣先行</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">出發前必睇天文台天氣預報同雷暴警告。夏天避免中午行山，冬天留意山頂低溫。雷暴黃雨就改期，唔好死衝。</p>
+              <div class="tip" style="margin-top:8px;"><i class="fas fa-globe"></i> 天文台網站：weather.gov.hk</div>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);border-left:4px solid #f59e0b;">
+              <h3 style="font-size:1.05rem;margin-bottom:6px;color:#f59e0b;">⏰ 時間規劃</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">香港夏天日落時間約6-7點，冬天5-6點。行山時間要比自己預算多30%做緩衝。預留充足時間落山，唔好摸黑行山。</p>
+              <div class="tip" style="margin-top:8px;"><i class="fas fa-lightbulb"></i> 帶埋頭燈以備不時之需</div>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);border-left:4px solid #3b82f6;">
+              <h3 style="font-size:1.05rem;margin-bottom:6px;color:#3b82f6;">👥 結伴同行</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">唔好一個人行山！有伴互相照應，萬一受傷都有得支援。出發前通知朋友或屋企人你去邊條路線同幾時返。</p>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);border-left:4px solid #8b5cf6;">
+              <h3 style="font-size:1.05rem;margin-bottom:6px;color:#8b5cf6;">🗑️ 無痕山林</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">自己垃圾自己帶走！山上冇垃圾桶，唔好將垃圾留喺山上。生果皮都唔好掉，分解需時幾個月。保護環境，先可以繼續享受大自然。</p>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);border-left:4px solid #ec4899;">
+              <h3 style="font-size:1.05rem;margin-bottom:6px;color:#ec4899;">📱 求救方法</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">有訊號打999或112。漁護署熱線：2230 5000。下載「遠足留蹤」App或者使用「GPS定位」功能，方便救援人員定位。</p>
+              <div class="tip" style="margin-top:8px;"><i class="fas fa-download"></i> 出發前先安裝「遠足留蹤」App</div>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px 24px;box-shadow:var(--card-shadow);border-left:4px solid #06b6d4;">
+              <h3 style="font-size:1.05rem;margin-bottom:6px;color:#06b6d4;">📋 路線級別</h3>
+              <p style="color:var(--text-light);font-size:0.9rem;">漁護署將行山路線分為1-3星：⭐=易行（石屎/完善路徑）、⭐⭐=中等（部分自然路面）、⭐⭐⭐=困難（浮沙碎石/需體能）。新手由⭐開始，逐步挑戰。</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <div class="sun"><i class="fas fa-sun"></i></div>
+          SunnyHK
+        </div>
+        <p data-i18n="footer-tagline">一個年輕、陽光、真實嘅香港旅行靈感平台。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-explore">探索</h4>
+        <a href="explore.html" data-i18n="footer-guide">人群指南</a>
+        <a href="hiking.html" data-i18n="footer-hiking">🥾 行山路線</a>
+        <a href="hiking.html" data-i18n="footer-hiking">🥾 行山路線</a>
+        <a href="snorkeling.html" data-i18n="footer-snorkeling">🤿 浮潛攻略</a>
+        <a href="tips.html" data-i18n="footer-tips">實用資訊</a>
+        <a href="stories.html" data-i18n="footer-stories">香港故事</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-about">關於</h4>
+        <a href="about.html" data-i18n="footer-about-us">關於 SunnyHK</a>
+        <a href="about.html#faq" data-i18n="footer-faq">常見問題</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-follow">關注我哋</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="小紅書"><i class="fab fa-xiaohongshu"></i></a>
+          <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 SunnyHK · Discover Your Own Hong Kong</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/lang.js"></script>
+<script src="js/main.js"></script>
+
+<script>navigator.serviceWorker?.register("/sw.js");</script>
+</body>
+</html>
