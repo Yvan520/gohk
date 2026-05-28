@@ -1,6 +1,6 @@
-const CACHE = 'sunnyhk-v1';
-const STATIC_CACHE = 'sunnyhk-static-v1';
-const IMAGE_CACHE = 'sunnyhk-img-v1';
+const CACHE = 'sunnyhk-v2';
+const STATIC_CACHE = 'sunnyhk-static-v2';
+const IMAGE_CACHE = 'sunnyhk-img-v2';
 
 const PRECACHE_URLS = [
   '/',
