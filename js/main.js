@@ -293,9 +293,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const p = placeCards[i];
     if (info && p && p.mapName && !info.querySelector('.hiking-card-btn')) {
       const link = document.createElement('a');
-      link.className = 'card-map-link';
+      link.className = 'hiking-card-btn';
       link.href = `map.html?q=${encodeURIComponent(p.mapName)}`;
       link.target = '_blank';
+      link.style.cssText = 'border:1.5px solid var(--brand);color:var(--brand);background:transparent;';
       link.innerHTML = '<i class="fas fa-map-marked-alt"></i> 睇地圖位置';
       info.appendChild(link);
     }
