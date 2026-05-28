@@ -114,7 +114,11 @@ img { max-width: 100%; height: auto; display: block; }
   box-shadow: 0 4px 12px rgba(245,158,11,0.3);
 }
 .navbar .logo span { color: var(--brand); }
-.navbar .nav-links { display: flex; align-items: center; gap: 32px; }
+.navbar .nav-links { display: flex; align-items: center; gap: 20px; flex-shrink: 0; }
+@media (max-width: 1100px) { .navbar .nav-links { gap: 14px; }
+  .navbar .nav-links a { font-size: 0.82rem; } }
+@media (max-width: 960px) { .navbar .nav-links { gap: 10px; }
+  .navbar .nav-links a { font-size: 0.78rem; } }
 .navbar .nav-links a {
   font-size: 0.9rem; font-weight: 500;
   color: var(--text-light);
@@ -140,6 +144,10 @@ img { max-width: 100%; height: auto; display: block; }
   min-width: 140px; opacity: 0; visibility: hidden;
   transition: all 0.2s ease; pointer-events: none;
   margin-top: 12px; border: 1px solid var(--border);
+}
+.nav-dropdown-menu::before {
+  content: ''; position: absolute; top: -16px; left: -16px; right: -16px;
+  height: 16px; background: transparent;
 }
 .nav-dropdown-menu a {
   display: block; padding: 8px 20px; white-space: nowrap;
