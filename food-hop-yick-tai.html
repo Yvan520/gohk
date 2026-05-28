@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SunnyHK 合益泰小食完整攻略 — 地址、交通、必食推介、價格、小編貼士一文睇晒。">
+<meta name="keywords" content="香港美食,合益泰小食,香港食肆,香港,旅遊">
+<meta name="robots" content="index, follow">
+<link rel="manifest" href="/manifest.json">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9RMXXLKYK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-L9RMXXLKYK');
+</script>
+<link rel="canonical" href="https://gohk.gamewayz.com/food-hop-yick-tai.html">
+<meta name="baidu-site-verification" content="codeva-6fKr2IJVp7" />
+<meta property="og:title" content="合益泰小食 | SunnyHK">
+<meta property="og:description" content="合益泰小食完整攻略 — 地址、交通、必食推介、小編貼士">
+<meta property="og:url" content="https://gohk.gamewayz.com/food-hop-yick-tai.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1504664911901-2518a8bfc164">
+<meta property="og:locale" content="zh_HK">
+<title>合益泰小食 | SunnyHK 香港美食地圖</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="modal-overlay" id="placeModalOverlay"></div>
+<div class="place-modal" id="placeModal">
+  <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+  <button class="modal-prev" id="modalPrev"><i class="fas fa-chevron-left"></i></button>
+  <button class="modal-next" id="modalNext"><i class="fas fa-chevron-right"></i></button>
+  <div class="modal-content" id="modalContent"></div>
+</div>
+<nav class="navbar">
+  <div class="inner">
+    <a href="index.html" class="logo">
+      <div class="sun"><i class="fas fa-sun"></i></div>
+      Sunny<span>HK</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav-home">首頁</a>
+      <div class="nav-dropdown">
+        <a href="explore.html" data-i18n="nav-explore">探索指南</a>
+        <div class="nav-dropdown-menu">
+          <a href="explore.html" data-i18n="nav-explore-all">🌟 人群指南</a>
+          <a href="hiking.html" data-i18n="nav-hiking">🥾 行山路線</a>
+          <a href="snorkeling.html" data-i18n="nav-snorkeling">🤿 浮潛攻略</a>
+          <a href="swimming.html" data-i18n="nav-swimming">🏊 游水指南</a>
+        </div>
+      </div>
+      <a href="food.html" class="active" data-i18n="nav-food">美食地圖</a>
+      <div class="nav-dropdown">
+        <a href="tips.html" data-i18n="nav-tips">實用資訊</a>
+        <div class="nav-dropdown-menu">
+          <a href="tips.html" data-i18n="nav-tips-all">💡 實用貼士</a>
+          <a href="electronics.html" data-i18n="nav-electronics">💻 電子產品</a>
+        </div>
+      </div>
+      <a href="map.html" data-i18n="nav-map">🗺️ 地圖</a>
+      <a href="stories.html" data-i18n="nav-stories">香港故事</a>
+      <a href="about.html" data-i18n="nav-about">關於</a>
+    </div>
+    <div class="nav-actions">
+      <div class="lang-group">
+        <button class="lang-btn" data-lang="trad">繁</button>
+        <button class="lang-btn" data-lang="simp">简</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切換主題"><i class="fas fa-moon"></i></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="選單">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="index.html" data-i18n="nav-mobile-home">首頁</a>
+  <a href="explore.html" data-i18n="nav-mobile-explore">🌟 人群指南</a>
+  <a href="hiking.html" data-i18n="nav-mobile-hiking">🥾 行山路線</a>
+  <a href="snorkeling.html" data-i18n="nav-mobile-snorkeling">🤿 浮潛攻略</a>
+  <a href="swimming.html" data-i18n="nav-mobile-swimming">🏊 游水指南</a>
+  <a href="food.html" data-i18n="nav-mobile-food">美食地圖</a>
+  <a href="tips.html" data-i18n="nav-mobile-tips">💡 實用貼士</a>
+  <a href="electronics.html" data-i18n="nav-mobile-electronics">💻 電子產品</a>
+  <a href="map.html" data-i18n="nav-mobile-map">🗺️ 地圖</a>
+  <a href="stories.html" data-i18n="nav-mobile-stories">香港故事</a>
+  <a href="about.html" data-i18n="nav-mobile-about">關於</a>
+  <div class="lang-group">
+    <button class="lang-btn" data-lang="trad">繁</button>
+    <button class="lang-btn" data-lang="simp">简</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="theme-toggle" id="themeToggleMobile" aria-label="切換主題" style="margin-top:8px;align-self:flex-start;"><i class="fas fa-moon"></i></button>
+</div>
+
+<div class="page-header">
+  <div class="inner">
+    <p class="breadcrumb"><a href="food.html">🍜 美食地圖</a> / 合益泰小食</p>
+    <h1>🥟 合益泰小食 · 深水埗腸粉王</h1>
+  </div>
+</div>
+
+<div class="explore-section">
+  <div class="inner" style="max-width:800px;margin:0 auto;padding:0 24px 60px;">
+
+    <div class="place-card" style="box-shadow:none;background:var(--card-bg);border-radius:var(--radius-md);overflow:hidden;">
+      <div class="thumb" style="height:320px;"><img src="https://images.unsplash.com/photo-1504664911901-2518a8bfc164?auto=format&fit=crop&w=1000&q=80" alt="合益泰腸粉" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div class="info" style="padding:24px;">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+          <span style="background:var(--brand)15;color:var(--brand);padding:4px 12px;border-radius:100px;font-size:0.8rem;font-weight:600;">腸粉</span>
+          <span style="background:var(--brand)15;color:var(--brand);padding:4px 12px;border-radius:100px;font-size:0.8rem;font-weight:600;">深水埗</span>
+          <span style="background:var(--brand)15;color:var(--brand);padding:4px 12px;border-radius:100px;font-size:0.8rem;font-weight:600;">平價</span>
+        </div>
+        <p style="font-size:1rem;line-height:1.8;color:var(--text-light);margin-bottom:24px;">每日新鮮即拉腸粉，滑溜到「咇」一聲入口。甜醬麻醬辣醬芝麻自己溝，$7四條便宜到喊。深水埗街坊由細食到大，米芝蓮都有推薦。</p>
+
+        <div class="tip" style="font-size:0.9rem;"><i class="fas fa-train"></i> 深水埗站A2出口，桂林街</div>
+        <div class="tip" style="font-size:0.9rem;"><i class="fas fa-clock"></i> 朝早7:00-下午8:00</div>
+        <div class="tip" style="font-size:0.9rem;"><i class="fas fa-yen-sign"></i> 人均$10-30</div>
+        <div class="tip" style="font-size:0.9rem;"><i class="fas fa-utensils"></i> 🥟 腸粉 $7/4條 - 滑溜即拉，醬料自己溝</div>
+        <div class="tip" style="font-size:0.9rem;"><i class="fas fa-star"></i> 🥟 腸粉 $10/6條 - 大份量更抵食</div>
+        <div class="tip" style="font-size:0.9rem;"><i class="fas fa-lightbulb"></i> 外賣仲平過堂食</div>
+
+        <div style="display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;">
+          <a href="food.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-arrow-left"></i> 返回美食地圖</a>
+          <a href="map.html?q=合益泰小食" target="_blank" class="hiking-card-btn" style="border:1.5px solid var(--brand);color:var(--brand);background:transparent;"><i class="fas fa-map-marked-alt"></i> 睇地圖位置</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;">
+      <h2 style="font-size:1.3rem;margin-bottom:16px;">🍽️ 食店介紹</h2>
+      <p style="color:var(--text-light);line-height:1.8;">合益泰小食係深水埗最出名嘅腸粉專門店，每日新鮮即拉腸粉，滑溜程度可以話係全港數一數二。店舖位於桂林街，門口長期有人排隊。腸粉$7有四條，$10有六條，平到唔似係香港嘅物價。</p>
+      <p style="color:var(--text-light);line-height:1.8;margin-top:12px;">合益泰嘅腸粉滑溜到「咇」一聲就滑入喉嚨，秘訣在於米漿嘅濃稠度同蒸嘅時間控制得剛剛好。食法係夾起腸粉，自己落甜醬、麻醬、辣醬同芝麻，每個人可以溝出自己鍾意嘅味道。米芝蓮都有推薦過呢間街頭小食，係深水埗掃街必經站。</p>
+    </div>
+
+    <div style="margin-top:32px;">
+      <h2 style="font-size:1.3rem;margin-bottom:16px;">📍 交通點樣去</h2>
+      <div class="tip"><i class="fas fa-train"></i> 深水埗站A2出口，桂林街_FULL</div>
+    </div>
+
+    <div style="margin-top:32px;">
+      <h2 style="font-size:1.3rem;margin-bottom:16px;">📋 必食推介</h2>
+      <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px;box-shadow:var(--card-shadow);margin-bottom:12px;">
+        <h3 style="font-size:1rem;margin-bottom:6px;color:var(--brand);">🥟 腸粉 $7/4條</h3>
+        <p style="color:var(--text-light);font-size:0.9rem;">🥟 腸粉 $7/4條_DESC</p>
+      </div>
+      <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px;box-shadow:var(--card-shadow);margin-bottom:12px;">
+        <h3 style="font-size:1rem;margin-bottom:6px;color:var(--brand);">🥟 腸粉 $10/6條</h3>
+        <p style="color:var(--text-light);font-size:0.9rem;">🥟 腸粉 $10/6條_DESC</p>
+      </div>
+      <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px;box-shadow:var(--card-shadow);">
+        <h3 style="font-size:1rem;margin-bottom:6px;color:var(--brand);">☕ 豆漿</h3>
+        <p style="color:var(--text-light);font-size:0.9rem;">☕ 豆漿_DESC</p>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;">
+      <h2 style="font-size:1.3rem;margin-bottom:16px;">💡 小編貼士</h2>
+      <div class="tip " style="font-size:0.9rem;"><i class="fas fa-check-circle"></i> 朝早10點前去少人啲，下晝開始排長龍</div>
+      <div class="tip " style="font-size:0.9rem;"><i class="fas fa-check-circle"></i> 落醬秘訣：甜醬打底、麻醬提升、辣醬點睛、芝麻裝飾</div>
+      <div class="tip " style="font-size:0.9rem;"><i class="fas fa-check-circle"></i> 可以外賣拎走，企喺街邊食先有風味</div>
+      <div class="tip " style="font-size:0.9rem;"><i class="fas fa-check-circle"></i> 深水埗掃街路線：合益泰 → 公和荳品 → 文記車仔麵</div>
+      <div class="tip " style="font-size:0.9rem;"><i class="fas fa-check-circle"></i> 只收現金</div>
+    </div>
+
+    <div style="margin-top:32px;text-align:center;">
+      <a href="food.html" class="hiking-card-btn" style="background:var(--brand);color:white;padding:12px 32px;"><i class="fas fa-arrow-left"></i> 返回美食地圖</a>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text"><div class="sun"><i class="fas fa-sun"></i></div>SunnyHK</div>
+        <p data-i18n="footer-tagline">一個年輕、陽光、真實嘅香港旅行靈感平台。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-explore">探索</h4>
+        <a href="explore.html" data-i18n="footer-guide">人群指南</a>
+        <a href="hiking.html" data-i18n="footer-hiking">🥾 行山路線</a>
+        <a href="snorkeling.html" data-i18n="footer-snorkeling">🤿 浮潛攻略</a>
+        <a href="explore.html#quiet" data-i18n="footer-quiet">發呆地圖</a>
+        <a href="tips.html" data-i18n="footer-tips">實用資訊</a>
+        <a href="stories.html" data-i18n="footer-stories">香港故事</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-about">關於</h4>
+        <a href="about.html" data-i18n="footer-about-us">關於 SunnyHK</a>
+        <a href="about.html#faq" data-i18n="footer-faq">常見問題</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-follow">關注我哋</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="小紅書"><i class="fab fa-xiaohongshu"></i></a>
+          <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 SunnyHK · Discover Your Own Hong Kong</span></div>
+  </div>
+</footer>
+<script src="js/lang.js"></script>
+<script src="js/main.js"></script>
+<script>navigator.serviceWorker?.register("/sw.js");</script>
+</body>
+</html>

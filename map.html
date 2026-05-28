@@ -330,6 +330,8 @@ gtag('config', 'G-L9RMXXLKYK');
       <label class="map-filter-item"><input type="checkbox" value="food" checked><span class="dot" style="background:#f97316"></span> 美食 Food</label>
       <label class="map-filter-item"><input type="checkbox" value="snorkeling" checked><span class="dot" style="background:#06b6d4"></span> 浮潛 Snorkeling</label>
       <label class="map-filter-item"><input type="checkbox" value="hiking" checked><span class="dot" style="background:#10b981"></span> 行山 Hiking</label>
+      <label class="map-filter-item"><input type="checkbox" value="swimming" checked><span class="dot" style="background:#0284c7"></span> 游水 Swimming</label>
+      <label class="map-filter-item"><input type="checkbox" value="electronics" checked><span class="dot" style="background:#dc2626"></span> 電子產品 Electronics</label>
     </div>
 
     <div id="hkMap"></div>
@@ -403,7 +405,9 @@ const categoryColors = {
   photo: '#ec4899',
   food: '#f97316',
    snorkeling: '#06b6d4',
-   hiking: '#10b981'
+   hiking: '#10b981',
+   swimming: '#0284c7',
+   electronics: '#dc2626'
 };
 
 const categoryLabels = {
@@ -415,7 +419,9 @@ const categoryLabels = {
   photo: '攝影',
   food: '美食',
    snorkeling: '浮潛',
-   hiking: '行山'
+   hiking: '行山',
+   swimming: '游水',
+   electronics: '電子產品'
 };
 
 const categoryEmojis = {
@@ -427,7 +433,9 @@ const categoryEmojis = {
   photo: '📸',
   food: '🍜',
    snorkeling: '🤿',
-   hiking: '🥾'
+   hiking: '🥾',
+   swimming: '🏊',
+   electronics: '💻'
 };
 
 const map = L.map('hkMap', {

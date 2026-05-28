@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SunnyHK Bakehouse完整攻略 — 地址、交通、必食推介、價格、小編貼士一文睇晒。">
+<meta name="keywords" content="香港美食,Bakehouse,香港食肆,香港,旅遊">
+<meta name="robots" content="index, follow">
+<link rel="manifest" href="/manifest.json">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9RMXXLKYK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-L9RMXXLKYK');
+</script>
+<link rel="canonical" href="https://gohk.gamewayz.com/food-bakehouse.html">
+<meta name="baidu-site-verification" content="codeva-6fKr2IJVp7" />
+<meta property="og:title" content="Bakehouse | SunnyHK">
+<meta property="og:description" content="Bakehouse完整攻略 — 地址、交通、必食推介、小編貼士">
+<meta property="og:url" content="https://gohk.gamewayz.com/food-bakehouse.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1653923302062-9fb10f6f3d8f">
+<meta property="og:locale" content="zh_HK">
+<title>Bakehouse | SunnyHK 香港美食地圖</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="modal-overlay" id="placeModalOverlay"></div>
+<div class="place-modal" id="placeModal">
+  <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+  <button class="modal-prev" id="modalPrev"><i class="fas fa-chevron-left"></i></button>
+  <button class="modal-next" id="modalNext"><i class="fas fa-chevron-right"></i></button>
+  <div class="modal-content" id="modalContent"></div>
+</div>
+<nav class="navbar">
+  <div class="inner">
+    <a href="index.html" class="logo">
+      <div class="sun"><i class="fas fa-sun"></i></div>
+      Sunny<span>HK</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav-home">首頁</a>
+      <div class="nav-dropdown">
+        <a href="explore.html" data-i18n="nav-explore">探索指南</a>
+        <div class="nav-dropdown-menu">
+          <a href="explore.html" data-i18n="nav-explore-all">🌟 人群指南</a>
+          <a href="hiking.html" data-i18n="nav-hiking">🥾 行山路線</a>
+          <a href="snorkeling.html" data-i18n="nav-snorkeling">🤿 浮潛攻略</a>
+          <a href="swimming.html" data-i18n="nav-swimming">🏊 游水指南</a>
+        </div>
+      </div>
+      <a href="food.html" class="active" data-i18n="nav-food">美食地圖</a>
+      <div class="nav-dropdown">
+        <a href="tips.html" data-i18n="nav-tips">實用資訊</a>
+        <div class="nav-dropdown-menu">
+          <a href="tips.html" data-i18n="nav-tips-all">💡 實用貼士</a>
+          <a href="electronics.html" data-i18n="nav-electronics">💻 電子產品</a>
+        </div>
+      </div>
+      <a href="map.html" data-i18n="nav-map">🗺️ 地圖</a>
+      <a href="stories.html" data-i18n="nav-stories">香港故事</a>
+      <a href="about.html" data-i18n="nav-about">關於</a>
+    </div>
+    <div class="nav-actions">
+      <div class="lang-group">
+        <button class="lang-btn" data-lang="trad">繁</button>
+        <button class="lang-btn" data-lang="simp">简</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切換主題"><i class="fas fa-moon"></i></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="選單">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="index.html" data-i18n="nav-mobile-home">首頁</a>
+  <a href="explore.html" data-i18n="nav-mobile-explore">🌟 人群指南</a>
+  <a href="hiking.html" data-i18n="nav-mobile-hiking">🥾 行山路線</a>
+  <a href="snorkeling.html" data-i18n="nav-mobile-snorkeling">🤿 浮潛攻略</a>
+  <a href="swimming.html" data-i18n="nav-mobile-swimming">🏊 游水指南</a>
+  <a href="food.html" data-i18n="nav-mobile-food">美食地圖</a>
+  <a href="tips.html" data-i18n="nav-mobile-tips">💡 實用貼士</a>
+  <a href="electronics.html" data-i18n="nav-mobile-electronics">💻 電子產品</a>
+  <a href="map.html" data-i18n="nav-mobile-map">🗺️ 地圖</a>
+  <a href="stories.html" data-i18n="nav-mobile-stories">香港故事</a>
+  <a href="about.html" data-i18n="nav-mobile-about">關於</a>
+  <div class="lang-group">
+    <button class="lang-btn" data-lang="trad">繁</button>
+    <button class="lang-btn" data-lang="simp">简</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="theme-toggle" id="themeToggleMobile" aria-label="切換主題" style="margin-top:8px;align-self:flex-start;"><i class="fas fa-moon"></i></button>
+</div>
+
+<div class="page-header">
+  <div class="inner">
+    <p class="breadcrumb"><a href="food.html">🍜 美食地圖</a> / Bakehouse</p>
+    <h1>🥐 Bakehouse · 全港最好食酸種蛋撻</h1>
+  </div>
+</div>
+
+<div class="explore-section">
+  <div class="inner" style="max-width:800px;margin:0 auto;padding:0 24px 60px;">
+
+    <div class="place-card" style="box-shadow:none;background:var(--card-bg);border-radius:var(--radius-md);overflow:hidden;">
+      <div class="thumb" style="height:320px;"><img src="https://images.unsplash.com/photo-1653923302062-9fb10f6f3d8f?auto=format&fit=crop&w=1000&q=80" alt="Bakehouse蛋撻" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div class="info" style="padding:24px;">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
+          <span style="background:var(--brand)15;color:var(--brand);padding:4px 12px;border-radius:100px;font-size:0.8rem;font-weight:600;">蛋撻</span>
+          <span style="background:var(--brand)15;color:var(--brand);padding:4px 12px;border-radius:100px;font-size:0.8rem;font-weight:600;">排隊</span>
+          <span style="background:var(--brand)15;color:var(--brand);padding:4px 12px;border-radius:100px;font-size:0.8rem;font-weight:600;">酸種</span>
+        </div>
+        <p style="font-size:1rem;line-height:1.8;color:var(--text-light);margin-bottom:24px;">前四季酒店糕點總廚 Grégoire Michaud 主理，酸種蛋撻日日排長龍。撻皮酥脆，蛋漿微甜帶焦香，$12一個被譽為全港最好食蛋撻。</p>
+
+        <div class="tip" style="font-size:0.9rem;"><i class="fas fa-train"></i> 中環/灣仔/尖沙咀有分店</div>
+        <div class="tip" style="font-size:0.9rem;"><i class="fas fa-clock"></i> 朝早8:00-晚上6:00</div>
+        <div class="tip" style="font-size:0.9rem;"><i class="fas fa-yen-sign"></i> 蛋撻$12/個</div>
+        <div class="tip" style="font-size:0.9rem;"><i class="fas fa-utensils"></i> 🥐 酸種蛋撻 $12 - 招牌！撻皮酥脆蛋漿微甜</div>
+        <div class="tip" style="font-size:0.9rem;"><i class="fas fa-star"></i> 🥐 牛角包 - 酸種麵團製，層次分明</div>
+        <div class="tip" style="font-size:0.9rem;"><i class="fas fa-lightbulb"></i> 朝早8點出爐第一批最新鮮</div>
+
+        <div style="display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;">
+          <a href="food.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-arrow-left"></i> 返回美食地圖</a>
+          <a href="map.html?q=Bakehouse" target="_blank" class="hiking-card-btn" style="border:1.5px solid var(--brand);color:var(--brand);background:transparent;"><i class="fas fa-map-marked-alt"></i> 睇地圖位置</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;">
+      <h2 style="font-size:1.3rem;margin-bottom:16px;">🍽️ 食店介紹</h2>
+      <p style="color:var(--text-light);line-height:1.8;">Bakehouse由前四季酒店糕點總廚 Grégoire Michaud 主理，用酸種麵團製作嘅蛋撻迅速成為全城熱話。佢哋嘅酸種蛋撻撻皮超酥脆，用牛油同酸種麵團製成，層次分明。蛋漿微甜帶焦香，口感滑溜如燉蛋。$12一個，性價比超高。</p>
+      <p style="color:var(--text-light);line-height:1.8;margin-top:12px;">Bakehouse而家喺中環、灣仔、尖沙咀都有分店，每間都日日排長龍。除咗蛋撻，佢哋嘅牛角包、冬甩、酸種包同樣出色。用酸種麵團製作嘅包點質地更輕盈、更易消化。店內仲有精品咖啡供應，用本地烘焙嘅咖啡豆。朝早8點第一批蛋撻出爐最新鮮，建議早啲去排隊。</p>
+    </div>
+
+    <div style="margin-top:32px;">
+      <h2 style="font-size:1.3rem;margin-bottom:16px;">📍 交通點樣去</h2>
+      <div class="tip"><i class="fas fa-train"></i> 中環/灣仔/尖沙咀有分店_FULL</div>
+    </div>
+
+    <div style="margin-top:32px;">
+      <h2 style="font-size:1.3rem;margin-bottom:16px;">📋 必食推介</h2>
+      <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px;box-shadow:var(--card-shadow);margin-bottom:12px;">
+        <h3 style="font-size:1rem;margin-bottom:6px;color:var(--brand);">🥐 酸種蛋撻 $12</h3>
+        <p style="color:var(--text-light);font-size:0.9rem;">🥐 酸種蛋撻 $12_DESC</p>
+      </div>
+      <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px;box-shadow:var(--card-shadow);margin-bottom:12px;">
+        <h3 style="font-size:1rem;margin-bottom:6px;color:var(--brand);">🥐 牛角包</h3>
+        <p style="color:var(--text-light);font-size:0.9rem;">🥐 牛角包_DESC</p>
+      </div>
+      <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:20px;box-shadow:var(--card-shadow);">
+        <h3 style="font-size:1rem;margin-bottom:6px;color:var(--brand);">☕ 精品咖啡</h3>
+        <p style="color:var(--text-light);font-size:0.9rem;">☕ 精品咖啡_DESC</p>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;">
+      <h2 style="font-size:1.3rem;margin-bottom:16px;">💡 小編貼士</h2>
+      <div class="tip " style="font-size:0.9rem;"><i class="fas fa-check-circle"></i> 朝早8點出爐第一批，最新鮮最好食</div>
+      <div class="tip " style="font-size:0.9rem;"><i class="fas fa-check-circle"></i> 中環分店最少人排隊</div>
+      <div class="tip " style="font-size:0.9rem;"><i class="fas fa-check-circle"></i> 蛋撻每人限買12個</div>
+      <div class="tip " style="font-size:0.9rem;"><i class="fas fa-check-circle"></i> 可以打電話預訂，免排隊</div>
+      <div class="tip " style="font-size:0.9rem;"><i class="fas fa-check-circle"></i> 接受信用卡同電子支付</div>
+    </div>
+
+    <div style="margin-top:32px;text-align:center;">
+      <a href="food.html" class="hiking-card-btn" style="background:var(--brand);color:white;padding:12px 32px;"><i class="fas fa-arrow-left"></i> 返回美食地圖</a>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text"><div class="sun"><i class="fas fa-sun"></i></div>SunnyHK</div>
+        <p data-i18n="footer-tagline">一個年輕、陽光、真實嘅香港旅行靈感平台。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-explore">探索</h4>
+        <a href="explore.html" data-i18n="footer-guide">人群指南</a>
+        <a href="hiking.html" data-i18n="footer-hiking">🥾 行山路線</a>
+        <a href="snorkeling.html" data-i18n="footer-snorkeling">🤿 浮潛攻略</a>
+        <a href="explore.html#quiet" data-i18n="footer-quiet">發呆地圖</a>
+        <a href="tips.html" data-i18n="footer-tips">實用資訊</a>
+        <a href="stories.html" data-i18n="footer-stories">香港故事</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-about">關於</h4>
+        <a href="about.html" data-i18n="footer-about-us">關於 SunnyHK</a>
+        <a href="about.html#faq" data-i18n="footer-faq">常見問題</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-follow">關注我哋</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="小紅書"><i class="fab fa-xiaohongshu"></i></a>
+          <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 SunnyHK · Discover Your Own Hong Kong</span></div>
+  </div>
+</footer>
+<script src="js/lang.js"></script>
+<script src="js/main.js"></script>
+<script>navigator.serviceWorker?.register("/sw.js");</script>
+</body>
+</html>
