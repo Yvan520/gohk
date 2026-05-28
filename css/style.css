@@ -129,6 +129,31 @@ img { max-width: 100%; height: auto; display: block; }
 .navbar .nav-links a:hover { color: var(--text); }
 .navbar .nav-links a:hover::after { width: 100%; }
 .navbar .nav-links a.active { color: var(--brand); }
+.nav-dropdown.active > a { color: var(--brand); }
+.nav-dropdown { position: relative; }
+.nav-dropdown > a { cursor: default; }
+.nav-dropdown > a::after { content: ' ▾'; font-size: 0.7em; }
+.nav-dropdown-menu {
+  position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+  background: var(--card-bg); border-radius: var(--radius-sm);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12); padding: 8px 0;
+  min-width: 140px; opacity: 0; visibility: hidden;
+  transition: all 0.2s ease; pointer-events: none;
+  margin-top: 12px; border: 1px solid var(--border);
+}
+.nav-dropdown-menu a {
+  display: block; padding: 8px 20px; white-space: nowrap;
+  font-size: 0.88rem; color: var(--text-light);
+  transition: all var(--transition);
+}
+.nav-dropdown-menu a:hover { color: var(--text); background: rgba(0,0,0,0.04); }
+.dark .nav-dropdown-menu a:hover { background: rgba(255,255,255,0.06); }
+.nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; pointer-events: auto; margin-top: 8px; }
+.navbar .nav-dropdown-menu { background: var(--card-bg); backdrop-filter: blur(20px); }
+.navbar .nav-dropdown-menu a { color: var(--text-light); }
+.navbar .nav-dropdown-menu a:hover { color: var(--text); }
+.navbar.scrolled .nav-dropdown-menu { background: var(--card-bg); }
+.navbar-chevron { display: none; }
 .navbar .nav-actions { display: flex; align-items: center; gap: 16px; }
 .theme-toggle {
   width: 40px; height: 40px; border-radius: 50%;
