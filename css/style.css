@@ -131,7 +131,7 @@ img { max-width: 100%; height: auto; display: block; }
 .navbar .nav-links a.active { color: var(--brand); }
 .nav-dropdown.active > a { color: var(--brand); }
 .nav-dropdown { position: relative; }
-.nav-dropdown > a { cursor: default; }
+.nav-dropdown > a { cursor: pointer; }
 .nav-dropdown > a::after { content: ' ▾'; font-size: 0.7em; }
 .nav-dropdown-menu {
   position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
