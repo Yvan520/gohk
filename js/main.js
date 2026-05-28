@@ -274,6 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
     info?.querySelectorAll('.tip').forEach(tip => { tipsHtml += tip.outerHTML; });
     const rawTitle = titleEl?.textContent || '';
     const cleanName = rawTitle.replace(/[^\u4e00-\u9fff\w\s]/g, '').trim();
+    const trailLink = info?.querySelector('.hiking-card-btn[href*="hiking-"]')?.getAttribute('href') || '';
     placeCards.push({
       imgSrc: img?.src || '',
       imgAlt: img?.alt || '',
@@ -281,15 +282,16 @@ document.addEventListener('DOMContentLoaded', () => {
       desc,
       tags,
       tips: tipsHtml,
-      mapName: cleanName
+      mapName: cleanName,
+      pageLink: trailLink
     });
   });
 
-  // Add inline map link to each place card
+  // Add inline map link to each place card (skip if already has one)
   document.querySelectorAll('.place-card').forEach((card, i) => {
     const info = card.querySelector('.info');
     const p = placeCards[i];
-    if (info && p && p.mapName) {
+    if (info && p && p.mapName && !info.querySelector('.hiking-card-btn[href*="map.html"]')) {
       const link = document.createElement('a');
       link.className = 'card-map-link';
       link.href = `map.html?q=${encodeURIComponent(p.mapName)}`;
@@ -311,15 +313,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = placeCards[index];
     if (!card) return;
     currentIndex = index;
+    const guideLink = card.pageLink ? `<a href="${card.pageLink}" class="modal-map-link" style="background:var(--brand);color:white;margin-right:8px;"><i class="fas fa-book-open"></i> 完整攻略</a>` : '';
     modalContent.innerHTML = `
       <img src="${card.imgSrc}" alt="${card.imgAlt}" />
       <h3>${card.title}</h3>
       <div class="modal-tags">${card.tags}</div>
       <p class="modal-desc">${card.desc}</p>
       <div class="modal-tips">${card.tips}</div>
-      <a href="map.html?q=${encodeURIComponent(card.mapName)}" class="modal-map-link" target="_blank">
-        <i class="fas fa-map-marked-alt"></i> 睇地圖位置
-      </a>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">
+        ${guideLink}
+        <a href="map.html?q=${encodeURIComponent(card.mapName)}" class="modal-map-link" target="_blank">
+          <i class="fas fa-map-marked-alt"></i> 睇地圖位置
+        </a>
+      </div>
     `;
     modalOverlay.classList.add('open');
     modal.classList.add('open');

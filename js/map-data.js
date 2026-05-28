@@ -155,4 +155,20 @@ const placesData = [
   { id: 'ninepin', name: '果洲群島', emoji: '🪨', category: 'snorkeling', lat: 22.2170, lng: 114.3470, section: 'snorkeling', link: 'snorkeling.html#expert' },
   { id: 'ng-mei-chau', name: '娥眉洲', emoji: '🌊', category: 'snorkeling', lat: 22.5100, lng: 114.2900, section: 'snorkeling', link: 'snorkeling.html#expert' },
   { id: 'ung-kong', name: '甕缸群島', emoji: '🏔️', category: 'snorkeling', lat: 22.2400, lng: 114.3600, section: 'snorkeling', link: 'snorkeling.html#expert' },
+
+  // ====== Hiking trails ======
+  { id: 'hiking-dragons-back', name: '龍脊 (Dragon\'s Back)', emoji: '🐉', category: 'hiking', lat: 22.2300, lng: 114.2400, section: 'hiking', link: 'hiking-dragons-back.html' },
+  { id: 'hiking-peak-circle', name: '太平山頂環山步道', emoji: '🏔️', category: 'hiking', lat: 22.2760, lng: 114.1450, section: 'hiking', link: 'hiking-peak-circle.html' },
+  { id: 'hiking-por-lo-shan', name: '菠蘿山良田坳峽谷', emoji: '🏜️', category: 'hiking', lat: 22.4000, lng: 113.9700, section: 'hiking', link: 'hiking-por-lo-shan.html' },
+  { id: 'hiking-lamma', name: '南丫島家樂徑', emoji: '🏝️', category: 'hiking', lat: 22.2000, lng: 114.1000, section: 'hiking', link: 'hiking-lamma-island.html' },
+  { id: 'hiking-lion-rock', name: '獅子山', emoji: '🦁', category: 'hiking', lat: 22.3500, lng: 114.1900, section: 'hiking', link: 'hiking-lion-rock.html' },
+  { id: 'hiking-tai-mo-shan', name: '大帽山', emoji: '⛰️', category: 'hiking', lat: 22.4100, lng: 114.1200, section: 'hiking', link: 'hiking-tai-mo-shan.html' },
+  { id: 'hiking-high-junk', name: '釣魚翁', emoji: '🎣', category: 'hiking', lat: 22.3000, lng: 114.2900, section: 'hiking', link: 'hiking-high-junk-peak.html' },
+  { id: 'hiking-thousand-islands', name: '千島湖', emoji: '🏞️', category: 'hiking', lat: 22.4400, lng: 114.0100, section: 'hiking', link: 'hiking-thousand-islands.html' },
+  { id: 'hiking-maclehose-s2', name: '麥理浩徑第二段', emoji: '🥾', category: 'hiking', lat: 22.4000, lng: 114.3200, section: 'hiking', link: 'hiking-maclehose-s2.html' },
+  { id: 'hiking-sunset-peak', name: '大東山 (日落大草坪)', emoji: '🌅', category: 'hiking', lat: 22.2700, lng: 113.9600, section: 'hiking', link: 'hiking-sunset-peak.html' },
+  { id: 'hiking-tung-o', name: '東澳古道', emoji: '🏘️', category: 'hiking', lat: 22.2800, lng: 113.9300, section: 'hiking', link: 'hiking-tung-o-trail.html' },
+  { id: 'hiking-cape-daguilar', name: '鶴咀海岸保護區', emoji: '🦀', category: 'hiking', lat: 22.2100, lng: 114.2600, section: 'hiking', link: 'hiking-cape-daguilar.html' },
+  { id: 'hiking-shing-mun', name: '城門水塘', emoji: '🌳', category: 'hiking', lat: 22.3800, lng: 114.1600, section: 'hiking', link: 'hiking-shing-mun.html' },
+  { id: 'hiking-yuen-tsuen', name: '元荃古道', emoji: '🏯', category: 'hiking', lat: 22.3900, lng: 114.0800, section: 'hiking', link: 'hiking-yuen-tsuen.html' },
 ];

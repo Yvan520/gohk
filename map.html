@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="SunnyHK 香港互動地圖 — 親子、青年、上班族、銀髮、發呆地圖，超過85個目的地盡在其中。">
+<meta name="description" content="SunnyHK 香港互動地圖 — 親子、青年、上班族、銀髮、發呆、行山、浮潛、美食，超過130個目的地盡在其中。">
 <meta name="keywords" content="香港互動地圖,香港旅遊地圖,香港景點地圖,香港美食地圖,香港分齡指南">
 <meta name="robots" content="index, follow">
 <link rel="manifest" href="/manifest.json">
@@ -35,7 +35,7 @@ gtag('config', 'G-L9RMXXLKYK');
   "@context": "https://schema.org",
   "@type": "Map",
   "name": "香港互動地圖",
-  "description": "SunnyHK 香港旅遊互動地圖，涵蓋親子、青年、上班族、銀髮、發呆、攝影、美食七大分類超過85個目的地。",
+  "description": "SunnyHK 香港旅遊互動地圖，涵蓋親子、青年、上班族、銀髮、發呆、攝影、美食、行山、浮潛十大分類超過130個目的地。",
   "url": "https://gohk.gamewayz.com/map.html",
   "provider": {
     "@type": "Organization",
@@ -329,6 +329,7 @@ gtag('config', 'G-L9RMXXLKYK');
       <label class="map-filter-item"><input type="checkbox" value="photo" checked><span class="dot" style="background:#ec4899"></span> 攝影 Photo</label>
       <label class="map-filter-item"><input type="checkbox" value="food" checked><span class="dot" style="background:#f97316"></span> 美食 Food</label>
       <label class="map-filter-item"><input type="checkbox" value="snorkeling" checked><span class="dot" style="background:#06b6d4"></span> 浮潛 Snorkeling</label>
+      <label class="map-filter-item"><input type="checkbox" value="hiking" checked><span class="dot" style="background:#10b981"></span> 行山 Hiking</label>
     </div>
 
     <div id="hkMap"></div>
@@ -401,7 +402,8 @@ const categoryColors = {
   quiet: '#8b5cf6',
   photo: '#ec4899',
   food: '#f97316',
-  snorkeling: '#06b6d4'
+   snorkeling: '#06b6d4',
+   hiking: '#10b981'
 };
 
 const categoryLabels = {
@@ -412,7 +414,8 @@ const categoryLabels = {
   quiet: '發呆',
   photo: '攝影',
   food: '美食',
-  snorkeling: '浮潛'
+   snorkeling: '浮潛',
+   hiking: '行山'
 };
 
 const categoryEmojis = {
@@ -423,7 +426,8 @@ const categoryEmojis = {
   quiet: '🌊',
   photo: '📸',
   food: '🍜',
-  snorkeling: '🤿'
+   snorkeling: '🤿',
+   hiking: '🥾'
 };
 
 const map = L.map('hkMap', {
