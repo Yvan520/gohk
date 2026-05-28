@@ -162,7 +162,8 @@ img { max-width: 100%; height: auto; display: block; }
 .navbar .nav-dropdown-menu a:hover { color: var(--text); }
 .navbar.scrolled .nav-dropdown-menu { background: var(--card-bg); }
 .navbar-chevron { display: none; }
-.navbar .nav-actions { display: flex; align-items: center; gap: 16px; }
+.navbar .nav-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+@media (max-width: 960px) { .navbar .nav-actions .theme-toggle { display: none; } }
 .theme-toggle {
   width: 40px; height: 40px; border-radius: 50%;
   border: 1px solid var(--border);
