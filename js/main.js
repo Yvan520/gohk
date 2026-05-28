@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
     info?.querySelectorAll('.tip').forEach(tip => { tipsHtml += tip.outerHTML; });
     const rawTitle = titleEl?.textContent || '';
     const cleanName = rawTitle.replace(/[^\u4e00-\u9fff\w\s]/g, '').trim();
-    const trailLink = info?.querySelector('.hiking-card-btn[href*="hiking-"]')?.getAttribute('href') || '';
+    const trailLink = info?.querySelector('.hiking-card-btn[href*="hiking-"],.hiking-card-btn[href*="food-"],.hiking-card-btn[href*="snorkeling-"],.hiking-card-btn[href*="swimming-"],.hiking-card-btn[href*="electronics-"]')?.getAttribute('href') || '';
     placeCards.push({
       imgSrc: img?.src || '',
       imgAlt: img?.alt || '',
