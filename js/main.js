@@ -271,7 +271,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const desc = info?.querySelector('p')?.innerHTML || '';
     const tags = info?.querySelector('.tags')?.innerHTML || '';
     let tipsHtml = '';
-    info?.querySelectorAll('.tip').forEach(tip => { tipsHtml += tip.outerHTML; });
+    info?.querySelectorAll('.tip').forEach(tip => {
+      const clone = tip.cloneNode(true);
+      const btnWrap = clone.querySelector('div[style*="display:flex"]');
+      if (btnWrap) btnWrap.remove();
+      tipsHtml += clone.outerHTML;
+    });
     const rawTitle = titleEl?.textContent || '';
     const cleanName = rawTitle.replace(/[^\u4e00-\u9fff\w\s]/g, '').trim();
     const trailLink = info?.querySelector('.hiking-card-btn[href*="hiking-"],.hiking-card-btn[href*="food-"],.hiking-card-btn[href*="snorkeling-"],.hiking-card-btn[href*="swimming-"],.hiking-card-btn[href*="electronics-"]')?.getAttribute('href') || '';
