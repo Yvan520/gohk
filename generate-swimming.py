@@ -599,13 +599,21 @@ def update_swimming_html():
 
         # Find the last tip div before closing </div> of .info
         # Pattern: find the h3 containing search_text, then from there find the closing </div> of .info
-        pattern = re.escape(search_text) + r'.*?</div>\s*</div>'
+        pattern = re.escape(search_text) + r'.*?(</div>)\s*</div>'
         match = re.search(pattern, html, re.DOTALL)
 
         if match:
             original = match.group()
-            # Insert button_html before the final </div>
-            modified = original.rstrip() + '\n' + button_html + '\n              </div>'
+            # Insert button_html before the final </div> (which closes .info)
+            # The regex captures everything up to the last </div> of .info
+            # We need to insert BEFORE that final </div>
+            # Find the position of the last </div> in the match
+            last_close = original.rstrip().rfind('</div>')
+            if last_close != -1:
+                before = original[:last_close]
+                modified = before + '\n' + button_html + '\n              </div>'
+            else:
+                modified = original.rstrip() + '\n' + button_html + '\n              </div>'
             html = html.replace(original, modified, 1)
         else:
             print(f"WARNING: Could not find card for {search_text}")
