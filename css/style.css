@@ -919,11 +919,149 @@ img { max-width: 100%; height: auto; display: block; }
   .age-grid { grid-template-columns: 1fr; }
   .feature-grid { grid-template-columns: 1fr; }
   .page-header { padding: 120px 20px 40px; }
+  .trail-hero { min-height: 40vh; }
+  .trail-hero .inner h1 { font-size: 1.8rem; }
+  .trail-content { padding: 24px 16px 40px; }
+  .step-card { padding: 18px; }
 }
 
 @media (max-width: 480px) {
   .stories-grid { columns: 1; }
   .hero h1 { font-size: 2rem; }
+  .trail-hero { min-height: 35vh; }
+  .trail-hero .inner h1 { font-size: 1.5rem; }
+  .trail-intro { font-size: 0.95rem; padding: 16px; }
+}
+
+/* ====== Detail / Trail Pages ====== */
+.trail-hero {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  margin-top: 0;
+  padding-top: 0;
+  background: #1e293b;
+}
+.trail-hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.trail-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 30%, rgba(0,0,0,0.85));
+  z-index: 1;
+}
+.trail-hero .inner {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px 48px;
+  color: white;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.trail-hero .inner h1 {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: white;
+  font-family: var(--font-serif);
+  margin-bottom: 8px;
+}
+.trail-hero .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.trail-hero .meta span {
+  padding: 4px 14px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.15);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+}
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.back-link:hover { color: white; }
+
+.trail-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+.trail-content h2 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  margin: 40px 0 20px;
+}
+.trail-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.trail-content p {
+  color: var(--text-light);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+.trail-intro {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text);
+  margin-bottom: 32px;
+  padding: 20px;
+  background: var(--bg-cool);
+  border-radius: var(--radius-md);
+}
+
+.step-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-bottom: 16px;
+  box-shadow: var(--card-shadow);
+  border-left: 4px solid var(--brand);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.step-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.trail-tips {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.trail-tips li {
+  padding: 14px 18px;
+  background: var(--bg-warm);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--text);
+  position: relative;
+  padding-left: 36px;
+}
+.trail-tips li::before {
+  content: '💡';
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  font-size: 0.85rem;
 }
 
 /* ====== Place Card Modal ====== */
