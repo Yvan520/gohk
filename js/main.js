@@ -287,11 +287,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Add inline map link to each place card (skip if already has one)
+  // Add inline map link to each place card (only if none exists yet)
   document.querySelectorAll('.place-card').forEach((card, i) => {
     const info = card.querySelector('.info');
     const p = placeCards[i];
-    if (info && p && p.mapName && !info.querySelector('.hiking-card-btn[href*="map.html"]')) {
+    if (info && p && p.mapName && !info.querySelector('a[href*="map.html"]')) {
       const link = document.createElement('a');
       link.className = 'card-map-link';
       link.href = `map.html?q=${encodeURIComponent(p.mapName)}`;
@@ -313,15 +313,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = placeCards[index];
     if (!card) return;
     currentIndex = index;
-    const guideLink = card.pageLink ? `<a href="${card.pageLink}" class="modal-map-link" style="background:var(--brand);color:white;margin-right:8px;"><i class="fas fa-book-open"></i> 完整攻略</a>` : '';
     modalContent.innerHTML = `
       <img src="${card.imgSrc}" alt="${card.imgAlt}" />
       <h3>${card.title}</h3>
       <div class="modal-tags">${card.tags}</div>
       <p class="modal-desc">${card.desc}</p>
       <div class="modal-tips">${card.tips}</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">
-        ${guideLink}
+      <div class="modal-actions">
+        ${card.pageLink ? `<a href="${card.pageLink}" class="modal-map-link"><i class="fas fa-book-open"></i> 完整攻略</a>` : ''}
         <a href="map.html?q=${encodeURIComponent(card.mapName)}" class="modal-map-link" target="_blank">
           <i class="fas fa-map-marked-alt"></i> 睇地圖位置
         </a>

@@ -1031,6 +1031,15 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 0.7rem;
   color: var(--primary);
 }
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.modal-actions .modal-map-link {
+  margin-top: 0;
+}
 .modal-map-link {
   display: inline-flex;
   align-items: center;
