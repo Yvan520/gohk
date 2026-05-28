@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.place-card').forEach((card, i) => {
     const info = card.querySelector('.info');
     const p = placeCards[i];
-    if (info && p && p.mapName && !info.querySelector('a[href*="map.html"]')) {
+    if (info && p && p.mapName && !info.querySelector('.hiking-card-btn')) {
       const link = document.createElement('a');
       link.className = 'card-map-link';
       link.href = `map.html?q=${encodeURIComponent(p.mapName)}`;
