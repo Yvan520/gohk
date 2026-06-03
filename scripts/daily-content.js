@@ -616,21 +616,33 @@ function updateNavbar() {
 
     let content = fs.readFileSync(filepath, 'utf-8');
 
-    const navLinks = [
-      '<a href="index.html"',
-      '<a href="explore.html"',
-      '<a href="food.html"',
-      '<a href="map.html"',
-      '<a href="stories.html"',
-      '<a href="about.html"',
-    ];
-
     const hasDaily = content.includes('daily-content.html');
     if (hasDaily) continue;
+
+    const navLinks = [
+      '<a href="index.html" data-i18n="nav-home">',
+      '<a href="explore.html" data-i18n="nav-explore">',
+      '<a href="food.html" data-i18n="nav-food">',
+      '<a href="map.html" data-i18n="nav-map">',
+      '<a href="stories.html" data-i18n="nav-stories">',
+      '<a href="about.html" data-i18n="nav-about">',
+    ];
 
     for (const link of navLinks) {
       if (content.includes(link)) {
         content = content.replace(link, `<a href="daily-content.html">📝 每日推介</a>\n      ${link}`);
+        break;
+      }
+    }
+
+    const mobileLinks = [
+      '<a href="index.html" data-i18n="nav-mobile-home">',
+      '<a href="stories.html" data-i18n="nav-mobile-stories">',
+    ];
+
+    for (const link of mobileLinks) {
+      if (content.includes(link) && !content.includes('daily-content.html')) {
+        content = content.replace(link, `${link}\n  <a href="daily-content.html">📝 每日推介</a>`);
         break;
       }
     }
