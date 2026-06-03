@@ -873,7 +873,9 @@ img { max-width: 100%; height: auto; display: block; }
   transition: right 0.3s ease;
   display: flex; flex-direction: column; gap: 20px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
+.mobile-drawer a { flex-shrink: 0; }
 .mobile-drawer.open { right: 0; }
 .mobile-drawer a {
   font-size: 1.1rem; font-weight: 500;
