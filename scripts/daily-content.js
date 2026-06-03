@@ -470,7 +470,7 @@ function updateListing(filename, article, dateInfo) {
   }
 
   const entry = `
-      <a href="daily-content/${filename}" class="feature-card fade-in" style="text-decoration:none;display:block;">
+      <a href="daily-content/${filename}" class="feature-card" style="text-decoration:none;display:block;border:1px solid var(--border);">
         <h3>${article.title}</h3>
         <p style="color:var(--text-light);font-size:0.85rem;">📅 ${dateInfo.dateStr} · ${dateInfo.label}</p>
         <p style="margin-top:4px;"></p>
