@@ -470,10 +470,10 @@ function updateListing(filename, article, dateInfo) {
   }
 
   const entry = `
-      <a href="daily-content/${filename}" class="feature-card" style="text-decoration:none;display:block;border:1px solid var(--border);">
-        <h3>${article.title}</h3>
-        <p style="color:var(--text-light);font-size:0.85rem;">📅 ${dateInfo.dateStr} · ${dateInfo.label}</p>
-        <p style="margin-top:4px;"></p>
+      <a href="daily-content/${filename}" class="feature-card" style="text-decoration:none;display:block;border:2px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,0.12);background:#ffffff;border-radius:20px;padding:28px;">
+        <h3 style="font-family:var(--font-serif);font-size:1.15rem;margin-bottom:8px;color:#1e293b;">${article.title}</h3>
+        <p style="color:#64748b;font-size:0.82rem;margin-bottom:8px;">📅 ${dateInfo.dateStr} · ${dateInfo.label}</p>
+        <p style="margin:0;color:#475569;"></p>
       </a>`;
 
   if (!existing) {
