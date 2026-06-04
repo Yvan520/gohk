@@ -77,19 +77,22 @@ function fetchWeather() {
       res.on('end', () => {
         try {
           const w = JSON.parse(data);
+          const desc = w.weather?.data?.[0]?.value || '';
+          const forecast = w.forecastDesc || '';
           resolve({
             temp: parseInt(w.temperature?.data?.[0]?.value?.replace('°C', '') || '25'),
             humidity: parseInt(w.humidity?.data?.[0]?.value?.replace('%', '') || '75'),
-            desc: w.weather?.data?.[0]?.value || w.forecastDesc || '天朗氣清',
+            desc: desc,
+            forecast: forecast,
             uv: w.uvindex?.data?.[0]?.value || '',
             source: 'hko',
           });
         } catch (e) {
-          resolve({ temp: 25, humidity: 75, desc: '天朗氣清', uv: '', source: 'fallback' });
+          resolve({ temp: 25, humidity: 75, desc: '天朗氣清', forecast: '', uv: '', source: 'fallback' });
         }
       });
     }).on('error', () => {
-      resolve({ temp: 25, humidity: 75, desc: '天朗氣清', uv: '', source: 'fallback' });
+      resolve({ temp: 25, humidity: 75, desc: '天朗氣清', forecast: '', uv: '', source: 'fallback' });
     });
   });
 }
@@ -360,7 +363,7 @@ function generateFoodArticle(weather, dateInfo) {
       <table style="width:100%;border-collapse:collapse;margin-top:8px;">
         <tr><td style="padding:4px 8px;color:var(--text-light);font-size:0.9rem;">類別</td><td style="padding:4px 8px;font-size:0.9rem;">${food.style}</td></tr>
         <tr><td style="padding:4px 8px;color:var(--text-light);font-size:0.9rem;">招牌菜</td><td style="padding:4px 8px;font-size:0.9rem;">${food.dish}</td></tr>
-        ${food.price ? `<tr><td style="padding:4px 8px;color:var(--text-light);font-size:0.9rem;">參考價</td><td style="padding:4px 8px;font-size:0.9rem;">$${food.price} 起</td></tr>` : ''}
+        ${food.price ? `<tr><td style="padding:4px 8px;color:var(--text-light);font-size:0.9rem;">參考價</td><td style="padding:4px 8px;font-size:0.9rem;">${food.price} 起</td></tr>` : ''}
         ${food.hours ? `<tr><td style="padding:4px 8px;color:var(--text-light);font-size:0.9rem;">營業時間</td><td style="padding:4px 8px;font-size:0.9rem;">${food.hours}</td></tr>` : ''}
         <tr><td style="padding:4px 8px;color:var(--text-light);font-size:0.9rem;">地區</td><td style="padding:4px 8px;font-size:0.9rem;">${food.area}</td></tr>
       </table>
@@ -559,11 +562,12 @@ function updateListing(filename, article, dateInfo) {
     return;
   }
 
-  const entry = `
+    const excerpt = article.content.replace(/<[^>]+>/g, '').slice(0, 80).trim();
+    const entry = `
       <a href="daily-content/${filename}" class="feature-card" style="text-decoration:none;display:block;border:2px solid #e2e8f0;box-shadow:0 4px 20px rgba(0,0,0,0.12);background:#ffffff;border-radius:20px;padding:28px;">
         <h3 style="font-family:var(--font-serif);font-size:1.15rem;margin-bottom:8px;color:#1e293b;">${article.title}</h3>
         <p style="color:#64748b;font-size:0.82rem;margin-bottom:8px;">📅 ${dateInfo.dateStr} · ${dateInfo.label}</p>
-        <p style="margin:0;color:#475569;"></p>
+        <p style="margin:0;color:#475569;">${excerpt}</p>
       </a>`;
 
   if (!existing) {
