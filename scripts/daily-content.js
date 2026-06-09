@@ -766,4 +766,22 @@ function updateSitemap(filename, dateInfo) {
   console.log('✅ sitemap 已更新');
 }
 
+function cleanSitemap() {
+  const sitemapPath = path.join(__dirname, '..', 'sitemap.xml');
+  if (!fs.existsSync(sitemapPath)) return;
+
+  let sitemap = fs.readFileSync(sitemapPath, 'utf-8');
+  const lines = sitemap.split('\n');
+  const validDailyDir = path.join(__dirname, '..', 'daily-content');
+  const validFiles = fs.existsSync(validDailyDir) ? fs.readdirSync(validDailyDir).filter(f => f.endsWith('.html')) : [];
+
+  const cleaned = lines.filter(line => {
+    const match = line.match(/daily-content\/([^<]+)\.html/);
+    if (!match) return true;
+    return validFiles.includes(`${match[1]}.html`);
+  });
+
+  fs.writeFileSync(sitemapPath, cleaned.join('\n'), 'utf-8');
+}
+
 main().catch(console.error);
