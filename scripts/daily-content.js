@@ -127,19 +127,32 @@ function getWeatherPhrase(temp, desc) {
 
 function slugify(text) { return text.replace(/[^\w\u4e00-\u9fff]/g, '-').replace(/-+/g, '-').toLowerCase(); }
 
-function generateHtml(title, content, weather, dateInfo, tags) {
+function generateHtml(title, content, weather, dateInfo, tags, metaDesc) {
   const feel = weatherFeeling(weather.temp);
+  const desc = (metaDesc || content.replace(/<[^>]+>/g, '').slice(0, 150).trim()).replace(/"/g, '&quot;');
   return `<!DOCTYPE html>
 <html lang="zh-HK">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="${title} — SunnyHK 每日推介，香港在地深度旅遊建議">
+<meta name="description" content="${desc}">
 <meta property="og:title" content="${title} | SunnyHK 每日推介">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="zh_HK">
 <meta property="og:image" content="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
 <title>${title} | SunnyHK 每日推介</title>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "${title.replace(/"/g, '\\"')}",
+  "description": "${desc}",
+  "author": { "@type": "Organization", "name": "SunnyHK" },
+  "publisher": { "@type": "Organization", "name": "SunnyHK" },
+  "datePublished": "${dateInfo.dateStr}",
+  "dateModified": "${dateInfo.dateStr}"
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="../css/style.css">
@@ -426,7 +439,8 @@ async function main() {
     return;
   }
 
-  const html = generateHtml(article.title, article.content, weather, dateInfo, article.tags);
+  const metaDesc = article.content.replace(/<[^>]+>/g, '').slice(0, 150).trim();
+  const html = generateHtml(article.title, article.content, weather, dateInfo, article.tags, metaDesc);
   fs.writeFileSync(filepath, html, 'utf-8');
   console.log(`✅ 已建立: daily-content/${filename}`);
 
