@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="互動地圖 — 親子青年上班族銀髮發呆行山浮潛美食超過130個目的地，搵出屬於你嘅香港角落。">
+<meta name="keywords" content="香港互動地圖,香港旅遊地圖,香港景點地圖,香港美食地圖,香港分齡指南">
+<meta name="robots" content="index, follow">
+<link rel="manifest" href="/manifest.json">
+<!-- Google tag (gtag.js) GA4 placeholder -> 改做你嘅 Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9RMXXLKYK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-L9RMXXLKYK');
+</script>
+<link rel="canonical" href="https://gohk.gamewayz.com/map.html">
+<meta name="baidu-site-verification" content="codeva-6fKr2IJVp7" />
+<meta property="og:title" content="香港互動地圖 | SunnyHK">
+<meta property="og:description" content="親子、青年、上班族、銀髮、發呆地圖—搵出屬於你嘅香港角落。">
+<meta property="og:url" content="https://gohk.gamewayz.com/map.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1465403157034-1d5e05cc2ac0?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:locale" content="zh_HK">
+<title>互動地圖 | SunnyHK 香港分齡攻略</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Map",
+  "name": "香港互動地圖",
+  "description": "SunnyHK 香港旅遊互動地圖，涵蓋親子、青年、上班族、銀髮、發呆、攝影、美食、行山、浮潛十大分類超過130個目的地。",
+  "url": "https://gohk.gamewayz.com/map.html",
+  "provider": {
+    "@type": "Organization",
+    "name": "SunnyHK"
+  }
+}
+</script>
+<style>
+.map-wrapper {
+  position: relative;
+  padding: 0 24px 80px;
+}
+.map-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+#hkMap {
+  height: 560px;
+  border-radius: var(--radius-md);
+  z-index: 1;
+}
+.dark #hkMap {
+  filter: invert(0.9) hue-rotate(180deg);
+}
+.map-sidebar {
+  position: absolute;
+  top: 16px;
+  left: 40px;
+  z-index: 10;
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  min-width: 180px;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.92);
+}
+.dark .map-sidebar {
+  background: rgba(30,41,59,0.92);
+}
+.map-sidebar h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.map-filter-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: var(--text);
+  transition: color var(--transition);
+}
+.map-filter-item:hover {
+  color: var(--brand);
+}
+.map-filter-item input[type="checkbox"] {
+  accent-color: var(--brand);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.map-filter-item .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.map-legend {
+  position: absolute;
+  bottom: 32px;
+  right: 40px;
+  z-index: 10;
+  background: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  font-size: 0.75rem;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.92);
+}
+.dark .map-legend {
+  background: rgba(30,41,59,0.92);
+}
+.map-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+  color: var(--text-light);
+}
+.map-legend-item .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.leaflet-popup-content-wrapper {
+  border-radius: 12px !important;
+  font-family: var(--font-sans);
+}
+.leaflet-popup-content {
+  margin: 12px 16px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  min-width: 180px;
+}
+.popup-name {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+.popup-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.popup-link {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: var(--brand);
+  font-weight: 600;
+  transition: color var(--transition);
+}
+.popup-link:hover {
+  color: var(--brand-dark);
+}
+.marker-cluster-small {
+  background-color: rgba(245,158,11,0.2) !important;
+}
+.marker-cluster-small div {
+  background-color: rgba(245,158,11,0.4) !important;
+  color: #1e293b !important;
+  font-weight: 700;
+}
+.marker-cluster-medium {
+  background-color: rgba(245,158,11,0.25) !important;
+}
+.marker-cluster-medium div {
+  background-color: rgba(245,158,11,0.45) !important;
+  color: #1e293b !important;
+  font-weight: 700;
+}
+.marker-cluster-large {
+  background-color: rgba(245,158,11,0.3) !important;
+}
+.marker-cluster-large div {
+  background-color: rgba(245,158,11,0.5) !important;
+  color: #1e293b !important;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .map-wrapper {
+    padding: 0 0 60px;
+  }
+  .map-container {
+    max-width: 100%;
+  }
+  #hkMap {
+    height: 460px;
+    border-radius: 0;
+  }
+  .map-sidebar {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0 16px 12px;
+    min-width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    padding: 12px 16px;
+  }
+  .map-sidebar h4 {
+    width: 100%;
+    margin-bottom: 6px;
+  }
+  .map-filter-item {
+    font-size: 0.8rem;
+    padding: 3px 0;
+  }
+  .map-legend {
+    bottom: 16px;
+    right: 16px;
+    padding: 10px 14px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="modal-overlay" id="placeModalOverlay"></div>
+<div class="place-modal" id="placeModal">
+  <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+  <button class="modal-prev" id="modalPrev"><i class="fas fa-chevron-left"></i></button>
+  <button class="modal-next" id="modalNext"><i class="fas fa-chevron-right"></i></button>
+  <div class="modal-content" id="modalContent"></div>
+</div>
+
+<nav class="navbar">
+  <div class="inner">
+    <a href="index.html" class="logo">
+      <div class="sun"><i class="fas fa-sun"></i></div>
+      Sunny<span>HK</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav-home">首頁</a>
+      <div class="nav-dropdown">
+        <a href="explore.html" data-i18n="nav-explore">探索指南</a>
+        <div class="nav-dropdown-menu">
+          <a href="explore.html" data-i18n="nav-explore-all">🌟 人群指南</a>
+          <a href="hiking.html" data-i18n="nav-hiking">🥾 行山路線</a>
+          <a href="snorkeling.html" data-i18n="nav-snorkeling">🤿 浮潛攻略</a>
+          <a href="swimming.html" data-i18n="nav-swimming">🏊 游水指南</a>
+        </div>
+      </div>
+      <a href="food.html" data-i18n="nav-food">美食地圖</a>
+      <div class="nav-dropdown">
+        <a href="tips.html" data-i18n="nav-tips">實用資訊</a>
+        <div class="nav-dropdown-menu">
+          <a href="tips.html" data-i18n="nav-tips-all">💡 實用貼士</a>
+          <a href="electronics.html" data-i18n="nav-electronics">💻 電子產品</a>
+        </div>
+      </div>
+      <a href="map.html" data-i18n="nav-map">🗺️ 地圖</a>
+      <a href="stories.html" data-i18n="nav-stories">香港故事</a>
+      <a href="daily-content.html">📝 每日推介</a>
+      <a href="about.html" data-i18n="nav-about">關於</a>
+      </div>
+    <div class="nav-actions">
+      <div class="lang-group">
+        <button class="lang-btn" data-lang="trad">繁</button>
+        <button class="lang-btn" data-lang="simp">简</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切換主題"><i class="fas fa-moon"></i></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="選單">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="daily-content.html">📝 每日推介</a>
+  <a href="index.html" data-i18n="nav-mobile-home">首頁</a>
+  <a href="explore.html" data-i18n="nav-mobile-explore">🌟 人群指南</a>
+  <a href="hiking.html" data-i18n="nav-mobile-hiking">🥾 行山路線</a>
+  <a href="snorkeling.html" data-i18n="nav-mobile-snorkeling">🤿 浮潛攻略</a>
+  <a href="swimming.html" data-i18n="nav-mobile-swimming">🏊 游水指南</a>
+  <a href="food.html" data-i18n="nav-mobile-food">美食地圖</a>
+  <a href="tips.html" data-i18n="nav-mobile-tips">💡 實用貼士</a>
+  <a href="electronics.html" data-i18n="nav-mobile-electronics">💻 電子產品</a>
+  <a href="map.html" data-i18n="nav-mobile-map">🗺️ 地圖</a>
+  <a href="stories.html" data-i18n="nav-mobile-stories">香港故事</a>
+  <a href="about.html" data-i18n="nav-mobile-about">關於</a>
+<div class="lang-group">
+     <button class="lang-btn" data-lang="trad">繁</button>
+     <button class="lang-btn" data-lang="simp">简</button>
+     <button class="lang-btn" data-lang="en">EN</button>
+   </div>
+  <button class="theme-toggle" id="themeToggleMobile" aria-label="切換主題" style="margin-top:8px;align-self:flex-start;"><i class="fas fa-moon"></i></button>
+</div>
+
+<div class="page-header">
+  <div class="inner">
+    <h1 data-i18n="map-title">🗺️ 香港互動地圖</h1>
+    <p data-i18n="map-subtitle">搵出屬於你嘅香港角落 — 一 click 就知喺邊。</p>
+  </div>
+</div>
+
+<div class="map-wrapper">
+  <div class="map-container">
+    <div class="map-sidebar">
+      <h4 data-i18n="map-filter">篩選分類</h4>
+      <label class="map-filter-item"><input type="checkbox" value="family" checked><span class="dot" style="background:#f59e0b"></span> 親子 Family</label>
+      <label class="map-filter-item"><input type="checkbox" value="youth" checked><span class="dot" style="background:#f43f5e"></span> 青年 Youth</label>
+      <label class="map-filter-item"><input type="checkbox" value="adult" checked><span class="dot" style="background:#3b82f6"></span> 上班族 Adult</label>
+      <label class="map-filter-item"><input type="checkbox" value="senior" checked><span class="dot" style="background:#14b8a6"></span> 銀髮 Senior</label>
+      <label class="map-filter-item"><input type="checkbox" value="quiet" checked><span class="dot" style="background:#8b5cf6"></span> 發呆 Quiet</label>
+      <label class="map-filter-item"><input type="checkbox" value="photo" checked><span class="dot" style="background:#ec4899"></span> 攝影 Photo</label>
+      <label class="map-filter-item"><input type="checkbox" value="food" checked><span class="dot" style="background:#f97316"></span> 美食 Food</label>
+      <label class="map-filter-item"><input type="checkbox" value="snorkeling" checked><span class="dot" style="background:#06b6d4"></span> 浮潛 Snorkeling</label>
+      <label class="map-filter-item"><input type="checkbox" value="hiking" checked><span class="dot" style="background:#10b981"></span> 行山 Hiking</label>
+      <label class="map-filter-item"><input type="checkbox" value="swimming" checked><span class="dot" style="background:#0284c7"></span> 游水 Swimming</label>
+      <label class="map-filter-item"><input type="checkbox" value="electronics" checked><span class="dot" style="background:#dc2626"></span> 電子產品 Electronics</label>
+    </div>
+
+    <div id="hkMap"></div>
+
+    <div class="map-legend">
+      <div class="map-legend-item"><span class="dot" style="background:#f59e0b"></span> 親子</div>
+      <div class="map-legend-item"><span class="dot" style="background:#f43f5e"></span> 青年</div>
+      <div class="map-legend-item"><span class="dot" style="background:#3b82f6"></span> 上班族</div>
+      <div class="map-legend-item"><span class="dot" style="background:#14b8a6"></span> 銀髮</div>
+      <div class="map-legend-item"><span class="dot" style="background:#8b5cf6"></span> 發呆</div>
+      <div class="map-legend-item"><span class="dot" style="background:#ec4899"></span> 攝影</div>
+      <div class="map-legend-item"><span class="dot" style="background:#f97316"></span> 美食</div>
+      <div class="map-legend-item"><span class="dot" style="background:#06b6d4"></span> 浮潛</div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <div class="sun"><i class="fas fa-sun"></i></div>
+          SunnyHK
+        </div>
+        <p data-i18n="footer-tagline">一個年輕、陽光、真實嘅香港旅行靈感平台。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-explore">探索</h4>
+        <a href="explore.html" data-i18n="footer-guide">人群指南</a>
+        <a href="hiking.html" data-i18n="footer-hiking">🥾 行山路線</a>
+        <a href="snorkeling.html" data-i18n="footer-snorkeling">🤿 浮潛攻略</a>
+        <a href="explore.html#quiet" data-i18n="footer-quiet">發呆地圖</a>
+        <a href="tips.html" data-i18n="footer-tips">實用資訊</a>
+        <a href="stories.html" data-i18n="footer-stories">香港故事</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-about">關於</h4>
+        <a href="about.html" data-i18n="footer-about-us">關於 SunnyHK</a>
+        <a href="about.html#faq" data-i18n="footer-faq">常見問題</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-follow">關注我哋</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="小紅書"><i class="fab fa-xiaohongshu"></i></a>
+          <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 SunnyHK · Discover Your Own Hong Kong</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="js/map-data.js"></script>
+<script src="js/lang.js"></script>
+<script src="js/main.js"></script>
+<script>
+(function() {
+
+const categoryColors = {
+  family: '#f59e0b',
+  youth: '#f43f5e',
+  adult: '#3b82f6',
+  senior: '#14b8a6',
+  quiet: '#8b5cf6',
+  photo: '#ec4899',
+  food: '#f97316',
+   snorkeling: '#06b6d4',
+   hiking: '#10b981',
+   swimming: '#0284c7',
+   electronics: '#dc2626'
+};
+
+const categoryLabels = {
+  family: '親子',
+  youth: '青年',
+  adult: '上班族',
+  senior: '銀髮',
+  quiet: '發呆',
+  photo: '攝影',
+  food: '美食',
+   snorkeling: '浮潛',
+   hiking: '行山',
+   swimming: '游水',
+   electronics: '電子產品'
+};
+
+const categoryEmojis = {
+  family: '👶',
+  youth: '🧑‍🎤',
+  adult: '💼',
+  senior: '👴',
+  quiet: '🌊',
+  photo: '📸',
+  food: '🍜',
+   snorkeling: '🤿',
+   hiking: '🥾',
+   swimming: '🏊',
+   electronics: '💻'
+};
+
+const map = L.map('hkMap', {
+  center: [22.3193, 114.1694],
+  zoom: 11,
+  scrollWheelZoom: true
+});
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  maxZoom: 18
+}).addTo(map);
+
+const markerClusterGroup = L.markerClusterGroup({
+  maxClusterRadius: 50,
+  spiderfyOnMaxZoom: true,
+  disableClusteringAtZoom: 16
+});
+
+function createMarkerIcon(category) {
+  const color = categoryColors[category] || '#64748b';
+  return L.divIcon({
+    className: 'custom-marker-icon',
+    html: `<div style="width:36px;height:36px;background:${color};border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.25);border:2px solid white;">${categoryEmojis[category] || '📍'}</div>`,
+    iconSize: [36, 36],
+    iconAnchor: [18, 36],
+    popupAnchor: [0, -40]
+  });
+}
+
+const markers = {};
+const categoryMarkers = {};
+
+placesData.forEach(place => {
+  const icon = createMarkerIcon(place.category);
+  const marker = L.marker([place.lat, place.lng], { icon });
+  const color = categoryColors[place.category] || '#64748b';
+  const label = categoryLabels[place.category] || place.category;
+  marker.bindPopup(`
+    <div class="popup-name">${place.emoji} ${place.name}</div>
+    <span class="popup-tag" style="background:${color}15;color:${color}">${label}</span>
+    <a class="popup-link" href="${place.link}">查看詳情 →</a>
+  `);
+  marker.placeId = place.id;
+  marker.category = place.category;
+  markerClusterGroup.addLayer(marker);
+  markers[place.id] = marker;
+  if (!categoryMarkers[place.category]) categoryMarkers[place.category] = [];
+  categoryMarkers[place.category].push(marker);
+});
+
+map.addLayer(markerClusterGroup);
+
+// Handle ?q=NAME from explore/food card map links
+function normalizeChinese(s) {
+  return s.replace(/[^\u4e00-\u9fff]/g, '');
+}
+const urlParams = new URLSearchParams(window.location.search);
+const queryName = urlParams.get('q');
+if (queryName) {
+  const norm = normalizeChinese(queryName);
+  const place = placesData.find(p => {
+    const pNorm = normalizeChinese(p.name);
+    return pNorm.includes(norm) || norm.includes(pNorm);
+  });
+  if (place && markers[place.id]) {
+    const m = markers[place.id];
+    map.setView([place.lat, place.lng], 15, { animate: true });
+    setTimeout(() => m.openPopup(), 400);
+  }
+}
+
+document.querySelectorAll('.map-filter-item input[type="checkbox"]').forEach(cb => {
+  cb.addEventListener('change', function() {
+    const cat = this.value;
+    const checked = this.checked;
+    (categoryMarkers[cat] || []).forEach(marker => {
+      if (checked) {
+        markerClusterGroup.addLayer(marker);
+      } else {
+        markerClusterGroup.removeLayer(marker);
+      }
+    });
+  });
+});
+
+function syncLegendWithTheme() {
+  const isDark = document.body.classList.contains('dark');
+  const hue = isDark ? 'invert(0.9) hue-rotate(180deg)' : 'none';
+  document.getElementById('hkMap').style.filter = hue;
+}
+
+const themeToggle = document.getElementById('themeToggle');
+if (themeToggle) {
+  const orig = themeToggle.addEventListener;
+  themeToggle.addEventListener('click', function() {
+    setTimeout(syncLegendWithTheme, 50);
+  });
+}
+
+const themeToggleMobile = document.getElementById('themeToggleMobile');
+if (themeToggleMobile) {
+  themeToggleMobile.addEventListener('click', function() {
+    setTimeout(syncLegendWithTheme, 50);
+  });
+}
+
+syncLegendWithTheme();
+
+setTimeout(() => map.invalidateSize(), 500);
+
+})();
+</script>
+
+<script>navigator.serviceWorker?.register("/sw.js");</script>
+</body>
+</html>

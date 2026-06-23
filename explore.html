@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="探索指南 — 香港分齡旅遊攻略，親子青年上班族銀髮發呆地圖，超過50個精選目的地真實體驗。">
+<meta name="keywords" content="香港旅遊攻略,香港分齡指南,香港親子景點,香港青年打卡,香港銀髮旅行,香港發呆地圖">
+<meta name="robots" content="index, follow">
+<link rel="manifest" href="/manifest.json">
+<!-- Google tag (gtag.js) GA4 placeholder -> 改做你嘅 Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9RMXXLKYK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-L9RMXXLKYK');
+</script>
+<link rel="canonical" href="https://gohk.gamewayz.com/explore.html">
+<meta name="baidu-site-verification" content="codeva-6fKr2IJVp7" />
+<meta property="og:title" content="探索指南 | SunnyHK 香港分齡攻略">
+<meta property="og:description" content="親子、青年、上班族、銀髮、發呆地圖—每個人都有自己嘅香港方式。超過50個精選目的地。">
+<meta property="og:url" content="https://gohk.gamewayz.com/explore.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1465403157034-1d5e05cc2ac0?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:locale" content="zh_HK">
+<title>探索指南 | SunnyHK 香港分齡攻略</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="modal-overlay" id="placeModalOverlay"></div>
+<div class="place-modal" id="placeModal">
+  <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+  <button class="modal-prev" id="modalPrev"><i class="fas fa-chevron-left"></i></button>
+  <button class="modal-next" id="modalNext"><i class="fas fa-chevron-right"></i></button>
+  <div class="modal-content" id="modalContent"></div>
+</div>
+
+<nav class="navbar">
+  <div class="inner">
+    <a href="index.html" class="logo">
+      <div class="sun"><i class="fas fa-sun"></i></div>
+      Sunny<span>HK</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav-home">首頁</a>
+      <div class="nav-dropdown active">
+        <a href="explore.html" data-i18n="nav-explore">探索指南</a>
+        <div class="nav-dropdown-menu">
+          <a href="explore.html" data-i18n="nav-explore-all">🌟 人群指南</a>
+          <a href="hiking.html" data-i18n="nav-hiking">🥾 行山路線</a>
+          <a href="snorkeling.html" data-i18n="nav-snorkeling">🤿 浮潛攻略</a>
+          <a href="swimming.html" data-i18n="nav-swimming">🏊 游水指南</a>
+        </div>
+      </div>
+      <a href="food.html" data-i18n="nav-food">美食地圖</a>
+      <div class="nav-dropdown">
+        <a href="tips.html" data-i18n="nav-tips">實用資訊</a>
+        <div class="nav-dropdown-menu">
+          <a href="tips.html" data-i18n="nav-tips-all">💡 實用貼士</a>
+          <a href="electronics.html" data-i18n="nav-electronics">💻 電子產品</a>
+        </div>
+      </div>
+      <a href="map.html" data-i18n="nav-map">🗺️ 地圖</a>
+      <a href="stories.html" data-i18n="nav-stories">香港故事</a>
+      <a href="about.html" data-i18n="nav-about">關於</a>
+      </div>
+    <div class="nav-actions">
+      <div class="lang-group">
+        <button class="lang-btn" data-lang="trad">繁</button>
+        <button class="lang-btn" data-lang="simp">简</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切換主題"><i class="fas fa-moon"></i></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="選單">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="index.html" data-i18n="nav-mobile-home">首頁</a>
+  <a href="explore.html" data-i18n="nav-mobile-explore">🌟 人群指南</a>
+  <a href="hiking.html" data-i18n="nav-mobile-hiking">🥾 行山路線</a>
+  <a href="snorkeling.html" data-i18n="nav-mobile-snorkeling">🤿 浮潛攻略</a>
+  <a href="swimming.html" data-i18n="nav-mobile-swimming">🏊 游水指南</a>
+  <a href="food.html" data-i18n="nav-mobile-food">美食地圖</a>
+  <a href="tips.html" data-i18n="nav-mobile-tips">💡 實用貼士</a>
+  <a href="electronics.html" data-i18n="nav-mobile-electronics">💻 電子產品</a>
+  <a href="map.html" data-i18n="nav-mobile-map">🗺️ 地圖</a>
+  <a href="stories.html" data-i18n="nav-mobile-stories">香港故事</a>
+  <a href="about.html" data-i18n="nav-mobile-about">關於</a>
+<div class="lang-group">
+     <button class="lang-btn" data-lang="trad">繁</button>
+     <button class="lang-btn" data-lang="simp">简</button>
+     <button class="lang-btn" data-lang="en">EN</button>
+   </div>
+  <button class="theme-toggle" id="themeToggleMobile" aria-label="切換主題" style="margin-top:8px;align-self:flex-start;"><i class="fas fa-moon"></i></button>
+</div>
+
+<div class="page-header">
+  <div class="inner">
+    <h1 data-i18n="explore-title">探索你嘅香港方式</h1>
+    <p data-i18n="explore-subtitle">唔按景點分類，按你嘅性格推薦。每一種節奏，都值得被尊重。</p>
+  </div>
+</div>
+
+<div class="explore-section">
+  <div class="inner">
+    <div class="flex-layout">
+      <nav class="sidebar-nav">
+        <h4 data-i18n="explore-sidebar-family">人群指南</h4>
+        <a href="#family" data-i18n="explore-sidebar-family">👶 親子家庭</a>
+        <a href="#youth" data-i18n="explore-sidebar-youth">🧑‍🎤 青年學生</a>
+        <a href="#adult" data-i18n="explore-sidebar-adult">💼 上班族</a>
+        <a href="#senior" data-i18n="explore-sidebar-senior">👴 銀髮旅行</a>
+        <a href="#quiet" data-i18n="explore-sidebar-quiet">🌊 發呆地圖</a>
+        <a href="#photo" data-i18n="explore-sidebar-photo">📸 摄影机位</a>
+        <a href="#routes" data-i18n="explore-sidebar-routes">🧭 行程路線</a>
+      </nav>
+
+      <div class="content-area">
+
+        <section id="family">
+          <h2 data-i18n="section-family">👶 親子家庭 · 小朋友眼中嘅香港</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">湊仔唔使頭痕！精選嬰兒車友好路線、親子餐廳、放電勝地，仲有本地媽媽嘅私藏貼士。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1651658313775-90bf2751913e?auto=format&fit=crop&w=800&q=80" alt="迪士尼" loading="lazy"></div>
+              <div class="info">
+                <h3>🏰 香港迪士尼樂園</h3>
+                <p>避開高峰小技巧：星期二、四去人最少，上晝先玩明日世界（排隊唔使15分鐘），下晝睇巡遊。帶埋水樽入園，每個餐廳都可以免費斟水。</p>
+                <div class="tags"><span>嬰兒車友好</span><span>親子餐廳</span><span>必去</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵迪士尼站 · 建議10:00前到閘口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 最佳時間：平日（二至四）</div>
+                <div class="tip"><i class="fas fa-camera"></i> 城堡前黃昏光線最靚，影全家福一流</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 成人$639 / 小童$475 · klook買飛平~10%</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1589977326928-0c4681f1f1d3?auto=format&fit=crop&w=800&q=80" alt="海洋公園" loading="lazy"></div>
+              <div class="info">
+                <h3>🐬 香港海洋公園</h3>
+                <p>點玩法唔攰：上山纜車睇海景（記得揀右手邊位），落山搭海洋列車，細路可以玩足一日。熊貓館必去，安安佳佳超得意！</p>
+                <div class="tags"><span>寓教於樂</span><span>親子互動</span><span>纜車</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵海洋公園站B出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 最佳時間：開園即入，上午睇動物避開人潮</div>
+                <div class="tip"><i class="fas fa-camera"></i> 纜車上山段影海景，海洋劇場表演前可近距離影海獅</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 成人$498 / 小童$249</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1653923302062-9fb10f6f3d8f?auto=format&fit=crop&w=800&q=80" alt="科學館" loading="lazy"></div>
+              <div class="info">
+                <h3>🔬 香港科學館 · 太空館</h3>
+                <p>互動性極強！細路可以落手操作各種科學裝置，玩住學嘅最佳地方。小朋友最鍾意能量穿梭機同氣候室，玩到唔肯走！</p>
+                <div class="tags"><span>室內</span><span>互動</span><span>雨天方案</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵尖沙咀站B2出口，行5分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 星期三免費入場，但人好多。建議平日下晝去</div>
+                <div class="tip"><i class="fas fa-camera"></i> 科學館外嘅機械人壁畫係熱門打卡位</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 科學館$30 / 太空館$10（展廳）</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 附近「澳洲牛奶公司」嘅炒蛋多士好出名</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1495522097160-b7d527cc67f8?auto=format&fit=crop&w=800&q=80" alt="天星小輪" loading="lazy"></div>
+              <div class="info">
+                <h3>🚢 天星小輪 & 維港</h3>
+                <p>畀幾蚊搭小輪過海，細路最鍾意睇海浪同吹海風。推嬰兒車完全冇問題。上層下層都試吓，上層風景靚啲，下層更有懷舊feel。</p>
+                <div class="tags"><span>嬰兒車友好</span><span>平價</span><span>經典</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 尖沙咀碼頭／中環碼頭</div>
+                <div class="tip"><i class="fas fa-clock"></i> 黃昏搭（17:30-18:30）睇日落維港</div>
+                <div class="tip"><i class="fas fa-camera"></i> 船尾位置可以影到維港全景，日落時分最佳</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 上層$5 / 下層$4 · 八達通嘟一嘟就得</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?auto=format&fit=crop&w=800&q=80" alt="西九" loading="lazy"></div>
+              <div class="info">
+                <h3>🧺 西九文化區大草坪</h3>
+                <p>帶細路去野餐、放風箏、跑跑跳跳。面向維港，係城市中嘅一片綠洲。週末好多本地家庭會嚟，周圍都係小朋友嘅笑聲。</p>
+                <div class="tags"><span>野餐</span><span>戶外</span><span>免費</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵九龍站E出口，行10分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 下晝4點後嚟，避開正午太陽，仲可以睇日落</div>
+                <div class="tip"><i class="fas fa-camera"></i> 海濱長廊盡頭係影維港日落嘅隱藏機位</div>
+                <div class="tip"><i class="fas fa-utensils"></i> M+博物館入面嘅餐廳景觀超靚，不過偏貴</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1471347025057-68ff089f54cd?auto=format&fit=crop&w=800&q=80" alt="單車館" loading="lazy"></div>
+              <div class="info">
+                <h3>🚴 香港單車館公園</h3>
+                <p>將軍澳嘅隱藏寶藏！超大草地、人工湖、兒童遊樂場，仲有免費單車租借服務。細路可以踩單車、放風箏、餵魚，玩足大半日都唔厭。</p>
+                <div class="tags"><span>免費</span><span>戶外</span><span>放電</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵坑口站B出口，行8分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早10點前人少少，下午太陽斜照影相靚</div>
+                <div class="tip"><i class="fas fa-camera"></i> 人工湖嘅瀑布同彩色橋係影相熱點</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 完全免費！單車租借都係象徵式收費</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 附近「坑口村」嘅地道小食店值得一試</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1576444356170-66073046b1bc?auto=format&fit=crop&w=800&q=80" alt="黃金海岸" loading="lazy"></div>
+              <div class="info">
+                <h3>🏖️ 黃金海岸</h3>
+                <p>屯門嘅小歐洲！沙灘幼細乾淨，旁邊有遊艇會同購物商場。最啱帶細路玩沙、睇船。週末仲有市集，手作仔同小食應有盡有。</p>
+                <div class="tags"><span>沙灘</span><span>親子</span><span>市集</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵屯門站轉K51巴士，約20分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 下晝3點後到，唔曬又可以睇日落</div>
+                <div class="tip"><i class="fas fa-camera"></i> 酒店後面嘅小樓梯係IG熱門打卡位，歐陸風情十足</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 沙灘免費，商場餐廳人均$100-200</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「黃金海岸餐廳」嘅蒜香大蝦意粉好正</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1582234372722-50d7ccc30ebd?auto=format&fit=crop&w=800&q=80" alt="荔枝窩" loading="lazy"></div>
+              <div class="info">
+                <h3>🌳 荔枝窩 · 300年客家圍村</h3>
+                <p>UNESCO認證嘅客家古村，超過300年歷史。風水林、紅樹林、銀葉樹林交織成一個天然博物館。逢周末有客家茶果同鹹雞供應，完全唔似香港，似去咗大陸鄉下旅行。</p>
+                <div class="tags"><span>自然</span><span>文化</span><span>親子</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 大學站馬料水碼頭搭船（只限周末）或烏蛟騰行山入</div>
+                <div class="tip"><i class="fas fa-clock"></i> 周末朝早10點前到，導賞團約1.5小時</div>
+                <div class="tip"><i class="fas fa-camera"></i> 風水林嘅巨型樟樹同紅樹林木板路係必影位</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費入村，茶果約$15/件</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 客家茶果同鹹雞係周末限定，記得預訂</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1512591290618-904e04936827?auto=format&fit=crop&w=800&q=80" alt="流浮山" loading="lazy"></div>
+              <div class="info">
+                <h3>🦪 流浮山 · 蠔田日落</h3>
+                <p>元朗西部以養蠔聞名，沿途見到一排排曬緊嘅蠔殼，夕陽下金光閃閃。神話屋希臘風壁畫+海景cafe，完全唔似香港。帶細路去可以睇蠔農作業，係好好嘅生活教育。</p>
+                <div class="tags"><span>海鮮</span><span>日落</span><span>親子</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 元朗站搭K65巴士到流浮山總站</div>
+                <div class="tip"><i class="fas fa-clock"></i> 下晝4點到，睇蠔田日落+食蠔班戟</div>
+                <div class="tip"><i class="fas fa-camera"></i> 蠔田日落係經典構圖，夕陽+蠔殼+倒影</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 神話屋cafe人均$60-100</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 神話屋嘅蠔班戟同海鮮湯必試</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1651658313775-90bf2751913e?auto=format&fit=crop&w=800&q=80" alt="公和荳品廠" loading="lazy"></div>
+              <div class="info">
+                <h3>🥟 公和荳品廠 · 百年豆品老字號</h3>
+                <p>深水埗百年豆品店，碗豆腐花滑溜到似布甸，煎釀三寶即叫即炸。幾蚊雞就食到米芝蓮推介，細路最鍾意睇師傅即場整豆腐。門口水蒸气騰騰，充滿懷舊風情。</p>
+                <div class="tags"><span>小食</span><span>百年老店</span><span>平價</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵深水埗站B2出口，行5分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早11點前到，豆腐花最新鮮</div>
+                <div class="tip"><i class="fas fa-camera"></i> 門口嘅石磨同蒸氣大鍋好有年代感</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 豆腐花$12，煎釀三寶$20</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 必食凍豆腐花+煎釀三寶+豆漿</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1549212408-d6b0defe25cf?auto=format&fit=crop&w=800&q=80" alt="九龍城" loading="lazy"></div>
+              <div class="info">
+                <h3>🍜 九龍城 · 泰國菜集中地</h3>
+                <p>九龍城嘅泰式料理比曼谷街頭仲要正宗！全區超過30間泰國餐廳同雜貨店，由街頭串燒到泰式燒烤都有。食完仲可以行九龍寨城公園，一個下晝玩勻食勻。</p>
+                <div class="tags"><span>美食</span><span>文化</span><span>親子</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵樂富站B出口，行8分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 下晝5點後，夜市氣氛最正</div>
+                <div class="tip"><i class="fas fa-camera"></i> 城南道嘅霓虹招牌同泰國雜貨店好有異國風</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 泰菜人均$80-200</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「小曼谷」泰式燒烤+「隆姐」泰式船河</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1465403157034-1d5e05cc2ac0?auto=format&fit=crop&w=800&q=80" alt="嘉道理農場" loading="lazy"></div>
+              <div class="info">
+                <h3>🌳 嘉道理農場</h3>
+                <p>148公頃自然保育區，麻鷹貓頭鷹水鹿蝴蝶園，家庭玩足一日。</p>
+                <div class="tags"><span>自然</span><span>親子</span><span>保育</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 門票包接駁車</div>
+                <div class="tip"><i class="fas fa-clock"></i> 平日遊客少</div>
+                <div class="tip"><i class="fas fa-camera"></i> 帶望遠鏡觀鳥</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 蝴蝶園必行</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1549212408-d6b0defe25cf?auto=format&fit=crop&w=800&q=80" alt="吉澳" loading="lazy"></div>
+              <div class="info">
+                <h3>🏝️ 吉澳</h3>
+                <p>香港最北島嶼，純樸水上人生活，益民茶樓客家菜。</p>
+                <div class="tags"><span>離島</span><span>客家菜</span><span>歷史</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 大學站馬料水船</div>
+                <div class="tip"><i class="fas fa-clock"></i> 天后宮200年</div>
+                <div class="tip"><i class="fas fa-camera"></i> 連鴨洲一齊玩</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 益民茶樓必食</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1759714872245-0d9647d7d0dc?auto=format&fit=crop&w=800&q=80" alt="香港動植物公園" loading="lazy"></div>
+              <div class="info">
+                <h3>🌳 香港動植物公園</h3>
+                <p>1856年開園，全港最古老公園，麻鷹美洲虎狐獴。</p>
+                <div class="tags"><span>親子</span><span>歷史</span><span>免費</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 中環站步行10分鐘，免費入場</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早6點開園</div>
+                <div class="tip"><i class="fas fa-camera"></i> 美洲虎籠舍同麻鷹園值得影相</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費入場</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 附近「沾仔記」雲吞麵</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1754837954336-fe727b1134b9?auto=format&fit=crop&w=800&q=80" alt="元朗公園百鳥塔" loading="lazy"></div>
+              <div class="info">
+                <h3>🦚 元朗公園百鳥塔</h3>
+                <p>七層高觀鳥塔，百鳥苑孔雀鸚鵡，BBQ場。</p>
+                <div class="tags"><span>觀鳥</span><span>親子</span><span>戶外</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 元朗站轉K73巴士</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早9點到下午5點</div>
+                <div class="tip"><i class="fas fa-camera"></i> 塔頂俯瞰元朗全景</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 入場$7</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 附近「又新街」掃街</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="youth">
+          <h2 data-i18n="section-youth">🧑‍🎤 青年 · 學生 · 年輕嘅城市節奏</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">窮遊、暴走、打卡、文藝——青春就係要咁樣浪費喺香港嘅街頭巷尾。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1465403157034-1d5e05cc2ac0?auto=format&fit=crop&w=800&q=80" alt="壁畫街" loading="lazy"></div>
+              <div class="info">
+                <h3>🎨 中環壁畫街 & PMQ</h3>
+                <p>隱藏喺荷里活道附近嘅塗鴉牆，每一面都係大片背景。韓國街、嘉咸街嘅壁畫最Hit！PMQ元創方由舊警察宿舍改造，文創小店、設計師品牌、Cafe林立。</p>
+                <div class="tags"><span>影相聖地</span><span>免費</span><span>文藝</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵上環站A2出口，行8分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 平日朝早人影少，光影柔和</div>
+                <div class="tip"><i class="fas fa-camera"></i> 嘉咸街壁畫用廣角鏡影，韓國街壁畫適合影人像</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 完全免費！PMQ入場都免費</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「一樂燒鵝」喺附近，平民價米芝蓮</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1562757258-05a61b40eeee?auto=format&fit=crop&w=800&q=80" alt="旺角" loading="lazy"></div>
+              <div class="info">
+                <h3>🌃 旺角夜市 & 深水埗</h3>
+                <p>霓虹燈牌、街頭小食、電子街——賽博朋克香港嘅最佳體驗地。女人街買平衫、西洋菜南街睇電子產品、花園街食魚蛋燒賣。深水埗近年變身文青天堂，特色Cafe同玩具店遍地開花。</p>
+                <div class="tags"><span>夜市</span><span>平價</span><span>地道</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵旺角站E2出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 夜晚7點後最旺，燈牌全部着晒好有氣氛</div>
+                <div class="tip"><i class="fas fa-camera"></i> 亞皆老街天橋影車流+霓虹燈牌，長曝光好正</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 小食$10-40，衫褲$50-200，性價比極高</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「十八座狗仔粉」嘅火鴨翅同狗仔粉必試</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1504664911901-2518a8bfc164?auto=format&fit=crop&w=800&q=80" alt="南丫島" loading="lazy"></div>
+              <div class="info">
+                <h3>🏝️ 南丫島徒步</h3>
+                <p>中環碼頭搭船30分鐘，去到另一個世界。由榕樹灣行到索罟灣，全程約1.5小時，途經沙灘、村屋、海景。途中有豆腐花檔，$15一碗冰凍豆腐花，行到身水身汗食最正！</p>
+                <div class="tags"><span>徒步</span><span>離島</span><span>性價比高</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 中環4號碼頭搭船</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早10點船，避開中午烈日</div>
+                <div class="tip"><i class="fas fa-camera"></i> 洪聖爺灣沙灘嘅日落係全島最佳</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 船費$25，全程免費徒步</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 索罟灣「天虹海鮮」嘅椒鹽瀨尿蝦好出名</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1549212408-d6b0defe25cf?auto=format&fit=crop&w=800&q=80" alt="太平山" loading="lazy"></div>
+              <div class="info">
+                <h3>🌄 太平山夜景</h3>
+                <p>建議傍晚前徒步上山（盧吉道），日落同夜景一次睇晒。免費觀景台都好正！盧吉道平緩好行，全程約30分鐘，沿途已經可以睇到維港景。山頂廣場嘅觀景台雖然要收費，但景觀無得輸。</p>
+                <div class="tags"><span>夜景</span><span>徒步</span><span>免費</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵中環站J2出口，轉15號巴士</div>
+                <div class="tip"><i class="fas fa-clock"></i> 17:00開始上山，日落前到頂</div>
+                <div class="tip"><i class="fas fa-camera"></i> 盧吉道觀景台用長焦鏡壓縮維港建築群</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 徒步免費，山頂纜車來回$88</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 山頂「阿甘蝦餐廳」望住夜景食飯好浪漫</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1516893676001-52fdf7605797?auto=format&fit=crop&w=800&q=80" alt="咖啡" loading="lazy"></div>
+              <div class="info">
+                <h3>☕ 咖啡館打卡路線</h3>
+                <p>堅尼地城 %Arabica（望海飲咖啡）、深水埗 Winstons Coffee（復古霓虹燈）、上環 Common Ground（水泥工業風）——每一間都值得為佢停下腳步。近年香港咖啡文化愈來愈濃，獨立小店各有個性。</p>
+                <div class="tags"><span>咖啡</span><span>文青</span><span>影相</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 堅尼地城C出口行2分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 平日下晝人少，可以慢慢影相</div>
+                <div class="tip"><i class="fas fa-camera"></i> %Arabica門口望海位，咖啡杯+海景構圖</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$40-60一杯</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?auto=format&fit=crop&w=800&q=80" alt="西環泳棚" loading="lazy"></div>
+              <div class="info">
+                <h3>🌅 西環泳棚</h3>
+                <p>隱藏喺西環海邊嘅秘境棧橋，伸延出海面，日落時分超夢幻！以前係公眾泳棚，而家變咗攝影發燒友嘅天堂。潮漲時海水會拍打橋面，氣氛一流。</p>
+                <div class="tags"><span>日落</span><span>秘境</span><span>影相</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵堅尼地城站C出口，行15分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 日落前半小時到達，Golden Hour最靚</div>
+                <div class="tip"><i class="fas fa-camera"></i> 喺橋尾由低角度影過去，人+海+夕陽構圖一流</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 完全免費！</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 附近「祥香茶餐廳」嘅蛋撻同奶茶好正</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1465403157034-1d5e05cc2ac0?auto=format&fit=crop&w=800&q=80" alt="怪獸大厦" loading="lazy"></div>
+              <div class="info">
+                <h3>🏗️ 怪獸大厦</h3>
+                <p>變形金剛取景地！鰂魚涌嘅海山樓，密集嘅單位形成視覺衝擊。極繁美學嘅極致——數百個窗戶同招牌構成嘅垂直城市景觀，係科幻電影迷必到之地。</p>
+                <div class="tags"><span>打卡</span><span>電影場景</span><span>建築</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵鰂魚涌站A出口，行3分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早10點前人少，可以影到乾淨畫面</div>
+                <div class="tip"><i class="fas fa-camera"></i> 正中央由下向上影，超廣角鏡必備</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費！記得安靜參觀，唔好騷擾居民</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「太興燒味」喺附近，叉燒飯水準穩定</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1504664911901-2518a8bfc164?auto=format&fit=crop&w=800&q=80" alt="坪洲" loading="lazy"></div>
+              <div class="info">
+                <h3>🏝️ 坪洲 · 寧靜離島</h3>
+                <p>比南丫島更靜、比梅窩更有個性。坪洲冇汽車，只有單車同腳步。島上有廢棄工廠、彩色村屋、手作Cafe。最啱一個人帶本書嚟消磨半日。</p>
+                <div class="tags"><span>離島</span><span>慢活</span><span>文藝</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 中環6號碼頭搭船，約40分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 平日去，週末遊客比較多</div>
+                <div class="tip"><i class="fas fa-camera"></i> 手指山頂可以360度睇成個香港</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 船費$25.2（快船）</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「Island Table Grocer」嘅手工麵包超好食</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?auto=format&fit=crop&w=800&q=80" alt="主教山配水庫" loading="lazy"></div>
+              <div class="info">
+                <h3>🏛️ 主教山配水庫 · 地下羅馬神殿</h3>
+                <p>2020年拆卸先意外發現嘅百年古蹟，羅馬式拱門建築，震撼程度似小型萬神殿。深水埗山頂嘅地下蓄水池，而家有限度開放導賞，好難約但絕對值得。</p>
+                <div class="tags"><span>古蹟</span><span>建築</span><span>文青</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵石硤尾站A出口，行10分鐘上山</div>
+                <div class="tip"><i class="fas fa-clock"></i> 水務署網站預約導賞團，通常開售即秒殺</div>
+                <div class="tip"><i class="fas fa-camera"></i> 拱門走廊盡頭，超廣角由低影上，氣勢磅礴</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費導賞，但要預約</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 落山去深水埗食劉森記蝦籽撈麵，perfect ending</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1471347025057-68ff089f54cd?auto=format&fit=crop&w=800&q=80" alt="大坑" loading="lazy"></div>
+              <div class="info">
+                <h3>🏘️ 大坑 · 銅鑼灣旁邊兩個世界</h3>
+                <p>離開銅鑼灣鬧市五分鐘，大坑嘅小店密度全港最高。炳記茶檔豬扒麵坐街邊摺櫈食、民聲冰室鹹蛋肉餅山、舞火龍習俗傳承百年。一個路口，由繁囂變寧靜。</p>
+                <div class="tags"><span>文青</span><span>美食</span><span>小區</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵天后站B出口，行8分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 星期一好多小店休息，避免</div>
+                <div class="tip"><i class="fas fa-camera"></i> 炳記茶檔嘅街邊摺櫈位，充滿香港地道風情</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 炳記豬扒麵$30，民聲肉餅山$80</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 炳記茶檔豬扒麵+凍奶茶、民聲冰室鹹蛋肉餅山</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1504664911901-2518a8bfc164?auto=format&fit=crop&w=800&q=80" alt="勝香園" loading="lazy"></div>
+              <div class="info">
+                <h3>🍜 勝香園 · 中環鐵皮檔茄牛通</h3>
+                <p>中環美輪街嘅鐵皮檔，番茄湯通粉係招牌，湯底濃郁到似成個番茄煲爛咗咁。檸蜜脆脆即叫即烘，外脆內軟。坐街邊摺櫈食先有風味，好多明星都嚟幫襯。成個場得鐵皮屋頂，落雨會滴水，但呢啲就係香港味道。</p>
+                <div class="tags"><span>鐵皮檔</span><span>番茄湯</span><span>排隊美食</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵上環站A2出口，行5分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早11點前去到，避開人龍</div>
+                <div class="tip"><i class="fas fa-camera"></i> 鐵皮檔+街邊摺櫈+蒸氣，港味十足</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$40-60，只收現金</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 茄牛通+檸蜜脆脆+凍奶茶，黃金組合</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1495522097160-b7d527cc67f8?auto=format&fit=crop&w=800&q=80" alt="D2 Place" loading="lazy"></div>
+              <div class="info">
+                <h3>🎨 D2 Place · 週末文創市集</h3>
+                <p>荔枝角嘅文創市集集中地，超過125個本地手作攤檔，由首飾、服飾到手搓天然護膚品都有。每個週末唔同主題，仲有workshop可以參加。行完市集去隔籬嘅億利工業大廈食隱世美食，成個下晝就係咁樣消磨。</p>
+                <div class="tags"><span>文創</span><span>市集</span><span>手作</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵荔枝角站D2出口，直達</div>
+                <div class="tip"><i class="fas fa-clock"></i> 周末下晝2點到6點最旺</div>
+                <div class="tip"><i class="fas fa-camera"></i> 天台花園嘅壁畫同霓虹燈牌係打卡位</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費入場，workshop約$100-300</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 億利工業大廈「友利冰室」平靚正</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1465403157034-1d5e05cc2ac0?auto=format&fit=crop&w=800&q=80" alt="橋咀洲" loading="lazy"></div>
+              <div class="info">
+                <h3>🏝️ 西貢 + 橋咀洲 · 玻璃水沙灘</h3>
+                <p>西貢碼頭搭街渡去橋咀洲，睇「菠蘿包石」地質奇觀，半月灣嘅玻璃水清到見底。退潮時出現連島沙洲，可以行去對面小島。完全東南亞度假feel，但係喺香港。西貢碼頭仲有好多海鮮檔同小食，玩足一日。</p>
+                <div class="tags"><span>離島</span><span>沙灘</span><span>地質</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵彩虹站轉1A小巴到西貢碼頭</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早10點船，退潮先行到連島沙洲</div>
+                <div class="tip"><i class="fas fa-camera"></i> 半月灣沙灘+菠蘿包石，影出國感覺</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 街渡來回$40-50</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 西貢碼頭「甜甜蜜」嘅榴槤糯米糍好正</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1576444356170-66073046b1bc?auto=format&fit=crop&w=800&q=80" alt="東龍島" loading="lazy"></div>
+              <div class="info">
+                <h3>🏝️ 東龍島</h3>
+                <p>周末逃離都市，噴水岩同東龍炮台超壯觀，海水拍打斷崖放鬆晒。</p>
+                <div class="tags"><span>離島</span><span>行山</span><span>周末</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 只有六日有船，三家村來回$45</div>
+                <div class="tip"><i class="fas fa-clock"></i> 帶夠水乾糧</div>
+                <div class="tip"><i class="fas fa-camera"></i> 環島約4小時</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 留意尾班船</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1471347025057-68ff089f54cd?auto=format&fit=crop&w=800&q=80" alt="南生圍" loading="lazy"></div>
+              <div class="info">
+                <h3>🌿 南生圍</h3>
+                <p>元朗濕地觀鳥天堂，木橋田野橫水渡，踩單車穿梭遠離煩囂。</p>
+                <div class="tags"><span>濕地</span><span>觀鳥</span><span>單車</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 元朗站轉巴士</div>
+                <div class="tip"><i class="fas fa-clock"></i> 租單車</div>
+                <div class="tip"><i class="fas fa-camera"></i> 帶蚊怕水</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 黃昏最靚</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1562757258-05a61b40eeee?auto=format&fit=crop&w=800&q=80" alt="綠蛋島" loading="lazy"></div>
+              <div class="info">
+                <h3>🥚 綠蛋島</h3>
+                <p>西貢玻璃水小島，獨木舟浮潛熱點，水清見底似泰國。</p>
+                <div class="tags"><span>浮潛</span><span>獨木舟</span><span>玻璃水</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 西貢租船或大坳門行山</div>
+                <div class="tip"><i class="fas fa-clock"></i> 潮退先行到</div>
+                <div class="tip"><i class="fas fa-camera"></i> 帶浮潛鏡</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 適合深諳水性</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1495522097160-b7d527cc67f8?auto=format&fit=crop&w=800&q=80" alt="新蒲崗美食圈" loading="lazy"></div>
+              <div class="info">
+                <h3>🍜 新蒲崗美食圈</h3>
+                <p>老字号潮州打冷同文青cafe和平共存，平民價錢高質享受。</p>
+                <div class="tags"><span>美食</span><span>文青</span><span>平民</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 鑽石山站行10分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 窩子bagel排長龍</div>
+                <div class="tip"><i class="fas fa-camera"></i> Bari Bari Steak鐵板牛扒$128</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 潮州打冷保留正宗</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1589977326928-0c4681f1f1d3?auto=format&fit=crop&w=800&q=80" alt="石門美食圈" loading="lazy"></div>
+              <div class="info">
+                <h3>🍜 石門美食圈</h3>
+                <p>石門站特色餐廳集中地，日本菜西餐港式茶記乜都有，坐得舒服。</p>
+                <div class="tags"><span>美食</span><span>平民</span><span>方便</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 石門站一出就係</div>
+                <div class="tip"><i class="fas fa-clock"></i> 京瑞廣場</div>
+                <div class="tip"><i class="fas fa-camera"></i> 假日午市多人</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 泊車方便</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1582234372722-50d7ccc30ebd?auto=format&fit=crop&w=800&q=80" alt="牛屎湖" loading="lazy"></div>
+              <div class="info">
+                <h3>🌊 牛屎湖</h3>
+                <p>新界東北寧靜海灣，廢棄村落探險帶神秘感。</p>
+                <div class="tags"><span>秘境</span><span>探險</span><span>行山</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 大埔墟轉小巴到烏蛟騰</div>
+                <div class="tip"><i class="fas fa-clock"></i> 有經驗行山人士</div>
+                <div class="tip"><i class="fas fa-camera"></i> 注意安全</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 蚊蟲極多</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1576444356170-66073046b1bc?auto=format&fit=crop&w=800&q=80" alt="M+博物館" loading="lazy"></div>
+              <div class="info">
+                <h3>🏛️ M+博物館</h3>
+                <p>西九文化區，亞洲視覺文化博物館，星期五開到10pm。</p>
+                <div class="tags"><span>博物館</span><span>文化</span><span>西九</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵九龍站E出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 星期五開到10pm</div>
+                <div class="tip"><i class="fas fa-camera"></i> 天台花園免費</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 預留3-4小時</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 博物館餐廳景觀靚</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1549212408-d6b0defe25cf?auto=format&fit=crop&w=800&q=80" alt="長洲島" loading="lazy"></div>
+              <div class="info">
+                <h3>🏝️ 長洲島</h3>
+                <p>離島後花園，大魚蛋芒果糯米糍，太平清醮包山節。</p>
+                <div class="tags"><span>離島</span><span>美食</span><span>節慶</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 中環5號碼頭</div>
+                <div class="tip"><i class="fas fa-clock"></i> 租單車$30</div>
+                <div class="tip"><i class="fas fa-camera"></i> 東灣日落</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 大魚蛋$10</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 芒果糯米糍必試</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1653923302062-9fb10f6f3d8f?auto=format&fit=crop&w=800&q=80" alt="PMQ元創方" loading="lazy"></div>
+              <div class="info">
+                <h3>🎨 PMQ元創方 x HKwalls</h3>
+                <p>前警察宿舍活化，街頭藝術壁畫，文青必到。</p>
+                <div class="tags"><span>文創</span><span>壁畫</span><span>免費</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 上環站A2</div>
+                <div class="tip"><i class="fas fa-clock"></i> 免費入場</div>
+                <div class="tip"><i class="fas fa-camera"></i> 壁畫街打卡</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 附近一樂燒鵝</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1504664911901-2518a8bfc164?auto=format&fit=crop&w=800&q=80" alt="蘭桂坊" loading="lazy"></div>
+              <div class="info">
+                <h3>🎉 蘭桂坊</h3>
+                <p>香港夜生活地標，happy hour 5-9pm半價。</p>
+                <div class="tags"><span>夜生活</span><span>酒吧</span><span>HappyHour</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 中環站D2</div>
+                <div class="tip"><i class="fas fa-clock"></i> happy hour 5-9pm半價</div>
+                <div class="tip"><i class="fas fa-camera"></i> SoHo區speakeasy酒吧</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 半價優惠</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 香港夜生活地標</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="adult">
+          <h2 data-i18n="section-adult">💼 上班族 · 俾忙碌嘅人一次唞氣</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">2日1夜放空自己，城市療癒地圖，安靜閱讀咖啡館——香港唔只有OT。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?auto=format&fit=crop&w=800&q=80" alt="半山扶梯" loading="lazy"></div>
+              <div class="info">
+                <h3>🛗 半山扶梯漫步</h3>
+                <p>世界最長嘅戶外扶梯系統。沿途經過蘇豪區、古董街，越行越高，城市喺腳下展開。朝早扶梯係落山方向（06:00-10:00），之後轉為上山，留意時間！</p>
+                <div class="tags"><span>治癒</span><span>慢逛</span><span>免費</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵中環站C出口，德輔道中</div>
+                <div class="tip"><i class="fas fa-clock"></i> 下晝4點後，光線穿過唐樓好有電影感</div>
+                <div class="tip"><i class="fas fa-camera"></i> 喺伊利近街上段回頭影，扶梯+遠景好有層次</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費！</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「沾仔記」雲吞麵近在咫尺，米芝蓮推薦</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1562757258-05a61b40eeee?auto=format&fit=crop&w=800&q=80" alt="石板街" loading="lazy"></div>
+              <div class="info">
+                <h3>🗿 石板街 & 大館</h3>
+                <p>百年石板路，香港電影嘅經典場景。旁邊嘅大館係前監獄改造嘅藝術區，有展覽、餐廳、Cafe。週末成日有免費導賞團，了解香港早期司法歷史。</p>
+                <div class="tags"><span>歷史</span><span>文藝</span><span>影相</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵中環站D2出口，行5分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 大館朝早11點開，平日人少</div>
+                <div class="tip"><i class="fas fa-camera"></i> 石板街由高處向下影，青石板+霓虹燈好有味道</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 大館免費入場</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 大館入面嘅「樂茶軒」飲茶食素點心，環境清幽</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1512591290618-904e04936827?auto=format&fit=crop&w=800&q=80" alt="西貢" loading="lazy"></div>
+              <div class="info">
+                <h3>🦐 西貢海鮮</h3>
+                <p>現撈現做，坐喺海邊食避風塘炒蟹，配一支冰凍啤酒，人間值得。短短一條海傍街，十幾間海鮮酒家任揀。最推薦自己去市場揀海鮮俾餐廳加工，新鮮又抵食。</p>
+                <div class="tags"><span>美食</span><span>海景</span><span>放鬆</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵彩虹站轉1A小巴，約20分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 下晝3點後，食完海鮮行海濱長廊</div>
+                <div class="tip"><i class="fas fa-camera"></i> 海傍街日落，漁船+燈光構圖好有風情</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$300-800，視乎揀咩海鮮</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「全記」同「洪記」係老字號，避風塘炒蟹必點</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1504664911901-2518a8bfc164?auto=format&fit=crop&w=800&q=80" alt="大澳" loading="lazy"></div>
+              <div class="info">
+                <h3>🏘️ 大澳漁村</h3>
+                <p>香港最後嘅水上人家。棚屋、鹹魚、夕陽下嘅漁船——時間喺呢度慢咗唔止一倍。搭小艇遊棚屋$30一位，船家會講解水上人生活，好有人情味。</p>
+                <div class="tags"><span>懷舊</span><span>慢生活</span><span>攝影</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵東涌站轉11號巴士，約50分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 平日去，週末遊客太多</div>
+                <div class="tip"><i class="fas fa-camera"></i> 新基橋係最佳影相位，棚屋+河道倒影</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 小艇遊$30，沙翁$15/個</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「大澳華記」嘅沙翁同茶果超好食</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1549212408-d6b0defe25cf?auto=format&fit=crop&w=800&q=80" alt="維港" loading="lazy"></div>
+              <div class="info">
+                <h3>🚢 維港夜遊船</h3>
+                <p>夜晚登上觀光船，睇兩岸燈火璀璨。一杯酒，一個人，一座城。張保仔號最有特色——中式帆船設計，船上供應雞尾酒，chill住睇維港。</p>
+                <div class="tags"><span>夜景</span><span>浪漫</span><span>放鬆</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 尖沙咀或中環碼頭上船</div>
+                <div class="tip"><i class="fas fa-clock"></i> 夜晚8點，維港燈光秀開始</div>
+                <div class="tip"><i class="fas fa-camera"></i> 船尾露天位影ICC+會展中心兩岸</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 張保仔號$220/位包一杯飲品</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1653923302062-9fb10f6f3d8f?auto=format&fit=crop&w=800&q=80" alt="PMQ" loading="lazy"></div>
+              <div class="info">
+                <h3>🎨 PMQ元創方</h3>
+                <p>前荷李活道已婚警察宿舍活化而成嘅創意中心。超過100個本地設計師進駐，由時裝、首飾到家居用品都有。週末仲有市集，好多本地手作品牌。</p>
+                <div class="tags"><span>文創</span><span>設計</span><span>市集</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵上環站A2出口，行10分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 週末下晝市集最熱鬧</div>
+                <div class="tip"><i class="fas fa-camera"></i> 中庭嘅螺旋樓梯好適合影文青照</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費入場，購物豐儉由人</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「Aberdeen Street」嘅All Day Breakfast好受歡迎</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1516893676001-52fdf7605797?auto=format&fit=crop&w=800&q=80" alt="西環碼頭" loading="lazy"></div>
+              <div class="info">
+                <h3>🌉 西環碼頭</h3>
+                <p>Instagram上爆紅嘅「天空之鏡」。落雨後嘅地面倒映天空，形成鏡面效果。傍晚時分，夕陽+倒影+遠處嘅貨櫃碼頭，構圖超夢幻。好多新人揀呢度影婚紗相。</p>
+                <div class="tags"><span>影相</span><span>日落</span><span>秘境</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵堅尼地城站C出口，行15分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 日落前半小時到，雨後積水效果最好</div>
+                <div class="tip"><i class="fas fa-camera"></i> 蹲低身影倒影，人物放喺畫面三分一位置</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費！</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「％Arabica」堅尼地城店望住海飲咖啡</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1562757258-05a61b40eeee?auto=format&fit=crop&w=800&q=80" alt="駱駝漆大廈" loading="lazy"></div>
+              <div class="info">
+                <h3>🏭 駱駝漆大廈 · 工廈美食寶藏</h3>
+                <p>觀塘工廈活化典範，三座大廈藏住無數本地小店、食肆、皮革作坊、文具舖。赤屋手工餃子配胡椒豚骨湯係必食，六款口味日日新鮮包，日本麵粉皮冇味精。行足半日都行唔完。</p>
+                <div class="tags"><span>美食</span><span>文創</span><span>尋寶</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵觀塘站B出口，行8分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 平日下晝去，周末好多店休息</div>
+                <div class="tip"><i class="fas fa-camera"></i> 工廈走廊嘅復古鐵閘同招牌，充滿工業風</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 赤屋餃子$50-80/人</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 赤屋手工餃子（星期一休息）、Looms織物工作室</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1516893676001-52fdf7605797?auto=format&fit=crop&w=800&q=80" alt="欣澳長索島" loading="lazy"></div>
+              <div class="info">
+                <h3>🏝️ 欣澳長索島 · 摩西分紅海</h3>
+                <p>隱世連島沙洲，退潮時出現一條天然沙石路連接島嶼，企喺路中間兩邊係海，好似摩西分紅海。《那些年》香港取景地之一，日落時金光閃爍，完全唔似香港。</p>
+                <div class="tags"><span>秘境</span><span>日落</span><span>影相</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵欣澳站行15分鐘到海邊</div>
+                <div class="tip"><i class="fas fa-clock"></i> 出發前查潮汐時間表，退潮先行到</div>
+                <div class="tip"><i class="fas fa-camera"></i> 沙洲中央由側面影，人+海+夕陽，超有電影感</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費！</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 欣澳站附近冇食肆，自備糧水</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1589977326928-0c4681f1f1d3?auto=format&fit=crop&w=800&q=80" alt="海防道熟食市場" loading="lazy"></div>
+              <div class="info">
+                <h3>🍽️ 海防道臨時熟食市場 · 天橋底飯堂</h3>
+                <p>尖沙咀天橋底嘅隱世飯堂，翻新之後乾淨咗但風味不變。沙嗲牛麵、海南雞飯、牛雜河仲係當年嗰種味道。性價比超高，尖沙咀地段$40就食到飽。最正係嗰種街坊氣氛，左右隔籬都係熟客同老闆吹水。</p>
+                <div class="tags"><span>大牌檔</span><span>平價</span><span>隱世</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵尖沙咀站A1出口，海防道尾</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早11點到下晝3點，最齊檔</div>
+                <div class="tip"><i class="fas fa-camera"></i> 天橋底嘅鐵皮檔環境，充滿地道香港味</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$40-70</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 合香園沙嗲牛麵、新香園牛河</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1582234372722-50d7ccc30ebd?auto=format&fit=crop&w=800&q=80" alt="蘇記茶檔" loading="lazy"></div>
+              <div class="info">
+                <h3>🍳 蘇記茶檔 · 深水埗老字號</h3>
+                <p>深水埗嘅老字號茶檔，豬扒煎到金黃香脆，杯鴛鴦夠濃夠滑。保留住七十年代嗰種舊式茶檔風味，招牌豬扒煎到金黃香脆，配上一杯懷舊鴛鴦，簡單但係滿足。老闆娘話佢哋做咗40年，街坊由細食到大。</p>
+                <div class="tags"><span>茶檔</span><span>懷舊</span><span>街坊</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵深水埗站A2出口，行3分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 晏晝4點收檔，午市去最好</div>
+                <div class="tip"><i class="fas fa-camera"></i> 舊式茶檔嘅紙皮石地板同吊扇，懷舊風</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$30-50</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 豬扒煎蛋公仔麵+凍鴛鴦</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1516893676001-52fdf7605797?auto=format&fit=crop&w=800&q=80" alt="蒲台島" loading="lazy"></div>
+              <div class="info">
+                <h3>🏝️ 蒲台島</h3>
+                <p>香港最南端，奇石處處超靚燈塔，紫菜麵海鮮必食。</p>
+                <div class="tags"><span>離島</span><span>奇石</span><span>海鮮</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 香港仔赤柱有船</div>
+                <div class="tip"><i class="fas fa-clock"></i> 郊遊徑短</div>
+                <div class="tip"><i class="fas fa-camera"></i> 佛手岩僧人石打卡</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 試坤記綠豆沙</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1504664911901-2518a8bfc164?auto=format&fit=crop&w=800&q=80" alt="東平洲" loading="lazy"></div>
+              <div class="info">
+                <h3>🪨 東平洲</h3>
+                <p>世界地質公園，頁岩平行石紋海蝕平台，海水藍到似東南亞。</p>
+                <div class="tags"><span>地質</span><span>離島</span><span>海岸</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 六日船大學站馬料水</div>
+                <div class="tip"><i class="fas fa-clock"></i> 船程個半鐘</div>
+                <div class="tip"><i class="fas fa-camera"></i> 留意潮汐</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 島上冇補給</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1651658313775-90bf2751913e?auto=format&fit=crop&w=800&q=80" alt="Ozone酒吧" loading="lazy"></div>
+              <div class="info">
+                <h3>🍸 Ozone酒吧</h3>
+                <p>ICC 118樓全球最高酒吧，HK$250-500。</p>
+                <div class="tags"><span>酒吧</span><span>夜景</span><span>頂級</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵九龍站</div>
+                <div class="tip"><i class="fas fa-clock"></i> happy hour 5-7pm</div>
+                <div class="tip"><i class="fas fa-camera"></i> 維港夜景</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> HK$250-500</div>
+                <div class="tip"><i class="fas fa-utensils"></i> dress code smart casual</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1512591290618-904e04936827?auto=format&fit=crop&w=800&q=80" alt="Red Sugar" loading="lazy"></div>
+              <div class="info">
+                <h3>🍷 Red Sugar 紅糖</h3>
+                <p>嘉里酒店7樓270度維港景露天吧，黃埔站。</p>
+                <div class="tags"><span>酒吧</span><span>海景</span><span>日落</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 黃埔站</div>
+                <div class="tip"><i class="fas fa-clock"></i> 日落5-7pm</div>
+                <div class="tip"><i class="fas fa-camera"></i> 270度維港景</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$200-400</div>
+                <div class="tip"><i class="fas fa-utensils"></i> live jazz星期四</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1465403157034-1d5e05cc2ac0?auto=format&fit=crop&w=800&q=80" alt="半島酒店" loading="lazy"></div>
+              <div class="info">
+                <h3>🏨 半島酒店大堂茶座</h3>
+                <p>經典英式下午茶，弦樂四重奏，人均$400-600。</p>
+                <div class="tags"><span>下午茶</span><span>經典</span><span>奢華</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 尖沙咀站</div>
+                <div class="tip"><i class="fas fa-clock"></i> 2-6pm</div>
+                <div class="tip"><i class="fas fa-camera"></i> 弦樂四重奏</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$400-600</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 玫瑰果醬可買走</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="senior">
+          <h2 data-i18n="section-senior">👴 銀髮旅行 · 慢落嚟，睇見香港</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">無障礙路線、體力友好攻略、早茶老字號——歲月係最好嘅導遊。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1582234372722-50d7ccc30ebd?auto=format&fit=crop&w=800&q=80" alt="茶樓" loading="lazy"></div>
+              <div class="info">
+                <h3>🍵 老茶樓早茶攻略</h3>
+                <p>陸羽茶室、蓮香樓——真正老派嘅茶樓。一盅兩件，報紙一翻，就係半日。陸羽茶室喺中環開咗超過80年，裝修仲保留住舊式茶樓嘅風貌。點心車推過嚟，鍾意邊款就拎邊款。</p>
+                <div class="tags"><span>早茶</span><span>懷舊</span><span>唔催人</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵中環站D2出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早7點到9點，坐低慢慢歎</div>
+                <div class="tip"><i class="fas fa-camera"></i> 茶樓內部嘅吊扇、地磚同卡位好有舊香港味道</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$80-150</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 陸羽蝦餃、蓮香蓮蓉包——招牌必點</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1629007006355-d75f7b828bfd?auto=format&fit=crop&w=800&q=80" alt="昂坪" loading="lazy"></div>
+              <div class="info">
+                <h3>🚡 昂坪360 & 寶蓮禪寺</h3>
+                <p>纜車睇大嶼山全景，平穩舒適。到寶蓮禪寺拜佛、食齋菜，心靜自然涼。天壇大佛係世界最高嘅戶外青銅坐佛，莊嚴宏偉。齋菜$120/位，菜式精緻。</p>
+                <div class="tags"><span>纜車</span><span>禮佛</span><span>無障礙</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵東涌站B出口，行5分鐘到纜車站</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早10點前到，避開旅行團</div>
+                <div class="tip"><i class="fas fa-camera"></i> 水晶車廂底部透明，腳下就係山景同海景</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 纜車來回$235（標準）/$315（水晶）</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 寶蓮禪寺齋菜，每日11:30-17:00供應</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1495522097160-b7d527cc67f8?auto=format&fit=crop&w=800&q=80" alt="南蓮園池" loading="lazy"></div>
+              <div class="info">
+                <h3>🌿 南蓮園池 & 志蓮淨苑</h3>
+                <p>仿唐木構建築，錦鯉池、松柏、誦經聲——城市中嘅一片淨土。輪椅友好，全園平坦。志蓮淨苑嘅天王殿同大雄寶殿係按照唐代寺院規制建造，每一處細節都值得細味。</p>
+                <div class="tags"><span>無障礙</span><span>寧靜</span><span>唐風</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵鑽石山站C2出口，行3分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早8點開門，晨運後順便行</div>
+                <div class="tip"><i class="fas fa-camera"></i> 錦鯉池嘅拱橋係最佳影相位</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費入場</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 園內「龍門樓」有素菜套餐，$60起</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1653923302062-9fb10f6f3d8f?auto=format&fit=crop&w=800&q=80" alt="花墟" loading="lazy"></div>
+              <div class="info">
+                <h3>🌸 花墟 & 雀鳥花園</h3>
+                <p>旺角附近嘅花市，色彩斑斕。買紮花、聽雀仔叫，心情都會好返晒。花墟道兩旁全部係花店，由平價鮮花到名貴盆栽都有。隔籬嘅雀鳥花園可以見到香港人湊雀仔嘅獨特文化。</p>
+                <div class="tags"><span>休閒</span><span>散步</span><span>本地文化</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵太子站A出口，行5分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早10點到12點最熱鬧</div>
+                <div class="tip"><i class="fas fa-camera"></i> 花墟嘅繽紛色彩好適合影人像</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 鮮花$30-100一束</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「金華冰廳」嘅菠蘿油同奶茶好出名</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1576444356170-66073046b1bc?auto=format&fit=crop&w=800&q=80" alt="九龍公園" loading="lazy"></div>
+              <div class="info">
+                <h3>🏸 九龍公園晨運</h3>
+                <p>尖沙咀鬧市中嘅綠洲。早上去打太極、散步，感受香港人嘅日常生活。公園有鳥湖、迷宮花園同雕塑徑，仲有游泳池同體育館，活動多元。</p>
+                <div class="tags"><span>晨運</span><span>免費</span><span>綠洲</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵尖沙咀站A1出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早6點到9點，晨運氣氛最濃</div>
+                <div class="tip"><i class="fas fa-camera"></i> 鳥湖嘅火烈鳥係影相熱點</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 公園旁「澳門茶餐廳」豬扒包好食</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1629007006355-d75f7b828bfd?auto=format&fit=crop&w=800&q=80" alt="香港公園" loading="lazy"></div>
+              <div class="info">
+                <h3>🌳 香港公園</h3>
+                <p>金鐘核心地段嘅巨型綠肺！內有觀鳥園、溫室、太極園同茶具文物館。觀鳥園係全東南亞最大嘅戶外觀鳥設施，行入去就俾幾十種雀鳥包圍，好震撼。</p>
+                <div class="tags"><span>觀鳥</span><span>免費</span><span>無障礙</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵金鐘站C1出口，天橋直達</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早8點到10點，雀鳥最活躍</div>
+                <div class="tip"><i class="fas fa-camera"></i> 觀鳥園用長焦鏡可以影到雀鳥近距離特寫</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「樂茶軒」喺公園入面，飲茶食點心好寫意</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1562757258-05a61b40eeee?auto=format&fit=crop&w=800&q=80" alt="九龍寨城公園" loading="lazy"></div>
+              <div class="info">
+                <h3>🏯 九龍寨城公園</h3>
+                <p>前身係九龍寨城——曾經全球人口密度最高嘅地方，而家變成清幽雅致嘅江南園林。公園保留咗古城牆、衙門同炮台，歷史意義深厚。最啱鍾意歷史嘅朋友慢慢行。</p>
+                <div class="tags"><span>歷史</span><span>園林</span><span>免費</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵樂富站B出口，行10分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早9點前到，感受晨光</div>
+                <div class="tip"><i class="fas fa-camera"></i> 亭台樓閣配合錦鯉池，中式園林構圖</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 附近「樂富廣場」有好多餐廳選擇</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1653923302062-9fb10f6f3d8f?auto=format&fit=crop&w=800&q=80" alt="香港公園" loading="lazy"></div>
+              <div class="info">
+                <h3>🌿 香港公園 · 銀髮慢活</h3>
+                <p>金鐘核心地段嘅巨型綠肺！平坦無障礙嘅散步徑、觀鳥園、溫室、太極園。朝早見到好多伯伯打太極，感受香港人嘅日常。觀鳥園係全東南亞最大，行入去就俾幾十種雀鳥包圍。</p>
+                <div class="tags"><span>無障礙</span><span>觀鳥</span><span>免費</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵金鐘站C1出口，天橋直達</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早8點到10點，雀鳥最活躍</div>
+                <div class="tip"><i class="fas fa-camera"></i> 觀鳥園瀑布前，雀鳥+水景構圖</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「樂茶軒」公園入面，飲杯普洱食件糕點</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1629007006355-d75f7b828bfd?auto=format&fit=crop&w=800&q=80" alt="東涌新華酒家" loading="lazy"></div>
+              <div class="info">
+                <h3>🍚 東涌新華酒家 · 隱世村屋食堂</h3>
+                <p>$56一個小菜，白飯例湯任裝，仲要係70年代懷舊裝修——綠色格仔磚、紙皮石地板、老海報。鹹魚煎肉餅同梅菜扣肉煲係招牌。位置偏僻到要本地人帶路，真正隱世。</p>
+                <div class="tags"><span>懷舊</span><span>平價</span><span>隱世</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵東涌站行15分鐘入馬灣涌村</div>
+                <div class="tip"><i class="fas fa-clock"></i> 只做周一至六午市11:30-2pm，星期日唔開</div>
+                <div class="tip"><i class="fas fa-camera"></i> 綠色格仔磚牆同紙皮石地板，懷舊風滿分</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$56起，白飯例湯任裝</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 鹹魚煎肉餅、梅菜扣肉煲必點</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?auto=format&fit=crop&w=800&q=80" alt="鯉魚門三家村" loading="lazy"></div>
+              <div class="info">
+                <h3>🐟 鯉魚門三家村</h3>
+                <p>九龍東傳統漁村，海鮮街即揀即煮，老香港味道。</p>
+                <div class="tags"><span>漁村</span><span>海鮮</span><span>日落</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 油塘站行10分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 海鮮問清楚價錢</div>
+                <div class="tip"><i class="fas fa-camera"></i> 燈塔日落最靚</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 平日少人</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1516893676001-52fdf7605797?auto=format&fit=crop&w=800&q=80" alt="香港公園" loading="lazy"></div>
+              <div class="info">
+                <h3>🌿 香港公園 (再補充)</h3>
+                <p>溫室觀鳥園太極園，免費入場，中環站行15分鐘。</p>
+                <div class="tags"><span>觀鳥</span><span>免費</span><span>無障礙</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 中環站行15分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 霍士傑溫定時展覽，觀鳥園9-5pm</div>
+                <div class="tip"><i class="fas fa-camera"></i> 觀鳥園瀑布前影雀鳥</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費入場</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「樂茶軒」飲茶食點心</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1770297346253-f1255dd167dc?auto=format&fit=crop&w=800&q=80" alt="遮打花園皇后像廣場" loading="lazy"></div>
+              <div class="info">
+                <h3>🏛️ 遮打花園皇后像廣場</h3>
+                <p>中環心臟地帶，百年歷史，週日菲傭聚會感受多元文化。</p>
+                <div class="tags"><span>歷史</span><span>免費</span><span>中環</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 中環站K出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 週日下午最熱鬧</div>
+                <div class="tip"><i class="fas fa-camera"></i> 皇后像廣場嘅殖民建築值得影</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 附近「翠華餐廳」</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="quiet">
+          <h2 data-i18n="section-quiet">🌊 發呆地圖 · 如果你咩都唔想做</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">旅行唔一定係要打卡。有時，淨係坐低。呢度係為I人準備嘅避風港。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?auto=format&fit=crop&w=800&q=80" alt="西九" loading="lazy"></div>
+              <div class="info">
+                <h3>西九海濱 · 睇日落</h3>
+                <p>適合一個人。傍晚嚟最好。帶一杯咖啡，坐喺長櫈上，睇太陽沉落海中。對面嘅中環同ICC喺夕陽下閃閃發光，世界靜得只剩下海浪聲。</p>
+                <div class="tags"><span>日落</span><span>獨處</span><span>免費</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵九龍站E出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 日落前45分鐘到，揀個靚位</div>
+                <div class="tip"><i class="fas fa-camera"></i> 海濱長廊盡頭嘅梯級，坐低影低角度夕陽</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1516893676001-52fdf7605797?auto=format&fit=crop&w=800&q=80" alt="碼頭" loading="lazy"></div>
+              <div class="info">
+                <h3>中環碼頭 · 睇船</h3>
+                <p>坐喺碼頭邊，睇來來往往嘅天星小輪。咩都唔諗，就係最好嘅放空。碼頭嘅長櫈可以坐好耐，海風吹嚟，聽住船笛聲，時間過得好慢好慢。</p>
+                <div class="tags"><span>發吽哣</span><span>海風</span><span>免費</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵中環站A出口，行10分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 下晝3點到5點，光線柔和</div>
+                <div class="tip"><i class="fas fa-camera"></i> 碼頭迴旋處嘅小輪+中環背景係經典構圖</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1504664911901-2518a8bfc164?auto=format&fit=crop&w=800&q=80" alt="石澳" loading="lazy"></div>
+              <div class="info">
+                <h3>石澳海灘 · 黃昏</h3>
+                <p>彩色屋仔、寧靜嘅海。戴耳機、拎本書，可以坐足成個下晝。石澳村嘅彩色小屋好似走進童話世界，海灘水清沙幼，係發呆嘅完美場景。</p>
+                <div class="tags"><span>海灘</span><span>安靜</span><span>彩色</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵筲箕灣站轉9號巴士，約30分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 平日下晝，人少少最正</div>
+                <div class="tip"><i class="fas fa-camera"></i> 彩色小屋群喺石澳村入面，每間都係影相位</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 石澳「成記」嘅餐蛋麵同凍檸茶好地道</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1629007006355-d75f7b828bfd?auto=format&fit=crop&w=800&q=80" alt="大帽山" loading="lazy"></div>
+              <div class="info">
+                <h3>大帽山 · 睇雲</h3>
+                <p>香港最高嘅山。清晨上山睇雲海，世界喺你腳下甦醒，寧靜至極。揸車可以直上閘口，再行30分鐘到山頂。秋冬時分雲海出現率最高，仙境一樣。</p>
+                <div class="tags"><span>山景</span><span>清晨</span><span>雲海</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 荃灣站轉51號巴士到郊野公園</div>
+                <div class="tip"><i class="fas fa-clock"></i> 清晨5點到6點，雲海最壯觀</div>
+                <div class="tip"><i class="fas fa-camera"></i> 山頂雷達站前嘅平台，雲海+日出一次影晒</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1512591290618-904e04936827?auto=format&fit=crop&w=800&q=80" alt="茶樓" loading="lazy"></div>
+              <div class="info">
+                <h3>老茶樓 · 一個人</h3>
+                <p>蓮香樓、陸羽茶室——一個人去都唔會尷尬嘅老派茶樓，坐幾耐都得。伙記唔會催你，報紙睇完一版又一版，茶淡咗就自己沖水，係最好嘅Me Time。</p>
+                <div class="tags"><span>茶樓</span><span>懷舊</span><span>一個人</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵上環站E1出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早7點到9點，最安靜</div>
+                <div class="tip"><i class="fas fa-camera"></i> 茶樓嘅點心車同舊式收銀櫃台好有味道</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 人均$60-100</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1495522097160-b7d527cc67f8?auto=format&fit=crop&w=800&q=80" alt="誠品" loading="lazy"></div>
+              <div class="info">
+                <h3>誠品書店 · 窗邊位</h3>
+                <p>銅鑼灣店嘅窗邊位置，攞本書、嗌杯茶，睇樓下人群匆匆。落地大窗望住維園同銅鑼灣街景，一個人可以喺度消磨整個下晝。</p>
+                <div class="tags"><span>書店</span><span>室內</span><span>放空</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵銅鑼灣站F出口，希慎廣場</div>
+                <div class="tip"><i class="fas fa-clock"></i> 平日下晝，學生未放學最靜</div>
+                <div class="tip"><i class="fas fa-camera"></i> 書店內嘅木系裝潢同書牆好適合影文青照</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費入場，唔消費都得</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1504664911901-2518a8bfc164?auto=format&fit=crop&w=800&q=80" alt="坪洲" loading="lazy"></div>
+              <div class="info">
+                <h3>坪洲 · 全日放空</h3>
+                <p>全香港最適合發呆嘅離島！島上冇車，得海風同腳步聲。喺海邊石櫈坐低，睇漁船出海、聽海浪拍岸。坪洲嘅手指山行到山頂都係20分鐘，景觀開揚。</p>
+                <div class="tags"><span>離島</span><span>寧靜</span><span>慢活</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 中環6號碼頭搭船</div>
+                <div class="tip"><i class="fas fa-clock"></i> 平日全日，船班疏落更顯寧靜</div>
+                <div class="tip"><i class="fas fa-camera"></i> 坪洲碼頭旁嘅長堤係影日落嘅隱藏位</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 船費$25.2</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「祺森冰室」嘅蝦多士係坪洲名物</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1629007006355-d75f7b828bfd?auto=format&fit=crop&w=800&q=80" alt="觀鳥園" loading="lazy"></div>
+              <div class="info">
+                <h3>香港公園 · 觀鳥園</h3>
+                <p>全東南亞最大嘅戶外觀鳥園！行入去就俾雀仔包圍，佢哋喺你頭頂飛過、喺你身邊跳嚟跳去。園內有瀑布同小溪，環境清幽。最啱帶本書坐低，聽雀仔唱歌。</p>
+                <div class="tags"><span>觀鳥</span><span>免費</span><span>室內</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵金鐘站C1出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早9點前，雀仔最活躍</div>
+                <div class="tip"><i class="fas fa-camera"></i> 瀑布前用慢快門影絲絹水流+雀鳥剪影</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「樂茶軒」公園入面，飲杯普洱食件糕點</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1549212408-d6b0defe25cf?auto=format&fit=crop&w=800&q=80" alt="薄扶林水塘" loading="lazy"></div>
+              <div class="info">
+                <h3>🌲 薄扶林水塘 · 香港第一個水塘</h3>
+                <p>隱藏喺港大後面山裡，遊人稀落到似走錯路。水務文物徑全平路，雨後清晨植物翠綠水氣氤氳，充滿仙氣。零商業、零門票，得鳥叫同水流聲。最啱一個人帶本書嚟消磨半日。</p>
+                <div class="tags"><span>寧靜</span><span>自然</span><span>免費</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵香港大學站A2出口，穿校園行過去</div>
+                <div class="tip"><i class="fas fa-clock"></i> 清晨7-10點，空氣最新鮮</div>
+                <div class="tip"><i class="fas fa-camera"></i> 水塘倒映樹影，水平如鏡，影仙境感</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費！全程自備水糧，冇商店</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 落山去西環祥香茶餐廳食蛋撻</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1495522097160-b7d527cc67f8?auto=format&fit=crop&w=800&q=80" alt="塔門" loading="lazy"></div>
+              <div class="info">
+                <h3>🐂 塔門 · 香港無添</h3>
+                <p>成個島都係大草地，牛牛周圍行，海膽炒飯係名物。露營過夜睇星空，朝早睇日出，香港最chill嘅周末逃離路線。疊石打卡位影相一流，企喺草地上望住無際大海，咩煩惱都冇晒。</p>
+                <div class="tags"><span>露營</span><span>離島</span><span>發呆</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 大學站馬料水碼頭搭船，約1.5小時</div>
+                <div class="tip"><i class="fas fa-clock"></i> 露營過夜最正，朝早睇日出</div>
+                <div class="tip"><i class="fas fa-camera"></i> 疊石+大海+藍天，超廣角影出世界盡頭感</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 船費約$30，露營免費</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 新惠和餐廳海膽炒飯係必食</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?auto=format&fit=crop&w=800&q=80" alt="堅尼地城海旁" loading="lazy"></div>
+              <div class="info">
+                <h3>🌅 堅尼地城海旁 · 西環日落</h3>
+                <p>新海濱長廊影到西環尾嘅日落同維港景色，冇山頂咁多人，但有同樣震撼嘅黃金光影。附近仲有彩色壁畫巷可以慢慢影。最正係可以喺海旁長櫈坐低，望住太陽慢慢沉落貨櫃碼頭後面，成個人放空晒。</p>
+                <div class="tags"><span>日落</span><span>海旁</span><span>免費</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵堅尼地城站C出口，沿海行8分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 下晝5點到6點半，Golden Hour</div>
+                <div class="tip"><i class="fas fa-camera"></i> 海旁長廊盡頭，低角度影夕陽+海面</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+                <div class="tip"><i class="fas fa-utensils"></i> %Arabica咖啡店望海飲咖啡</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1651658313775-90bf2751913e?auto=format&fit=crop&w=800&q=80" alt="流水響水塘" loading="lazy"></div>
+              <div class="info">
+                <h3>🌲 流水響水塘</h3>
+                <p>港版輕井澤，湖面靜到似塊鏡，白千層倒影。</p>
+                <div class="tags"><span>水塘</span><span>倒影</span><span>新手</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 粉嶺站52B小巴</div>
+                <div class="tip"><i class="fas fa-clock"></i> 秋冬落羽松轉紅</div>
+                <div class="tip"><i class="fas fa-camera"></i> 朝早8-9點光線靚</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 新手都啱</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1629007006355-d75f7b828bfd?auto=format&fit=crop&w=800&q=80" alt="東涌東海濱長廊" loading="lazy"></div>
+              <div class="info">
+                <h3>🌅 東涌東海濱長廊</h3>
+                <p>雨花園小屋形涼亭特色，睇飛機升降日落hea足下晝。</p>
+                <div class="tags"><span>日落</span><span>海濱</span><span>免費</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 東涌站行5分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 雨花園影相</div>
+                <div class="tip"><i class="fas fa-camera"></i> 日落最舒服</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 機場維修區睇更遠</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?auto=format&fit=crop&w=800&q=80" alt="南蓮園池" loading="lazy"></div>
+              <div class="info">
+                <h3>🏯 南蓮園池 & 志蓮淨苑</h3>
+                <p>唐風園林，全木構建築群，免費入場。</p>
+                <div class="tags"><span>唐風</span><span>園林</span><span>免費</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 鑽石山站C2</div>
+                <div class="tip"><i class="fas fa-clock"></i> 志蓮星期四休息</div>
+                <div class="tip"><i class="fas fa-camera"></i> 錦鯉池拱橋</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費入場</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 龍門樓素菜套餐</div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <section id="photo">
+          <h2 data-i18n="section-photo">📸 摄影机位 (Photo Spots)</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">香港係攝影天堂！由Instagram爆紅機位到本地攝影師私藏地點，呢度全部幫你整理好。</p>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1471347025057-68ff089f54cd?auto=format&fit=crop&w=800&q=80" alt="堅尼地城籃球場" loading="lazy"></div>
+              <div class="info">
+                <h3>🏀 堅尼地城籃球場</h3>
+                <p>IG上爆紅嘅「日落籃球場」！位處西環海旁，黃昏時太陽正好落喺球場後方，影到人+籃球框+鹹蛋黃嘅絕美構圖。場地免費開放，不過要等日落前嘅Golden Hour。</p>
+                <div class="tags"><span>日落</span><span>人像</span><span>經典</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵堅尼地城站C出口，行8分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 日落前30分鐘到，由球場向海方向影</div>
+                <div class="tip"><i class="fas fa-camera"></i> 長焦壓縮，將太陽、籃框、人影三者結合</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「祥香茶餐廳」喺附近，影完去食蛋撻</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1574227492706-f65b24c3688a?auto=format&fit=crop&w=800&q=80" alt="西環泳棚" loading="lazy"></div>
+              <div class="info">
+                <h3>🌉 西環泳棚 · 海邊棧橋</h3>
+                <p>香港最經典嘅日落攝影點之一！一條木橋伸延出海，兩旁海浪拍打，夕陽喺橋嘅盡頭沉落。最佳時間係潮漲+日落，浪花會濺上橋面，效果超夢幻。</p>
+                <div class="tags"><span>日落</span><span>長曝光</span><span>經典</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵堅尼地城站C出口，行15分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 日落前半小時到，潮漲日子效果最好</div>
+                <div class="tip"><i class="fas fa-camera"></i> 超廣角由橋頭影到橋尾+夕陽，人物放橋中間</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1516893676001-52fdf7605797?auto=format&fit=crop&w=800&q=80" alt="怪獸大厦" loading="lazy"></div>
+              <div class="info">
+                <h3>🏗️ 怪獸大厦 · 極繁美學</h3>
+                <p>鰂魚涌海山樓——變形金剛4取景地！密集嘅單位、外露嘅冷氣機、縱橫交錯嘅招牌，形成一種壓迫感同美感並存嘅獨特視覺。由下向上影，天空被建築切割成一個洞。</p>
+                <div class="tags"><span>建築</span><span>電影</span><span>科幻</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵鰂魚涌站A出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早10點前人少</div>
+                <div class="tip"><i class="fas fa-camera"></i> 正中位置攤喺地向上影，超廣角鏡必備</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費，尊重居民安靜拍攝</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1576444356170-66073046b1bc?auto=format&fit=crop&w=800&q=80" alt="樂華南邨" loading="lazy"></div>
+              <div class="info">
+                <h3>🌀 樂華南邨 · 時光隧道</h3>
+                <p>觀塘樂華南邨停車場天台嘅藍色圓形空間——被稱為「時光隧道」。弧形嘅水泥牆身、藍色調、自然光由頂部灑落，影人像超有科幻感。本地攝影師私藏機位。</p>
+                <div class="tags"><span>科幻</span><span>人像</span><span>免費</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵觀塘站轉22M小巴</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早9點到11點，陽光由頂部打下光影</div>
+                <div class="tip"><i class="fas fa-camera"></i> 人物企喺圓心，由高處向下影，形成強烈幾何感</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1562757258-05a61b40eeee?auto=format&fit=crop&w=800&q=80" alt="彩虹邨" loading="lazy"></div>
+              <div class="info">
+                <h3>🌈 彩虹邨 · 彩色球場</h3>
+                <p>香港最具代表性嘅公共屋邨之一！籃球場地面髹上七彩顏色，背後嘅公屋大廈同樣色彩繽紛。由停車場天台影落去，成個畫面好似調色盤一樣，充滿活力。</p>
+                <div class="tags"><span>色彩</span><span>打卡</span><span>免費</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵彩虹站C4出口，行5分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早10點前到，避開人潮同正午硬光</div>
+                <div class="tip"><i class="fas fa-camera"></i> 停車場天台由上向下影，人物企喺球場正中</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 彩虹邨入面嘅「金碧酒家」點心好出名</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1504664911901-2518a8bfc164?auto=format&fit=crop&w=800&q=80" alt="紅香爐峰" loading="lazy"></div>
+              <div class="info">
+                <h3>🏔️ 紅香爐峰 · 比太平山靚10倍</h3>
+                <p>北角寶馬山隱藏機位，15分鐘上山俯瞰維港東面全景。日落時金光灑落維港，夜晚睇到成個九龍半島。唔使同人逼山頂，本地攝影友私藏，呢度先係真正嘅夜景王者。</p>
+                <div class="tags"><span>夜景</span><span>秘境</span><span>日落</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 港鐵炮台山站，行到聖貞德中學側邊上山</div>
+                <div class="tip"><i class="fas fa-clock"></i> 日落前半小時到，magic hour影晒日夜</div>
+                <div class="tip"><i class="fas fa-camera"></i> 長焦壓縮維港建築群，日落+夜景一次過</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費！帶電筒，夜晚落山冇燈</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 落山去炮台山「華姐清湯腩」食牛腩河</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1576444356170-66073046b1bc?auto=format&fit=crop&w=800&q=80" alt="坪洲手指山" loading="lazy"></div>
+              <div class="info">
+                <h3>⛰️ 坪洲手指山 · 360度全景</h3>
+                <p>坪洲最高點只得95米，行20分鐘就到頂，但景觀開揚到嚇親你——迪士尼、港珠澳大橋、大嶼山、港島西一一盡收眼底。清晨去最好，東面日出+晨光灑落離島群。</p>
+                <div class="tags"><span>全景</span><span>離島</span><span>免費</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 中環6號碼頭搭船到坪洲</div>
+                <div class="tip"><i class="fas fa-clock"></i> 清晨6-8點，日出方向正對東面</div>
+                <div class="tip"><i class="fas fa-camera"></i> 山頂涼亭位，360度全景按快門停唔到手</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 船費$25.2，免費登山</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 落山食祺森冰室蝦多士</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1653923302062-9fb10f6f3d8f?auto=format&fit=crop&w=800&q=80" alt="鹽田梓" loading="lazy"></div>
+              <div class="info">
+                <h3>🧂 鹽田梓</h3>
+                <p>西貢鹽田村落，親身體驗曬鹽，聖若瑟小堂靚到似歐洲。</p>
+                <div class="tags"><span>歷史</span><span>鹽田</span><span>打卡</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 西貢搭街渡15分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 導賞團了解曬鹽</div>
+                <div class="tip"><i class="fas fa-camera"></i> 聖若瑟堂打卡</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 客家茶果</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1512591290618-904e04936827?auto=format&fit=crop&w=800&q=80" alt="香港仔避風塘" loading="lazy"></div>
+              <div class="info">
+                <h3>⛵ 香港仔避風塘</h3>
+                <p>懷舊舢舨夜遊，太白海鮮舫夜景，避風塘炒蟹艇仔粉。</p>
+                <div class="tags"><span>夜景</span><span>舢舨</span><span>海鮮</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 香港仔海旁租舢舨</div>
+                <div class="tip"><i class="fas fa-clock"></i> 黃昏出發</div>
+                <div class="tip"><i class="fas fa-camera"></i> 好天夜景仲靚過維港</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 艇仔粉地道</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1725971669490-edd88736e768?auto=format&fit=crop&w=800&q=80" alt="中環半山扶手電梯" loading="lazy"></div>
+              <div class="info">
+                <h3>🛗 中環半山扶手電梯</h3>
+                <p>全球最長戶外有蓋扶手梯，重慶森林取景地，兩旁壁畫。</p>
+                <div class="tags"><span>電影</span><span>建築</span><span>打卡</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 中環站C出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 上午下行下午上行，清晨人流少</div>
+                <div class="tip"><i class="fas fa-camera"></i> 伊利近街上段回頭影扶梯+遠景</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 沾仔記雲吞麵近在咫尺</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1552912470-ee2e96439539?auto=format&fit=crop&w=800&q=80" alt="西環貨物裝卸區" loading="lazy"></div>
+              <div class="info">
+                <h3>🚢 西環貨物裝卸區</h3>
+                <p>Instagram爆紅「西環碼頭」，日落貨櫃打卡。</p>
+                <div class="tags"><span>日落</span><span>打卡</span><span>秘境</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 堅尼地城站步行10分鐘</div>
+                <div class="tip"><i class="fas fa-clock"></i> 日落前到，Golden Hour最靚</div>
+                <div class="tip"><i class="fas fa-camera"></i> 貨櫃+夕陽+倒影構圖</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費</div>
+                <div class="tip"><i class="fas fa-utensils"></i> %Arabica望海飲咖啡</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1516893676001-52fdf7605797?auto=format&fit=crop&w=800&q=80" alt="鰂魚涌海山樓" loading="lazy"></div>
+              <div class="info">
+                <h3>🏗️ 鰂魚涌海山樓</h3>
+                <p>變形金剛4取景，極繁美學，密集建築群。</p>
+                <div class="tags"><span>建築</span><span>電影</span><span>打卡</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 鰂魚涌站A出口</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早10點前人少</div>
+                <div class="tip"><i class="fas fa-camera"></i> 正中由下向上影，超廣角必備</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 免費，安靜拍攝</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 「太興燒味」叉燒飯</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="routes">
+          <h2 data-i18n="section-routes">🧭 行程路線 · 第一次嚟香港咁樣玩</h2>
+          <p style="margin-bottom:24px;color:var(--text-light);">精選3日2夜經典路線，啱晒第一次嚟香港嘅你。</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:28px;box-shadow:var(--card-shadow);">
+              <div style="font-size:2rem;margin-bottom:12px;">🌆</div>
+              <h3 style="font-family:var(--font-serif);font-size:1.2rem;margin-bottom:8px;">Day 1 · 港島城市感</h3>
+              <ul style="color:var(--text-light);font-size:0.9rem;line-height:2;list-style:none;padding:0;">
+                <li>🏔️ 太平山（傍晚前抵達）</li>
+                <li>🗿 中環石板街 & 大館</li>
+                <li>🌃 維港夜景 + 天星小輪</li>
+                <li>🍜 蘭芳園絲襪奶茶</li>
+              </ul>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:28px;box-shadow:var(--card-shadow);">
+              <div style="font-size:2rem;margin-bottom:12px;">🏮</div>
+              <h3 style="font-family:var(--font-serif);font-size:1.2rem;margin-bottom:8px;">Day 2 · 九龍煙火氣</h3>
+              <ul style="color:var(--text-light);font-size:0.9rem;line-height:2;list-style:none;padding:0;">
+                <li>🍜 旺角街市 + 金華冰廳菠蘿油</li>
+                <li>📸 深水埗文青打卡</li>
+                <li>🌙 廟街夜市 + 煲仔飯</li>
+              </ul>
+            </div>
+            <div style="background:var(--card-bg);border-radius:var(--radius-md);padding:28px;box-shadow:var(--card-shadow);">
+              <div style="font-size:2rem;margin-bottom:12px;">🏝️</div>
+              <h3 style="font-family:var(--font-serif);font-size:1.2rem;margin-bottom:8px;">Day 3 · 離島慢生活</h3>
+              <ul style="color:var(--text-light);font-size:0.9rem;line-height:2;list-style:none;padding:0;">
+                <li>🚢 南丫島徒步（榕樹灣→索罟灣）</li>
+                <li>🦐 海鮮午餐</li>
+                <li>🌊 海邊發吽哣 + 豆腐花</li>
+              </ul>
+            </div>
+          </div>
+          <div style="margin-top:32px;padding:24px;background:var(--card-bg);border-radius:var(--radius-md);box-shadow:var(--card-shadow);">
+            <h3 style="font-family:var(--font-serif);margin-bottom:12px;">💡 出行小貼士</h3>
+            <ul style="color:var(--text-light);font-size:0.9rem;line-height:2.2;">
+              <li>🚇 建議買八達通卡，地鐵、巴士、便利店、茶餐廳通用</li>
+              <li>📱 下載 Google Maps + Citymapper，導航冇難度</li>
+              <li>🧥 室內冷氣好猛，記得帶件薄外套</li>
+              <li>💰 人均預算參考：4000-6000 HKD（唔包機票）</li>
+              <li>⏰ 避開週末高峰去熱門景點</li>
+              <li>🔌 帶定轉插頭（英規三腳方形）</li>
+              <li>📶 機場買SIM卡，$33有50GB數據</li>
+            </ul>
+          </div>
+          <div class="place-list">
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1770297346253-f1255dd167dc?auto=format&fit=crop&w=800&q=80" alt="港島文化一日遊" loading="lazy"></div>
+              <div class="info">
+                <h3>🏛️ 港島文化一日遊</h3>
+                <p>西環壁畫→中環大館→灣仔藍屋→銅鑼灣，步行+電車。</p>
+                <div class="tags"><span>港島</span><span>文化</span><span>步行</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 西環出發，搭電車向東</div>
+                <div class="tip"><i class="fas fa-clock"></i> 全日行程，朝早10點出發</div>
+                <div class="tip"><i class="fas fa-camera"></i> 大館監獄走廊影相</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> $3電車一日任搭</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 灣仔「華嫂冰室」</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1759714872245-0d9647d7d0dc?auto=format&fit=crop&w=800&q=80" alt="九龍美食散步" loading="lazy"></div>
+              <div class="info">
+                <h3>🍜 九龍美食散步</h3>
+                <p>深水埗掃街→太子花墟→旺角夜市→尖沙咀海傍。</p>
+                <div class="tags"><span>美食</span><span>九龍</span><span>散步</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 深水埗站開始，沿太子旺角行到尖沙咀</div>
+                <div class="tip"><i class="fas fa-clock"></i> 下晝2點出發，行到夜晚</div>
+                <div class="tip"><i class="fas fa-camera"></i> 深水埗壁畫街打卡</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 深水埗周六有手作市集</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 深水埗「合益泰」腸粉</div>
+              </div>
+            </div>
+            <div class="place-card">
+              <div class="thumb"><img src="https://images.unsplash.com/photo-1504664911901-2518a8bfc164?auto=format&fit=crop&w=800&q=80" alt="離島出走兩天遊" loading="lazy"></div>
+              <div class="info">
+                <h3>🏝️ 離島出走兩天遊</h3>
+                <p>Day1長洲單車+大魚蛋+張保仔洞，Day2南丫島海鮮+風力發電站。</p>
+                <div class="tags"><span>離島</span><span>露營</span><span>美食</span></div>
+                <div class="tip"><i class="fas fa-train"></i> 中環4號碼頭出發</div>
+                <div class="tip"><i class="fas fa-clock"></i> 朝早9點船</div>
+                <div class="tip"><i class="fas fa-camera"></i> 長洲東灣日落</div>
+                <div class="tip"><i class="fas fa-yen-sign"></i> 租單車$30</div>
+                <div class="tip"><i class="fas fa-utensils"></i> 長洲大魚蛋+南丫島海鮮</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <div class="sun"><i class="fas fa-sun"></i></div>
+          SunnyHK
+        </div>
+        <p data-i18n="footer-tagline">一個年輕、陽光、真實嘅香港旅行靈感平台。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-explore">探索</h4>
+        <a href="explore.html" data-i18n="footer-guide">人群指南</a>
+        <a href="hiking.html" data-i18n="footer-hiking">🥾 行山路線</a>
+        <a href="snorkeling.html" data-i18n="footer-snorkeling">🤿 浮潛攻略</a>
+        <a href="explore.html#quiet" data-i18n="footer-quiet">發呆地圖</a>
+        <a href="tips.html" data-i18n="footer-tips">實用資訊</a>
+        <a href="stories.html" data-i18n="footer-stories">香港故事</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-about">關於</h4>
+        <a href="about.html" data-i18n="footer-about-us">關於 SunnyHK</a>
+        <a href="about.html#faq" data-i18n="footer-faq">常見問題</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-follow">關注我哋</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="小紅書"><i class="fab fa-xiaohongshu"></i></a>
+          <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 SunnyHK · Discover Your Own Hong Kong</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/lang.js"></script>
+<script src="js/main.js"></script>
+
+<script>navigator.serviceWorker?.register("/sw.js");</script>
+</body>
+</html>

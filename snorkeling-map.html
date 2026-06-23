@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="香港浮潛地圖 — 由橋咀洲、海下灣到東平洲，12大浮潛勝地推介！按難度分類、最佳季節、裝備建議，SunnyHK帶你發掘香港隱世玻璃水。">
+<meta name="keywords" content="香港浮潛,香港浮潛地點,橋咀洲浮潛,海下灣浮潛,綠蛋島浮潛,東平洲,浮潛攻略">
+<meta name="robots" content="index, follow">
+<link rel="manifest" href="/manifest.json">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9RMXXLKYK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-L9RMXXLKYK');
+</script>
+<link rel="canonical" href="https://gohk.gamewayz.com/snorkeling-map.html">
+<meta name="baidu-site-verification" content="codeva-6fKr2IJVp7" />
+<meta property="og:title" content="🤿 香港浮潛地圖 | SunnyHK">
+<meta property="og:description" content="由橋咀洲、海下灣到東平洲，12大浮潛勝地推介！按難度分類、最佳季節、裝備建議。">
+<meta property="og:url" content="https://gohk.gamewayz.com/snorkeling-map.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:locale" content="zh_HK">
+<title>🤿 香港浮潛地圖 | SunnyHK</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.trail-hero {
+  position: relative; min-height: 50vh; display: flex; align-items: flex-end;
+  background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%);
+  overflow: hidden;
+}
+.trail-hero img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6;
+}
+.trail-hero .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(transparent 30%, rgba(0,0,0,0.8));
+}
+.trail-hero .inner {
+  position: relative; z-index: 1; padding: 40px 24px 48px; width: 100%;
+  max-width: 1200px; margin: 0 auto;
+}
+.trail-hero h1 { font-size: 2.4rem; font-weight: 900; color: white;
+  font-family: var(--font-serif); margin-bottom: 8px; }
+.trail-hero .meta { display: flex; gap: 16px; flex-wrap: wrap; color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+.trail-hero .meta span { background: rgba(255,255,255,0.12); padding: 4px 14px; border-radius: 100px; }
+.trail-content { max-width: 900px; margin: 0 auto; padding: 48px 24px; }
+.trail-intro { font-size: 1.05rem; line-height: 1.9; color: var(--text-light); margin-bottom: 40px; padding: 20px; background: var(--bg-cool); border-radius: var(--radius-md); }
+.step-card {
+  background: var(--card-bg); border-radius: var(--radius-md);
+  padding: 24px 28px; margin-bottom: 16px; box-shadow: var(--card-shadow);
+  border-left: 4px solid var(--brand);
+}
+.step-card h3 { margin-bottom: 8px; font-size: 1.1rem; }
+.step-card p { color: var(--text-light); font-size: 0.93rem; line-height: 1.8; }
+.trail-tips { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px,1fr)); gap: 12px; }
+.trail-tips li { background: var(--card-bg); border-radius: var(--radius-sm); padding: 14px 18px;
+  list-style: none; box-shadow: var(--card-shadow); font-size: 0.9rem; color: var(--text-light); }
+.trail-tips li::before { content: "💡 "; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--brand);
+  font-weight: 600; font-size: 0.9rem; margin-bottom: 32px; }
+.back-link:hover { text-decoration: underline; }
+@media (max-width: 768px) {
+  .trail-hero h1 { font-size: 1.6rem; }
+  .step-card { padding: 18px 20px; }
+}
+.snorkel-card {
+  background: var(--card-bg); border-radius: var(--radius-md);
+  padding: 24px 28px; margin-bottom: 16px; box-shadow: var(--card-shadow);
+  border-left: 4px solid #06b6d4;
+}
+.snorkel-card h3 { font-size: 1.1rem; margin-bottom: 6px; }
+.snorkel-card p { color: var(--text-light); font-size: 0.9rem; line-height: 1.7; margin-bottom: 8px; }
+.snorkel-card .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.snorkel-card .tags span {
+  padding: 3px 10px; border-radius: 100px; font-size: 0.7rem;
+  background: var(--bg-cool); color: var(--text-light);
+}
+.snorkel-card .info-row { display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.82rem; color: var(--text-muted); }
+.snorkel-card .info-row span { display: flex; align-items: center; gap: 4px; }
+.snorkel-card .btn-row { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+.season-table {
+  width: 100%; border-collapse: collapse; margin-bottom: 32px;
+  background: var(--card-bg); border-radius: var(--radius-md); overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+.season-table th {
+  background: var(--brand); color: white; padding: 12px 16px;
+  font-size: 0.85rem; text-align: left; font-weight: 600;
+}
+.season-table td {
+  padding: 10px 16px; font-size: 0.85rem; color: var(--text-light);
+  border-bottom: 1px solid var(--border);
+}
+.season-table tr:last-child td { border-bottom: none; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="inner">
+    <a href="index.html" class="logo">
+      <div class="sun"><i class="fas fa-sun"></i></div>
+      Sunny<span>HK</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav-home">首頁</a>
+      <div class="nav-dropdown active">
+        <a href="explore.html" data-i18n="nav-explore">探索指南</a>
+        <div class="nav-dropdown-menu">
+          <a href="explore.html" data-i18n="nav-explore-all">🌟 人群指南</a>
+          <a href="hiking.html" data-i18n="nav-hiking">🥾 行山路線</a>
+          <a href="snorkeling.html" data-i18n="nav-snorkeling">🤿 浮潛攻略</a>
+          <a href="swimming.html" data-i18n="nav-swimming">🏊 游水指南</a>
+        </div>
+      </div>
+      <a href="food.html" data-i18n="nav-food">美食地圖</a>
+      <div class="nav-dropdown">
+        <a href="tips.html" data-i18n="nav-tips">實用資訊</a>
+        <div class="nav-dropdown-menu">
+          <a href="tips.html" data-i18n="nav-tips-all">💡 實用貼士</a>
+          <a href="electronics.html" data-i18n="nav-electronics">💻 電子產品</a>
+        </div>
+      </div>
+      <a href="map.html" data-i18n="nav-map">🗺️ 地圖</a>
+      <a href="stories.html" data-i18n="nav-stories">香港故事</a>
+      <a href="about.html" data-i18n="nav-about">關於</a>
+    </div>
+    <div class="nav-actions">
+      <div class="lang-group">
+        <button class="lang-btn" data-lang="trad">繁</button>
+        <button class="lang-btn" data-lang="simp">简</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切換主題"><i class="fas fa-moon"></i></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="選單">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="index.html">首頁</a>
+  <a href="explore.html">🌟 人群指南</a>
+  <a href="hiking.html">🥾 行山路線</a>
+  <a href="snorkeling.html">🤿 浮潛攻略</a>
+  <a href="swimming.html">🏊 游水指南</a>
+  <a href="food.html">美食地圖</a>
+  <a href="tips.html">💡 實用貼士</a>
+  <a href="electronics.html">💻 電子產品</a>
+  <a href="map.html">🗺️ 地圖</a>
+  <a href="stories.html">香港故事</a>
+  <a href="about.html">關於</a>
+  <div class="lang-group">
+    <button class="lang-btn" data-lang="trad">繁</button>
+    <button class="lang-btn" data-lang="simp">简</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="theme-toggle" id="themeToggleMobile" aria-label="切換主題" style="margin-top:8px;align-self:flex-start;"><i class="fas fa-moon"></i></button>
+</div>
+
+<div class="trail-hero">
+  <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80" alt="香港浮潛地圖" loading="lazy">
+  <div class="overlay"></div>
+  <div class="inner">
+    <h1>🤿 香港浮潛地圖</h1>
+    <div class="meta">
+      <span>12大浮潛勝地</span>
+      <span>玻璃水秘境</span>
+      <span>按難度分類</span>
+    </div>
+  </div>
+</div>
+
+<div class="trail-content">
+  <p class="trail-intro">
+    香港唔只有石屎森林！離島同海岸線上，隱藏住好多水清沙幼嘅浮潛勝地。由西貢嘅橋咀洲到東北嘅東平洲，珊瑚群落、熱帶魚群、玻璃水⋯⋯唔使去馬爾代夫，香港都見得到！呢個地圖幫你按難度揀浮潛點，由新手到高手都有選擇。
+  </p>
+
+  <h2>🏖️ 新手啱玩 · 零經驗冇問題</h2>
+  <p style="margin-bottom:20px;color:var(--text-light);">風浪平靜、水淺、有基本配套，第一次試浮潛都得！</p>
+
+  <div class="snorkel-card">
+    <h3>🌴 橋咀洲 Sharp Island</h3>
+    <p>西貢最親民嘅浮潛點，船程十分鐘！落船行過連島沙洲（潮退先過得），離岸廿米已經見到十字牡丹珊瑚群落。游完水可以行上廈門灣沙灘休息。</p>
+    <div class="tags"><span>新手推薦</span><span>親子</span><span>公共交通可達</span></div>
+    <div class="info-row">
+      <span><i class="fas fa-ship"></i> 西貢碼頭搭街渡</span>
+      <span><i class="fas fa-yen-sign"></i> 來回$40-50</span>
+      <span><i class="fas fa-clock"></i> 15分鐘船程</span>
+    </div>
+    <div class="btn-row"><a href="snorkeling-sharp-island.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a></div>
+  </div>
+
+  <div class="snorkel-card">
+    <h3>🪸 海下灣 Hoi Ha Wan</h3>
+    <p>香港首批海岸公園之一，水靜到似湖面！有人工魚礁變成海洋生物安樂窩，各式熱帶魚穿梭。海下村可以租獨木舟，劃出去水更深嘅地方。</p>
+    <div class="tags"><span>海岸公園</span><span>風浪平靜</span><span>獨木舟</span></div>
+    <div class="info-row">
+      <span><i class="fas fa-bus"></i> 西貢搭7號小巴</span>
+      <span><i class="fas fa-yen-sign"></i> 獨木舟$100/小時</span>
+      <span><i class="fas fa-clock"></i> 30分鐘車程</span>
+    </div>
+    <div class="btn-row"><a href="snorkeling-hoi-ha-wan.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a></div>
+  </div>
+
+  <div class="snorkel-card">
+    <h3>🏖️ 廈門灣 Half Moon Bay</h3>
+    <p>半月形沙灘水清沙幼，被譽為香港嘅馬爾代夫！官方泳灘有救生員，配套齊全。灘頭兩側礁石區係最好浮潛點，有珊瑚同魚仔，適合帶小朋友。</p>
+    <div class="tags"><span>官方泳灘</span><span>救生員</span><span>親子</span></div>
+    <div class="info-row">
+      <span><i class="fas fa-ship"></i> 西貢搭街渡直達</span>
+      <span><i class="fas fa-info-circle"></i> 有更衣室、燒烤爐</span>
+    </div>
+    <div class="btn-row"><a href="snorkeling-half-moon-bay.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a></div>
+  </div>
+
+  <div class="snorkel-card">
+    <h3>⭐ 三星灣 Triple Bay</h3>
+    <p>西貢白沙灣附近嘅隱世泳灘，水質長期評為「良好」至「極佳」。平日幾乎冇乜人，浮潛點喺沙灘右邊石灘，水清見底。</p>
+    <div class="tags"><span>隱世</span><span>水質極佳</span><span>寧靜</span></div>
+    <div class="info-row">
+      <span><i class="fas fa-ship"></i> 白沙灣碼頭搭街渡</span>
+      <span><i class="fas fa-yen-sign"></i> 來回$30</span>
+    </div>
+    <div class="btn-row"><a href="snorkeling-triple-bay.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a></div>
+  </div>
+
+  <h2 style="margin-top:40px;">⚡ 進階之選 · 有經驗嘅浮潛者</h2>
+  <p style="margin-bottom:20px;color:var(--text-light);">要划獨木舟或行山路先到，回報係更清澈嘅水質同更豐富嘅海洋生態。</p>
+
+  <div class="snorkel-card">
+    <h3>🥚 綠蛋島 Green Egg Island</h3>
+    <p>Instagram最紅嘅香港玻璃水秘境！高空睇似一隻荷包蛋。水清到好似透明咁。上島要划獨木舟（相思灣出發約45分鐘）或者行山路+綑邊。</p>
+    <div class="tags"><span>玻璃水</span><span>秘境</span><span>獨木舟</span></div>
+    <div class="info-row">
+      <span><i class="fas fa-kayak"></i> 相思灣划獨木舟45分鐘</span>
+      <span><i class="fas fa-exclamation-triangle"></i> 島上冇水冇補給</span>
+    </div>
+    <div class="btn-row"><a href="snorkeling-green-egg.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a></div>
+  </div>
+
+  <div class="snorkel-card">
+    <h3>🧂 鹽田梓 Yim Tin Tsai</h3>
+    <p>有300年歷史嘅客家鹽田村，周圍紅樹林同水域生態超豐富！碼頭右邊有硬珊瑚群落，容易見到彈塗魚、招潮蟹。建議租獨木舟繞島一圈。</p>
+    <div class="tags"><span>歷史文化</span><span>紅樹林</span><span>生態豐富</span></div>
+    <div class="info-row">
+      <span><i class="fas fa-ship"></i> 西貢搭街渡直達</span>
+      <span><i class="fas fa-yen-sign"></i> 鹽田參觀$20</span>
+    </div>
+    <div class="btn-row"><a href="snorkeling-yim-tin-tsai.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a></div>
+  </div>
+
+  <div class="snorkel-card">
+    <h3>🌿 塔門 Grass Island</h3>
+    <p>塔門北面同東面水域水質清澈，有珊瑚群落。最正係可以日間浮潛、夜晚露營睇星星，一次過滿足兩個願望！海膽炒飯必試。</p>
+    <div class="tags"><span>露營</span><span>觀星</span><span>牛牛</span></div>
+    <div class="info-row">
+      <span><i class="fas fa-ship"></i> 馬料水碼頭搭船1.5小時</span>
+      <span><i class="fas fa-utensils"></i> 海膽炒飯必食</span>
+    </div>
+    <div class="btn-row"><a href="snorkeling-grass-island.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a></div>
+  </div>
+
+  <div class="snorkel-card">
+    <h3>🏝️ 東心淇 Tung Sam Kei</h3>
+    <p>赤門海峽嘅隱世小島，水質一級棒！南面同西面有珊瑚群落，經常有成班魚仔跟住你游。平日可以一個人獨享成個沙灘。</p>
+    <div class="tags"><span>隱世</span><span>水質一級</span><span>少人</span></div>
+    <div class="info-row">
+      <span><i class="fas fa-ship"></i> 黃石碼頭搭船15分鐘</span>
+      <span><i class="fas fa-fire"></i> 有燒烤爐</span>
+    </div>
+    <div class="btn-row"><a href="snorkeling-tung-sam-kei.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a></div>
+  </div>
+
+  <h2 style="margin-top:40px;">🏆 高手向 · 需要有經驗</h2>
+  <p style="margin-bottom:20px;color:var(--text-light);">船程長、偏遠，回報係香港最頂級嘅海底景觀！</p>
+
+  <div class="snorkel-card">
+    <h3>🗿 東平洲 Tung Ping Chau</h3>
+    <p>香港東極！47種珊瑚、過百種珊瑚魚、數十種海藻。水清到可以見到十米以下嘅海床。斬頸洲、更樓石等地質奇觀必影。</p>
+    <div class="tags"><span>地質奇觀</span><span>珊瑚天堂</span><span>偏遠</span></div>
+    <div class="info-row">
+      <span><i class="fas fa-ship"></i> 馬料水碼頭搭船1.5小時</span>
+      <span><i class="fas fa-exclamation-triangle"></i> 訊號微弱</span>
+    </div>
+    <div class="btn-row"><a href="snorkeling-tung-ping-chau.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a></div>
+  </div>
+
+  <div class="snorkel-card">
+    <h3>🪨 果洲群島 Ninepin Group</h3>
+    <p>「香港嘅海底花園」！海床鋪滿色彩繽紛嘅軟珊瑚、柳珊瑚、木珊瑚同海扇。必須包船或參加潛水團先去到，適合有經驗者。</p>
+    <div class="tags"><span>海底花園</span><span>包船</span><span>經驗要求</span></div>
+    <div class="info-row">
+      <span><i class="fas fa-ship"></i> 西貢包船1小時</span>
+      <span><i class="fas fa-yen-sign"></i> 人均$300-500</span>
+    </div>
+    <div class="btn-row"><a href="snorkeling-ninepin.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a></div>
+  </div>
+
+  <div class="snorkel-card">
+    <h3>🌊 娥眉洲 Ng Mei Chau</h3>
+    <p>印洲塘海岸公園內，水質最好嘅區域之一。大量軟珊瑚同硬珊瑚，魚群密集，被譽為香港嘅「小沖繩」。能見度極高，水清時見十幾米深。</p>
+    <div class="tags"><span>印洲塘</span><span>能見度高</span><span>包船</span></div>
+    <div class="info-row">
+      <span><i class="fas fa-ship"></i> 黃石碼頭包船前往</span>
+      <span><i class="fas fa-camera"></i> 水底wide鏡必帶</span>
+    </div>
+    <div class="btn-row"><a href="snorkeling-ng-mei-chau.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a></div>
+  </div>
+
+  <div class="snorkel-card">
+    <h3>🏔️ 甕缸群島 Ung Kong Group</h3>
+    <p>香港地質公園一部分，海底地形多變，有海蝕洞、深海溝。少數可以見到大型珊瑚礁群落嘅地方，有機會見到海龜！水流較急，只適合有豐富經驗者。</p>
+    <div class="tags"><span>大型珊瑚礁</span><span>海蝕洞</span><span>高手限定</span></div>
+    <div class="info-row">
+      <span><i class="fas fa-ship"></i> 西貢包船</span>
+      <span><i class="fas fa-exclamation-triangle"></i> 水流急，必須有經驗帶領</span>
+    </div>
+    <div class="btn-row"><a href="snorkeling-ung-kong.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a></div>
+  </div>
+
+  <h2 style="margin-top:48px;">📅 最佳浮潛季節</h2>
+  <table class="season-table">
+    <thead>
+      <tr>
+        <th>月份</th>
+        <th>水溫</th>
+        <th>建議</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>3-4月</td><td>18-22°C</td><td>春初，水溫較低，建議著潛水衣。風浪穩定。</td></tr>
+      <tr><td>5-6月</td><td>23-27°C</td><td>最佳浮潛季節開始！水溫舒適，風浪細。</td></tr>
+      <tr><td>7-9月</td><td>27-30°C</td><td>最暖季節，著防曬衣就夠。留意雷暴同颱風。</td></tr>
+      <tr><td>10-11月</td><td>23-27°C</td><td>秋高氣爽，水質最清。浮潛黃金季節！</td></tr>
+      <tr><td>12-2月</td><td>15-20°C</td><td>水溫低，建議2-3mm潛水衣。東北季候風有浪。</td></tr>
+    </tbody>
+  </table>
+
+  <h2>🎒 浮潛裝備建議</h2>
+  <ul class="trail-tips">
+    <li>面鏡+呼吸管：最緊要Fit面形，Decathlon入門套裝$200起。</li>
+    <li>浮潛鞋：保護對腳唔被蠔殼界親，厚底包腳踭款式最好。</li>
+    <li>防曬衣/潛水衣：防曬又保暖，仲防止水母𧐢。選Reef Safe。</li>
+    <li>浮水衣：唔識游水都可以浮潛！浮水衣令你自然浮喺水面。</li>
+    <li>防水袋：保護手機同銀包，必備！</li>
+    <li>物理防曬（Reef Safe）：普通防曬會殺珊瑚，改用Zinc Oxide base。</li>
+    <li>大樽水+小食：補充水份同體力，浮潛係體力活！</li>
+  </ul>
+
+  <div style="text-align:center;margin:48px 0;">
+    <a href="index.html" class="submit-btn" style="display:inline-block;width:auto;padding:14px 36px;border-radius:100px;text-decoration:none;">
+      ← 返回首頁
+    </a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <div class="sun"><i class="fas fa-sun"></i></div>
+          SunnyHK
+        </div>
+        <p>一個年輕、陽光、真實嘅香港旅行靈感平台。</p>
+      </div>
+      <div class="footer-col">
+        <h4>探索</h4>
+        <a href="explore.html">人群指南</a>
+        <a href="hiking.html">🥾 行山路線</a>
+        <a href="snorkeling.html">🤿 浮潛攻略</a>
+        <a href="explore.html#quiet">發呆地圖</a>
+        <a href="tips.html">實用資訊</a>
+        <a href="stories.html">香港故事</a>
+      </div>
+      <div class="footer-col">
+        <h4>關於</h4>
+        <a href="about.html">關於 SunnyHK</a>
+        <a href="about.html#faq">常見問題</a>
+      </div>
+      <div class="footer-col">
+        <h4>關注我哋</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="小紅書"><i class="fab fa-xiaohongshu"></i></a>
+          <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 SunnyHK · Discover Your Own Hong Kong</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/lang.js"></script>
+<script src="js/main.js"></script>
+<script>navigator.serviceWorker?.register("/sw.js");</script>
+</body>
+</html>

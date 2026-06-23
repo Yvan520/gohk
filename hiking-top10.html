@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="香港十大行山路線推介！由龍脊、獅子山到大帽山，難度、時間、交通、景色全面比較。SunnyHK為你揀出最值得行嘅10條路線。">
+<meta name="keywords" content="香港行山路線,香港十大行山,龍脊,獅子山,大帽山,麥理浩徑,大東山,行山推介">
+<meta name="robots" content="index, follow">
+<link rel="manifest" href="/manifest.json">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9RMXXLKYK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-L9RMXXLKYK');
+</script>
+<link rel="canonical" href="https://gohk.gamewayz.com/hiking-top10.html">
+<meta name="baidu-site-verification" content="codeva-6fKr2IJVp7" />
+<meta property="og:title" content="🥾 香港十大行山路線 | SunnyHK">
+<meta property="og:description" content="由龍脊、獅子山到大帽山，難度、時間、交通、景色全面比較。最值得行嘅10條路線一次睇晒。">
+<meta property="og:url" content="https://gohk.gamewayz.com/hiking-top10.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:locale" content="zh_HK">
+<title>🥾 香港十大行山路線 | SunnyHK</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.trail-hero {
+  position: relative; min-height: 50vh; display: flex; align-items: flex-end;
+  background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%);
+  overflow: hidden;
+}
+.trail-hero img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6;
+}
+.trail-hero .overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(transparent 30%, rgba(0,0,0,0.8));
+}
+.trail-hero .inner {
+  position: relative; z-index: 1; padding: 40px 24px 48px; width: 100%;
+  max-width: 1200px; margin: 0 auto;
+}
+.trail-hero h1 { font-size: 2.4rem; font-weight: 900; color: white;
+  font-family: var(--font-serif); margin-bottom: 8px; }
+.trail-hero .meta { display: flex; gap: 16px; flex-wrap: wrap; color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+.trail-hero .meta span { background: rgba(255,255,255,0.12); padding: 4px 14px; border-radius: 100px; }
+.trail-content { max-width: 900px; margin: 0 auto; padding: 48px 24px; }
+.trail-intro { font-size: 1.05rem; line-height: 1.9; color: var(--text-light); margin-bottom: 40px; padding: 20px; background: var(--bg-cool); border-radius: var(--radius-md); }
+.step-card {
+  background: var(--card-bg); border-radius: var(--radius-md);
+  padding: 24px 28px; margin-bottom: 16px; box-shadow: var(--card-shadow);
+  border-left: 4px solid var(--brand);
+}
+.step-card h3 { margin-bottom: 8px; font-size: 1.1rem; }
+.step-card p { color: var(--text-light); font-size: 0.93rem; line-height: 1.8; }
+.trail-tips { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px,1fr)); gap: 12px; }
+.trail-tips li { background: var(--card-bg); border-radius: var(--radius-sm); padding: 14px 18px;
+  list-style: none; box-shadow: var(--card-shadow); font-size: 0.9rem; color: var(--text-light); }
+.trail-tips li::before { content: "💡 "; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--brand);
+  font-weight: 600; font-size: 0.9rem; margin-bottom: 32px; }
+.back-link:hover { text-decoration: underline; }
+@media (max-width: 768px) {
+  .trail-hero h1 { font-size: 1.6rem; }
+  .step-card { padding: 18px 20px; }
+}
+.top10-grid { display: grid; gap: 16px; }
+.top10-card {
+  background: var(--card-bg); border-radius: var(--radius-md);
+  padding: 24px 28px; box-shadow: var(--card-shadow);
+  border-left: 4px solid var(--brand);
+  display: grid; grid-template-columns: 60px 1fr; gap: 20px; align-items: start;
+}
+.top10-card .rank {
+  font-size: 2rem; font-weight: 900; color: var(--brand);
+  font-family: var(--font-serif); text-align: center; line-height: 1;
+}
+.top10-card h3 { font-size: 1.1rem; margin-bottom: 6px; }
+.top10-card p { color: var(--text-light); font-size: 0.9rem; line-height: 1.7; margin-bottom: 8px; }
+.top10-card .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.top10-card .tags span {
+  padding: 3px 10px; border-radius: 100px; font-size: 0.7rem;
+  background: var(--bg-cool); color: var(--text-light);
+}
+.top10-card .info-row { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.82rem; color: var(--text-muted); }
+.top10-card .info-row span { display: flex; align-items: center; gap: 4px; }
+.top10-card .btn-row { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+@media (max-width: 768px) {
+  .top10-card { grid-template-columns: 1fr; gap: 8px; }
+  .top10-card .rank { text-align: left; font-size: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="inner">
+    <a href="index.html" class="logo">
+      <div class="sun"><i class="fas fa-sun"></i></div>
+      Sunny<span>HK</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav-home">首頁</a>
+      <div class="nav-dropdown active">
+        <a href="explore.html" data-i18n="nav-explore">探索指南</a>
+        <div class="nav-dropdown-menu">
+          <a href="explore.html" data-i18n="nav-explore-all">🌟 人群指南</a>
+          <a href="hiking.html" data-i18n="nav-hiking">🥾 行山路線</a>
+          <a href="snorkeling.html" data-i18n="nav-snorkeling">🤿 浮潛攻略</a>
+          <a href="swimming.html" data-i18n="nav-swimming">🏊 游水指南</a>
+        </div>
+      </div>
+      <a href="food.html" data-i18n="nav-food">美食地圖</a>
+      <div class="nav-dropdown">
+        <a href="tips.html" data-i18n="nav-tips">實用資訊</a>
+        <div class="nav-dropdown-menu">
+          <a href="tips.html" data-i18n="nav-tips-all">💡 實用貼士</a>
+          <a href="electronics.html" data-i18n="nav-electronics">💻 電子產品</a>
+        </div>
+      </div>
+      <a href="map.html" data-i18n="nav-map">🗺️ 地圖</a>
+      <a href="stories.html" data-i18n="nav-stories">香港故事</a>
+      <a href="about.html" data-i18n="nav-about">關於</a>
+    </div>
+    <div class="nav-actions">
+      <div class="lang-group">
+        <button class="lang-btn" data-lang="trad">繁</button>
+        <button class="lang-btn" data-lang="simp">简</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切換主題"><i class="fas fa-moon"></i></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="選單">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="index.html">首頁</a>
+  <a href="explore.html">🌟 人群指南</a>
+  <a href="hiking.html">🥾 行山路線</a>
+  <a href="snorkeling.html">🤿 浮潛攻略</a>
+  <a href="swimming.html">🏊 游水指南</a>
+  <a href="food.html">美食地圖</a>
+  <a href="tips.html">💡 實用貼士</a>
+  <a href="electronics.html">💻 電子產品</a>
+  <a href="map.html">🗺️ 地圖</a>
+  <a href="stories.html">香港故事</a>
+  <a href="about.html">關於</a>
+  <div class="lang-group">
+    <button class="lang-btn" data-lang="trad">繁</button>
+    <button class="lang-btn" data-lang="simp">简</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="theme-toggle" id="themeToggleMobile" aria-label="切換主題" style="margin-top:8px;align-self:flex-start;"><i class="fas fa-moon"></i></button>
+</div>
+
+<div class="trail-hero">
+  <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80" alt="香港十大行山路線" loading="lazy">
+  <div class="overlay"></div>
+  <div class="inner">
+    <h1>🥾 香港十大行山路線</h1>
+    <div class="meta">
+      <span>人氣排行</span>
+      <span>難度：⭐ 至 ⭐⭐⭐</span>
+      <span>全港實測</span>
+    </div>
+  </div>
+</div>
+
+<div class="trail-content">
+  <p class="trail-intro">
+    香港號稱「東方之珠」，但佢嘅山海之美一樣震撼！由CNN推薦嘅龍脊到象徵香港精神嘅獅子山，由957米嘅大帽山到芒草搖曳嘅大東山——我哋實測咗全港幾十條行山路線，精心揀出最值得行嘅10條。每條路線都有完整攻略、交通、難度評級同景色介紹，幫你揀到最啱自己嘅一條。
+  </p>
+
+  <div class="top10-grid">
+
+    <div class="top10-card">
+      <div class="rank">#1</div>
+      <div>
+        <h3>🐉 龍脊 Dragon's Back</h3>
+        <p>CNN旅遊榜推薦嘅香港行山路線！由土地灣上山經打爛埕頂山到大浪灣，山脊兩邊都係海景——一邊石澳、一邊大潭灣。秋冬天去最正，唔曬又涼爽，係新手同老手都鍾意嘅路線。</p>
+        <div class="tags"><span>國際知名</span><span>全海景</span><span>新手OK</span></div>
+        <div class="info-row">
+          <span><i class="fas fa-signal"></i> 難度：⭐ 簡單</span>
+          <span><i class="fas fa-clock"></i> 2-3小時</span>
+          <span><i class="fas fa-road"></i> 4-5公里</span>
+        </div>
+        <div class="btn-row">
+          <a href="hiking-dragons-back.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a>
+          <a href="map.html?q=龍脊" target="_blank" class="hiking-card-btn" style="border:1.5px solid var(--brand);color:var(--brand);background:transparent;"><i class="fas fa-map-marked-alt"></i> 睇地圖</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="top10-card">
+      <div class="rank">#2</div>
+      <div>
+        <h3>🦁 獅子山 Lion Rock</h3>
+        <p>香港精神嘅象徵！由樂富起步，上到山頂可以俯瞰九龍全景同維港。最後一段要手腳並用爬石級，但唔算危險。山頂嘅「獅頭」裂縫係經典打卡位，上到山頂特別有感觸。</p>
+        <div class="tags"><span>香港精神</span><span>九龍全景</span><span>中級</span></div>
+        <div class="info-row">
+          <span><i class="fas fa-signal"></i> 難度：⭐⭐ 中等</span>
+          <span><i class="fas fa-clock"></i> 約4小時來回</span>
+          <span><i class="fas fa-road"></i> 4公里</span>
+        </div>
+        <div class="btn-row">
+          <a href="hiking-lion-rock.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a>
+          <a href="map.html?q=獅子山" target="_blank" class="hiking-card-btn" style="border:1.5px solid var(--brand);color:var(--brand);background:transparent;"><i class="fas fa-map-marked-alt"></i> 睇地圖</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="top10-card">
+      <div class="rank">#3</div>
+      <div>
+        <h3>⛰️ 大帽山 Tai Mo Shan</h3>
+        <p>香港最高峰——957米！天氣好時可以俯瞰新界、九龍、港島，甚至遠眺深圳。冬天有機會結霜，春天有大量蝴蝶，秋天芒草隨風搖曳。山頂天文台雷達站係地標。</p>
+        <div class="tags"><span>香港最高</span><span>360度全景</span><span>中級</span></div>
+        <div class="info-row">
+          <span><i class="fas fa-signal"></i> 難度：⭐⭐ 中等</span>
+          <span><i class="fas fa-clock"></i> 2-3小時來回</span>
+          <span><i class="fas fa-road"></i> 8公里</span>
+        </div>
+        <div class="btn-row">
+          <a href="hiking-tai-mo-shan.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a>
+          <a href="map.html?q=大帽山" target="_blank" class="hiking-card-btn" style="border:1.5px solid var(--brand);color:var(--brand);background:transparent;"><i class="fas fa-map-marked-alt"></i> 睇地圖</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="top10-card">
+      <div class="rank">#4</div>
+      <div>
+        <h3>🥇 麥理浩徑第二段 MacLehose Trail S2</h3>
+        <p>麥理浩徑全長100公里分10段，其中第二段係最精華路段——經浪茄、西灣山、鹹田灣、赤徑到北潭凹。沿途經多個水清沙幼嘅沙灘，上山落海不斷重複，景色全港頂級。</p>
+        <div class="tags"><span>麥徑精華</span><span>沙灘路線</span><span>高手</span></div>
+        <div class="info-row">
+          <span><i class="fas fa-signal"></i> 難度：⭐⭐⭐ 困難</span>
+          <span><i class="fas fa-clock"></i> 5-6小時</span>
+          <span><i class="fas fa-road"></i> 14公里</span>
+        </div>
+        <div class="btn-row">
+          <a href="hiking-maclehose-s2.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a>
+          <a href="map.html?q=麥理浩徑" target="_blank" class="hiking-card-btn" style="border:1.5px solid var(--brand);color:var(--brand);background:transparent;"><i class="fas fa-map-marked-alt"></i> 睇地圖</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="top10-card">
+      <div class="rank">#5</div>
+      <div>
+        <h3>🌾 大東山 Sunset Peak</h3>
+        <p>香港第三高峰（869米），秋冬芒草季嘅王者！每年11月到12月，成山頭金黃色芒草隨風搖曳。爛頭營嘅石屋群係標誌性地標，配合芒草景影出嚟好似去咗蘇格蘭高地。</p>
+        <div class="tags"><span>芒草天堂</span><span>爛頭營</span><span>高手</span></div>
+        <div class="info-row">
+          <span><i class="fas fa-signal"></i> 難度：⭐⭐⭐ 困難</span>
+          <span><i class="fas fa-clock"></i> 約4小時</span>
+          <span><i class="fas fa-road"></i> 7公里</span>
+        </div>
+        <div class="btn-row">
+          <a href="hiking-sunset-peak.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a>
+          <a href="map.html?q=大東山" target="_blank" class="hiking-card-btn" style="border:1.5px solid var(--brand);color:var(--brand);background:transparent;"><i class="fas fa-map-marked-alt"></i> 睇地圖</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="top10-card">
+      <div class="rank">#6</div>
+      <div>
+        <h3>🎣 釣魚翁 High Junk Peak</h3>
+        <p>香港三尖之一，海拔344米，山形尖削似釣魚翁而得名。上到山頂望到成個清水灣半島同布袋澳，景色開揚。可以簡化只上山頂（約1小時），或者挑戰全程到大廟。</p>
+        <div class="tags"><span>香港三尖</span><span>清水灣</span><span>中級</span></div>
+        <div class="info-row">
+          <span><i class="fas fa-signal"></i> 難度：⭐⭐ 中等</span>
+          <span><i class="fas fa-clock"></i> 短途2小時 / 全程6小時</span>
+          <span><i class="fas fa-road"></i> 視乎路線</span>
+        </div>
+        <div class="btn-row">
+          <a href="hiking-high-junk-peak.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a>
+          <a href="map.html?q=釣魚翁" target="_blank" class="hiking-card-btn" style="border:1.5px solid var(--brand);color:var(--brand);background:transparent;"><i class="fas fa-map-marked-alt"></i> 睇地圖</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="top10-card">
+      <div class="rank">#7</div>
+      <div>
+        <h3>🏔️ 太平山頂環山步道 Victoria Peak Circle</h3>
+        <p>最輕鬆又最經典！盧吉道環山步道平坦到BB車都推到，圍繞太平山山腰一圈約3.5公里。沿途180度俯瞰維港同九龍，黃昏時分可以一次過睇日落同百萬夜景。</p>
+        <div class="tags"><span>零難度</span><span>百萬夜景</span><span>新手OK</span></div>
+        <div class="info-row">
+          <span><i class="fas fa-signal"></i> 難度：⭐ 簡單</span>
+          <span><i class="fas fa-clock"></i> 約1小時</span>
+          <span><i class="fas fa-road"></i> 3.5公里</span>
+        </div>
+        <div class="btn-row">
+          <a href="hiking-peak-circle.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a>
+          <a href="map.html?q=太平山頂" target="_blank" class="hiking-card-btn" style="border:1.5px solid var(--brand);color:var(--brand);background:transparent;"><i class="fas fa-map-marked-alt"></i> 睇地圖</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="top10-card">
+      <div class="rank">#8</div>
+      <div>
+        <h3>🐋 鶴咀 Cape D'Aguilar</h3>
+        <p>香港最東南端嘅海岸保護區！雷音洞、蟹洞、1867年燈塔同巨型鯨魚骨標本。由筲箕灣出發行石屎路約1小時到，沿路無敵海景，唔會覺得攰。世界級地質景觀。</p>
+        <div class="tags"><span>海岸保護區</span><span>地質景觀</span><span>中級</span></div>
+        <div class="info-row">
+          <span><i class="fas fa-signal"></i> 難度：⭐⭐ 中等</span>
+          <span><i class="fas fa-clock"></i> 3-4小時來回</span>
+          <span><i class="fas fa-road"></i> 8公里</span>
+        </div>
+        <div class="btn-row">
+          <a href="hiking-cape-daguilar.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a>
+          <a href="map.html?q=鶴咀" target="_blank" class="hiking-card-btn" style="border:1.5px solid var(--brand);color:var(--brand);background:transparent;"><i class="fas fa-map-marked-alt"></i> 睇地圖</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="top10-card">
+      <div class="rank">#9</div>
+      <div>
+        <h3>🌳 城門水塘 Shing Mun Reservoir</h3>
+        <p>新界最受歡迎親子行山路線！環塘徑平坦樹蔭多，沿途見到猴子、牛牛同鸚鵡。白千層林道——兩排白色樹幹企喺水邊，影出嚟好似仙境。環塘一圈約8公里，可以只行半段。</p>
+        <div class="tags"><span>親子首選</span><span>白千層</span><span>新手OK</span></div>
+        <div class="info-row">
+          <span><i class="fas fa-signal"></i> 難度：⭐ 簡單</span>
+          <span><i class="fas fa-clock"></i> 半段2小時 / 環塘4小時</span>
+          <span><i class="fas fa-road"></i> 8公里</span>
+        </div>
+        <div class="btn-row">
+          <a href="hiking-shing-mun.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a>
+          <a href="map.html?q=城門水塘" target="_blank" class="hiking-card-btn" style="border:1.5px solid var(--brand);color:var(--brand);background:transparent;"><i class="fas fa-map-marked-alt"></i> 睇地圖</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="top10-card">
+      <div class="rank">#10</div>
+      <div>
+        <h3>🏝️ 南丫島家樂徑 Lamma Island Family Walk</h3>
+        <p>由榕樹灣行到索罟灣，石屎路為主輕鬆到可以穿拖鞋行！途中經過洪聖爺灣（可以游水）、觀景亭同豆腐花店。兩邊都係海，海風吹住行唔會太熱。行完喺索罟灣食海鮮收尾。</p>
+        <div class="tags"><span>小島風情</span><span>海鮮</span><span>零難度</span></div>
+        <div class="info-row">
+          <span><i class="fas fa-signal"></i> 難度：⭐ 簡單</span>
+          <span><i class="fas fa-clock"></i> 1.5-2小時</span>
+          <span><i class="fas fa-road"></i> 5公里</span>
+        </div>
+        <div class="btn-row">
+          <a href="hiking-lamma-island.html" class="hiking-card-btn" style="background:var(--brand);color:white;"><i class="fas fa-book-open"></i> 完整攻略</a>
+          <a href="map.html?q=南丫島" target="_blank" class="hiking-card-btn" style="border:1.5px solid var(--brand);color:var(--brand);background:transparent;"><i class="fas fa-map-marked-alt"></i> 睇地圖</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <h2 style="margin-top:48px;">🎒 行山貼士</h2>
+  <ul class="trail-tips">
+    <li>新手由⭐路線開始，逐步挑戰⭐⭐⭐。唔好一開始就上大帽山！</li>
+    <li>必備裝備：行山鞋、1.5L水、防曬、帽、離線地圖、充電寶。</li>
+    <li>夏天避免中午行山，朝早出發最理想。冬天山頂風大，帶件風褸。</li>
+    <li>出發前睇天文台天氣預報，雷暴警告就改期，唔好死衝。</li>
+    <li>結伴同行最安全，出發前通知朋友你去邊條路線。</li>
+    <li>自己垃圾自己帶走！無痕山林，保護環境。</li>
+    <li>下載「遠足留蹤」App，方便救援人員定位。</li>
+    <li>帶少量乾糧同現金，山頂士多冇八達通。</li>
+  </ul>
+
+  <div style="text-align:center;margin:48px 0;">
+    <a href="index.html" class="submit-btn" style="display:inline-block;width:auto;padding:14px 36px;border-radius:100px;text-decoration:none;">
+      ← 返回首頁
+    </a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <div class="sun"><i class="fas fa-sun"></i></div>
+          SunnyHK
+        </div>
+        <p>一個年輕、陽光、真實嘅香港旅行靈感平台。</p>
+      </div>
+      <div class="footer-col">
+        <h4>探索</h4>
+        <a href="explore.html">人群指南</a>
+        <a href="hiking.html">🥾 行山路線</a>
+        <a href="snorkeling.html">🤿 浮潛攻略</a>
+        <a href="explore.html#quiet">發呆地圖</a>
+        <a href="tips.html">實用資訊</a>
+        <a href="stories.html">香港故事</a>
+      </div>
+      <div class="footer-col">
+        <h4>關於</h4>
+        <a href="about.html">關於 SunnyHK</a>
+        <a href="about.html#faq">常見問題</a>
+      </div>
+      <div class="footer-col">
+        <h4>關注我哋</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="小紅書"><i class="fab fa-xiaohongshu"></i></a>
+          <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 SunnyHK · Discover Your Own Hong Kong</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/lang.js"></script>
+<script src="js/main.js"></script>
+<script>navigator.serviceWorker?.register("/sw.js");</script>
+</body>
+</html>

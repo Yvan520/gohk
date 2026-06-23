@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="香港故事留言板 — 真實旅人分享喺香港嘅嗰一日，最美夜景最難忘一餐最治癒一刻，超過20個故事。">
+<meta name="keywords" content="香港故事,香港旅遊分享,香港回憶,香港旅行故事,香港留言板">
+<meta name="robots" content="index, follow">
+<link rel="manifest" href="/manifest.json">
+<!-- Google tag (gtag.js) GA4 placeholder -> 改做你嘅 Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9RMXXLKYK"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-L9RMXXLKYK');
+</script>
+<link rel="canonical" href="https://gohk.gamewayz.com/stories.html">
+<meta name="baidu-site-verification" content="codeva-6fKr2IJVp7" />
+<meta property="og:title" content="香港故事 | SunnyHK 留言板">
+<meta property="og:description" content="分享你喺香港嘅嗰一日。最美夜景、最難忘嘅一餐、最治癒嘅一刻。真實旅人分享。">
+<meta property="og:url" content="https://gohk.gamewayz.com/stories.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1504664911901-2518a8bfc164?auto=format&fit=crop&w=1200&q=80">
+<meta property="og:locale" content="zh_HK">
+<title>香港故事 | SunnyHK 留言板</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.tag-select { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag-option {
+  padding: 8px 16px; border-radius: 100px;
+  border: 1px solid var(--border);
+  background: var(--bg-warm); cursor: pointer;
+  font-size: 0.85rem; transition: all var(--transition);
+  font-family: var(--font-sans); color: var(--text-light);
+}
+.tag-option:hover { border-color: var(--brand); color: var(--brand); }
+.tag-option.selected { background: var(--brand); color: white; border-color: var(--brand); }
+.filter-bar {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px;
+}
+.filter-btn-s {
+  padding: 8px 18px; border-radius: 100px;
+  border: 1px solid var(--border);
+  background: var(--card-bg); cursor: pointer;
+  font-size: 0.85rem; transition: all var(--transition);
+  font-family: var(--font-sans); color: var(--text-light);
+}
+.filter-btn-s:hover { border-color: var(--brand); color: var(--brand); }
+.filter-btn-s.active { background: var(--brand); color: white; border-color: var(--brand); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="inner">
+    <a href="index.html" class="logo">
+      <div class="sun"><i class="fas fa-sun"></i></div>
+      Sunny<span>HK</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" data-i18n="nav-home">首頁</a>
+      <div class="nav-dropdown">
+        <a href="explore.html" data-i18n="nav-explore">探索指南</a>
+        <div class="nav-dropdown-menu">
+          <a href="explore.html" data-i18n="nav-explore-all">🌟 人群指南</a>
+          <a href="hiking.html" data-i18n="nav-hiking">🥾 行山路線</a>
+          <a href="snorkeling.html" data-i18n="nav-snorkeling">🤿 浮潛攻略</a>
+          <a href="swimming.html" data-i18n="nav-swimming">🏊 游水指南</a>
+        </div>
+      </div>
+      <a href="food.html" data-i18n="nav-food">美食地圖</a>
+      <div class="nav-dropdown">
+        <a href="tips.html" data-i18n="nav-tips">實用資訊</a>
+        <div class="nav-dropdown-menu">
+          <a href="tips.html" data-i18n="nav-tips-all">💡 實用貼士</a>
+          <a href="electronics.html" data-i18n="nav-electronics">💻 電子產品</a>
+        </div>
+      </div>
+      <a href="map.html" data-i18n="nav-map">🗺️ 地圖</a>
+      <a href="stories.html" data-i18n="nav-stories">香港故事</a>
+      <a href="daily-content.html">📝 每日推介</a>
+      <a href="about.html" data-i18n="nav-about">關於</a>
+      </div>
+    <div class="nav-actions">
+      <div class="lang-group">
+        <button class="lang-btn" data-lang="trad">繁</button>
+        <button class="lang-btn" data-lang="simp">简</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="切換主題"><i class="fas fa-moon"></i></button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="選單">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <a href="daily-content.html">📝 每日推介</a>
+  <a href="index.html" data-i18n="nav-mobile-home">首頁</a>
+  <a href="explore.html" data-i18n="nav-mobile-explore">🌟 人群指南</a>
+  <a href="hiking.html" data-i18n="nav-mobile-hiking">🥾 行山路線</a>
+  <a href="snorkeling.html" data-i18n="nav-mobile-snorkeling">🤿 浮潛攻略</a>
+  <a href="swimming.html" data-i18n="nav-mobile-swimming">🏊 游水指南</a>
+  <a href="food.html" data-i18n="nav-mobile-food">美食地圖</a>
+  <a href="tips.html" data-i18n="nav-mobile-tips">💡 實用貼士</a>
+  <a href="electronics.html" data-i18n="nav-mobile-electronics">💻 電子產品</a>
+  <a href="map.html" data-i18n="nav-mobile-map">🗺️ 地圖</a>
+  <a href="stories.html" data-i18n="nav-mobile-stories">香港故事</a>
+  <a href="about.html" data-i18n="nav-mobile-about">關於</a>
+<div class="lang-group">
+     <button class="lang-btn" data-lang="trad">繁</button>
+     <button class="lang-btn" data-lang="simp">简</button>
+     <button class="lang-btn" data-lang="en">EN</button>
+   </div>
+  <button class="theme-toggle" id="themeToggleMobile" aria-label="切換主題" style="margin-top:8px;align-self:flex-start;"><i class="fas fa-moon"></i></button>
+</div>
+
+<div class="page-header">
+  <div class="inner">
+    <h1 data-i18n="stories-title">💬 香港故事 · <br>分享你嘅嗰一日</h1>
+    <p data-i18n="stories-subtitle">每一個嚟過嘅人，都留低咗一瞬心動。你都可以。</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="inner" style="max-width: 900px;">
+
+    <div class="story-form fade-in">
+      <h3 data-i18n="stories-form-title">✏️ 寫低你嘅香港瞬間</h3>
+      <p class="hint">分享你喺香港最難忘嘅回憶，可能你嘅故事會成為別人嘅旅行靈感。</p>
+      <form id="storyForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="stories-form-nickname">稱呼</label>
+            <input type="text" id="storyNickname" placeholder="你嘅名字" maxlength="30" data-i18n-placeholder="stories-form-nickname">
+          </div>
+          <div class="form-group">
+            <label data-i18n="stories-form-origin">來自邊度</label>
+            <input type="text" id="storyOrigin" placeholder="深圳 / 上海 / 東京 ..." data-i18n-placeholder="stories-form-origin">
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-i18n="stories-form-category">故事分類</label>
+          <select id="storyCategory">
+            <option value="night">🌇 最美夜景</option>
+            <option value="food">🍜 最難忘嘅一餐</option>
+            <option value="healing">💛 最治癒嘅一刻</option>
+            <option value="family">👨‍👩‍👧 親子回憶</option>
+            <option value="solo">🎒 一個人嘅旅行</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>你嘅故事</label>
+          <textarea id="storyMessage" rows="4" placeholder="嗰日喺香港..." required data-i18n-placeholder="stories-form-message"></textarea>
+        </div>
+        <button type="submit" class="submit-btn" data-i18n="stories-form-submit"><i class="fas fa-paper-plane" style="margin-right:8px;"></i> 發佈故事</button>
+      </form>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn-s active" onclick="filterStories('all')" data-i18n="stories-filter-all">全部故事</button>
+      <button class="filter-btn-s" onclick="filterStories('night')" data-i18n="stories-filter-night">🌇 夜景</button>
+      <button class="filter-btn-s" onclick="filterStories('food')" data-i18n="stories-filter-food">🍜 美食</button>
+      <button class="filter-btn-s" onclick="filterStories('healing')" data-i18n="stories-filter-healing">💛 治癒</button>
+      <button class="filter-btn-s" onclick="filterStories('family')" data-i18n="stories-filter-family">👨‍👩‍👧 親子</button>
+      <button class="filter-btn-s" onclick="filterStories('solo')" data-i18n="stories-filter-solo">🎒 獨旅</button>
+    </div>
+
+    <div class="stories-grid" id="storiesContainer">
+      <div class="story-card" style="text-align:center;padding:48px 24px;grid-column:1/-1;">
+        <div style="font-size:3rem;margin-bottom:16px;">💬</div>
+        <p style="color:var(--text-muted);">載入中...</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">
+          <div class="sun"><i class="fas fa-sun"></i></div>
+          SunnyHK
+        </div>
+        <p data-i18n="footer-tagline">一個年輕、陽光、真實嘅香港旅行靈感平台。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-explore">探索</h4>
+        <a href="explore.html" data-i18n="footer-guide">人群指南</a>
+        <a href="hiking.html" data-i18n="footer-hiking">🥾 行山路線</a>
+        <a href="snorkeling.html" data-i18n="footer-snorkeling">🤿 浮潛攻略</a>
+        <a href="explore.html#quiet" data-i18n="footer-quiet">發呆地圖</a>
+        <a href="tips.html" data-i18n="footer-tips">實用資訊</a>
+        <a href="stories.html" data-i18n="footer-stories">香港故事</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-about">關於</h4>
+        <a href="about.html" data-i18n="footer-about-us">關於 SunnyHK</a>
+        <a href="about.html#faq" data-i18n="footer-faq">常見問題</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer-follow">關注我哋</h4>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="小紅書"><i class="fab fa-xiaohongshu"></i></a>
+          <a href="#" aria-label="微博"><i class="fab fa-weibo"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 SunnyHK · Discover Your Own Hong Kong</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/lang.js"></script>
+<script src="js/main.js"></script>
+<script>
+function filterStories(category) {
+  const btns = document.querySelectorAll('.filter-btn-s');
+  btns.forEach(b => b.classList.remove('active'));
+  if (event && event.currentTarget) event.currentTarget.classList.add('active');
+  else btns[0].classList.add('active');
+
+  const catMap = { night:'🌇', food:'🍜', healing:'💛', family:'👨', solo:'🎒' };
+  document.querySelectorAll('#storiesContainer .story-card').forEach(card => {
+    if (card.id === 'emptyState') return;
+    const tag = card.querySelector('.tag');
+    if (!tag) { card.style.display = ''; return; }
+    const cat = tag.textContent.trim();
+    if (category === 'all') { card.style.display = ''; return; }
+    card.style.display = cat.startsWith(catMap[category] || '') ? '' : 'none';
+  });
+}
+</script>
+<script>
+if (!localStorage.getItem('sunnyhk-stories-seeded')) {
+  const seedStories = [
+    {
+      nickname: '港鐵妹',
+      origin: '湖南',
+      category: 'healing',
+      message: '月中嗰日搭港鐵扶手梯突然頭暈跣低，醒咗喊到死死下。有個藍衫婆婆衝過嚟扶起我，陪我喺中環站坐足一粒鐘，又遞水又話幫我俾醫藥費。臨走佢塞咗$500俾我話「好開心你哋嚟香港玩，去食啲嘢啦」，然後轉身就走咗。香港人嘅邊界感，原來係咁溫柔嘅。',
+      time: '上週',
+      likes: 67,
+      liked: false
+    },
+    {
+      nickname: '茶記新丁',
+      origin: '上海',
+      category: 'healing',
+      message: '啱啱過咗嚟香港，喺茶餐廳食飯隔籬枱個阿伯大嬸一直望住我，我以為歧視我大陸口音。點知個阿伯遞咗張紙過嚟，上面寫咗九個字：「去藥房買泰國青草膏」。原來佢見我隻腳生滿曬蟎蟲敏感粒粒，好心提我。炮台山之前都有個阿姨寫紙仔叫我買無比滴。呢度啲人，沉默但係暖到入心。',
+      time: '上個月',
+      likes: 43,
+      liked: false
+    },
+    {
+      nickname: '外賣強',
+      origin: '香港',
+      category: 'family',
+      message: '我喺大埔送外賣送咗16年。試過送餐俾個婆婆，見到佢跌咗喺地下又叫唔到救命，即刻搵隔籬鄰居幫手。又試過有個阿伯叫咗四人套餐，等咗成幾分鐘先開到門，原來佢半身不遂。佢話嗰日係仔生日，叫四人餐同個仔慶祝。做外賣見盡人生百態，幫得就幫啦，唔好咁自私。',
+      time: '第二年',
+      likes: 52,
+      liked: false
+    },
+    {
+      nickname: '涼果何',
+      origin: '香港',
+      category: 'healing',
+      message: '深水埗街頭見到涼果伯伯，就快90歲仲推住車仔賣涼果。佢話自己由觀塘裕民坊做到𠵱家，重建趕咗佢走，𠵱家嚟深水埗繼續做。佢啲銀稔自家生曬，入口清香唔似出面得死甜。佢笑住話「我就快90歲，繼續做！」佢仲會同你講越南竹帽故事、講當年美兵見到都好驚。呢啲係香港最後嘅街頭風景。',
+      time: '上個月',
+      likes: 44,
+      liked: false
+    },
+    {
+      nickname: '夜歸人',
+      origin: '廣州',
+      category: 'solo',
+      message: '夜晚11點喺中環站想增值八達通，身上得$100同$500紙幣，部機食唔到，人工又收咗工。徬徨之際見到個著拖鞋戴帽嘅靚仔行過，硬住頭皮問佢可唔可以幫手買飛。佢一句廢話冇講就幫我買咗，仲話「唔使轉錢了，小事」，我行勻成個站得返啲散銀塞返俾佢。香港人係咪個個都咁好？',
+      time: '上個禮拜',
+      likes: 38,
+      liked: false
+    },
+    {
+      nickname: 'Uber天使',
+      origin: '香港',
+      category: 'healing',
+      message: '老竇突然入咗醫院，由港島飛的返新界，上咗車完全冇心情講嘢。司機問我我做咗個手勢話唔想傾，佢竟然冇嬲，仲用咗成30分鐘車程不斷搵話題分散我注意。落車前佢話「緊張時個人最緊要唔好亂，呢個時候係最容易做錯決定，冷靜啲，冇事嘅妹妹！」事後我先發現佢揸咗6年車攞過1萬次五星。',
+      time: '上個月',
+      likes: 71,
+      liked: false
+    },
+    {
+      nickname: '輪椅仔',
+      origin: '香港',
+      category: 'family',
+      message: '沙田石門見到架的士停低，個司機大佬落車扶個坐輪椅嘅伯伯出嚟，再推佢上行人路。佢冇即刻走，係一直望到個伯伯安全行到先返上車。成個過程冇催過一句，冇響過一次號。我喺後面等佢，等得心甘命抵。香港仲有好多好嘅的士司機㗎，只係佢哋唔出聲之嘛。',
+      time: '上星期',
+      likes: 46,
+      liked: false
+    },
+    {
+      nickname: '鏡叔',
+      origin: '香港',
+      category: 'healing',
+      message: '茶果嶺村有間1962年開到𠵱家嘅榮華冰室，鏡叔兩公婆做咗大半世，老婆走咗之後佢自己一個繼續做。佢話市區啲人左鄰右里都唔識，喺茶果嶺唔同，街頭到街尾個個都識。每年天后誕成條村都返晒嚟，人多到不得了。佢話「茶果嶺村人情好，呢啲係錢買唔到㗎」。',
+      time: '第二年',
+      likes: 39,
+      liked: false
+    },
+    {
+      nickname: '書蟲小李',
+      origin: '香港',
+      category: 'healing',
+      message: '上星期行咗去旺角嘅Boundary Bookshop，細細間但好有溫度。店主話「我哋唔只係賣書，係build community㗎」。坐低睇咗本香港攝影集，成個下晝就咁過咗。原來治癒可以好簡單。',
+      time: '5月12日',
+      likes: 23,
+      liked: false
+    },
+    {
+      nickname: '離島達人',
+      origin: '九龍',
+      category: 'healing',
+      message: '南丫島榕樹灣有檔婆婆賣糖水賣咗成50年，$10一碗芝麻糊，滑到不得了。佢話「後生仔，慢慢食，唔使急」。嗰刻我明咗，幸福就係一碗芝麻糊再加一個微笑。',
+      time: '5月8日',
+      likes: 31,
+      liked: false
+    },
+    {
+      nickname: '為食貓',
+      origin: '廣州',
+      category: 'food',
+      message: '第一次聽「無情雞」呢個名覺得好搞笑，原來係傳統廣東宴席菜——白切雞配薑蔥油，因為「無情」意指雞冇內臓，啖啖肉。喺中環「鏞記」試咗，皮爽肉滑，點埋薑蓉真係一流！',
+      time: '5月3日',
+      likes: 45,
+      liked: false
+    },
+    {
+      nickname: '夜遊神',
+      origin: '台灣',
+      category: 'night',
+      message: '青衣真君廟嘅霓虹燈牌真係震撼到我！夜晚去，成座廟被粉紅同藍色燈光包圍，科幻感十足。完全顛覆咗我對傳統寺廟嘅想像，仲以為自己去咗cyberpunk電影場景。',
+      time: '4月28日',
+      likes: 38,
+      liked: false
+    },
+    {
+      nickname: '陳師奶',
+      origin: '香港',
+      category: 'family',
+      message: '帶咗兩個仔去科學館，佢哋玩到癲咗！能量穿梭機最誇張，啲波波由頂滾落嚟，啲細路睇到嘩嘩聲。仲有氣候室可以體驗颱風，阿仔話「媽咪，原來颱風係咁嘅！」又學到嘢又好玩。',
+      time: '4月20日',
+      likes: 27,
+      liked: false
+    },
+    {
+      nickname: '一人旅人',
+      origin: '新加坡',
+      category: 'solo',
+      message: '一個人去長洲，渡海書店係最大驚喜。喺二樓窗邊位攞住本《香港散步學》，望住下面東灣海灘，成個世界靜晒。下晝去張保仔洞探險，喺海邊大石上坐低睇日落——原來一個人旅行都可以咁滿足。',
+      time: '4月15日',
+      likes: 52,
+      liked: false
+    },
+    {
+      nickname: '車婆',
+      origin: '香港',
+      category: 'healing',
+      message: '朝早搭小巴撞到個染橙紅色頭髮嘅婆婆司機，一問先知佢88歲渣咗60年車！佢話「當年窮先至做呢啲工」，𠵱家仲話後生唔願入行，佢頂硬上。全程手車又穩又狠，落車忍唔住同佢講咗句「婆婆你好嘢！」',
+      time: '上週',
+      likes: 47,
+      liked: false
+    },
+    {
+      nickname: '涼叔',
+      origin: '香港',
+      category: 'healing',
+      message: '深水埗有間叫「風扇醫院」嘅鐵皮檔，86歲嘅波叔喺度醫風扇醫咗成50年。有對老夫婦攞住結婚嗰陣父輩送嘅古董風扇，行勻成個灣仔冇人肯整。波叔20蚊就搞掂，佢話：「見佢開心，我都好開心。」呢啲就係人情味。',
+      time: '上個月',
+      likes: 36,
+      liked: false
+    },
+    {
+      nickname: '糖水細',
+      origin: '香港',
+      category: 'food',
+      message: '1951年佢阿爸「牛雜強」推車仔賣牛雜起家，70年代靠一季糯米飯賺到夠買一層樓。細哥以前叫「糖水細」，推車仔賣糖水養成頭家。𠵱家攞足6年米芝蓮，佢阿爸臨終前同佢講：「你如果冇行錯路，你會好成功。」佢話聽到心痛，但𠵱家總算冇令老竇失望。',
+      time: '1951年',
+      likes: 61,
+      liked: false
+    },
+    {
+      nickname: '遮王',
+      origin: '香港',
+      category: 'healing',
+      message: '深水埗街市有間1842年開到𠵱家嘅「新藝城傘皇」，年底正式收檔。第五代傳人威哥成日講，有對80幾歲老人家攞把爛遮嚟整，話係當年17歲追女仔送嘅定情信物。威哥整返好，分文冇收，淨係收咗佢哋一盒糕餅。一把遮，等咗60年。',
+      time: '1842年',
+      likes: 55,
+      liked: false
+    },
+    {
+      nickname: '點心車',
+      origin: '香港',
+      category: 'solo',
+      message: '1926年開業，同一條街同一個舖位，等咗100年。推車仔嘅姐姐唔會理你，你唔嗌佢就推走，成個場都係阿伯自己一個人飲茶睇報紙。佢唔係最好食嘅點心，但佢係最後一間仲用緊推車嘅百年茶樓。坐低之後，你會明點解香港人可以同一間舖食足三代人。',
+      time: '1926年',
+      likes: 43,
+      liked: false
+    },
+    {
+      nickname: '遮下你',
+      origin: '深圳',
+      category: 'night',
+      message: '落狗屎冇帶遮，衝紅綠燈嗰陣有個阿叔突然行過嚟，二話不說就將把遮擰過嚟。我係咁話「唔該曬唔該曬」，佢用超標準普通話講「不用謝」，一啲港味都冇。成條斑馬線佢就咁送我過去，自己半邊膊頭濕曬。人間有情。',
+      time: '上星期',
+      likes: 29,
+      liked: false
+    },
+    {
+      nickname: '陳師奶',
+      origin: '香港',
+      category: 'food',
+      message: '上個星期日同個女去咗新蒲崗掃街，佢話要試間新開嘅日式鐵板牛扒，點知$128就食到紐西蘭西冷，仲要鐵板上枱咋咋聲，個女開心到不停叫我再帶佢去。睇住佢食得滋味，呢啲就係平民嘅幸福啦。',
+      time: '上個星期日',
+      likes: 34,
+      liked: false
+    },
+    {
+      nickname: '阿強',
+      origin: '香港',
+      category: 'solo',
+      message: '收工冇咩做，一個人揸車去咗東涌海濱長廊，坐低睇住日落同飛機升降，成個人都靜落嚟。城市人太耐冇放空，原來$0就可以買到一個寧靜嘅黃昏。但係記住帶蚊怕水，我畀蚊咬到跳舞。',
+      time: '前日收工後',
+      likes: 28,
+      liked: false
+    },
+    {
+      nickname: '小玲',
+      origin: '深圳',
+      category: 'healing',
+      message: '前排壓力大到爆，同事推介我去流水響水塘散心。朝早八點到，湖面靜到似塊鏡，白千層倒影靚到唔似香港。坐咗成個鐘，咩都唔諗，眼淚無聲咁流咗出嚟，之後成個人輕晒。原來療癒可以好簡單。',
+      time: '上星期六早上',
+      likes: 55,
+      liked: false
+    },
+    {
+      nickname: '大Tony',
+      origin: '香港',
+      category: 'night',
+      message: '同班friend去咗東龍島露營，夜晚喺崖邊開住啤酒吹水，聽住海浪聲，天上面仲有星星。平時返工對住電腦mon，呢啲時刻先叫做生活。不過半夜去廁所好鑊氣，黑到見唔到路，帶頭燈呀各位。',
+      time: '上個月周末',
+      likes: 41,
+      liked: false
+    },
+    {
+      nickname: '黃太',
+      origin: '香港',
+      category: 'family',
+      message: '復活節帶兩個仔去嘉道理農場，佢哋見到豹貓同麻鷹興奮到跳起。蝴蝶園入面有幾十種蝴蝶飛嚟飛去，細佬追蝴蝶追到成身汗。午餐食佢哋cafe嘅素菜包，意想不到咁好食。由朝玩到晚，上車即訓，完美嘅家庭日。',
+      time: '復活節假期',
+      likes: 48,
+      liked: false
+    },
+    {
+      nickname: '阿傑',
+      origin: '廣州',
+      category: 'youth',
+      message: '約咗成班friend去綠蛋島玩獨木舟，啲水清到見底，真係玻璃水嚟㗎。划到出去浮潛見到成班魚仔，仲有海膽。返到西貢再食海鮮，成班人由朝玩到晚，雖然第二日全身酸痛，但值得。',
+      time: '剛過去嘅星期六',
+      likes: 37,
+      liked: false
+    },
+    {
+      nickname: 'Peggy',
+      origin: '香港',
+      category: 'food',
+      message: '同事介紹咗間新蒲崗嘅潮州打冷，夜晚收工走去試。鵝片拼盤同蠔仔粥超正，凍蟹新鮮到不得了。老闆話間舖開咗三十幾年，由爸爸傳到佢。呢啲老味道，食一餐少一餐，要珍惜呀。食完飽到上心口都係$200頭，抵到爛。',
+      time: '昨晚收工',
+      likes: 32,
+      liked: false
+    },
+    {
+      nickname: '文迪',
+      origin: '台灣',
+      category: 'healing',
+      message: '一個人出走咗去南生圍，踩住單車穿梭橫水渡同木橋，日落嗰陣成片天空燒咗咁靚。坐喺岸邊睇雀仔飛，電話收得唔好反而開心。冇notification嘅世界，原來係咁平靜。下次要帶埋畫簿嚟寫生。',
+      time: '上星期六',
+      likes: 44,
+      liked: false
+    },
+    {
+      nickname: '阿豪',
+      origin: '澳門',
+      category: 'solo',
+      message: '趁平日放假自己去咗蒲台島，成個島都冇乜人，得幾個伯伯喺度釣魚。燈塔位影咗大半個鐘相，之後食咗碗紫菜麵，簡單但好味。搭船回程嗰陣吹住海風，諗起好多嘢，一個人嘅旅行有時仲充實過一大班人。',
+      time: '星期三',
+      likes: 25,
+      liked: false
+    },
+    {
+      nickname: '珊珊',
+      origin: '香港',
+      category: 'night',
+      message: '生日嗰晚男朋友帶我去香港仔坐舢舨夜遊避風塘，避風塘炒蟹同椒鹽瀨尿蝦送上船，海風吹住食海鮮，仲有太白海鮮舫嘅燈光做背景。佢話要畀我一個難忘嘅生日，佢做到咗。香港原來仲有咁浪漫嘅地方。',
+      time: '上星期生日',
+      likes: 63,
+      liked: false
+    },
+    {
+      nickname: '陳師奶的利是錢',
+      origin: '街坊',
+      category: 'healing',
+      message: '陳師奶每次嚟街市買餸都攞住一疊利是封，唔係派俾啲細路，係多謝啲檔主「計少幾蚊」或者「送多條葱」。佢話：「人哋對你好，你要識做。」而家啲後生成日覺得老土，但其實呢啲人情味先係香港最值錢嘅嘢。',
+      time: '上星期',
+      likes: 41,
+      liked: false
+    },
+    {
+      nickname: '阿強的豆腐花',
+      origin: '晨運客',
+      category: 'food',
+      message: '朝早六點半，大埔墟街市後面，阿強架豆腐花車準時開檔。佢啲豆腐花滑到可以當甜品食，黃糖任落。佢話呢個位擺咗三十年，由佢阿爸嗰代開始。三十年前呢度仲係個爛地停車場，而家起滿樓，但佢架車仲喺度。',
+      time: '早上',
+      likes: 36,
+      liked: false
+    },
+    {
+      nickname: '小玲的SEN學生',
+      origin: '特教老師',
+      category: 'healing',
+      message: '我教特殊教育需要學生八年，見過最得意嘅case係一個自閉症小朋友可以背晒成個港鐵路線圖，但講唔到自己阿媽叫咩名。有次佢喺金鐘站走失，結果自己搭咗五個站返學校，仲話：「老師，呢條路最近。」香港嘅鐵路系統對佢嚟講係安全感。',
+      time: '今年',
+      likes: 47,
+      liked: false
+    },
+    {
+      nickname: '大Tony的WhatsApp',
+      origin: '地產經紀',
+      category: 'healing',
+      message: '大Tony係個地產經紀，每日WhatsApp status都會有一句「今天的我打倒昨天的我」。例如：星期一話「樓市必升」，星期三變「而家係最好嘅買入點」，星期五拍片「調整係正常」。我問佢你唔怕客戶睇返你之前講過咩？佢笑住話：「香港人，三分鐘記憶嘛。」一語中的。',
+      time: '呢排',
+      likes: 53,
+      liked: false
+    },
+    {
+      nickname: '黃太的鳳仙花',
+      origin: '鄰居',
+      category: 'healing',
+      message: '黃太住公屋四十年，窗台種咗十幾盆鳳仙花，由春天開到秋天。佢話呢啲花最「捱得」，唔使點淋水，太陽曬住都生得靚。「同我哋呢代香港人一樣，再差嘅環境都開到花。」後來成條走廊嘅鄰居都學佢種，變咗條空中花園。',
+      time: '今年',
+      likes: 39,
+      liked: false
+    },
+    {
+      nickname: '阿傑的巴士人生',
+      origin: '巴士迷',
+      category: 'healing',
+      message: '阿傑係個典型巴士迷，屋企幾百部巴士模型。佢話最鍾意係行屯門公路嘅60X，「屯門公路嘅風景係全世界最靚嘅公路風景，左邊山右邊海前面係青馬大橋。」我跟佢坐咗一次，佢全程冇停過口，每段路都講得出典故。香港需要呢啲對城市有熱情嘅人。',
+      time: '上個月',
+      likes: 44,
+      liked: false
+    },
+    {
+      nickname: 'Peggy的移民巴士',
+      origin: '社工',
+      category: 'healing',
+      message: 'Peggy做移民輔導，每日見唔同嘅人。佢話最深刻係一個單親媽媽帶住兩個女去英國，臨上機前同佢講：「我唔知去英國係咪啱，但我知留喺香港一定錯。」半年後收到佢message，話喺Manchester開咗間茶餐廳，賣菠蘿油同絲襪奶茶，英國人好鍾意。香港人，去到邊都係開餐飲。',
+      time: '今年',
+      likes: 58,
+      liked: false
+    },
+    {
+      nickname: '文迪的愛情故事',
+      origin: '朋友',
+      category: 'healing',
+      message: '文迪同男朋友拍拖六年，男朋友用晒六年前追佢嘅方法繼續——每日一封手寫信。我話：「你男朋友由簡體字寫到繁體字，由鉛筆寫到鋼筆，下一版係咪要寫書法？」文迪話：「佢話要寫到結婚嗰日，然後擺酒嗰陣展覽俾親友睇。」我話呢啲男仔去邊度搵。',
+      time: '呢排',
+      likes: 62,
+      liked: false
+    },
+    {
+      nickname: '阿豪的眼鏡舖',
+      origin: '熟客',
+      category: 'healing',
+      message: '深水埗黃金商場對面有間老式眼鏡舖，阿豪係老細兼師傅。佢驗眼唔用電腦，用傳統嗰種「呢個清啲定呢個清啲」嘅方法。我話你點同商場嗰啲大連鎖店鬥？佢答：「人哋十分鐘驗完，我用一粒鐘。我睇你對眼，唔係睇你個荷包。」呢啲就係香港嘅匠人精神，可惜買少見少。',
+      time: '上個月',
+      likes: 49,
+      liked: false
+    },
+    {
+      nickname: '珊珊的貓貓Café',
+      origin: '貓奴',
+      category: 'healing',
+      message: '旺角一座舊唐樓嘅閣樓，珊珊開咗間貓Café。十七隻貓全部係收養返嚟，有啲得返三條腿，有啲盲一隻眼。珊珊話：「冇人要嘅貓，我嚟要。」鋪頭細到得二百呎，但周末爆滿。有客人話心情唔好就會上去坐兩個鐘，淨係睇貓打喊露都治療晒。香港需要多啲呢種溫暖嘅角落。',
+      time: '上星期',
+      likes: 56,
+      liked: false
+    }
+  ];
+  const existing = JSON.parse(localStorage.getItem('sunnyhk-stories') || '[]');
+  localStorage.setItem('sunnyhk-stories', JSON.stringify([...seedStories, ...existing]));
+  localStorage.setItem('sunnyhk-stories-seeded', 'true');
+}
+</script>
+
+<script>navigator.serviceWorker?.register("/sw.js");</script>
+</body>
+</html>
